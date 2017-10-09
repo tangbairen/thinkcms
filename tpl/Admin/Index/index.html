@@ -1,0 +1,25 @@
+<extend name="Public:base"/>
+<block name="title">后台首页</block>
+<block name="content">
+    <div class="page-header">
+        <h1><i class="fa fa-home"></i> 首页</h1>
+    </div>
+    <div class="col-xs-12">
+        <div class="tabbable">
+            <h4>欢迎使用后台管理系统,你本次登陆时间为:{$data.last_login_time|date="Y-m-d H:i:s",###}，登陆IP:{$data.last_login_ip}，登录地址：{$area.country}</h4>
+            <table class="table table-bordered" style="width:60%;margin-top:20px;">
+                <tr>
+                    <td>登录次数</td>
+                    <td>{$data['login_count']}</td>
+                </tr>
+                <tr>
+                    <td>所属组（角色）</td>
+                    <td>{$group.title}</td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</block>
+<block name="js"></block>

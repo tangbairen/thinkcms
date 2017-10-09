@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link href="__ADMIN_ACEADMIN__/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ADMIN_ACEADMIN__/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__ADMIN_ACEADMIN__/layer/ace.min.css">
+    <link rel="stylesheet" href="__ADMIN_ACEADMIN__/css/ace-rtl.min.css">
+    <link rel="stylesheet" href="__ADMIN_ACEADMIN__/css/ace-skins.min.css">
+    <script src="__ADMIN_ACEADMIN__/js/ace-extra.min.js"></script>
+    <script src="__ADMIN_ACEADMIN__/js/jquery-1.10.2.min.js"></script>
+    <script src="__ADMIN_ACEADMIN__/layer/layer.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="__ADMIN_ACEADMIN__/layer/layer.css" id="layui_layer_skinlayercss">
+    <title>BT管理后台登陆</title>
+</head>
+
+<body class="login-layout">
+<div class="logintop">
+    <span>欢迎后台管理界面平台</span>
+
+</div>
+<div class="loginbody">
+    <div class="login-container">
+        <div class="center">
+            <h1>
+                <i class="icon-leaf green"></i>
+                <span class="orange">BT</span>
+                <span class="white">后台管理系统</span>
+            </h1>
+            <h4 class="white">Background Management System</h4>
+        </div>
+        <div class="space-6"></div>
+        <div class="position-relative">
+            <div id="login-box" class="login-box widget-box no-border visible">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            <i class="icon-coffee green"></i>
+                            管理员登陆
+                        </h4>
+                        <div class="login_icon"><img src="__PUBLIC_IMAGES__/login.png"></div>
+                        <form class="" method="post" onsubmit="return false">
+                            <fieldset>
+                                <p id="js_login" style="height:28px;color:red;"></p>
+                                <label class="block clearfix">
+										<span class="block input-icon input-icon-right">
+											<input type="text" class="form-control" placeholder="登录名" name="name">
+											<i class="icon-user"></i>
+										</span>
+                                </label>
+
+                                <label class="block clearfix">
+										<span class="block input-icon input-icon-right">
+											<input type="password" class="form-control" placeholder="密码" name="pwd">
+											<i class="icon-lock"></i>
+										</span>
+                                </label>
+
+                                <label class="block clearfix">
+										<span class="block input-icon input-icon-right">
+											<input type="text" class="form-control" placeholder="验证码" name="code">
+											<i class="icon-edit"></i>
+										</span>
+                                </label>
+                                <label class="block clearfix">
+										<span class="block input-icon input-icon-right">
+											<img id="verifyImg" style="cursor:pointer;" src="{:U('login/code')}" onclick="changeVerify()" alt="">
+
+										</span>
+                                </label>
+                                <div class="space"></div>
+
+                                <div class="clearfix">
+
+                                    <input type="submit" class="width-35 pull-right btn btn-sm btn-primary" id="login_btn" value="登录">
+
+                                </div>
+
+                                <div class="space-4"></div>
+                            </fieldset>
+                        </form>
+                    </div><!-- /widget-main -->
+
+                    <div class="toolbar clearfix">
+
+                    </div>
+                </div><!-- /widget-body -->
+            </div><!-- /login-box -->
+        </div><!-- /position-relative -->
+    </div>
+</div>
+<div class="loginbm">版权所有  2016-2017 </div>
+
+</body>
+<script>
+    //刷新验证码
+    function changeVerify(){
+        var timenow = new Date().getTime();
+        document.getElementById('verifyImg').src='code/'+timenow;
+    }
+
+
+
+    $('#login_btn').on('click', function(){
+        var num=0;
+        var str="";
+        $("input[name$='name']").each(function(n){
+            if($(this).val()=="")
+            {
+
+                layer.alert(str+=""+"登录名不能为空！\r\n",{
+                    title: '提示框',
+                    icon:0,
+                });
+                num++;
+                return false;
+            }
+        });
+
+        $("input[type$='password']").each(function(n){
+            if($(this).val()=="")
+            {
+
+                layer.alert(str+=""+"密码不能为空！\r\n",{
+                    title: '提示框',
+                    icon:0,
+                });
+                num++;
+                return false;
+            }
+        });
+        $("input[name$='code']").each(function(n){
+            if($(this).val()=="")
+            {
+
+                layer.alert(str+=""+"验证码不能为空！\r\n",{
+                    title: '提示框',
+                    icon:0,
+                });
+                num++;
+                return false;
+            }
+        });
+        if(num>0){
+            return false;
+        }else{
+            // ajax登录验证
+            var name=$('input[name="name"]').val();
+            var pass=$('input[name="pwd"]').val();
+            var code=$('input[name="code"]').val();
+            $.ajax({
+                url  :"{:U('login/handler')}",
+                type :'POST',
+                data : {username:name,pass:pass,code:code},
+                dataType: "json",
+                success:function(data){
+
+                    if(data.code == 200){
+                        layer.alert(data['message'],{
+                            title: '提示框',
+                            icon:1,
+                        },function(index){
+                            location.href="{:U('index/index')}";
+                            layer.close(index);
+                        });
+                    }else{
+                        layer.alert(data['message'],{
+                            title: '提示框',
+                            icon:3,
+                        },function(index){
+                            changeVerify();
+                            layer.close(index);
+                        });
+                    }
+                }
+            });
+        }
+
+    });
+</script>
+</html>
