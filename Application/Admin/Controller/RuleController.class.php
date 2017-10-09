@@ -1,6 +1,8 @@
 <?php
 namespace Admin\Controller;
 use Common\Controller\AdminBaseController;
+use Think\Exception;
+
 /**
  * 后台权限管理
  */
@@ -23,14 +25,28 @@ class RuleController extends AdminBaseController{
      * 添加权限
      */
     public function add(){
-        $data=I('post.');
-        unset($data['id']);
-        $result=D('AuthRule')->addData($data);
-        if ($result) {
-            $this->success('添加成功',U('Admin/Rule/index'));
-        }else{
-            $this->error('添加失败');
+        try{
+            $data=I('post.');
+            unset($data['id']);
+            if(empty($data['title'])) throw new Exception('权限名不能为空');
+            if(empty($data['name'])) throw new Exception('权限不能为空');
+            $name=trim($data['name']);
+            $res=M('AuthRule')->where("name='{$name}'")->select();
+            if($res) throw new Exception('该权限已经存在了');
+
+            $result=D('AuthRule')->addData($data);
+            if ($result) {
+                $this->success('添加成功',U('Admin/Rule/index'));
+            }else{
+                $this->error('添加失败');
+            }
+
+        }catch(Exception $e){
+
+            $message=$e->getMessage();
+            $this->error($message);
         }
+
     }
 
     /**
@@ -84,6 +100,16 @@ class RuleController extends AdminBaseController{
     public function add_group(){
         $data=I('post.');
         unset($data['id']);
+        //判断是否存在
+        $title=trim($data['title']);
+
+        $data=M('AuthGroup')->where("title='{$title}'")->select();
+
+        if($data){
+            $this->error('该用户组已存在了！');
+            exit;
+        }
+
         $result=D('AuthGroup')->addData($data);
         if ($result) {
             $this->success('添加成功',U('Admin/Rule/group'));

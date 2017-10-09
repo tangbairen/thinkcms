@@ -50,7 +50,7 @@
 							</tr>
 							<tr>
 								<th></th>
-								<td> <input class="btn btn-success" type="submit" value="添加"></td>
+								<td> <input class="btn btn-success" onclick="return addData()" type="submit" value="添加"></td>
 							</tr>
 						</table>
 					</form>
@@ -112,5 +112,21 @@
 			$("input[name='name']").val(ruleName);
 			$('#bjy-edit').modal('show');
 		}
+
+		function addData(){
+			var title=$("input[name='title']").val();
+			var name=$("input[name='name']").val();
+			if(title == ''){
+				alert('权限名不能为空');
+				return false;
+			}
+
+			if(name == ''){
+				alert('权限不能为空');
+				return false;
+			}
+
+		}
+
 	</script>
 </block>
