@@ -228,7 +228,23 @@ class RuleController extends AdminBaseController{
     public function add_admin(){
         if(IS_POST){
             $data=I('post.');
-            $result=D('Users')->addData($data);
+            $map['username']=$data['username'];
+            if(!empty($data['phone'])){
+                $map['phone']=$data['phone'];
+            }
+            $map['email']=$data['email'];
+            $map['password']=md5($data['password']);
+            $map['status']=$data['status'];
+            $map['register_time']=time();
+
+            //查询是否存在
+            $res=M('Users')->where("username='{$data['username']}'")->find();
+            if($res){
+                $this->error('该用户名已经存在了！');
+                exit;
+            }
+
+            $result=M('Users')->data($map)->add();
             if($result){
                 if (!empty($data['group_ids'])) {
                     foreach ($data['group_ids'] as $k => $v) {
@@ -267,6 +283,7 @@ class RuleController extends AdminBaseController{
             $map=array(
                 'id'=>$uid
                 );
+
             // 修改权限
             D('AuthGroupAccess')->deleteData(array('uid'=>$uid));
             foreach ($data['group_ids'] as $k => $v) {
@@ -279,10 +296,12 @@ class RuleController extends AdminBaseController{
             $data=array_filter($data);
             // 如果修改密码则md5
             if (!empty($data['password'])) {
-                $data['password']=md5($data['password']);
+                $array['password']=md5($data['password']);
             }
-            // p($data);die;
-            $result=D('Users')->editData($map,$data);
+
+            $User = M("Users");
+
+            $result=$User->where($map)->save($data);
             if($result){
                 // 操作成功
                 $this->success('编辑成功',U('Admin/Rule/edit_admin',array('id'=>$uid)));

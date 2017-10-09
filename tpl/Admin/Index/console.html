@@ -1,0 +1,44 @@
+<extend name="Public:base"/>
+<block name="title">后台首页</block>
+<block name="content">
+    <style>
+        .am-g{width:100%;height: 100px;border:1px solid #ccc;}
+        .am-g ul li{line-height: 10px;margin-right: 10px;margin-left: 200px;margin-top: 20px;}
+        .badge {    background-color: #eff1f3!important;}
+
+    </style>
+    <div class="page-header">
+        <h1><i class="fa fa-home"></i> 首页 > 控制台</h1>
+    </div>
+    <div class="col-xs-10">
+        <div class="am-g">
+            <ul class="nav nav-pills" role="tablist">
+                <li role="presentation" class="active"><a href="{:U('Admin/Rule/admin_user_list')}">管理员数 <span class="badge">{$manger_count}</span></a></li>
+                <li role="presentation" class="active"><a href="{:U('Admin/Nav/index')}">菜单数 <span class="badge">{$menu_count}</span></a></li>
+            </ul>
+        </div>
+
+        <div class="tabbable">
+            <table class="table table-bordered" style="width:100%;margin-top:20px;">
+                <foreach name="data" item="val" key="key">
+                    <tr>
+                        <td>{$key}</td>
+                        <td>{$val}</td>
+                    </tr>
+                </foreach>
+                <tr>
+
+                    <td>扩展列表</td>
+                    <td>
+                        <div style="word-break:break-all;width:80%;">
+                            {$extensionsList}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</block>
+<block name="js"></block>

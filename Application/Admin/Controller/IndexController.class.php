@@ -38,6 +38,23 @@ class IndexController extends AdminBaseController{
 	    $this->display();
 	}
 
+	/*
+	 * 控制台
+	 * */
+	public function console()
+	{
+		//获取服务器信息
+		$data=$this->getServerInfo();
+		// 扩展列表
+		$extensionsList = get_loaded_extensions();
+
+		$manger_count=M('Users')->count();
+		$menu_count=M('AdminNav')->count();
+
+		$this->assign(array('data'=>$data,'extensionsList'=>implode(' , ',$extensionsList),'manger_count'=>$manger_count,'menu_count'=>$menu_count));
+		$this->display();
+	}
+
 
 
 }
