@@ -46,11 +46,40 @@ class ResourceModel extends Model
                     $res=M('AuthGroup')->where("id={$val['group_id']}")->find();
                     $val['group_name']=$res['title'];
                 }
+                if($val['brand_id'] > 0){
+                    $brands=M('Brands')->where("id={$val['brand_id']}")->find();
+                    $val['brands_name']=$brands['name'];
+                }
             }
         }
 
         return array('data'=>$data,'show'=>$show,'count'=>$count);
     }
 
+    public function edit()
+    {
+        $id=I('post.id');
+        $group_id=I('post.group_id');//用户组id
+        $username=I('post.username');
+        $phone=I('post.phone');
+        $chats=I('post.chats');
+        $address=I('post.address');
+        $source=I('post.source');
+        $brand_id=I('post.brand_id');//品牌id
+        $remarks=I('post.remarks');
+
+        $map['group_id']=$group_id;
+        $map['username']=$username;
+        $map['phone']=$phone;
+        $map['phone']=$phone;
+        $map['chats']=$chats;
+        $map['address']=$address;
+        $map['source']=$source;
+        $map['remarks']=$remarks;
+        $map['brand_id']=$brand_id;
+
+        $result=$this->where("id={$id}")->save($map);
+        return $result;
+    }
 
 }
