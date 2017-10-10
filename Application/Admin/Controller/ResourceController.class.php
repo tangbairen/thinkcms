@@ -107,8 +107,16 @@ class ResourceController extends AdminBaseController
                 //用户组
                 $autGroup=M('AuthGroup')->select();
 
+                //品牌
+                $brandArr=M('Brands')->select();
+                $array=array(
+                    'group_name'=>$group_name['title'],
+                    'brand_name'=>$brand_name,
+                    'autGroup'=>$autGroup,
+                    'brandArr'=>$brandArr,
 
-                $this->assign(array('group_name'=>$group_name['title'],'brand_name'=>$brand_name,'autGroup'=>$autGroup));
+                );
+                $this->assign($array);
                 $this->assign('data',$data);
                 $this->display();
 

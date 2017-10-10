@@ -60,7 +60,7 @@
                         <th>咨询品牌</th>
                         <td>
                             <input class="input-medium" type="text" value="{$brand_name}" readonly name="brand_name">
-                            <a href="">点击修改</a>
+                            <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat">点击修改</a>
                         </td>
                         <input type="hidden" name="brand_id" value="{$data['brand_id']}">
                     </tr>
@@ -80,7 +80,7 @@
             </form>
         </div>
     </div>
-
+    <!--用户组-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -92,7 +92,9 @@
                     <form>
                         <foreach name="autGroup" item="val">
                             <span style="padding-right: 15px;padding-left: 5px;">{$val['title']}
-                                <input class="xb-icheck" type="radio" name="group_user" groupName="{$val['title']}" value="{$val['id']}" >
+                                <input class="xb-icheck" type="radio" name="group_user"
+                                       groupName="{$val['title']}" value="{$val['id']}"
+                                <if condition="$val['id'] eq $data['group_id']"> checked </if> >
                             </span>
                         </foreach>
 
@@ -101,6 +103,34 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                     <button type="button" class="btn btn-primary" onclick="group_confirm();">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end 用户组-->
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">修改咨询品牌</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <foreach name="brandArr" item="val">
+                            <span style="padding-right: 15px;padding-left: 5px;">{$val['name']}
+                                <input class="xb-icheck" type="radio" name="brand_title"
+                                       brandName="{$val['name']}" value="{$val['id']}"
+                                <if condition="$val['id'] eq $data['brand_id']"> checked </if> >
+                            </span>
+                        </foreach>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="brand_confirm();">确定</button>
                 </div>
             </div>
         </div>
@@ -130,6 +160,20 @@
             $("input[name='group']").val(groupName);
             $('#exampleModal').modal('hide');
         }
+
+        function brand_confirm(){
+            var brand_id=$("input[name='brand_title']:checked").val();
+            var brandName=$("input[name='brand_title']:checked").attr('brandName');
+            if(typeof(brand_id) == 'undefined'){
+                alert('请选择咨询品牌');
+                return false;
+            }
+
+            $("input[name='brand_id']").val(brand_id);
+            $("input[name='brand_name']").val(brandName);
+            $('#exampleModal2').modal('hide');
+        }
+
 
     </script>
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/thinkcms02.iml" filepath="$PROJECT_DIR$/.idea/thinkcms02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/thinkcms.iml" filepath="$PROJECT_DIR$/.idea/thinkcms.iml" />
     </modules>
   </component>
 </project>
