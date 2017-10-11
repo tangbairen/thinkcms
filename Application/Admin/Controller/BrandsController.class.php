@@ -114,10 +114,66 @@ class BrandsController extends AdminBaseController
             'show'=>$show,
             'data'=>$data
         );
-
         $this->assign($array);
         $this->display();
     }
 
+    /*
+     * 品牌分组详情
+     * */
+    public function detail()
+    {
+        $gid=I('get.gid')+0;
+        $group=M('AuthGroup')->where("id={$gid}")->find();
+        $data=M('BrandsAuth')
+            ->alias('b')
+            ->field('b.id,b.gid,t.name,b.count')
+            ->join('left join bt_brands as t on b.brands_id=t.id')
+            ->where("b.gid={$gid}")
+            ->select();
+
+        $array=array(
+            'data'=>$data,
+            'group_name'=>$group['title']
+        );
+        $this->assign($array);
+
+        $this->display();
+    }
+
+    /*
+     * 删除分配组中的品牌分配
+     * */
+    public function del_brand()
+    {
+        $id=I('get.id');
+        $gid=I('get.gid');
+
+        $res=M('BrandsAuth')->where("id={$id}")->delete();
+        if($res){
+            $this->success('删除成功',U('Admin/Brands/detail',array('gid'=>$gid)));
+        }else{
+            $this->error('删除失败');
+        }
+
+    }
+
+    /*
+     * 修改分配组中的品牌数量
+     * */
+    public function edit_brand()
+    {
+        $id=I('post.brandId');
+        $groupId=I('post.groupId');
+        $count=I('post.count');
+
+        $res=M('BrandsAuth')->where("id={$id}")->save(array('count'=>$count));
+        if($res){
+            $this->success('修改成功',U('Admin/Brands/detail',array('gid'=>$groupId)));
+        }else{
+            $this->error('修改失败');
+        }
+
+    }
 
 }
