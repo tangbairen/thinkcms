@@ -87,5 +87,13 @@ class BrandsController extends AdminBaseController
 
     }
 
+    /*
+     * 品牌分配规则
+     * */
+    public function brand_auth()
+    {
+        $this->display();
+    }
+
 
 }

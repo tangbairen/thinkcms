@@ -71,6 +71,9 @@ class ResourceController extends AdminBaseController
 
     }
 
+    /*
+     * 修改数据（客服的数据）
+     * */
     public function modify()
     {
         if(IS_POST){
@@ -128,5 +131,41 @@ class ResourceController extends AdminBaseController
         }
 
     }
+
+    /*
+     * 添加数据（客服添加）
+     * */
+    public function add_resource()
+    {
+        if(IS_POST){
+
+            try{
+                $res=D('Resource')->addData();
+                if(empty($res)) throw new Exception('添加失败');
+
+                $this->success('添加成功',U('Admin/Resource/customer'));
+            }catch(Exception $e){
+                $message=$e->getMessage();
+                $this->error($message);
+            }
+
+
+        }else{
+
+            //用户组
+            $autGroup=M('AuthGroup')->select();
+            //品牌
+            $brandArr=M('Brands')->select();
+            $array=array(
+                'autGroup'=>$autGroup,
+                'brandArr'=>$brandArr,
+            );
+
+            $this->assign($array);
+            $this->display();
+        }
+    }
+
+
 
 }
