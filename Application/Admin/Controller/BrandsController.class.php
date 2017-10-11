@@ -103,7 +103,7 @@ class BrandsController extends AdminBaseController
 
         $data=M('BrandsAuth')
             ->alias('b')
-            ->field("b.gid,g.title,group_CONCAT(`name`,'(',count,')') as brand_count ")
+            ->field("b.gid,g.title,group_CONCAT(`name`,'( ',count,' )') as brand_count")
             ->join('left join bt_brands as t on b.brands_id=t.id ')
             ->join('left join bt_auth_group as g on b.gid=g.id')
             ->group('b.gid')
@@ -175,5 +175,55 @@ class BrandsController extends AdminBaseController
         }
 
     }
+
+    /*
+     * 分配数据
+     * */
+    public function allot()
+    {
+        if(IS_POST){
+            try{
+                $group_id=I('post.group_id');
+                $brand_id=I('post.brand_id');
+                $count=I('post.count');
+
+                if(empty($group_id)) throw new Exception('请选择用户组');
+                if(empty($brand_id)) throw new Exception('请选择分配品牌');
+                if(empty($count)) throw new Exception('请输入分配数量');
+                $map['brands_id']=$brand_id;
+                $map['gid']=$group_id;
+                $res=M('BrandsAuth')->where($map)->find();
+                if($res) throw new Exception('已经分配过！');
+
+                $map['count']=$count;
+
+                $data=M('BrandsAuth')->add($map);
+
+                if(!$data) throw new Exception('分配失败');
+
+                $this->success('分配成功',U('Admin/Brands/brand_auth'));
+
+            }catch(Exception $e){
+                $message=$e->getMessage();
+                $this->error($message);
+            }
+
+        }else{
+
+            //用户组
+            $autGroup=M('AuthGroup')->select();
+            //品牌
+            $brandArr=M('Brands')->select();
+            $array=array(
+                'autGroup'=>$autGroup,
+                'brandArr'=>$brandArr,
+            );
+
+            $this->assign($array);
+            $this->display();
+        }
+
+    }
+
 
 }
