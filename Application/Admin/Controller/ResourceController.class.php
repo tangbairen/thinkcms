@@ -166,6 +166,27 @@ class ResourceController extends AdminBaseController
         }
     }
 
+    /*
+     * 数据审核（对应的组，如科应组）
+     * */
+    public function audit()
+    {
+        $uid=session('user.id');
+        $group=M('AuthGroupAccess')->where("uid=$uid")->find();
+        $data=D('Resource')->selectData("group_id = {$group['group_id']}");
+        //所有组
+        $group=M('AuthGroup')->select();
+        $phone=I('get.phone');
+        $s_group=I('get.group');
+        $start_time=I('get.start_time','');
+        $end_time=I('get.end_time','');
 
+
+        $this->assign(array('phone'=>$phone,'s_group'=>$s_group,'start_time'=>$start_time,'end_time'=>$end_time));
+        $this->assign('group',$group);
+        $this->assign($data);// 赋值数据集
+
+        $this->display();
+    }
 
 }

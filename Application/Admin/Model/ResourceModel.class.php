@@ -9,9 +9,9 @@ class ResourceModel extends Model
     /*
      * 获取全部数据
      * */
-    public function selectData()
+    public function selectData($where='1')
     {
-        $where='1';
+
         $phone=trim(I('get.phone','','htmlspecialchars'));
         $s_group=I('get.group','');
         $start_time=I('get.start_time','');
