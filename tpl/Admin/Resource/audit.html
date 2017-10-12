@@ -36,8 +36,7 @@
         <div class="tabbable">
 
             <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
-                <li class="active"> <a href="{:U('Admin/Rule/admin_user_list')}">数据列表</a></li>
-                <li> <a href="{:U('Admin/Resource/add_resource')}">添加数据</a></li>
+                <li class="active"> <a >数据列表</a></li>
             </ul>
             <div class="tab-content">
                 <table class="table table-striped table-bordered table-hover table-condensed">
@@ -72,10 +71,10 @@
                             <td>{$val['source']}</td>
                             <td>{$val['brands_name']}</td>
                             <td>{$val['remarks']}</td>
-                            <td>{$val['status']}
+                            <td>
                                 <if condition="$val['status'] eq 1 ">
                                     是
-                                    <elseif condition="$val['status'] neq 0"/>
+                                    <elseif condition="$val['status'] eq 2"/>
                                     否
                                 </if>
                             </td>
@@ -88,9 +87,9 @@
                             </td>
                             <td>{$val['assistant']}</td>
                             <td>{$val['confirm_address']}</td>
-                            <td>{$val['confirm_remark']}</td>
+                            <td width="15%">{$val['confirm_remark']}</td>
                             <td>
-                                <a class="btn btn-primary btn-xs" resId="{$val['id']}" resCompany="{$val['company']}" assistant="{$val['assistant']}"
+                                <a class="btn btn-primary btn-xs" groupId="{$val['group_id']}" resId="{$val['id']}" resCompany="{$val['company']}" assistant="{$val['assistant']}"
                                    confirm_remark="{$val['confirm_remark']}" address="{$val['confirm_address']}" status="{$val['status']}" onclick="edit(this)">修改</a>
                             </td>
                             </td>
@@ -113,10 +112,8 @@
                     <h4 class="modal-title" id="myModalLabel">修改信息</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="bjy-form" class="form-inline" action="" method="post">
-                        <input type="hidden" name="id">
+                    <form id="bjy-form" class="form-inline" action="{:U('Admin/Resource/group_modify')}" method="post">
                         <table class="table table-striped table-bordered table-hover table-condensed">
-                            <input type="hidden" value="resId">
                             <tr>
                                 <th width="15%">公司名：</th>
                                 <td> <input class="input-medium" type="text" name="company"></td>
@@ -132,7 +129,7 @@
                             <tr>
                                 <th width="12%">备注：</th>
                                 <td>
-                                    <textarea cols="50" rows="10" name="confirm_remark"></textarea>
+                                    <textarea id="content" cols="50" rows="10" name="confirm_remark"></textarea>
                                 </td>
                             </tr>
 
@@ -141,11 +138,13 @@
                                 <td> <span class="inputword">是</span>
                                     <input class="xb-icheck" type="radio" name="status" value="1" <eq name="user_data['status']" value="1"> checked="checked"</eq> > &emsp;
                                     <span class="inputword">否</span>
-                                    <input class="xb-icheck" type="radio" name="status" value="0" <eq name="user_data['status']" value="0"> checked="checked"</eq> >
+                                    <input class="xb-icheck" type="radio" name="status" value="2" <eq name="user_data['status']" value="0"> checked="checked"</eq> >
                                 </td>
                             </tr>
                             <tr>
                                 <th></th>
+                                <input type="hidden" name="resId">
+                                <input type="hidden" name="groupId">
                                 <td> <input class="btn btn-success" type="submit" onclick="return modify();" value="修改"></td>
                             </tr>
                         </table>
@@ -169,21 +168,23 @@
         // 修改菜单
         function edit(obj){
             var resId=$(obj).attr('resId');
+            var groupId=$(obj).attr('groupId');
             var resCompany=$(obj).attr('resCompany');
             var assistant=$(obj).attr('assistant');
             var confirm_remark=$(obj).attr('confirm_remark');
             var address=$(obj).attr('address');
             var status=$(obj).attr('status');
-
+            console.log(typeof (status));
             $("input[name='resId']").val(resId);
+            $("input[name='groupId']").val(groupId);
             $("input[name='company']").val(resCompany);
             $("input[name='confirm_address']").val(address);
             $("input[name='assistant']").val(assistant);
-            $("input[name='confirm_remark']").val(confirm_remark);
+            $("#content").val(confirm_remark);
 
             if(status == 1){
                 $("input[name='status']").eq(0).attr('checked','checked');
-            }else if(status === 0){
+            }else if(status == 2){
                 $("input[name='status']").eq(1).attr('checked','checked');
             }
 

@@ -167,4 +167,36 @@ class ResourceModel extends Model
         return $gid;
     }
 
+    /*
+     * 组修改数据（科应）
+     * */
+    public function groupModify()
+    {
+        $company=I('post.company'); //公司名
+        $confirm_address=I('post.confirm_address'); //确认地址
+        $assistant=I('post.assistant'); //回访人
+        $confirm_remark=I('post.confirm_remark'); //备注
+        $status=I('post.status'); //是否可跟
+        $resId=I('post.resId'); //id
+        $groupId=I('post.groupId'); //组id
+
+        if(empty($assistant)) throw new Exception('请填入回访人');
+        if($status === '') throw new Exception('请选择是否可跟');
+
+        $map['id']=$resId;
+        $map['group_id']=$groupId;
+
+        $array['company']=$company;
+        $array['confirm_address']=$confirm_address;
+        $array['assistant']=$assistant;
+        $array['confirm_remark']=$confirm_remark;
+        $array['status']=$status;
+        $array['update_time']=time();
+
+        $res=$this->where($map)->save($array);
+
+        return $res;
+    }
+
+
 }

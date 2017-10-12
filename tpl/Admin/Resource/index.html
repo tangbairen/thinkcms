@@ -83,7 +83,7 @@
                             <td>{$val['status']}
                                 <if condition="$val['status'] eq 1 ">
                                     是
-                                    <elseif condition="$val['status'] neq 0"/>
+                                    <elseif condition="$val['status'] eq 2"/>
                                     否
                                 </if>
                             </td>
@@ -95,7 +95,7 @@
                                     </if>
                             </td>
                             <td>{$val['assistant']}</td>
-                            <td>{$val['confirm_remark']}</td>
+                            <td width="15%">{$val['confirm_remark']}</td>
                         </tr>
                     </foreach>
                 </table>

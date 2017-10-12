@@ -189,4 +189,24 @@ class ResourceController extends AdminBaseController
         $this->display();
     }
 
+    /*
+     * 数据修改(组)是否可跟，回访人...
+     * */
+    public function group_modify()
+    {
+        try{
+
+            $res=D('Resource')->groupModify();
+            if(!$res) throw new Exception('修改失败');
+
+            $this->success('修改成功',U('Admin/Resource/audit'));
+
+        }catch(Exception $e){
+            $message=$e->getMessage();
+            $this->error($message);
+        }
+
+    }
+
+
 }
