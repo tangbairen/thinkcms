@@ -30,6 +30,31 @@ class ResourceController extends AdminBaseController
     }
 
     /*
+     * 导出总数据
+     * */
+    public function totalExport()
+    {
+        $field=['id','addtime','group_id','address','username','phone','chats','brand_id','source'];
+    }
+
+
+    /*
+     * 查询数据
+     * @param $field array [导出的字段]
+     * @param $where array or string [条件]
+     * @param $order string [排序]
+     * */
+    public function comment_export($field,$where=1,$order="addtime desc")
+    {
+        $data=M('Resource')
+            ->field($field)
+            ->where($where)
+            ->order($order)
+            ->select();
+        return $data;
+    }
+
+    /*
      * 数据列表（客服）
      * */
     public function customer()
@@ -205,6 +230,57 @@ class ResourceController extends AdminBaseController
             $message=$e->getMessage();
             $this->error($message);
         }
+
+    }
+
+
+
+    private    function getExcel($fileName,$headArr,$data){
+        //对数据进行检验
+        if(empty($data) || !is_array($data)){
+            die("data must be a array");
+        }
+        //检查文件名
+        if(empty($fileName)){
+            exit;
+        }
+        $date = date("Y_m_d",time());
+        $fileName .= "_{$date}.xls";
+        //创建PHPExcel对象，注意，不能少了\
+        $objPHPExcel = new \PHPExcel();
+        $objProps = $objPHPExcel->getProperties();
+
+        //设置表头
+        $key = ord("A");
+        foreach($headArr as $v){
+            $colum = chr($key);
+            $objPHPExcel->setActiveSheetIndex(0) ->setCellValue($colum.'1', $v);
+            $key += 1;
+        }
+        $column = 2;
+        $objActSheet = $objPHPExcel->getActiveSheet();
+        foreach($data as $key => $rows){ //行写入
+            $span = ord("A");
+            foreach($rows as $keyName=>$value){// 列写入
+                $j = chr($span);
+                $objActSheet->setCellValue($j.$column, $value);
+                $span++;
+            }
+            $column++;
+        }
+        $fileName = iconv("utf-8", "gb2312", $fileName);
+        //重命名表
+        // $objPHPExcel->getActiveSheet()->setTitle('test');
+        //设置活动单指数到第一个表,所以Excel打开这是第一个表
+        $objPHPExcel->setActiveSheetIndex(0);
+        ob_end_clean();
+        ob_start();
+        header('Content-Type: application/vnd.ms-excel');
+        header("Content-Disposition: attachment;filename=\"$fileName\"");
+        header('Cache-Control: max-age=0');
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+        $objWriter->save('php://output'); //文件通过浏览器下载
+        exit;
 
     }
 

@@ -12,7 +12,7 @@ class ResourceModel extends Model
     public function selectData($where='1')
     {
 
-        $phone=trim(I('get.phone','','htmlspecialchars'));
+        $phone=trim(I('get.phone',''));
         $s_group=I('get.group','');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
