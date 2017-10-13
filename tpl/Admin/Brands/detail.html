@@ -20,7 +20,7 @@
                 <table class="table table-striped table-bordered table-hover table-condensed">
                     <tr>
                         <th>品牌</th>
-                        <th>品牌（个数）</th>
+                        <th>品牌（限定数量）</th>
                         <th>操作</th>
                     </tr>
                     <foreach name="data" item="val">
@@ -98,10 +98,10 @@
         function confirm_edit(){
             var count=$("input[name='count']").val();
 
-            if(count == 0){
+           /* if(count == 0){
                 alert('数量至少为1个');
                 return false;
-            }
+            }*/
 
         }
 

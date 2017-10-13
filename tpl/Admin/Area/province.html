@@ -1,0 +1,80 @@
+<extend name="Public:base"/>
+<block name="title">修改管理员</block>
+<block name="css"><icheckcss/>
+</block>
+<block name="content">
+    <div class="page-header">
+        <h1><i class="fa fa-home"></i> 首页 &gt; 后台管理 &gt; 修改管理员</h1>
+    </div><div class="col-xs-12">
+    <div class="tabbable">
+        <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
+            <li class="active"> <a >区域分配</a></li>
+        </ul>
+        <div class="tab-content">
+            <form class="form-inline" method="post" action="{:U('Admin/Rule/edit_admin')}">
+                <input type="hidden" name="id" value="{$user_data['id']}">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <tr>
+                        <th>省份</th>
+                        <th>所属区域</th>
+                    </tr>
+                    <foreach name="data" item="val">
+                        <tr>
+                            <th>{$val['name']}</th>
+                            <td>
+                                <select name="" provinceId="{$val['id']}" onchange="edit(this)">
+                                    <option value="0">选择区域</option>
+                                    <foreach name="area" item="v">
+                                    <option value="{$v.id}" <if condition="$v['id'] eq $val['area_id'] "> selected </if> >{$v['area_name']}</option>
+                                    </foreach>
+                                </select>
+                            </td>
+                        </tr>
+                    </foreach>
+
+                    <tr>
+                        <th></th>
+                        <td>
+                            <!--<input class="btn btn-success" type="submit" onclick="return edit();" value="修改">-->
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</block>
+<block name="js">
+    <icheckjs color="blue"/>
+    <script>
+        function edit(obj){
+            var provinceId=$(obj).attr('provinceId');
+            var area_id=$(obj).val();
+
+            $.ajax({
+                'url':"{:U('Admin/Area/province')}",
+                'type':'post',
+                'dataType':'json',
+                'data':{'provinceId':provinceId,'area_id':area_id},
+                'success':function(data){
+                    if(data['code']== 200){
+                        alert(data['message']);
+                    }else{
+                        alert(data['message']);
+                    }
+                }
+
+
+            });
+
+
+        }
+
+
+
+
+    </script>
+
+
+
+</block>

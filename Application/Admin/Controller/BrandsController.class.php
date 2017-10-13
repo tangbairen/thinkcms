@@ -225,5 +225,63 @@ class BrandsController extends AdminBaseController
 
     }
 
+    /*
+     * 分配总数
+     * */
+    public function total()
+    {
+        $data=M('Total')->alias('t')
+            ->field('t.id,t.title,t.group_id,t.total,g.title as group_name')
+            ->join('bt_auth_group as g on t.group_id = g.id')
+            ->select();
+
+        //所有组
+        $group=M('AuthGroup')->select();
+
+
+        $this->assign('data',$data);
+        $this->assign('group',$group);
+        $this->display();
+    }
+
+    public function add_total()
+    {
+        $title=I('post.title');
+        $group_id=I('post.group');
+        $total=I('post.total');
+
+        $res=M('Total')->where("group_id={$group_id}")->find();
+        if($res){
+            $this->error('该组已经分配有了');
+        }
+        $array=array(
+            'title'=>$title,
+            'group_id'=>$group_id,
+            'total'=>$total
+        );
+
+        $data=M('Total')->add($array);
+
+        if($data){
+            $this->success('添加成功',U('Admin/Brands/total'));
+        }else{
+            $this->error('添加失败');
+        }
+
+    }
+
+    public function edit_total()
+    {
+        $total=I('post.total_count');
+        $id=I('post.id');
+
+        $data=M('Total')->where("id={$id}")->save(array('total'=>$total));
+
+        if($data){
+            $this->success('修改成功',U('Admin/Brands/total'));
+        }else{
+            $this->error('修改失败');
+        }
+    }
 
 }
