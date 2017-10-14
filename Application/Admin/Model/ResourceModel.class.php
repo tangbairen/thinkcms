@@ -325,6 +325,7 @@ class ResourceModel extends Model
             ->select();
         $type=[1=>'平台手动',2=>'53客服平台'];
         $fenpei=[1=>'未分配',2=>'已分配'];
+        $status=[1=>'可跟',2=>'不可跟'];
         if(!empty($data)){
             foreach($data as $key=>&$val){
                 $val['addtime']=date('Y-m-d H:i:s',$val['addtime']);
@@ -341,12 +342,22 @@ class ResourceModel extends Model
                     $province=M('Province')->where("id={$val['province']}")->find();
                     $val['province']=$province['name'];
                 }
+                if($val['status'] > 0   ){
+                    $val['status']=$status[$val['status']];
+                }else{
+                    $val['status']='';
+                }
+                if($val['update_time'] > 0){
+                    $val['update_time']=date('Y-m-d H:i:s',$val['update_time']);
+                }else{
+                    $val['update_time']='';
+                }
 
                 $val['types']=$type[$val['types']];
                 $val['allocation']=$fenpei[$val['allocation']];
             }
         }
-
+      
         return $data;
 
 
