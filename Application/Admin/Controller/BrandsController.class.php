@@ -92,26 +92,26 @@ class BrandsController extends AdminBaseController
      * */
     public function brand_auth()
     {
-        $count= M('BrandsAuth')
+       /* $count= M('BrandsAuth')
             ->alias('b')
             ->field("b.gid,g.title,group_CONCAT(`name`,'(',count,')') as brand_count ")
             ->join('left join bt_brands as t on b.brands_id=t.id ')
             ->join('left join bt_auth_group as g on b.gid=g.id')
             ->count();// 查询满足要求的总记录数
         $Page       = new \Think\Page($count,20);// 实例化分页类 传入总记录数和每页显示的记录数(25)
-        $show       = $Page->show();// 分页显示输出
+        $show       = $Page->show();// 分页显示输出*/
 
         $data=M('BrandsAuth')
             ->alias('b')
-            ->field("b.gid,g.title,group_CONCAT(`name`,'( ',count,' )') as brand_count")
+            ->field("b.gid,g.title,group_CONCAT(`name`,'( ',count,' )') as brand_count,ifnull(z.total,0) as total")
             ->join('left join bt_brands as t on b.brands_id=t.id ')
             ->join('left join bt_auth_group as g on b.gid=g.id')
+            ->join('left join bt_total as z on z.group_id=g.id')
             ->group('b.gid')
-            ->limit($Page->firstRow.','.$Page->listRows)
             ->order('g.id')
             ->select();
+
         $array=array(
-            'show'=>$show,
             'data'=>$data
         );
         $this->assign($array);

@@ -74,6 +74,44 @@ class ResourceController extends AdminBaseController
         $this->display();
     }
 
+    /*
+     * 客服导出数据
+     * */
+    public function customerExport()
+    {
+        $where =1;
+        $phone=trim(I('get.phone',''));
+        $s_group=I('get.group','');
+        $start_time=I('get.start_time','');
+        $end_time=I('get.end_time','');
+
+        if(!empty($phone)){
+            $where .=" and phone={$phone}";
+        }
+        if(!empty($s_group)){
+            $where .=" and group_id={$s_group}";
+        }
+
+        if(!empty($start_time)){
+            $start_time=strtotime($start_time);
+            $where .=" and addtime >={$start_time}";
+        }
+
+        if(!empty($end_time)){
+            $end_time=strtotime($end_time);
+            $where .=" and addtime <={$end_time}";
+        }
+
+        $field=['addtime','customer_info','province','address','username',
+            'phone','chats','source','brand_id','group_id','keyword','types','allocation'];
+
+        $data=D('Resource')->exportData($field,$where);
+
+
+        $header=['时间','客服ID','省份','	地址','客户姓名','电话号码','QQ/微信','来源渠道','品牌','所属组','关键字','添加类型','是否分配'];
+       export($header,$data);
+    }
+
     public function delete()
     {
         try{

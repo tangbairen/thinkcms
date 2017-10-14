@@ -51,6 +51,9 @@ class ResourceModel extends Model
                     $brands=M('Brands')->where("id={$val['brand_id']}")->find();
                     $val['brands_name']=$brands['name'];
                 }
+                $province=M('Province')->where("id={$val['province']}")->find();
+
+                $val['province_name']=$province['name'];
             }
         }
 
@@ -197,6 +200,47 @@ class ResourceModel extends Model
 
         return $res;
     }
+
+    /*
+     * 导出数据
+     * @param $field array or string [查询的字段]
+     * @param $where array or string [查询条件]
+     * @param $order string [排序条件]
+     * */
+    public function exportData($field,$where=1,$order='address desc,allocation')
+    {
+        $data=$this
+            ->field($field)
+            ->where($where)
+            ->order($order)
+            ->select();
+        $type=[1=>'平台手动',2=>'53客服平台'];
+        $fenpei=[1=>'未分配',2=>'已分配'];
+        if(!empty($data)){
+            foreach($data as $key=>&$val){
+                $val['addtime']=date('Y-m-d H:i:s',$val['addtime']);
+                if($val['group_id'] > 0){
+                    $res=M('AuthGroup')->where("id={$val['group_id']}")->find();
+                    $val['group_id']=$res['title'];
+                }
+                if($val['brand_id'] > 0){
+                    $brands=M('Brands')->where("id={$val['brand_id']}")->find();
+                    $val['brand_id']=$brands['name'];
+                }
+                $province=M('Province')->where("id={$val['province']}")->find();
+
+                $val['province']=$province['name'];
+                $val['types']=$type[$val['types']];
+                $val['allocation']=$fenpei[$val['allocation']];
+            }
+        }
+
+        return $data;
+
+
+    }
+
+
 
 
 }
