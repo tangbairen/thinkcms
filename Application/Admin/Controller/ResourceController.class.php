@@ -175,7 +175,7 @@ class ResourceController extends AdminBaseController
 
 
         $data=D('Resource')->exportData($field,$where);
-        
+
         export($header,$data);
 
 

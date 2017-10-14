@@ -87,8 +87,11 @@ class RuleController extends AdminBaseController{
      */
     public function group(){
         $data=D('AuthGroup')->select();
+        $area=M('Area')->select();
+
         $assign=array(
-            'data'=>$data
+            'data'=>$data,
+            'area'=>$area
             );
         $this->assign($assign);
         $this->display();
@@ -99,6 +102,7 @@ class RuleController extends AdminBaseController{
      */
     public function add_group(){
         $data=I('post.');
+
         unset($data['id']);
         //判断是否存在
         $title=trim($data['title']);
@@ -110,7 +114,16 @@ class RuleController extends AdminBaseController{
             exit;
         }
 
-        $result=D('AuthGroup')->addData($data);
+        $area_id='';
+        if(!empty($data['check'])){
+            foreach($data['check'] as $key=>$val){
+                $area_id .=$val.',';
+            }
+            $area_id=trim($area_id,',');
+        }
+        $map['title']=$title;
+        $map['area_id']=$area_id;
+        $result=M('AuthGroup')->add($map);
         if ($result) {
             $this->success('添加成功',U('Admin/Rule/group'));
         }else{
@@ -123,10 +136,21 @@ class RuleController extends AdminBaseController{
      */
     public function edit_group(){
         $data=I('post.');
-        $map=array(
-            'id'=>$data['id']
-            );
-        $result=D('AuthGroup')->editData($map,$data);
+        $area_id='';
+        if(!empty($data['check2'])){
+            foreach($data['check2'] as $key=>$value){
+                $area_id .=$value.',';
+            }
+            $area_id=trim($area_id,',');
+
+        }
+        $map['title']=trim($data['title']);
+        $map['area_id']=$area_id;
+        /*$map=array(
+            'id'=>$data['id'],
+            );*/
+        $result=M('AuthGroup')->where("id={$data['id']}")->save($map);
+//        $result=D('AuthGroup')->editData($map,$data);
         if ($result) {
             $this->success('修改成功',U('Admin/Rule/group'));
         }else{
