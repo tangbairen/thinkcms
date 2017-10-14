@@ -23,21 +23,14 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <th>数据ID</th>
+                        <th>ID</th>
                         <td>
                             <input class="input-medium" type="text" name="id" value="{$data['id']}" readonly>
                         </td>
                     </tr>
+
                     <tr>
-                        <th>用户组（所属）</th>
-                        <td>
-                            <input class="input-medium" type="text" name="group" value="{$group_name}" readonly>
-                            <input type="hidden" name="group_id" value="{$data['group_id']}">
-                            <a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">点击修改</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>姓名</th>
+                        <th>客服姓名</th>
                         <td> <input class="input-medium" type="text" name="username" value="{$data['username']}"></td>
                     </tr>
                     <tr>
@@ -49,6 +42,22 @@
                         <td> <input class="input-medium" type="text" value="{$data['chats']}" name="chats"></td>
                     </tr>
                     <tr>
+                        <th>客服ID/名字</th>
+                        <td> <input class="input-medium" type="text" value="{$data['customer_info']}" name="customer_info"></td>
+                    </tr>
+                    <tr>
+                        <th>省份</th>
+                        <td>
+                            <select name="province" id="province">
+                                <option value="">请选择省份</option>
+                                <foreach name="province" item="val">
+                                    <option value="{$val['id']}" <if condition="$val['id'] eq $data['province']">selected</if> >{$val['name']}</option>
+                                </foreach>
+                            </select>
+                            <span>(必填)</span>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>地址</th>
                         <td> <input class="input-medium" type="text" value="{$data['address']}" name="address"></td>
                     </tr>
@@ -56,17 +65,34 @@
                         <th>来源渠道</th>
                         <td> <input class="input-medium" type="text" value="{$data['source']}" name="source"></td>
                     </tr>
-                    <tr>
-                        <th>咨询品牌</th>
+                   <!-- <tr>
+                        <th>品牌</th>
                         <td>
                             <input class="input-medium" type="text" value="{$brand_name}" readonly name="brand_name">
                             <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat">点击修改</a>
                         </td>
                         <input type="hidden" name="brand_id" value="{$data['brand_id']}">
+                    </tr>-->
+                    <tr>
+                        <th>品牌</th>
+                        <td>
+                            <input class="input-medium" type="text" value="{$brand_name}" readonly name="brand_name">
+                            <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat">点击修改</a>
+                            <span>(必填)</span>
+                        </td>
+                        <input type="hidden" name="brand_id" value="{$data['brand_id']}">
+                    </tr>
+                    <tr>
+                        <th>用户组（所属）</th>
+                        <td>
+                            <input class="input-medium" type="text" name="group" value="{$group_name}" readonly>
+                            <input type="hidden" name="group_id" value="{$data['group_id']}">
+                            <a href="" data-toggle="modal" onclick="return group();" data-target="#exampleModal" data-whatever="@fat">点击修改</a>
+                        </td>
                     </tr>
                     <tr>
                         <th>关键字</th>
-                        <td> <input class="input-medium" type="text" value="{$data['remarks']}" name="remarks"></td>
+                        <td> <input class="input-medium" type="text" value="{$data['keyword']}" name="keyword"></td>
                     </tr>
 
                     <tr>
@@ -89,16 +115,17 @@
                     <h4 class="modal-title" id="exampleModalLabel">修改所属组</h4>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <foreach name="autGroup" item="val">
+                        <!--<foreach name="autGroup" item="val">
                             <span style="padding-right: 15px;padding-left: 5px;">{$val['title']}
                                 <input class="xb-icheck" type="radio" name="group_user"
                                        groupName="{$val['title']}" value="{$val['id']}"
                                 <if condition="$val['id'] eq $data['group_id']"> checked </if> >
                             </span>
-                        </foreach>
+                        </foreach>-->
+                    <form id="groupform">
 
                     </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -174,6 +201,48 @@
             $('#exampleModal2').modal('hide');
         }
 
+        function group(){
+            var province=$('#province').val();
+            var brand_name=$("input[name='brand_name']").val();
+            var brand_id=$("input[name='brand_id']").val();
+            var group_id=$("input[name='group_id']").val();
+            console.log(group_id);
+            if(province == ''){
+                alert('请先选择省份');
+                return false;
+            }
+
+            if(brand_name == ''){
+                alert('请先选择品牌');
+                return false;
+            }
+
+            $.ajax({
+                'url':"{:U('Admin/Resource/group')}",
+                'type':'get',
+                'data':{'province':province,'brand_id':brand_id},
+                'dataType':'json',
+                'success':function(data){
+                    $('#groupform').html('');
+                    $str='';
+                    var select='';
+                    $.each(data,function(i,val){
+                        console.log(val['id']);
+                        if(group_id == val['id']){
+                            select ='checked';
+                        }
+                        $str +="<span style='padding-right: 15px;padding-left: 5px;'>"+val['title']+"<input class='xb-icheck' type='radio' name='group_user' "+select+" groupName='"+val['title']+"' value='"+val['id']+"'> </span>";
+                    });
+
+                    $('#groupform').append($str);
+
+                }
+
+
+
+            });
+
+        }
 
     </script>
 

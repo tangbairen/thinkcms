@@ -170,16 +170,18 @@ class ResourceController extends AdminBaseController
                     $brand_name=$brand['name'];
                 }
 
-                //用户组
-                $autGroup=M('AuthGroup')->select();
-
+                /*//用户组
+                $autGroup=M('AuthGroup')->select();*/
+                //省份
+                $province=M('Province')->select();
                 //品牌
                 $brandArr=M('Brands')->select();
                 $array=array(
                     'group_name'=>$group_name['title'],
                     'brand_name'=>$brand_name,
-                    'autGroup'=>$autGroup,
+//                    'autGroup'=>$autGroup,
                     'brandArr'=>$brandArr,
+                    'province'=>$province,
 
                 );
                 $this->assign($array);

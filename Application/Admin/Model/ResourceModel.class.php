@@ -65,25 +65,40 @@ class ResourceModel extends Model
 
     public function edit()
     {
+
         $id=I('post.id');
-        $group_id=I('post.group_id');//用户组id
         $username=I('post.username');
         $phone=I('post.phone');
         $chats=I('post.chats');
+        $province_id=I('post.province');//省份id
+        $customer_info=I('post.customer_info');//客服信息
         $address=I('post.address');
         $source=I('post.source');
-        $brand_id=I('post.brand_id');//品牌id
-        $remarks=I('post.remarks');
+        $group_id=I('post.group_id');
+        $brand_id=I('post.brand_id');
+        $remarks=I('post.keyword');
+        //选择区域id
+        $province=M('Province')->where("id={$province_id}")->find();
 
+        if(empty($group_id)){
+            $allocation=1;
+        }else{
+            $allocation=2;
+        }
+
+        $map['addtime']=time();
         $map['group_id']=$group_id;
+        $map['address']=$address;
         $map['username']=$username;
         $map['phone']=$phone;
-        $map['phone']=$phone;
         $map['chats']=$chats;
-        $map['address']=$address;
-        $map['source']=$source;
-        $map['remarks']=$remarks;
+        $map['customer_info']=$customer_info;
         $map['brand_id']=$brand_id;
+        $map['province']=$province_id;
+        $map['area_id']=$province['area_id'];
+        $map['source']=$source;
+        $map['keyword']=$remarks;
+        $map['allocation']=$allocation;
 
         $result=$this->where("id={$id}")->save($map);
         return $result;
