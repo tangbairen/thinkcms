@@ -215,13 +215,13 @@ class ResourceController extends AdminBaseController
 
         }else{
 
-            //用户组
-            $autGroup=M('AuthGroup')->select();
+            //省份
+            $province=M('Province')->select();
             //品牌
             $brandArr=M('Brands')->select();
             $array=array(
-                'autGroup'=>$autGroup,
                 'brandArr'=>$brandArr,
+                'province'=>$province
             );
 
             $this->assign($array);
@@ -273,7 +273,7 @@ class ResourceController extends AdminBaseController
 
 
 
-    private    function getExcel($fileName,$headArr,$data){
+    private  function getExcel($fileName,$headArr,$data){
         //对数据进行检验
         if(empty($data) || !is_array($data)){
             die("data must be a array");
@@ -320,6 +320,26 @@ class ResourceController extends AdminBaseController
         $objWriter->save('php://output'); //文件通过浏览器下载
         exit;
 
+    }
+
+    /*
+     * 根据省份和品牌分析所属的组
+     * */
+    public function group()
+    {
+        $province_id=I('get.province');
+        $brand_id=I('get.brand_id');
+        //选择区域id
+        $province=M('Province')->where("id={$province_id}")->find();
+        $group=M('AuthGroup')->field('id,title,area_id')->select();
+        foreach($group as $key=>$val){
+            $arr=explode(',',$val['area_id']);
+            if(!in_array($province['area_id'],$arr)){
+                unset($group[$key]);
+            }
+        }
+
+        $this->ajaxReturn($group);
     }
 
 
