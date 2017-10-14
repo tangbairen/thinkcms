@@ -71,6 +71,7 @@
                         <th>公司名称</th>
                         <th>回访时间</th>
                         <th>回访人</th>
+                        <th>确认地址</th>
                         <th>备注信息</th>
                         <!--<th>操作</th>-->
                     </tr>
@@ -112,6 +113,7 @@
                                 </if>
                             </td>
                             <td>{$val['assistant']}</td>
+                            <td>{$val['confirm_address']}</td>
                             <td>{$val['remark']}</td>
                             <!--<td>
                                 <a href="{:U('Admin/Resource/modify',array('number'=>$val['id']))}" class="btn btn-primary btn-xs" >修改</a>
