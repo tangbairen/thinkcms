@@ -357,7 +357,7 @@ class ResourceModel extends Model
                 $val['allocation']=$fenpei[$val['allocation']];
             }
         }
-      
+
         return $data;
 
 
