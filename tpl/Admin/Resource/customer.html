@@ -19,13 +19,24 @@
                 <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
                 <div class="col-sm-12">
                     <select class="form-control" name="group" id="group">
-                        <option value="">请选择用户组</option>
+                        <option value="">全部</option>
                         <foreach name="group" item="val">
                             <option value="{$val['id']}" <if condition="$s_group eq $val['id']">selected</if> >{$val['title']}</option>
                         </foreach>
                     </select>
                 </div>
             </div>
+            <div class="form-group">
+                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
+                <div class="col-sm-12">
+                    <select class="form-control" name="allocation" id="allocation">
+                        <option value="">是否分配</option>
+                        <option value="2" <if condition="$allocation eq 2">selected</if> >分配</option>
+                        <option value="1" <if condition="$allocation eq 1">selected</if> >未分配</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">时间：</label>
                 <div class="col-sm-8">
@@ -125,7 +136,8 @@
             var start_time=$("input[name='start_time']").val();
             var end_time=$("input[name='end_time']").val();
             var group=$('#group').val();
-            var url="{:U('Admin/Resource/customerExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time;
+            var allocation=$('#allocation').val();
+            var url="{:U('Admin/Resource/customerExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&allocation='+allocation;
 
             location.href=url;
 

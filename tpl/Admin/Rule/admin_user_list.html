@@ -46,7 +46,10 @@
                             <td>
                                 <if condition="$v['status'] = 1 ">正常    <else /> 禁用</if>
                             </td>
-                            <td> <a href="{:U('Admin/Rule/edit_admin',array('id'=>$v['id']))}">修改权限或密码</a></td>
+                            <td>
+                                <a href="{:U('Admin/Rule/edit_admin',array('id'=>$v['id']))}">修改权限或密码</a>
+                                <a href="javascript:if(confirm('确定删除？'))location='{:U('Admin/Rule/delete_user',array('id'=>$v['id']))}'">删除</a>
+                            </td>
                         </tr>
                     </foreach>
                 </table>

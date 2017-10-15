@@ -16,10 +16,16 @@ class ResourceModel extends Model
         $s_group=I('get.group','');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
+        $allocation=I('get.allocation','');
 
         if(!empty($phone)){
             $where .=" and phone={$phone}";
         }
+
+        if(!empty($allocation)){
+            $where .=" and allocation={$allocation}";
+        }
+
         if(!empty($s_group)){
             $where .=" and group_id={$s_group}";
         }

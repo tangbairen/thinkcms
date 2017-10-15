@@ -385,4 +385,19 @@ class RuleController extends AdminBaseController{
             $this->display();
         }
     }
+
+    /*
+     * 删除管理员
+     * */
+    public function delete_user()
+    {
+        $id=I('get.id');
+        $result=M('Users')->where("id={$id}")->delete();
+        if ($result) {
+            $this->success('删除成功',U('Admin/Rule/admin_user_list'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
+
 }

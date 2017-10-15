@@ -21,9 +21,16 @@ class ResourceController extends AdminBaseController
         $s_group=I('get.group');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
+        $allocation=I('get.allocation','');
 
-
-        $this->assign(array('phone'=>$phone,'s_group'=>$s_group,'start_time'=>$start_time,'end_time'=>$end_time));
+        $array=array(
+            'phone'=>$phone,
+            's_group'=>$s_group,
+            'start_time'=>$start_time,
+            'end_time'=>$end_time,
+            'allocation'=>$allocation
+        );
+        $this->assign($array);
         $this->assign('group',$group);
         $this->assign($data);// 赋值数据集
         $this->display();
@@ -39,7 +46,7 @@ class ResourceController extends AdminBaseController
         $s_group=I('get.group','');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
-
+        $allocation=I('get.allocation','');
         if(!empty($phone)){
             $where .=" and phone={$phone}";
         }
@@ -55,6 +62,10 @@ class ResourceController extends AdminBaseController
         if(!empty($end_time)){
             $end_time=strtotime($end_time);
             $where .=" and addtime <={$end_time}";
+        }
+
+        if(!empty($allocation)){
+            $where .=" and allocation={$allocation}";
         }
 
         $field=['addtime','customer_info','province','address','username',
@@ -97,8 +108,17 @@ class ResourceController extends AdminBaseController
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
 
+        $allocation=I('get.allocation','');
 
-        $this->assign(array('phone'=>$phone,'s_group'=>$s_group,'start_time'=>$start_time,'end_time'=>$end_time));
+        $array=array(
+            'phone'=>$phone,
+            's_group'=>$s_group,
+            'start_time'=>$start_time,
+            'end_time'=>$end_time,
+            'allocation'=>$allocation
+        );
+
+        $this->assign($array);
         $this->assign('group',$group);
         $this->assign($data);// 赋值数据集
         $this->display();
@@ -114,6 +134,7 @@ class ResourceController extends AdminBaseController
         $s_group=I('get.group','');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
+        $allocation=I('get.allocation','');
 
         if(!empty($phone)){
             $where .=" and phone={$phone}";
@@ -131,6 +152,11 @@ class ResourceController extends AdminBaseController
             $end_time=strtotime($end_time);
             $where .=" and addtime <={$end_time}";
         }
+
+        if(!empty($allocation)){
+            $where .=" and allocation={$allocation}";
+        }
+
 
         $field=['addtime','customer_info','province','address','username',
             'phone','chats','source','brand_id','group_id','keyword','types','allocation'];
