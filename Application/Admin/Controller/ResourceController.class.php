@@ -422,5 +422,4 @@ class ResourceController extends AdminBaseController
         $this->ajaxReturn($group);
     }
 
-
 }
