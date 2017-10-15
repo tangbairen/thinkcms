@@ -400,6 +400,7 @@ class ResourceController extends AdminBaseController
     {
         $province_id=I('get.province');
         $brand_id=I('get.brand_id');
+
         //选择区域id
         $province=M('Province')->where("id={$province_id}")->find();
         $group=M('AuthGroup')->field('id,title,area_id')->select();
@@ -409,6 +410,14 @@ class ResourceController extends AdminBaseController
                 unset($group[$key]);
             }
         }
+
+        foreach($group as $k=>$v){
+            $res=M('BrandsAuth')->where("brands_id={$brand_id} and gid={$v['id']}")->find();
+            if(empty($res)){
+                unset($group[$k]);
+            }
+        }
+
 
         $this->ajaxReturn($group);
     }

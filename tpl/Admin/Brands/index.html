@@ -14,7 +14,7 @@
                 <th>品牌ID</th>
                 <th>品牌名称</th>
                 <th>添加时间</th>
-                <th>状态</th>
+                <!--<th>状态</th>-->
                 <th>操作</th>
             </tr>
             <foreach name="data" item="val">
@@ -22,9 +22,9 @@
                     <td>{$val['id']}</td>
                     <td>{$val['name']}</td>
                     <td>{$val['addtime']|date='Y-m-d H:i:s',###}</td>
-                    <td>
+                    <!--<td>
                         <if condition="$val['status'] eq 1 ">正常<else /> 禁用</if>
-                    </td>
+                    </td>-->
                     <td>
                         <button type="button" class="btn btn-primary btn-xs" navId="{$val['id']}" navName="{$val['name']}" navStatus="{$val['status']}" onclick="edit(this)">修改</button>
                         <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Brands/delete',array('id'=>$val['id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>

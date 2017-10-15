@@ -102,7 +102,6 @@ class RuleController extends AdminBaseController{
      */
     public function add_group(){
         $data=I('post.');
-
         unset($data['id']);
         //判断是否存在
         $title=trim($data['title']);
@@ -115,14 +114,16 @@ class RuleController extends AdminBaseController{
         }
 
         $area_id='';
-        if(!empty($data['check'])){
-            foreach($data['check'] as $key=>$val){
+        $arr=I('post.check');
+        if(!empty($arr)){
+            foreach($arr as $key=>$val){
                 $area_id .=$val.',';
             }
             $area_id=trim($area_id,',');
         }
         $map['title']=$title;
         $map['area_id']=$area_id;
+
         $result=M('AuthGroup')->add($map);
         if ($result) {
             $this->success('添加成功',U('Admin/Rule/group'));
