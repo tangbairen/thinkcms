@@ -349,7 +349,7 @@ class RuleController extends AdminBaseController{
             if (!empty($data['password'])) {
                 $data['password']=md5($data['password']);
             }
-            
+
             $User = M("Users");
 
             $result=$User->where($map)->save($data);

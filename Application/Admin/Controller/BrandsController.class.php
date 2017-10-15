@@ -189,7 +189,7 @@ class BrandsController extends AdminBaseController
 
                 if(empty($group_id)) throw new Exception('请选择用户组');
                 if(empty($brand_id)) throw new Exception('请选择分配品牌');
-                if(empty($count)) throw new Exception('请输入分配数量');
+//                if(empty($count)) throw new Exception('请输入分配数量');
                 $map['brands_id']=$brand_id;
                 $map['gid']=$group_id;
                 $res=M('BrandsAuth')->where($map)->find();

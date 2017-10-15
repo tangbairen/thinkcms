@@ -322,6 +322,7 @@ CREATE TABLE `bt_resource` (
   `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '配注（助理）',
   `addtime` int(11) NOT NULL COMMENT '添加时间',
   `update_time` int(11) NOT NULL DEFAULT '0' COMMENT '回访时间',
+  `confirm_address` varchar(60) NOT NULL DEFAULT '' COMMENT '确认地址',
   `types` tinyint(1) NOT NULL DEFAULT '1' COMMENT '添加类型：1，平台手动，2 ，53客服平台',
   `allocation` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否分配，1：未分配，2：已分配',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态：1:可跟，2：不可跟',
