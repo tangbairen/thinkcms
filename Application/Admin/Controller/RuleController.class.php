@@ -347,9 +347,9 @@ class RuleController extends AdminBaseController{
             $data=array_filter($data);
             // 如果修改密码则md5
             if (!empty($data['password'])) {
-                $array['password']=md5($data['password']);
+                $data['password']=md5($data['password']);
             }
-
+            
             $User = M("Users");
 
             $result=$User->where($map)->save($data);
