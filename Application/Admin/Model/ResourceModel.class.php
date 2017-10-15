@@ -301,7 +301,7 @@ class ResourceModel extends Model
         $array['company']=$company;
         $array['confirm_address']=$confirm_address;
         $array['assistant']=$assistant;
-        $array['confirm_remark']=$confirm_remark;
+        $array['remark']=$confirm_remark;
         $array['status']=$status;
         $array['update_time']=time();
 
