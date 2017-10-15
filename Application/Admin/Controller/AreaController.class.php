@@ -112,6 +112,25 @@ class AreaController extends AdminBaseController
 
     }
 
+    /*
+     * 添加省份
+     * */
+    public function add_provinc()
+    {
+        $name=trim(I('post.name'));
+        if(empty($name)){
+            $this->error('省份名称不能为空');
+        }
+
+        $res=M('Province')->add(array('name'=>$name));
+
+        if($res){
+            $this->success('添加成功',U('Admin/Area/province'));
+        }else{
+            $this->error('添加失败');
+        }
+
+    }
 
 
 }
