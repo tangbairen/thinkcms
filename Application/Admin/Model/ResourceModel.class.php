@@ -34,7 +34,6 @@ class ResourceModel extends Model
             $where .=" and addtime <={$end_time}";
         }
 
-
         $count      = $this->where($where)->count();// 查询满足要求的总记录数
         $Page       = new \Think\Page($count,20);// 实例化分页类 传入总记录数和每页显示的记录数(25)
         $show       = $Page->show();// 分页显示输出
@@ -165,14 +164,25 @@ class ResourceModel extends Model
     {
 
         $group=M('AuthGroup')->field('id,title,area_id')->select();
+
         $group_id='';
         foreach($group as $key=>$val){
             $arr=explode(',',$val['area_id']);
             if(!in_array($area_id,$arr)){
                 unset($group[$key]);
             }
-            $group_id .=$val['id'].',';
 
+
+        }
+        //清除没有品牌的组
+        foreach($group as $k=>$v){
+            $res=M('BrandsAuth')->where("brands_id={$brand_id} and gid={$v['id']}")->find();
+            if(empty($res)){
+                unset($group[$k]);
+            }else{
+
+                $group_id .=$v['id'].',';
+            }
         }
 
         $group_id=trim($group_id,',');          //所有用户组id
