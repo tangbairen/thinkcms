@@ -168,6 +168,9 @@ class ResourceModel extends Model
      * */
     public function allocationGroup($brand_id,$area_id)
     {
+        if(empty($brand_id) || empty($area_id)){
+            return 0;
+        }
 
         $group=M('AuthGroup')->field('id,title,area_id')->select();
 

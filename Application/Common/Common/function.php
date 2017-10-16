@@ -2,6 +2,16 @@
 
 header("Content-type:text/html;charset=utf-8");
 
+function parse_url_param($str)
+{
+    $data = array();
+    $parameter = explode('&', end(explode('?', $str)));
+    foreach ($parameter as $val) {
+        $tmp = explode('=', $val);
+        $data[$tmp[0]] = $tmp[1];
+    }
+    return $data;
+}
 /*
      * @param $head [标题头]
      * @param $body [二维数组]
