@@ -10,7 +10,7 @@ class VisitorController extends Controller
     //接受数据
     public function index()
     {
-        $content=I('post.');
+        $content=$_POST;
         $strData=urldecode($content);
         $len=strripos($strData,'}');
         $result=substr($strData, 0,$len+1);
