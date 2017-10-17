@@ -52,7 +52,7 @@ class VisitorController extends AdminBaseController
      * */
     public function userinfo()
     {
-        
+
         $this->display();
     }
 
