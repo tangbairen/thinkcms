@@ -18,7 +18,7 @@ class Visitor
      * */
     public function addInfo($data)
     {
-        echo 23322;exit;
+
         if(empty($data)){
             return false;
         }
@@ -27,7 +27,7 @@ class Visitor
         foreach($data as $key=>$val){
             $map[$key]=$val;
         }
-
+        echo 23322;exit;
         $mysql=new MMysql($this->conf);
         $mysql->insert('bt_visitor_info',$map);
 
