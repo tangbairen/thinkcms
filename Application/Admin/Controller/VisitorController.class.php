@@ -10,7 +10,7 @@ class VisitorController extends Controller
     //接受数据
     public function index()
     {
-        $content=$_POST;
+//        $content=$_POST;
         /*$strData=urldecode($content);
         $len=strripos($strData,'}');
         $result=substr($strData, 0,$len+1);
@@ -25,8 +25,8 @@ class VisitorController extends Controller
 
             D('VisitorRecord')->addData($data);
         }*/
-        $time=date('Y-m-d H:i:s',time());
-        file_put_contents("./Uploads/log/".$time.'.txt',$content);
+        /*$time=date('Y-m-d H:i:s',time());
+        file_put_contents("./Uploads/log/".$time.'.txt',$content);*/
 
         //返回数据给接口方
         $res= array('cmd'=>'OK','token'=>'TOKEN');
