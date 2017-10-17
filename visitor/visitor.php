@@ -11,7 +11,7 @@
     $data=json_decode($result,true);
 
     $visitor=new Visitor();
-    require('./MMysql.class.php');
+//    require('./MMysql.class.php');
 
     /*$mysql=new MMysql(array(
         'host'=>'localhost',
