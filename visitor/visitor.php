@@ -2,8 +2,6 @@
     header('Content-type:text/html;charset=utf-8');
     error_reporting(0);
     require('./Visitor.class.php');
-    $data= array('cmd'=>'OK','token'=>'TOKEN');
-    echo json_encode($data);
 
     $content=$_POST;
     $mysql=new MMysql(array(
@@ -16,11 +14,11 @@
     $arr=array('content'=>json_encode($_POST));
     $id=$mysql->insert('bt_content',$arr);
 
-    /*file_put_contents("../Uploads/log/visitor.txt", $content);
+    file_put_contents("../Uploads/log/visitor.txt", $content);
 
-    $cont=file_get_contents('../Uploads/log/visitor.txt');*/
+    $cont=file_get_contents('../Uploads/log/visitor.txt');
 
-    $strData=@urldecode($content);
+    $strData=@urldecode($cont);
     $len=strripos($strData,'}');
     $result=substr($strData, 0,$len+1);
 
@@ -37,3 +35,5 @@
     $time=date('Y-m-d H:i:s',time());
     file_put_contents("../Uploads/log/".$time.'.txt', $content);
 
+    $data= array('cmd'=>'OK','token'=>'TOKEN');
+    echo json_encode($data);
