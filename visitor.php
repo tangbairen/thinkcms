@@ -9,6 +9,9 @@
 	// 引入ThinkPHP入口文件
 	require './ThinkPHP/ThinkPHP.php';
 
-	$aaa=new \Admin\Controller\VisitorController();
+	/*$aaa=new \Admin\Controller\VisitorController();
 
-	$aaa->index();
+	$aaa->index();*/
+
+	$data = array('cmd' => 'OK', 'token' => 'TOKEN');
+	echo  json_encode($data);
