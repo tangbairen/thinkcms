@@ -5,7 +5,7 @@ require('./MMysql.class.php');
  * */
 class Visitor
 {
-    private $conf=array(
+    public $conf=array(
         'host'=>'localhost',
         'port'=>'3306',
         'user'=>'thinkcms',

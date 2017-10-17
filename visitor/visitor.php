@@ -22,10 +22,11 @@
     $visitor=new Visitor();
 
     if(count($data) == count($data,1)){//一维（访客信息）
-
+        echo 111;
         $visitor->addInfo($data);
 
     }else{//二维（访客聊天记录）
+        echo 122;
         $visitor->addRecord($data);
     }
     exit;
