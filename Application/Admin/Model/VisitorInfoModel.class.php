@@ -166,7 +166,7 @@ class VisitorInfoModel extends Model
 
         if(!empty($data)){
             foreach($data as $key=>&$val){
-                $val['time']=date('Y-m-d H:i:s',$val['talk_time']);
+                $val['time']=date('Y-m-d H:i:s',$val['time']);
                 if($val['status'] == 1){
                     $val['status']='未处理';
                 }else{
