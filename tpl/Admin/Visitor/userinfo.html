@@ -8,54 +8,61 @@
         <h1><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据源</h1>
     </div>
     <div class="col-xs-12">
-        <!-- <form class="form-inline" style="margin-bottom: 10px;">
-             <div class="form-group">
-                 <label for="inputEmail3" class="col-sm-4 control-label">手机号：</label>
-                 <div class="col-sm-8">
-                     <input type="text" name="phone" value="{$phone}" class="form-control" id="inputEmail3" placeholder="手机号">
-                 </div>
-             </div>
-             <div class="form-group">
-                 &lt;!&ndash;<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>&ndash;&gt;
-                 <div class="col-sm-12">
-                     <select class="form-control" name="group" id="group">
-                         <option value="">全部</option>
-                         <foreach name="group" item="val">
-                             <option value="{$val['id']}" <if condition="$s_group eq $val['id']">selected</if> >{$val['title']}</option>
-                         </foreach>
-                     </select>
-                 </div>
-             </div>
-             <div class="form-group">
-                 &lt;!&ndash;<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>&ndash;&gt;
-                 <div class="col-sm-12">
-                     <select class="form-control" name="allocation" id="allocation">
-                         <option value="">是否分配</option>
-                         <option value="2" <if condition="$allocation eq 2">selected</if> >分配</option>
-                         <option value="1" <if condition="$allocation eq 1">selected</if> >未分配</option>
-                     </select>
-                 </div>
-             </div>
+        <form class="form-inline" style="margin-bottom: 10px; ">
+            <div style="width:70%;">
+                <div class="form-group" >
+                    <label for="inputEmail3" class="col-sm-4 control-label">访客ID：</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="guest_id" value="{$get['guest_id']}" class="form-control" id="inputEmail3" placeholder="访客ID">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
+                    <div class="col-sm-12">
+                        <select class="form-control" name="status" id="status">
+                            <option value="">状态</option>
+                            <option value="2" <if condition="$get['status'] eq 2">selected</if> >已处理</option>
+                            <option value="1" <if condition="$get['status'] eq 1">selected</if> >未处理</option>
+                        </select>
+                    </div>
+                </div>
 
-             <div class="form-group">
-                 <label for="inputEmail3" class="col-sm-4 control-label">时间：</label>
-                 <div class="col-sm-8">
-                     <input id="test1" name="start_time"  class="form-control" id="inputEmail3" value="{$start_time}">
-                 </div>
-             </div>
-             <div class="form-group">
-                 <label for="inputEmail3" class="col-sm-3 control-label">~</label>
-                 <div class="col-sm-9">
-                     <input id="test2" name="end_time"   class="form-control" id="inputEmail3" value="{$end_time}">
-                 </div>
-             </div>
-             <button type="submit" class="btn btn-primary">搜索</button>
-             <a class="btn btn-default" onclick="clean();">清空</a>
-             <span style="padding-left: 20px;">总条数（{$count}）</span>
-             <a class="btn btn-primary" onclick="daochu()">导出数据</a>
-         </form>-->
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">对话时间：</label>
+                    <div class="col-sm-8">
+                        <input id="test1" name="start_time"  class="form-control" id="inputEmail3" value="{$get['start_time']}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">~</label>
+                    <div class="col-sm-9">
+                        <input id="test2" name="end_time"   class="form-control" id="inputEmail3" value="{$get['end_time']}">
+                    </div>
+                </div>
 
-        <div class="tabbable">
+                <div class="form-group" style="padding-top:5px;">
+                    <label for="inputEmail3" class="col-sm-5 control-label">客服工号：</label>
+                    <div class="col-sm-7">
+                        <input style="width: 250px;" type="text" name="worker_id" value="{$get['worker_id']}" class="form-control" id="inputEmail3" placeholder="访客ID">
+                    </div>
+                </div>
+
+            </div>
+            <div style="float:right;margin-top: -50px;margin-right: 50px;">
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">搜索</button>
+                    <a class="btn btn-default" onclick="clean();">清空</a>
+                    <span style="padding-left: 20px;">总条数（{$count}）</span>
+                    <a class="btn btn-primary" onclick="daochu()">导出数据</a>
+                </div>
+            </div>
+
+
+
+        </form>
+
+        <div class="tabbable" style="margin-top: 20px;">
 
             <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
                 <li class="active"> <a >数据列表</a></li>
@@ -88,7 +95,13 @@
                             <td>{$val['worker_id']}</td>
                             <td>{$val['talk_time']}</td>
                             <td>{$val['end_time']}</td>
-                            <td>{$val['status']}</td>
+                            <td>
+                                <if condition="$val['status'] == '已处理'">
+                                    <span style="color:#177714;">{$val['status']}</span>
+                                    <else/>
+                                    <span style="color:#ff1857">{$val['status']}</span>
+                                </if>
+                            </td>
                             <td>
                                 <!--<a href="{:U('Admin/Resource/modify',array('number'=>$val['id']))}" class="btn btn-primary btn-xs" >修改</a>-->
                                 <!--<a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Resource/delete',array('id'=>$val['id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>-->
@@ -98,7 +111,7 @@
 
                     </foreach>
                 </table>
-                <div>
+                <div style="padding-top: 20px;padding-bottom: 100px;">
                     {$show}
                 </div>
             </div>
@@ -110,19 +123,20 @@
     <script>
 
         function clean(){
-            $("input[name='phone']").val('');
+            $("input[name='guest_id']").val('');
             $("input[name='start_time']").val('');
             $("input[name='end_time']").val('');
-            $("#group").val('');
+            $("input[name='worker_id']").val('');
+            $("#status").val('');
         }
 
         function daochu(){
-            var phone=$("input[name='phone']").val();
+            var guest_id=$("input[name='guest_id']").val();
+            var worker_id=$("input[name='worker_id']").val();
             var start_time=$("input[name='start_time']").val();
             var end_time=$("input[name='end_time']").val();
-            var group=$('#group').val();
-            var allocation=$('#allocation').val();
-            var url="{:U('Admin/Resource/customerExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&allocation='+allocation;
+            var status=$('#status').val();
+            var url="{:U('Admin/Visitor/infoExport')}?guest_id="+guest_id+'&worker_id='+worker_id+'&start_time='+start_time+'&end_time='+end_time+'&status='+status;
 
             location.href=url;
 

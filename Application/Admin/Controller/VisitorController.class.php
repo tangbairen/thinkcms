@@ -41,9 +41,12 @@ class VisitorController extends AdminBaseController
     public function data_source()
     {
 
+        $get=I('get.');
+
         $data=D('VisitorRecord')->getData();
 
         $this->assign($data);
+        $this->assign('get',$get);
         $this->display();
     }
 
@@ -52,8 +55,23 @@ class VisitorController extends AdminBaseController
      * */
     public function userinfo()
     {
+        $get=I('get.');
 
+        $data=D('VisitorInfo')->getData();
+
+        $this->assign($data);
+        $this->assign('get',$get);
         $this->display();
     }
+
+    /*
+     * 数据源导出
+     * */
+    public function recordExport()
+    {
+
+    }
+
+
 
 }
