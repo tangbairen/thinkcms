@@ -11,7 +11,7 @@
         'passwd'=>'bairen168',
         'dbname'=>'thinkcms'
     ));
-    $arr=array('content'=>$_POST);
+    $arr=array('content'=>json_encode($_POST));
     $id=$mysql->insert('bt_content',$arr);
 
     file_put_contents("../Uploads/log/visitor.txt", $content);
