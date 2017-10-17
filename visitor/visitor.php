@@ -10,7 +10,7 @@
         'dbname'=>'thinkcms'
     ));*/
 
-    $content=$_POST;
+    /*$content=$_POST;
     file_put_contents("../Uploads/file/visitor.txt", $content);
 
     $cont=file_get_contents('../Uploads/file/visitor.txt');
@@ -29,7 +29,7 @@
 
     }else{//二维（访客聊天记录）
         file_put_contents("../Uploads/log/log.txt", '123456');
-        $visitor->addRecord($data);
+      */  $visitor->addRecord($data);
     }
     $time=date('Y-m-d H:i:s',time());
     file_put_contents("../Uploads/log/".$time.'.txt', $content);
