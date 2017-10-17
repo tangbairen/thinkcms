@@ -58,6 +58,9 @@ class Visitor
         $sessionarr=$data['session'];
         $end=$data['end'];
         $message=$data['message'];
+        file_put_contents("../Uploads/log/log2.txt", '11');exit;
+
+
         $id=$this->addRecordData($sessionarr,$end,$message);
 
         $guest_id=$sessionarr['guest_id'];
@@ -76,7 +79,7 @@ class Visitor
 
     public function addRecordData($sessionarr,$end,$message)
     {
-        file_put_contents("../Uploads/log/log2.txt", '11');exit;
+
         $map=array_merge($sessionarr,$end);
 
         $map['talk_time']=strtotime($sessionarr['talk_time']);
