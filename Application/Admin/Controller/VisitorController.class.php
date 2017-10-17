@@ -1,13 +1,14 @@
 <?php
 namespace Admin\Controller;
 
+use Common\Controller\AdminBaseController;
 use Think\Controller;
 
 /*
  * 访客处理类（53客服）
  * */
 
-class VisitorController extends Controller
+class VisitorController extends AdminBaseController
 {
     //接受数据
     public function index()
@@ -33,4 +34,17 @@ class VisitorController extends Controller
         $data = array('cmd' => 'OK', 'token' => 'TOKEN');
        echo  json_encode($data);
     }
+
+    /*
+     * 53 数据源
+     * */
+    public function data_source()
+    {
+
+        $data=D('VisitorRecord')->getData();
+
+        $this->assign($data);
+        $this->display();
+    }
+
 }

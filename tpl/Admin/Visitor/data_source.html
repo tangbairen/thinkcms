@@ -1,0 +1,144 @@
+<extend name="Public:base"/>
+<block name="title">用户组添加用户</block>
+<block name="content">
+    <style>
+        .form-group>label[class*="col-"] {padding-top: 10px;}
+    </style>
+    <div class="page-header">
+        <h1><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据源</h1>
+    </div>
+    <div class="col-xs-12">
+       <!-- <form class="form-inline" style="margin-bottom: 10px;">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">手机号：</label>
+                <div class="col-sm-8">
+                    <input type="text" name="phone" value="{$phone}" class="form-control" id="inputEmail3" placeholder="手机号">
+                </div>
+            </div>
+            <div class="form-group">
+                &lt;!&ndash;<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>&ndash;&gt;
+                <div class="col-sm-12">
+                    <select class="form-control" name="group" id="group">
+                        <option value="">全部</option>
+                        <foreach name="group" item="val">
+                            <option value="{$val['id']}" <if condition="$s_group eq $val['id']">selected</if> >{$val['title']}</option>
+                        </foreach>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                &lt;!&ndash;<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>&ndash;&gt;
+                <div class="col-sm-12">
+                    <select class="form-control" name="allocation" id="allocation">
+                        <option value="">是否分配</option>
+                        <option value="2" <if condition="$allocation eq 2">selected</if> >分配</option>
+                        <option value="1" <if condition="$allocation eq 1">selected</if> >未分配</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">时间：</label>
+                <div class="col-sm-8">
+                    <input id="test1" name="start_time"  class="form-control" id="inputEmail3" value="{$start_time}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">~</label>
+                <div class="col-sm-9">
+                    <input id="test2" name="end_time"   class="form-control" id="inputEmail3" value="{$end_time}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">搜索</button>
+            <a class="btn btn-default" onclick="clean();">清空</a>
+            <span style="padding-left: 20px;">总条数（{$count}）</span>
+            <a class="btn btn-primary" onclick="daochu()">导出数据</a>
+        </form>-->
+
+        <div class="tabbable">
+
+            <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
+                <li class="active"> <a >数据列表</a></li>
+            </ul>
+            <div class="tab-content">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <tr>
+                        <th>ID</th>
+                        <th>访客ID</th>
+                        <th>会话ID</th>
+                        <th>访客IP</th>
+                        <th>地址</th>
+                        <th>搜索引擎</th>
+                        <th>关键字</th>
+                        <th>客服工号</th>
+                        <th>对话时间</th>
+                        <th>结束时间</th>
+                        <th>处理状态</th>
+                        <th>操作</th>
+                    </tr>
+                    <foreach name="data" item="val">
+                        <tr>
+                            <td>{$val['id']}</td>
+                            <td>{$val['guest_id']}</td>
+                            <td>{$val['talk_id']}</td>
+                            <td>{$val['guest_ip']}</td>
+                            <td>{$val['guest_area']}</td>
+                            <td>{$val['se']}</td>
+                            <td>{$val['kw']}</td>
+                            <td>{$val['worker_id']}</td>
+                            <td>{$val['talk_time']}</td>
+                            <td>{$val['end_time']}</td>
+                            <td>{$val['status']}</td>
+                            <td>
+                                <!--<a href="{:U('Admin/Resource/modify',array('number'=>$val['id']))}" class="btn btn-primary btn-xs" >修改</a>-->
+                                <!--<a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Resource/delete',array('id'=>$val['id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>-->
+                            </td>
+                            </td>
+                        </tr>
+
+                    </foreach>
+                </table>
+                <div>
+                    {$show}
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/statics/laydate/laydate.js"></script>
+    <script>
+
+        function clean(){
+            $("input[name='phone']").val('');
+            $("input[name='start_time']").val('');
+            $("input[name='end_time']").val('');
+            $("#group").val('');
+        }
+
+        function daochu(){
+            var phone=$("input[name='phone']").val();
+            var start_time=$("input[name='start_time']").val();
+            var end_time=$("input[name='end_time']").val();
+            var group=$('#group').val();
+            var allocation=$('#allocation').val();
+            var url="{:U('Admin/Resource/customerExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&allocation='+allocation;
+
+            location.href=url;
+
+        }
+
+
+        //时间选择器
+        laydate.render({
+            elem: '#test1'
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#test2'
+            ,type: 'datetime'
+        });
+    </script>
+
+
+</block>
