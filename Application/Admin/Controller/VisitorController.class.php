@@ -29,7 +29,7 @@ class VisitorController extends Controller
         file_put_contents("./Uploads/log/".$time.'.txt',$content);*/
 
         //返回数据给接口方
-        $res= array('cmd'=>'OK','token'=>'TOKEN');
-        echo json_encode($res);
+        $data= array('cmd'=>'OK','token'=>'TOKEN1');
+        echo json_encode($data);
     }
 }
