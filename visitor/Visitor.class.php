@@ -32,7 +32,7 @@ class Visitor
 
         $mysql->insert('bt_visitor_info',$map);
 
-        $guest_id=$data['guest_id'];//访客id
+        /*$guest_id=$data['guest_id'];//访客id
 
 
         //查询聊天记录是否存在
@@ -41,7 +41,7 @@ class Visitor
         //数据存在
         if(!empty($recordData)){
             $this->addResource($data,$recordData[0]);
-        }
+        }*/
 
     }
 
@@ -64,17 +64,16 @@ class Visitor
 
         $id=$this->addRecordData($sessionarr,$end,$message);
 
-        $guest_id=$sessionarr['guest_id'];
+        /*$guest_id=$sessionarr['guest_id'];
         //查询客户信息是否存在
         //$exist=D('VisitorInfo')->where("guest_id={$guest_id} and status=1")->find();
         $mysql=new MMysql($this->conf);
         $exist=$mysql->where("guest_id={$guest_id} and status=1")->select('bt_visitor_info');
-        file_put_contents("../Uploads/log/log2.txt", '123456');
         $recordData=array_merge($sessionarr,$end);
         //数据存在
         if(!empty($exist)){
             $this->addResource($exist[0],$recordData,$message);
-        }
+        }*/
 
     }
 

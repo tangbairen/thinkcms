@@ -24,14 +24,11 @@
     $visitor=new Visitor();
     $count=$visitor->getmaxdim($data);
     if($count == 1 ){//一维（访客信息）
-        file_put_contents("../Uploads/log/log222.txt", '123456');
         $visitor->addInfo($data);
 
     }else{//二维（访客聊天记录）
-        file_put_contents("../Uploads/log/log.txt", '123456');
         $visitor->addRecord($data);
     }
-//    $content=$_POST;
     $time=date('Y-m-d H:i:s',time());
     file_put_contents("../Uploads/log/".$time.'.txt', $content);
 
