@@ -191,7 +191,6 @@ class MMysql {
         if (!$data) return;
         $sql = "insert into ".$tbName."(".implode(',',array_keys($data)).") values(".implode(',',array_values($data)).")";
 
-        echo $sql;exit;
         return $this->_doExec($sql);
     }
 

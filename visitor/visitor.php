@@ -29,7 +29,6 @@
         echo 122;
         $visitor->addRecord($data);
     }
-    exit;
     $time=date('Y-m-d H:i:s',time());
     file_put_contents("../Uploads/log/".$time.'.txt', $content);
 
