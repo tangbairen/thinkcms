@@ -2,7 +2,16 @@
     header('Content-type:text/html;charset=utf-8');
     error_reporting(1);
     require('./Visitor.class.php');
+    $mysql=new MMysql(array(
+        'host'=>'localhost',
+        'port'=>'3306',
+        'user'=>'thinkcms',
+        'passwd'=>'bairen168',
+        'dbname'=>'thinkcms'
+    ));
 
+    var_dump($mysql);
+    exit;
     $content=$_POST;
     $strData=@urldecode($content);
     $len=strripos($strData,'}');
@@ -12,18 +21,7 @@
 
     $visitor=new Visitor();
     require('./MMysql.class.php');
-    $mysql=new MMysql(array(
-        'host'=>'localhost',
-        'port'=>'3306',
-        'user'=>'thinkcms',
-        'passwd'=>'bairen168',
-        'dbname'=>'thinkcms'
-    ));
-    var_dump($mysql);
 
-    var_dump($mysql);
-    $mysql->select('bt_users');
-    exit;
     if(count($data) == count($data,1)){//一维（访客信息）
 
         $visitor->addInfo($data);
