@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" afterPath="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" afterPath="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visitor/visitor.php" afterPath="$PROJECT_DIR$/visitor/visitor.php" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,53 +25,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="visitor.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="visitor.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.0740743">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.12357724">
+              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userinfo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html">
+      <file leaf-file-name="MMysql.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visitor/MMysql.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.666667">
-              <caret line="45" column="165" selection-start-line="45" selection-start-column="165" selection-end-line="45" selection-end-column="165" />
+            <state vertical-scroll-proportion="-7.5925927">
+              <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
               <folding>
-                <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#if#0;n#td#6;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#if#0;n#td#6;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <marker date="1508243473455" expanded="true" signature="2439:2558" placeholder="SELECT COLUM..COLUMNS..." />
+                <marker date="1508243473455" expanded="true" signature="5757:5861" placeholder="insert into ${$tbName}..." />
+                <marker date="1508243473455" expanded="true" signature="6124:6148" placeholder="delete from ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_source.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
+      <file leaf-file-name="Visitor.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36422765">
-              <caret line="45" column="165" selection-start-line="45" selection-start-column="165" selection-end-line="45" selection-end-column="165" />
+            <state vertical-scroll-proportion="-0.7037037">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="30" />
               <folding>
-                <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <marker date="1508243473456" expanded="true" signature="5160:5213" placeholder="select * fro..bt_total..." />
+                <marker date="1508243473456" expanded="true" signature="8218:8277" placeholder="select * fro..bt_province..." />
               </folding>
             </state>
           </provider>
@@ -91,6 +76,7 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/VisitorController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
+        <option value="$PROJECT_DIR$/visitor/visitor.php" />
       </list>
     </option>
   </component>
@@ -167,64 +153,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="visitor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Visitor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,17 +259,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.0740743">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.20975609">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667">
+        <state vertical-scroll-proportion="0.55609757">
           <caret line="45" column="165" selection-start-line="45" selection-start-column="165" selection-end-line="45" selection-end-column="165" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
@@ -358,22 +297,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
+    <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36422765">
-          <caret line="45" column="165" selection-start-line="45" selection-start-column="165" selection-end-line="45" selection-end-column="165" />
+        <state vertical-scroll-proportion="-0.7037037">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <marker date="1508243473456" expanded="true" signature="5160:5213" placeholder="select * fro..bt_total..." />
+            <marker date="1508243473456" expanded="true" signature="8218:8277" placeholder="select * fro..bt_province..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visitor/MMysql.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5925927">
+          <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
+          <folding>
+            <marker date="1508243473455" expanded="true" signature="2439:2558" placeholder="SELECT COLUM..COLUMNS..." />
+            <marker date="1508243473455" expanded="true" signature="5757:5861" placeholder="insert into ${$tbName}..." />
+            <marker date="1508243473455" expanded="true" signature="6124:6148" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12357724">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

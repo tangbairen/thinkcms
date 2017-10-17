@@ -2,15 +2,18 @@
     header('Content-type:text/html;charset=utf-8');
     error_reporting(0);
     require('./Visitor.class.php');
-    /*$mysql=new MMysql(array(
+
+    $content=$_POST;
+    $mysql=new MMysql(array(
         'host'=>'localhost',
         'port'=>'3306',
         'user'=>'thinkcms',
         'passwd'=>'bairen168',
         'dbname'=>'thinkcms'
-    ));*/
+    ));
+    $arr=array('content'=>$_POST);
+    $id=$mysql->insert('bt_content',$arr);
 
-    $content=$_POST;
     file_put_contents("../Uploads/log/visitor.txt", $content);
 
     $cont=file_get_contents('../Uploads/log/visitor.txt');
