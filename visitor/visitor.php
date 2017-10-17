@@ -1,6 +1,6 @@
 <?php
     header('Content-type:text/html;charset=utf-8');
-    error_reporting(1);
+    error_reporting(0);
     require('./Visitor.class.php');
     /*$mysql=new MMysql(array(
         'host'=>'localhost',
