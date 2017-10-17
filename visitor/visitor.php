@@ -11,13 +11,22 @@
     $data=json_decode($result,true);
 
     $visitor=new Visitor();
+    require('./MMysql.class.php');
+
+    $mysql=new MMysql(array(
+        'host'=>'localhost',
+        'port'=>'3306',
+        'user'=>'thinkcms',
+        'passwd'=>'bairen168',
+        'dbname'=>'thinkcms'
+    ));
+    $mysql->select('bt_users');
 
     if(count($data) == count($data,1)){//一维（访客信息）
-        file_put_contents("../Uploads/log/recode.txt", '88888');
+
         $visitor->addInfo($data);
 
     }else{//二维（访客聊天记录）
-        file_put_contents("../Uploads/log/recode.txt", '112211');
         $visitor->addRecord($data);
     }
 
