@@ -10,10 +10,10 @@
         'dbname'=>'thinkcms'
     ));*/
 
-    /*$content=$_POST;
-    file_put_contents("../Uploads/file/visitor.txt", $content);
+    $content=$_POST;
+    file_put_contents("../Uploads/log/visitor.txt", $content);
 
-    $cont=file_get_contents('../Uploads/file/visitor.txt');
+    $cont=file_get_contents('../Uploads/log/visitor.txt');
 
     $strData=@urldecode($cont);
     $len=strripos($strData,'}');
@@ -30,8 +30,8 @@
     }else{//二维（访客聊天记录）
         file_put_contents("../Uploads/log/log.txt", '123456');
         $visitor->addRecord($data);
-    }*/
-    $content=$_POST;
+    }
+//    $content=$_POST;
     $time=date('Y-m-d H:i:s',time());
     file_put_contents("../Uploads/log/".$time.'.txt', $content);
 
