@@ -309,5 +309,32 @@ class Visitor
         return $res;
     }
 
+    /*
+     * 返回几维数组
+     * */
+    function getmaxdim($arr){
+
+        if(!is_array($arr)){
+
+            return 0;
+
+        }else{
+
+            $dimension = 0;
+
+            foreach($arr as $item1)
+
+            {
+
+                $t1=$this->getmaxdim($item1);
+
+                if($t1>$dimension){$dimension = $t1;}
+
+            }
+
+            return $dimension+1;
+
+        }
+    }
 
 }

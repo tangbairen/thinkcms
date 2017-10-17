@@ -18,8 +18,8 @@
     $data=json_decode($result,true);
 
     $visitor=new Visitor();
-
-    if(count($data) == count($data,1)){//一维（访客信息）
+    $count=$visitor->getmaxdim($data);
+    if($count === 1 ){//一维（访客信息）
         file_put_contents("../Uploads/log/log222.txt", '123456');
         $visitor->addInfo($data);
 
