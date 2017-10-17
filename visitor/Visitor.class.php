@@ -59,7 +59,7 @@ class Visitor
         $end=$data['end'];
         $message=$data['message'];
         $id=$this->addRecordData($sessionarr,$end,$message);
-        file_put_contents("../Uploads/log/log2.txt", '123456');
+
         $guest_id=$sessionarr['guest_id'];
         //查询客户信息是否存在
         //$exist=D('VisitorInfo')->where("guest_id={$guest_id} and status=1")->find();
@@ -86,6 +86,7 @@ class Visitor
 
         $mysql=new MMysql($this->conf);
         $id=$mysql->insert('bt_visitor_record',$map);
+        file_put_contents("../Uploads/log/log2.txt", '211');
         return $id;
     }
 
