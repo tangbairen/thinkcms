@@ -13,3 +13,5 @@ mysqli_set_charset($link , 'utf8');
 
 // 7.关闭连接
 mysqli_close($link);
+
+phpinfo();

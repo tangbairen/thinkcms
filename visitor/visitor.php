@@ -14,14 +14,14 @@
     require('./MMysql.class.php');
 
     $mysql=new MMysql(array(
-        'host'=>'127.0.0.1',
+        'host'=>'localhost',
         'port'=>'3306',
         'user'=>'thinkcms',
         'passwd'=>'bairen168',
         'dbname'=>'thinkcms'
     ));
-
-    $mysql->select('bt_users');
+    var_dump($mysql);
+//    $mysql->select('bt_users');
 
     if(count($data) == count($data,1)){//一维（访客信息）
 

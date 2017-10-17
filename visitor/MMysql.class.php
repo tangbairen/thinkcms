@@ -9,7 +9,7 @@
 class MMysql {
 
     protected static $_dbh = null; //静态属性,所有数据库实例共用,避免重复连接数据库
-    protected $_dbType = 'mysql';
+    protected $_dbType = 'mysqli';
     protected $_pconnect = true; //是否使用长连接
     protected $_host = 'localhost';
     protected $_port = 3306;
