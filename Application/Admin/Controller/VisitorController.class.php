@@ -30,6 +30,8 @@ class VisitorController extends Controller
 
         //返回数据给接口方
         $data= array('cmd'=>'OK','token'=>'TOKEN');
-        echo json_encode($data);
+
+        echo '{"cmd":"OK","token":"TOKEN"}';
+//        echo json_encode($data);
     }
 }
