@@ -1,8 +1,8 @@
 <?php
 
 define('HOST','localhost');
-define('USER','thinkcms');
-define('PASS','bairen168');
+define('USER','root');
+define('PASS','root');
 define('DB','thinkcms');
 
 // 1.连接
@@ -14,4 +14,13 @@ mysqli_set_charset($link , 'utf8');
 // 7.关闭连接
 mysqli_close($link);
 
-phpinfo();
+require('./MMysql.class.php');
+
+$mysql=new MMysql(array(
+        'host'=>'localhost',
+        'port'=>'3306',
+        'user'=>'root',
+        'passwd'=>'root',
+        'dbname'=>'thinkcms'
+    ));
+   var_dump($mysql);
