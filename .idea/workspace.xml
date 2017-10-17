@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/VisitorController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/VisitorController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Common/function.php" afterPath="$PROJECT_DIR$/Application/Common/Common/function.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" afterPath="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" afterPath="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" />
     </list>
@@ -55,8 +49,8 @@
       <file leaf-file-name="userinfo.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3707317">
-              <caret line="138" column="44" selection-start-line="138" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.2894309">
+              <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
@@ -65,6 +59,26 @@
                 <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#if#0;n#td#6;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#if#0;n#td#6;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_source.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.111111">
+              <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
@@ -104,9 +118,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/VisitorController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" />
       </list>
     </option>
@@ -380,25 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22764228">
-          <caret line="138" column="52" selection-start-line="0" selection-start-column="0" selection-end-line="157" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.25926">
@@ -406,14 +401,6 @@
           <folding>
             <element signature="e#30#46#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.62963">
-          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -425,10 +412,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.62963">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.111111">
+          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3707317">
-          <caret line="138" column="44" selection-start-line="138" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.2894309">
+          <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
@@ -437,8 +450,8 @@
             <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#if#0;n#td#10;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#if#0;n#td#6;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#if#0;n#td#6;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
           </folding>
         </state>

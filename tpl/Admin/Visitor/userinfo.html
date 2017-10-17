@@ -5,7 +5,7 @@
         .form-group>label[class*="col-"] {padding-top: 10px;}
     </style>
     <div class="page-header">
-        <h1><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据源</h1>
+        <h1><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 访客信息</h1>
     </div>
     <div class="col-xs-12">
         <form class="form-inline" style="margin-bottom: 10px; ">
@@ -72,14 +72,10 @@
                     <tr>
                         <th>ID</th>
                         <th>访客ID</th>
-                        <th>会话ID</th>
-                        <th>访客IP</th>
-                        <th>地址</th>
-                        <th>搜索引擎</th>
-                        <th>关键字</th>
+                        <th>访客名称</th>
+                        <th>手机号</th>
                         <th>客服工号</th>
-                        <th>对话时间</th>
-                        <th>结束时间</th>
+                        <th>添加时间</th>
                         <th>处理状态</th>
                         <th>操作</th>
                     </tr>
@@ -87,14 +83,10 @@
                         <tr>
                             <td>{$val['id']}</td>
                             <td>{$val['guest_id']}</td>
-                            <td>{$val['talk_id']}</td>
-                            <td>{$val['guest_ip']}</td>
-                            <td>{$val['guest_area']}</td>
-                            <td>{$val['se']}</td>
-                            <td>{$val['kw']}</td>
+                            <td>{$val['guest_name']}</td>
+                            <td>{$val['mobile']}</td>
                             <td>{$val['worker_id']}</td>
-                            <td>{$val['talk_time']}</td>
-                            <td>{$val['end_time']}</td>
+                            <td>{$val['time']}</td>
                             <td>
                                 <if condition="$val['status'] == '已处理'">
                                     <span style="color:#177714;">{$val['status']}</span>
