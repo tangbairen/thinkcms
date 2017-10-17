@@ -47,4 +47,13 @@ class VisitorController extends AdminBaseController
         $this->display();
     }
 
+    /*
+     * 访客信息
+     * */
+    public function userinfo()
+    {
+        
+        $this->display();
+    }
+
 }
