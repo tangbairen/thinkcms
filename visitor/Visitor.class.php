@@ -27,8 +27,9 @@ class Visitor
         foreach($data as $key=>$val){
             $map[$key]=$val;
         }
-        echo 23322;exit;
+
         $mysql=new MMysql($this->conf);
+        echo 23322;exit;
         $mysql->insert('bt_visitor_info',$map);
 
         $guest_id=$data['guest_id'];//访客id
