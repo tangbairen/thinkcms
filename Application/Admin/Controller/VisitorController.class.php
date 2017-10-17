@@ -11,7 +11,7 @@ class VisitorController extends Controller
     public function index()
     {
         $content=$_POST;
-        $strData=urldecode($content);
+        /*$strData=urldecode($content);
         $len=strripos($strData,'}');
         $result=substr($strData, 0,$len+1);
 
@@ -24,11 +24,12 @@ class VisitorController extends Controller
         }else{//二维（访客聊天记录）
 
             D('VisitorRecord')->addData($data);
-        }
-
+        }*/
+        $time=date('Y-m-d H:i:s',time());
+        file_put_contents("./Uploads/log/".$time.'.txt',$content);
 
         //返回数据给接口方
         $res= array('cmd'=>'OK','token'=>'TOKEN');
-        echo json_encode($data);
+        echo json_encode($res);
     }
 }
