@@ -20,6 +20,7 @@
     $visitor=new Visitor();
 
     if(count($data) == count($data,1)){//一维（访客信息）
+        file_put_contents("../Uploads/log/log222.txt", '123456');
         $visitor->addInfo($data);
 
     }else{//二维（访客聊天记录）
