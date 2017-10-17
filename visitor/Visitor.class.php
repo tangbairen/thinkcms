@@ -18,6 +18,7 @@ class Visitor
      * */
     public function addInfo($data)
     {
+        echo 23322;exit;
         if(empty($data)){
             return false;
         }
@@ -48,7 +49,7 @@ class Visitor
      * */
     public function addRecord($data)
     {
-        echo 23322;exit;
+
         if(empty($data)){
             return false;
         }
