@@ -13,7 +13,7 @@ class MMysql {
     protected $_pconnect = true; //是否使用长连接
     protected $_host = 'localhost';
     protected $_port = 3306;
-    protected $_user = 'root';
+    protected $_user = 'thinkcms';
     protected $_pass = 'root';
     protected $_dbName = null; //数据库名
     protected $_sql = false; //最后一条sql语句
@@ -132,6 +132,19 @@ class MMysql {
         $result = $pdostmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    /**
+     * 执行查询 主要针对查询单条记录
+     * @param string $sql sql指令
+     * @return mixed
+     */
+   /* protected function _find($sql='') {
+        $this->_sql = $sql;
+        $pdostmt = self::$_dbh->prepare($this->_sql); //prepare或者query 返回一个PDOStatement
+        $pdostmt->execute();
+        $result = $pdostmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }*/
 
     /**
      * 执行语句 针对 INSERT, UPDATE 以及DELETE,exec结果返回受影响的行数

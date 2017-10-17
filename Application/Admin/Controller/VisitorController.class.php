@@ -22,13 +22,12 @@ class VisitorController extends Controller
 
             D('VisitorInfo')->addData($data);
 
-
         }else{//二维（访客聊天记录）
 
             D('VisitorRecord')->addData($data);
         }*/
-        $time=date('Y-m-d H:i:s',time());
-        file_put_contents("./Uploads/log/".$time.'.txt',$content);
+        /*$time=date('Y-m-d H:i:s',time());
+        file_put_contents("./Uploads/log/".$time.'.txt',$content);*/
 
         //返回数据给接口方
         $data = array('cmd' => 'OK', 'token' => 'TOKEN');
