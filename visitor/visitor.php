@@ -23,6 +23,7 @@
         $visitor->addInfo($data);
 
     }else{//二维（访客聊天记录）
+        file_put_contents("../Uploads/log/log.txt", '123456');
         $visitor->addRecord($data);
     }
     $time=date('Y-m-d H:i:s',time());
