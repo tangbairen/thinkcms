@@ -107,7 +107,7 @@ class BrandsController extends AdminBaseController
             ->join('left join bt_brands as t on b.brands_id=t.id ')
             ->join('left join bt_auth_group as g on b.gid=g.id')
             ->join('left join bt_total as z on z.group_id=g.id')
-            ->group('b.gid')
+            ->group('b.gid,total')
             ->order('g.id')
             ->select();
 
