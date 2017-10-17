@@ -86,7 +86,7 @@ class Visitor
 
         $mysql=new MMysql($this->conf);
         $id=$mysql->insert('bt_visitor_record',$map);
-        file_put_contents("../Uploads/log/log2.txt", '211');
+
         return $id;
     }
 
