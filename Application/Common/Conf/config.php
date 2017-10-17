@@ -28,6 +28,10 @@ return array(
     'MODULE_ALLOW_LIST'      => array('Home','Admin','Api','User','App'), //允许访问列表
     'URL_HTML_SUFFIX'        => '',  // URL伪静态后缀设置
     'URL_MODEL'              => 2,  //启用rewrite
+    'APP_SUB_DOMAIN_DEPLOY'   =>    1, // 开启子域名配置
+    'APP_SUB_DOMAIN_RULES'    =>    array(
+        'cms.lezycy.com'  => 'Admin',  // admin.domain1.com域名指向Admin模块
+    ),
 //***********************************SESSION设置**********************************
     'SESSION_OPTIONS'        => array(
         'name'               => 'BJYADMIN',//设置session名
