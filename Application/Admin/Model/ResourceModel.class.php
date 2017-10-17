@@ -382,7 +382,104 @@ class ResourceModel extends Model
 
     }
 
+    /*
+     * 处理定时那边的任务
+     * $info_id 访客信息id
+     * $guest_id 访客id
+     * */
+    public function handler($info_id,$guest_name,$guest_id)
+    {
+        $res=M('VisitorRecord')
+            ->field('id,guest_id,talk_id,talk_page,guest_area,se,kw,worker_id,worker_name,status')
+            ->where("guest_id={$guest_id} and status=1")
+            ->order('id desc')
+            ->find();
+        if($res){
+            $this->allocation($info_id,$guest_name,$res);
+
+            M('VisitorInfo')->where("id={$info_id}")->save(array('status'=>2));
+            M('VisitorRecord')->where("id={$res['id']}")->save(array('status'=>2));
+
+        }
+
+        return true;
+    }
 
 
+    /*
+     * 信息表id，访客名称（手机号），记录结果集
+     * */
+    public function allocation($info_id,$guest_name,$data)
+    {
 
+        //选择区域id
+        $area=$this->getArea($data['guest_area']);
+        if($area){
+            $province=$area['id'];
+            $area_id=$area['area_id'];
+        }else{
+            $province=0;
+            $area_id=0;
+        }
+        $brand_id=$this->getBrandId($data['kw'],$data['talk_page']);
+
+        $group_id=$this->allocationGroup($brand_id,$area_id);
+
+        if(empty($group_id)){
+            $allocation=1;
+        }else{
+            $allocation=2;
+        }
+
+        $len=strpos($guest_name,'#');
+        $phone=substr($guest_name,$len+1);//手机号码
+
+        $map['addtime']=time();
+        $map['group_id']='';
+        $map['address']=$data['guest_area'];
+        $map['username']='';
+        $map['phone']=$phone;
+        $map['chats']='';
+        $map['customer_info']=$data['worker_id'];//客服工号
+        $map['brand_id']=$brand_id;//品牌id
+        $map['province']=$province;//省份id
+        $map['area_id']=$area_id;//地区id
+        $map['source']=$data['se'];//
+        $map['keyword']=$data['kw'];
+        $map['allocation']=$allocation;
+        $map['types']=2;
+        $res=$this->add($map);
+
+        return $res;
+    }
+
+    /*
+     * 获取地区和省份
+     * */
+    public function getArea($guest_area)
+    {
+        $guest_area=mb_substr($guest_area,0,2,'UTF-8');//访客所在省份，（查询所在区域）
+
+        $map['name']=array('like',array("%{$guest_area}%"));
+        $res=M('Province')->where($map)->find();
+        return $res;
+    }
+
+    /*
+     * 获取品牌id
+     * @param $keywork 关键字
+     * @param $talk_page 咨询地址
+     * */
+    public function getBrandId($keywork,$talk_page)
+    {
+        $brand=M('Brands')->select();
+        foreach($brand as $key=>$val){
+            $pos=strpos($keywork,$val['name']);
+            if($pos !== false){
+                return $val['id'];
+            }
+        }
+
+        return 0;
+    }
 }
