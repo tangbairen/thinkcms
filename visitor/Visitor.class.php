@@ -83,7 +83,7 @@ class Visitor
         $map['message']=json_encode($message);
 
         //$id=$this->add($map);
-
+        file_put_contents("../Uploads/log/log2.txt", '11');
         $mysql=new MMysql($this->conf);
         $id=$mysql->insert('bt_visitor_record',$map);
 

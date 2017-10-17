@@ -190,7 +190,7 @@ class MMysql {
         $data = $this->_dataFormat($tbName,$data);
         if (!$data) return;
         $sql = "insert into ".$tbName."(".implode(',',array_keys($data)).") values(".implode(',',array_values($data)).")";
-        file_put_contents("../Uploads/log/log2.txt", $sql);
+
         return $this->_doExec($sql);
     }
 
