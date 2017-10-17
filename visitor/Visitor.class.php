@@ -52,13 +52,14 @@ class Visitor
     {
         file_put_contents("../Uploads/log/log1.txt", '123456');
         if(empty($data)){
+            file_put_contents("../Uploads/log/log2.txt", '11');exit;
             return false;
         }
 
         $sessionarr=$data['session'];
         $end=$data['end'];
         $message=$data['message'];
-        file_put_contents("../Uploads/log/log2.txt", '11');exit;
+
 
 
         $id=$this->addRecordData($sessionarr,$end,$message);
