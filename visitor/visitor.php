@@ -11,18 +11,19 @@
     $data=json_decode($result,true);
 
     $visitor=new Visitor();
-//    require('./MMysql.class.php');
-
-    /*$mysql=new MMysql(array(
+    require('./MMysql.class.php');
+    $mysql=new MMysql(array(
         'host'=>'localhost',
         'port'=>'3306',
         'user'=>'thinkcms',
         'passwd'=>'bairen168',
         'dbname'=>'thinkcms'
-    ));*/
-//    var_dump($mysql);
-//    $mysql->select('bt_users');
+    ));
+    var_dump($mysql);
 
+    var_dump($mysql);
+    $mysql->select('bt_users');
+    exit;
     if(count($data) == count($data,1)){//一维（访客信息）
 
         $visitor->addInfo($data);
