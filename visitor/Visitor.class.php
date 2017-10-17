@@ -29,9 +29,9 @@ class Visitor
         }
 
         $mysql=new MMysql($this->conf);
-        echo 23322;exit;
-        $mysql->insert('bt_visitor_info',$map);
 
+        $mysql->insert('bt_visitor_info',$map);
+        echo 23322;exit;
         $guest_id=$data['guest_id'];//访客id
 
 
