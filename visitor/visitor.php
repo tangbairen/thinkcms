@@ -13,10 +13,11 @@
     $visitor=new Visitor();
 
     if(count($data) == count($data,1)){//一维（访客信息）
-
+        file_put_contents("../Uploads/log/recode.txt", '88888');
         $visitor->addInfo($data);
 
     }else{//二维（访客聊天记录）
+        file_put_contents("../Uploads/log/recode.txt", '112211');
         $visitor->addRecord($data);
     }
 

@@ -48,7 +48,7 @@ class Visitor
      * */
     public function addRecord($data)
     {
-        file_put_contents("../Uploads/log/recode.txt", '112211');
+
         if(empty($data)){
             return false;
         }
