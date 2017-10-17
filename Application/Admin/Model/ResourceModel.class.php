@@ -335,7 +335,7 @@ class ResourceModel extends Model
      * @param $where array or string [查询条件]
      * @param $order string [排序条件]
      * */
-    public function exportData($field,$where=1,$order='address desc,allocation')
+    public function exportData($field,$where=1,$order='addtime desc,allocation')
     {
         $data=$this
             ->field($field)

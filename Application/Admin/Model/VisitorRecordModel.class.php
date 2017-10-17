@@ -124,4 +124,32 @@ class VisitorRecordModel extends Model
         return array('data'=>$data,'show'=>$show,'count'=>$count);
     }
 
+    /*
+     * 导出数据
+     * @param $field array or string [查询的字段]
+     * @param $where array or string [查询条件]
+     * @param $order string [排序条件]
+     * */
+    public function exportData($field,$where=1,$order='talk_time desc')
+    {
+        $data=$this
+            ->field($field)
+            ->where($where)
+            ->order($order)
+            ->select();
+        if(!empty($data)){
+            foreach($data as $key=>&$val){
+                $val['talk_time']=date('Y-m-d H:i:s',$val['talk_time']);
+                $val['end_time']=date('Y-m-d H:i:s',$val['end_time']);
+                if($val['status'] == 1){
+                    $val['status']='未处理';
+                }else{
+                    $val['status']='已处理';
+                }
+            }
+        }
+
+        return $data;
+    }
+
 }
