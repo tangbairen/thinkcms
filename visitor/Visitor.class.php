@@ -50,20 +50,22 @@ class Visitor
      * */
     public function addRecord($data)
     {
-
+        file_put_contents("../Uploads/log/log1.txt", '123456');
         if(empty($data)){
             return false;
         }
+
         $sessionarr=$data['session'];
         $end=$data['end'];
         $message=$data['message'];
         $id=$this->addRecordData($sessionarr,$end,$message);
+        file_put_contents("../Uploads/log/log2.txt", '123456');
         $guest_id=$sessionarr['guest_id'];
         //查询客户信息是否存在
         //$exist=D('VisitorInfo')->where("guest_id={$guest_id} and status=1")->find();
         $mysql=new MMysql($this->conf);
         $exist=$mysql->where("guest_id={$guest_id} and status=1")->select('bt_visitor_info');
-
+        file_put_contents("../Uploads/log/log2.txt", '123456');
         $recordData=array_merge($sessionarr,$end);
         //数据存在
         if(!empty($exist)){
