@@ -48,7 +48,9 @@ class Visitor
      * */
     public function addRecord($data)
     {
-
+        if(empty($data)){
+            return false;
+        }
         $sessionarr=$data['session'];
         $end=$data['end'];
         $message=$data['message'];
