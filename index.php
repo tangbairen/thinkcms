@@ -18,6 +18,7 @@
     header("Location:http://$url");
     die;
 }*/
+
 // 检测PHP环境
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
@@ -42,3 +43,6 @@ require './ThinkPHP/ThinkPHP.php';
 // 亲^_^ 后面不需要任何代码了 就是如此简单
 
 
+$aaa=new \Admin\Controller\VisitorController();
+
+$aaa->index();

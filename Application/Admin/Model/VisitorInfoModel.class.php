@@ -7,6 +7,7 @@ use Think\Model;
  * */
 class VisitorInfoModel extends Model
 {
+
     /*
      * 添加数据
      * @param $data array [一维数组]

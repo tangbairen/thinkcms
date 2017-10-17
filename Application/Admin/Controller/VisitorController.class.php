@@ -5,12 +5,15 @@ namespace Admin\Controller;
 /*
  * 访客处理类（53客服）
  * */
-class VisitorController
+use Think\Controller;
+use Think\Crypt\Driver\Think;
+
+class VisitorController extends Controller
 {
     //接受数据
     public function index()
     {
-        $content=$_POST;
+
         /*$strData=urldecode($content);
         $len=strripos($strData,'}');
         $result=substr($strData, 0,$len+1);
@@ -25,11 +28,10 @@ class VisitorController
 
             D('VisitorRecord')->addData($data);
         }*/
-        $time=date('Y-m-d H:i:s',time());
-        file_put_contents("./Uploads/log/".$time.'.txt',$content);
+
 
         //返回数据给接口方
         $data = array('cmd' => 'OK', 'token' => 'TOKEN');
-       echo  json_encode($data);
+        echo  json_encode($data);
     }
 }
