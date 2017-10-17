@@ -11,7 +11,11 @@
     ));*/
 
     $content=$_POST;
-    $strData=@urldecode($content);
+    file_put_contents("../Uploads/file/visitor.txt", $content);
+
+    $cont=file_get_contents('../Uploads/file/visitor.txt');
+
+    $strData=@urldecode($cont);
     $len=strripos($strData,'}');
     $result=substr($strData, 0,$len+1);
 
