@@ -321,6 +321,45 @@ class BrandsController extends AdminBaseController
         }
     }
 
+    /*
+     * 删除来源渠道数据
+     * */
+    public function del_referer()
+    {
+        $id=I('get.id');
+        $res=M('Referer')->where("id={$id}")->delete();
+        if($res){
+            $this->success('删除成功',U('Admin/Brands/referer'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
 
+    /*
+     * 修改来源渠道数据
+     * */
+    public function edit_referer()
+    {
+
+        try{
+            $edit_id=I('post.edit_id');
+            $edit_title=I('post.edit_title');
+            $edit_url=I('post.edit_url');
+            if(empty($edit_title)) throw new Exception('标题不能为空');
+            if(empty($edit_url)) throw new Exception('url地址不能为空');
+
+            $map['title']=$edit_title;
+            $map['url']=$edit_url;
+
+            $res=M('Referer')->where("id={$edit_id}")->save($map);
+            if(!$res) throw new Exception('修改失败');
+
+            $this->success('修改成功',U('Admin/Brands/referer'));
+
+        }catch(Exception $e){
+            $message=$e->getMessage();
+            $this->error($message);
+        }
+    }
 
 }

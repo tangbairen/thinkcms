@@ -31,7 +31,8 @@
                             <td>{$val['title']}</td>
                             <td>{$val['url']}</td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" total="{$val['total']}" onclick="edit(this)">修改</button>
+                                <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" title="{$val['title']}" url="{$val['url']}" onclick="edit(this)">修改</button>
+                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Brands/del_referer',array('id'=>$val['id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>
                             </td>
                         </tr>
                     </foreach>
@@ -80,17 +81,18 @@
                     <h4 class="modal-title" id="myModalLabel"> 修改信息</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="bjy-form" class="form-inline" action="{:U('Admin/Brands/edit_total')}" method="post">
-                        <input type="hidden" name="id">
+                    <form id="bjy-form" class="form-inline" action="{:U('Admin/Brands/edit_referer')}" method="post">
+                        <input type="hidden" name="edit_id">
                         <table class="table table-striped table-bordered table-hover table-condensed">
-                            <tr>
-                                <th width="15%">分配数量：</th>
-                                <td> <input class="input-medium" type="text" name="total_count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></td>
+                            <tr><th width="12%">标题：</th>
+                                <td> <input class="input-medium" type="text" name="edit_title"></td>
                             </tr>
                             <tr>
-                                <th></th>
-                                <td> <input class="btn btn-success" type="submit" onclick="return edit_total();" value="修改"></td>
+                                <th width="12%">url地址：</th>
+                                <td> <input class="input-medium" type="text" name="edit_url"></td>
                             </tr>
+
+                            <tr><th></th><td> <input class="btn btn-success" type="submit" onclick="return editData();" value="修改"></td></tr>
                         </table>
                     </form>
                 </div>
@@ -110,9 +112,11 @@
         // 修改菜单
         function edit(obj){
             var totalId=$(obj).attr('totalId');
-            var total=$(obj).attr('total');
-            $("input[name='id']").val(totalId);
-            $("input[name='total_count']").val(total);
+            var title=$(obj).attr('title');
+            var url=$(obj).attr('url');
+            $("input[name='edit_id']").val(totalId);
+            $("input[name='edit_title']").val(title);
+            $("input[name='edit_url']").val(url);
 
             $('#bjy-edit').modal('show');
         }
@@ -147,6 +151,20 @@
                 return false;
             }
 
+        }
+
+        function editData(){
+            var title=$("input[name='edit_title']").val();
+            var url=$("input[name='edit_url']").val();
+
+            if(title == ''){
+                alert('请填入标题');
+                return false;
+            }
+            if(url == ''){
+                alert('请输入url地址');
+                return false;
+            }
         }
 
     </script>
