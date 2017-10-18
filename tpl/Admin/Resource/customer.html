@@ -100,8 +100,10 @@
                                 </if>
                             </td>
                             <td>
-                                <if condition="$val['allocation'] eq 2">已分配
-                                    <else />未分配
+                                <if condition="$val['allocation'] eq 2">
+                                    <span style="color:#1fbc53">已分配</span>
+                                    <else />
+                                    <span style="color:#b62409">未分配</span>
                                 </if>
                             </td>
                             <td>
@@ -113,7 +115,7 @@
 
                     </foreach>
                 </table>
-                <div>
+                <div style="margin-bottom: 100px;margin-top: 50px;">
                     {$show}
                 </div>
             </div>
