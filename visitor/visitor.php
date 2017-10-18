@@ -6,7 +6,7 @@
     $data= array('cmd'=>'OK','token'=>'TOKEN');
     echo json_encode($data);
 
-    /*$content=$_POST;
+    /*
     $mysql=new MMysql(array(
         'host'=>'localhost',
         'port'=>'3306',
@@ -16,7 +16,7 @@
     ));
     $arr=array('content'=>json_encode($_POST));
     $id=$mysql->insert('bt_content',$arr);*/
-
+    $content=$_POST;
     file_put_contents("../Uploads/log/visitor.txt", $content);
 
     $cont=file_get_contents('../Uploads/log/visitor.txt');
