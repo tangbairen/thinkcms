@@ -446,15 +446,27 @@ class ResourceModel extends Model
             $allocation=2;
         }
 
-        $len=strpos($guest_name,'#');
-        $phone=substr($guest_name,$len+1);//手机号码
+        $phone='';
+        $chats='';
+        $len=stripos ($guest_name,'t#');
+        $qlen=stripos ($guest_name,'q#');
+        if($len !== false){
+            $phone=mb_substr($guest_name,$len+2);//手机号码
+
+        }else if($qlen !==false){
+            $chats=mb_substr($guest_name,$qlen+2);//qq获取微信
+
+        }else{
+            $len=stripos ($guest_name,'+');
+            $phone=mb_substr($guest_name,$len+1);//手机号码
+        }
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
         $map['address']=$data['guest_area'];
         $map['username']='';
         $map['phone']=$phone;
-        $map['chats']='';
+        $map['chats']=$chats;
         $map['customer_info']=$data['worker_id'];//客服工号
         $map['brand_id']=$brand_id;//品牌id
         $map['province']=$province;//省份id

@@ -5,7 +5,7 @@
     require('./Visitor.class.php');
 
     if($_POST){
-        
+
         $content=$_POST;
         file_put_contents("../Uploads/log/visitor.txt", $content);
 
