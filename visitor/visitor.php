@@ -14,6 +14,9 @@
     $arr=array('content'=>json_encode($_POST));
     $id=$mysql->insert('bt_content',$arr);*/
     $content=$_POST;
+    if($_GET){
+        file_get_contents('../Uploads/get.txt',json_encode($_GET));
+    }
     file_put_contents("../Uploads/log/visitor.txt", $content);
 
     $cont=file_get_contents('../Uploads/log/visitor.txt');

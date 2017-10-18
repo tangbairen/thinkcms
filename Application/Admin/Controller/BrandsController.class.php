@@ -284,4 +284,43 @@ class BrandsController extends AdminBaseController
         }
     }
 
+    /*
+     * 来源渠道列表
+     * */
+    public function referer()
+    {
+        $data=M('Referer')->select();
+
+
+        $this->assign('data',$data);
+        $this->display();
+    }
+
+    /*
+     * 添加来源数据
+     * */
+    public function add_referer()
+    {
+        try{
+            $title=I('post.title');
+            $url=I('post.url');
+            if(empty($title)) throw new Exception('标题不能为空');
+            if(empty($url)) throw new Exception('url地址不能为空');
+
+            $map['title']=$title;
+            $map['url']=$url;
+
+            $res=M('Referer')->add($map);
+            if(!$res) throw new Exception('添加失败');
+
+            $this->success('添加成功',U('Admin/Brands/referer'));
+
+        }catch(Exception $e){
+            $message=$e->getMessage();
+            $this->error($message);
+        }
+    }
+
+
+
 }

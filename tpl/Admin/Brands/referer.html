@@ -1,0 +1,155 @@
+<extend name="Public:base"/>
+<block name="title">来源渠道列表</block>
+<block name="content">
+    <style>
+        .form-group>label[class*="col-"] {padding-top: 10px;}
+        .input-medium {width:300px;}
+    </style>
+    <div class="page-header">
+        <h1><i class="fa fa-home"></i> 首页 &gt; 品牌管理 &gt; 来源渠道列表</h1>
+    </div>
+    <div class="col-xs-12">
+
+
+        <div class="tabbable">
+
+            <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
+                <li class="active"> <a >数据列表</a></li>
+                <li> <a href="javascript:;" onclick="add()">添加来源渠道</a></li>
+            </ul>
+            <div class="tab-content">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <tr>
+                        <th>id</th>
+                        <th>标题</th>
+                        <th>url地址</th>
+                        <th>操作</th>
+                    </tr>
+                    <foreach name="data" item="val">
+                        <tr>
+                            <td>{$val['id']}</td>
+                            <td>{$val['title']}</td>
+                            <td>{$val['url']}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" total="{$val['total']}" onclick="edit(this)">修改</button>
+                            </td>
+                        </tr>
+                    </foreach>
+                </table>
+                <div>
+                    {$show}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--添加-->
+    <div class="modal fade" id="bjy-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times;</button>
+                    <h4 class="modal-title" id="myModalLabel"> 添加来源渠道信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="bjy-form" class="form-inline" action="{:U('Admin/Brands/add_referer')}" method="post">
+                        <input type="hidden" name="pid" value="0">
+                        <table class="table table-striped table-bordered table-hover table-condensed">
+                            <tr><th width="12%">标题：</th>
+                                <td> <input class="input-medium" type="text" name="title"></td>
+                            </tr>
+                            <tr>
+                                <th width="12%">url地址：</th>
+                                <td> <input class="input-medium" type="text" name="url"></td>
+                            </tr>
+
+                            <tr><th></th><td> <input class="btn btn-success" type="submit" onclick="return addData();" value="添加"></td></tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end 添加-->
+
+    <div class="modal fade" id="bjy-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times;</button>
+                    <h4 class="modal-title" id="myModalLabel"> 修改信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="bjy-form" class="form-inline" action="{:U('Admin/Brands/edit_total')}" method="post">
+                        <input type="hidden" name="id">
+                        <table class="table table-striped table-bordered table-hover table-condensed">
+                            <tr>
+                                <th width="15%">分配数量：</th>
+                                <td> <input class="input-medium" type="text" name="total_count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td> <input class="btn btn-success" type="submit" onclick="return edit_total();" value="修改"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</block>
+<block name="js">
+    <script>
+
+        // 添加菜单
+        function add(){
+            $('#bjy-add').modal('show');
+        }
+        // 修改菜单
+        function edit(obj){
+            var totalId=$(obj).attr('totalId');
+            var total=$(obj).attr('total');
+            $("input[name='id']").val(totalId);
+            $("input[name='total_count']").val(total);
+
+            $('#bjy-edit').modal('show');
+        }
+
+        function clean(){
+            $("input[name='phone']").val('');
+            $("input[name='start_time']").val('');
+            $("input[name='end_time']").val('');
+            $("#group").val('');
+        }
+
+        function addData(){
+            var title=$("input[name='title']").val();
+            var url=$("input[name='url']").val();
+
+            if(title == ''){
+                alert('请填入标题');
+                return false;
+            }
+            if(url == ''){
+                alert('请输入url地址');
+                return false;
+            }
+
+        }
+
+        function edit_total(){
+            var total=$("input[name='total_count']").val();
+
+            if(total == '' || total== 0){
+                alert('请输入分配数量');
+                return false;
+            }
+
+        }
+
+    </script>
+
+
+</block>
