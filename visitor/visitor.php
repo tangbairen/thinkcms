@@ -44,8 +44,8 @@
         }
 
     }
-    $time=date('Y-m-d H:i:s',time());
-    file_put_contents("../Uploads/log/".$time.'.txt', $content);
+
+    file_put_contents("../Uploads/log/content.txt", $content);
 
     /*$data= array('cmd'=>'OK','token'=>'TOKEN');
     echo json_encode($data);*/
