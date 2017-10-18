@@ -435,7 +435,7 @@ class ResourceModel extends Model
         $phone=substr($guest_name,$len+1);//手机号码
 
         $map['addtime']=time();
-        $map['group_id']='';
+        $map['group_id']=$group_id;
         $map['address']=$data['guest_area'];
         $map['username']='';
         $map['phone']=$phone;
