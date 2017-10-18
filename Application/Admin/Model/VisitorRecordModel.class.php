@@ -96,7 +96,7 @@ class VisitorRecordModel extends Model
             'total' => $count,/*总数（改）*/
             'url' => !empty($param['url']) ? $param['url'] : '',/*URL配置*/
             'max' => !empty($param['max']) ? $param['max'] : 20,/*每页显示多少条记录（改）*/
-            'url_model' => 2,/*URL模式*/
+            'url_model' => 1,/*URL模式*/
             'ajax' =>  !empty($param['ajax']) ? true : false,/*开启ajax分页*/
             'out' =>  !empty($param['out']) ? $param['out'] : false,/*输出设置*/
             'url_suffix' => true,/*url后缀*/
