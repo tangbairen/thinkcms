@@ -3,7 +3,10 @@
     error_reporting(0);
     require('./Visitor.class.php');
 
-    $content=$_POST;
+    $data= array('cmd'=>'OK','token'=>'TOKEN');
+    echo json_encode($data);
+
+    /*$content=$_POST;
     $mysql=new MMysql(array(
         'host'=>'localhost',
         'port'=>'3306',
@@ -12,7 +15,7 @@
         'dbname'=>'thinkcms'
     ));
     $arr=array('content'=>json_encode($_POST));
-    $id=$mysql->insert('bt_content',$arr);
+    $id=$mysql->insert('bt_content',$arr);*/
 
     file_put_contents("../Uploads/log/visitor.txt", $content);
 
@@ -27,13 +30,22 @@
     $visitor=new Visitor();
     $count=$visitor->getmaxdim($data);
     if($count == 1 ){//一维（访客信息）
-        $visitor->addInfo($data);
+        $cmd=isset($data['cmd']) ? $data['cmd']:'';
+        if($cmd == 'customer'){//是否为推送访客信息 命令
+            $visitor->addInfo($data);
+        }
 
-    }else{//二维（访客聊天记录）
-        $visitor->addRecord($data);
+    }else{//多维（访客聊天记录）
+        $message=isset($data['message']) ? $data['message'] : '';
+        $session=isset($data['session']) ? $data['session'] : '';
+        $message=isset($data['end']) ? $data['end'] : '';
+        if($message && $session && $message){
+            $visitor->addRecord($data);
+        }
+
     }
     $time=date('Y-m-d H:i:s',time());
     file_put_contents("../Uploads/log/".$time.'.txt', $content);
 
-    $data= array('cmd'=>'OK','token'=>'TOKEN');
-    echo json_encode($data);
+    /*$data= array('cmd'=>'OK','token'=>'TOKEN');
+    echo json_encode($data);*/
