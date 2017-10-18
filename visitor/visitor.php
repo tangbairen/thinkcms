@@ -3,9 +3,6 @@
     error_reporting(0);
     require('./Visitor.class.php');
 
-    $data= array('cmd'=>'OK','token'=>'TOKEN');
-    echo json_encode($data);
-
     /*
     $mysql=new MMysql(array(
         'host'=>'localhost',
@@ -47,5 +44,5 @@
 
     file_put_contents("../Uploads/log/content.txt", $content);
 
-    /*$data= array('cmd'=>'OK','token'=>'TOKEN');
-    echo json_encode($data);*/
+    $data= array('cmd'=>'OK','token'=>'TOKEN');
+    echo json_encode($data);
