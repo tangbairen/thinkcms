@@ -451,7 +451,7 @@ class ResourceModel extends Model
         $len=stripos ($guest_name,'t#');
         $qlen=stripos ($guest_name,'q#');
         if($len !== false){
-            $phone=mb_substr($guest_name,$len+2);//手机号码
+            $phone=substr($guest_name,$len+2);//手机号码
             file_put_contents('../Uploads/log/aaa.txt',$phone);
 
         }
