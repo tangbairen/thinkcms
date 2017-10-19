@@ -16,7 +16,8 @@
 
             $len=strripos($strData,'}');
             $result=substr($strData, 0,$len+1);
-            @file_put_contents("../Uploads/log/12222.txt", json_encode($content));
+            $cmd=isset($_POST['cmd']) ? $_POST['cmd'] : '没有的事！';
+            @file_put_contents("../Uploads/log/12222.txt", $cmd);
             $data=json_decode($result,true);
 
             $visitor=new Visitor();
