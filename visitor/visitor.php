@@ -18,6 +18,7 @@
             $result=substr($strData, 0,$len+1);
             $cmd=isset($_POST['cmd']) ? $_POST['cmd'] : '';
             @file_put_contents("../Uploads/log/12222.txt", $_POST['content']);
+            @file_put_contents("../Uploads/log/cmd.txt", $cmd);
             $data=json_decode($result,true);
 
             $visitor=new Visitor();
