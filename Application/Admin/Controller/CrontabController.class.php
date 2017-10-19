@@ -38,6 +38,6 @@ class CrontabController extends Controller
         return true;
     }
 
-    
+
 
 }

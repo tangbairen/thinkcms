@@ -7,32 +7,33 @@
     if($_POST){
 
         $content=$_POST;
-        file_put_contents("../Uploads/log/visitor.txt", $content);
+        /*file_put_contents("../Uploads/log/visitor.txt", $content);
 
-        $cont=file_get_contents('../Uploads/log/visitor.txt');
+        $cont=file_get_contents('../Uploads/log/visitor.txt');*/
+        if(!empty($content)){
+            $strData=@urldecode($content);
+            $len=strripos($strData,'}');
+            $result=substr($strData, 0,$len+1);
 
-        $strData=@urldecode($cont);
-        $len=strripos($strData,'}');
-        $result=substr($strData, 0,$len+1);
+            $data=json_decode($result,true);
 
-        $data=json_decode($result,true);
+            $visitor=new Visitor();
+            $count=$visitor->getmaxdim($data);
+            if($count == 1 ){//一维（访客信息）
+                $cmd=isset($data['cmd']) ? $data['cmd']:'';
+                if($cmd == 'customer'){//是否为推送访客信息 命令
+                    $visitor->addInfo($data);
+                }
 
-        $visitor=new Visitor();
-        $count=$visitor->getmaxdim($data);
-        if($count == 1 ){//一维（访客信息）
-            $cmd=isset($data['cmd']) ? $data['cmd']:'';
-            if($cmd == 'customer'){//是否为推送访客信息 命令
-                $visitor->addInfo($data);
+            }else{//多维（访客聊天记录）
+                $message=isset($data['message']) ? $data['message'] : '';
+                $session=isset($data['session']) ? $data['session'] : '';
+                $message=isset($data['end']) ? $data['end'] : '';
+                if($message && $session && $message){
+                    $visitor->addRecord($data);
+                }
+
             }
-
-        }else{//多维（访客聊天记录）
-            $message=isset($data['message']) ? $data['message'] : '';
-            $session=isset($data['session']) ? $data['session'] : '';
-            $message=isset($data['end']) ? $data['end'] : '';
-            if($message && $session && $message){
-                $visitor->addRecord($data);
-            }
-
         }
 
         file_put_contents("../Uploads/log/content.txt", $content);
