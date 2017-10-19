@@ -38,8 +38,6 @@ class CrontabController extends Controller
         return true;
     }
 
-    public function demo(){
-        phpinfo();
-    }
+    
 
 }
