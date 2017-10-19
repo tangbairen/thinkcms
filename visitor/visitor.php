@@ -11,14 +11,14 @@
         if($cmd == 'talk_info'){//整体推送
             $content=urldecode($_POST['content']);
 
-            $visitor->addRecord($content);
+//            $visitor->addRecord($content);
         }else{
             //访客信息推送
             $customer=isset($_POST['content'])? urldecode($_POST['content']) : '';
             if($customer){
                 $cmd=isset($customer['cmd']) ? $customer['cmd'] : '';
                 if($cmd == 'customer'){
-                    $visitor->addInfo($customer);
+//                    $visitor->addInfo($customer);
                 }
 
 
