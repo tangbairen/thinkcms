@@ -15,7 +15,7 @@
             $strData=@urldecode($content);
             $len=strripos($strData,'}');
             $result=substr($strData, 0,$len+1);
-
+            @file_put_contents("../Uploads/log/12222.txt", $result);
             $data=json_decode($result,true);
 
             $visitor=new Visitor();
@@ -27,7 +27,7 @@
                 }
 
             }else{//多维（访客聊天记录）
-                file_put_contents("../Uploads/log/12222.txt", json_encode($data));
+
                 $message=isset($data['message']) ? $data['message'] : '';
                 $session=isset($data['session']) ? $data['session'] : '';
                 $message=isset($data['end']) ? $data['end'] : '';
