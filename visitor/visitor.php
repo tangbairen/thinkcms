@@ -27,6 +27,7 @@
                 }
 
             }else{//多维（访客聊天记录）
+                file_put_contents("../Uploads/log/12222.txt", $content);
                 $message=isset($data['message']) ? $data['message'] : '';
                 $session=isset($data['session']) ? $data['session'] : '';
                 $message=isset($data['end']) ? $data['end'] : '';
