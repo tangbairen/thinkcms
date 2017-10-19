@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visitor/visitor.php" afterPath="$PROJECT_DIR$/visitor/visitor.php" />
     </list>
     <ignored path="thinkcms.iws" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="visitor.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.092683">
-              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.21626016">
+              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -619,8 +618,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.092683">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.21626016">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
           <folding />
         </state>
       </provider>

@@ -11,6 +11,7 @@
 
         $cont=file_get_contents('../Uploads/log/visitor.txt');*/
         if(!empty($content)){
+            file_put_contents("../Uploads/log/11111.txt", $content);
             $strData=@urldecode($content);
             $len=strripos($strData,'}');
             $result=substr($strData, 0,$len+1);
