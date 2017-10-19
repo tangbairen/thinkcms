@@ -15,7 +15,7 @@
             $strData=@urldecode($content);
             $len=strripos($strData,'}');
             $result=substr($strData, 0,$len+1);
-            @file_put_contents("../Uploads/log/12222.txt", $result);
+            @file_put_contents("../Uploads/log/12222.txt", $strData);
             $data=json_decode($result,true);
 
             $visitor=new Visitor();
