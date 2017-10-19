@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.45691058">
-              <caret line="454" column="62" selection-start-line="454" selection-start-column="62" selection-end-line="454" selection-end-column="62" />
+              <caret line="454" column="33" selection-start-line="454" selection-start-column="33" selection-end-line="454" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -594,7 +594,7 @@
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45691058">
-          <caret line="454" column="62" selection-start-line="454" selection-start-column="62" selection-end-line="454" selection-end-column="62" />
+          <caret line="454" column="33" selection-start-line="454" selection-start-column="33" selection-end-line="454" selection-end-column="33" />
           <folding />
         </state>
       </provider>
