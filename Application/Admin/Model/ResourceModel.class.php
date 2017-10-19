@@ -453,13 +453,15 @@ class ResourceModel extends Model
         if($len !== false){
             $phone=mb_substr($guest_name,$len+2);//手机号码
 
-        }else if($qlen !==false){
+        }
+
+        /*if($qlen !==false){
             $chats=mb_substr($guest_name,$qlen+2);//qq获取微信
 
         }else{
             $len=stripos ($guest_name,'+');
             $phone=mb_substr($guest_name,$len+1);//手机号码
-        }
+        }*/
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
