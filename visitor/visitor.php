@@ -13,9 +13,10 @@
         if(!empty($content)){
             file_put_contents("../Uploads/log/11111.txt", $content);
             $strData=@urldecode($content);
+
             $len=strripos($strData,'}');
             $result=substr($strData, 0,$len+1);
-            @file_put_contents("../Uploads/log/12222.txt", $strData);
+            @file_put_contents("../Uploads/log/12222.txt", json_encode($content));
             $data=json_decode($result,true);
 
             $visitor=new Visitor();
