@@ -6,19 +6,37 @@
 
     if($_POST){
 
-        $content=$_POST;
-        /*file_put_contents("../Uploads/log/visitor.txt", $content);
+        $visitor=new Visitor();
+        $cmd=isset($_POST['cmd']) ? $_POST['cmd'] : '';
+        if($cmd == 'talk_info'){//整体推送
+            $content=urldecode($_POST['content']);
 
-        $cont=file_get_contents('../Uploads/log/visitor.txt');*/
-        if(!empty($content)){
-            file_put_contents("../Uploads/log/11111.txt", $content);
+            $visitor->addRecord($content);
+        }else{
+            //访客信息推送
+            $customer=isset($_POST['content'])? urldecode($_POST['content']) : '';
+            if($customer){
+                $cmd=isset($customer['cmd']) ? $customer['cmd'] : '';
+                if($cmd == 'customer'){
+                    $visitor->addInfo($customer);
+                }
+
+
+            }
+
+
+        }
+
+
+
+        /*if(!empty($content)){
+            file_put_contents("../Uploads/log/visitor.txt", $content);
+
+            $cont=file_get_contents('../Uploads/log/visitor.txt');
             $strData=@urldecode($content);
 
             $len=strripos($strData,'}');
             $result=substr($strData, 0,$len+1);
-            $cmd=isset($_POST['cmd']) ? $_POST['cmd'] : '';
-            @file_put_contents("../Uploads/log/12222.txt", $_POST['content']);
-            @file_put_contents("../Uploads/log/cmd.txt", $cmd);
             $data=json_decode($result,true);
 
             $visitor=new Visitor();
@@ -39,8 +57,8 @@
                 }
 
             }
-        }
-
+        }*/
+        $content=$_POST;
         file_put_contents("../Uploads/log/content.txt", $content);
     }
 
