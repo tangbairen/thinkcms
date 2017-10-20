@@ -452,6 +452,7 @@ class ResourceModel extends Model
         $qlen=stripos ($guest_name,'q#');
         if($len !== false){
             $phone=substr($guest_name,$len+2);//手机号码
+
         }
         if(empty($phone)){
             $phone =$info['mobile'];
@@ -461,7 +462,12 @@ class ResourceModel extends Model
             $chats=substr($guest_name,$len+2);//QQ或微信...
         }
 
-
+        if(empty($phone)){
+            $phone = '';
+        }
+        if(empty($chats)){
+            $chats = '';
+        }
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
@@ -490,6 +496,8 @@ class ResourceModel extends Model
         //来源渠道
         $talk_page=$data['talk_page'];
         $res=parse_url($talk_page);
+
+
         $host=$res['host'];//来源url
         $path=trim($res['path'],'/');//品牌标识
 
@@ -512,11 +520,14 @@ class ResourceModel extends Model
 
         $brand=M('Brands')->select();
         foreach($brand as $key=>$val){
+
             if(stripos($val['identify'],$path) !== false){
                 $brand_id=$val['id'];
             }
+
         }
-        if(!empty($brand_id)){
+
+        if(empty($brand_id)){
             foreach($brand as $key=>$val){
                 $pos=strpos($data['kw'],$val['name']);
                 if($pos !== false){
@@ -525,7 +536,12 @@ class ResourceModel extends Model
                 }
             }
         }
+
         $device=$arr[$data['device']];
+        if(empty($source))$source ='';
+        if(empty($brand_id))$brand_id ='';
+        if(empty($device))$device ='';
+
         return array('source'=>$source.$device,'brand_id'=>$brand_id);
 
     }
