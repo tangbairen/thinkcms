@@ -86,18 +86,15 @@ class Visitor
 
     public function addRecordData($sessionarr,$end,$message)
     {
-        $map=array();
-        foreach($sessionarr as $key=>$val){
-            $map[$key]=$val;
-        }
-        
+        $map=array_merge($sessionarr,$end);
+
         $map['talk_time']=strtotime($sessionarr['talk_time']);
         $map['end_time']=strtotime($end['end_time']);
         $map['message']=json_encode($message);
 
 
         $mysql=new MMysql($this->conf);
-        $res=$mysql->insert('bt_visitor_record',$map);
+        $id=$mysql->insert('bt_visitor_record',$map);
 
         return true;
     }
