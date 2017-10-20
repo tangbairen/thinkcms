@@ -3,7 +3,7 @@ namespace Admin\Model;
 
 use Think\Exception;
 use Think\Model;
-
+header('content-type:text/html;charset=utf-8');
 class ResourceModel extends Model
 {
     /*
@@ -471,6 +471,7 @@ class ResourceModel extends Model
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
+        $map['talk_id']=$data['talk_id'];
         $map['address']=$data['guest_area'];
         $map['username']='';
         $map['phone']=$phone;

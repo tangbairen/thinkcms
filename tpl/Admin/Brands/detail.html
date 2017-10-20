@@ -58,8 +58,11 @@
                         <input type="hidden" name="groupId">
                         <table class="table table-striped table-bordered table-hover table-condensed">
                             <tr>
-                                <th>分配数量(个)：</th>
-                                <td> <input class="input-medium" type="text" name="count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> </td>
+                                <th>分配数量(限定数量)：</th>
+                                <td>
+                                    <input class="input-medium" type="text" name="count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                    <span>不填，则不限制</span>
+                                </td>
                             </tr>
                             <tr>
                                 <th></th>
