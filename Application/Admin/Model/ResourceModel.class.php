@@ -449,19 +449,23 @@ class ResourceModel extends Model
         $phone='';
         $chats='';
         $len=stripos ($guest_name,'t#');
-        $qlen=stripos ($guest_name,'q#');
+
         if($len !== false){
             $phone=substr($guest_name,$len+2);//手机号码
 
+        }else{
+            $qlen=strrpos($guest_name,'#');
+            if($qlen !== false){
+                $chats=substr($guest_name,$len+1);//QQ或微信...
+            }
         }
+
+
+
         if(empty($phone)){
             $phone =$info['mobile'];
         }
-
-        if($qlen !== false){
-            $chats=substr($guest_name,$len+2);//QQ或微信...
-        }
-
+        
         if(empty($phone)){
             $phone = '';
         }
