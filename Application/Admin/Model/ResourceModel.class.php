@@ -405,7 +405,7 @@ class ResourceModel extends Model
     public function handler($info,$guest_name,$guest_id)
     {
         $res=M('VisitorRecord')
-            ->field('id,guest_id,talk_id,talk_page,guest_area,se,kw,worker_id,worker_name,status')
+            ->field('id,guest_id,talk_id,talk_page,guest_area,se,kw,worker_id,worker_name,device,status')
             ->where("guest_id={$guest_id} and status=1")
             ->order('id desc')
             ->find();
