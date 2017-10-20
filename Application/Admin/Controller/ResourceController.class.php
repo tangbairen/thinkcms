@@ -185,6 +185,13 @@ class ResourceController extends AdminBaseController
         $end_time=I('get.end_time','');
 
         $where="group_id = {$group['group_id']}";
+
+        $box=I('get.box','');
+
+        if(!empty($box)){
+            $where .=" and id in({$box})";
+        }
+        
         if(!empty($phone)){
             $where .=" and phone={$phone}";
         }

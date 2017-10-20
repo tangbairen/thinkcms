@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,64 +25,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="visitor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.633333">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.466667">
-              <caret line="167" column="39" selection-start-line="167" selection-start-column="29" selection-end-line="167" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="customer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.9">
-              <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
+            <state vertical-scroll-proportion="-14.566667">
+              <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="155" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Visitor.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
+      <file leaf-file-name="audit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5333333">
-              <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
-              <folding>
-                <marker date="1508485273353" expanded="true" signature="6106:6159" placeholder="select * fro... bt_total" />
-                <marker date="1508485273353" expanded="true" signature="9164:9223" placeholder="select * fro... bt_province" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VisitorController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/VisitorController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.633333">
-              <caret line="45" column="41" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="41" />
+            <state vertical-scroll-proportion="-20.666666">
+              <caret line="252" column="52" selection-start-line="252" selection-start-column="41" selection-end-line="252" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResourceController.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24352941">
+              <caret line="193" column="8" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7411765">
-              <caret line="375" column="40" selection-start-line="375" selection-start-column="40" selection-end-line="375" selection-end-column="40" />
+            <state vertical-scroll-proportion="-10.266666">
+              <caret line="318" column="31" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="31" />
               <folding>
                 <element signature="e#30#50#0#PHP" expanded="true" />
               </folding>
@@ -103,7 +81,6 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CrontabControll.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/LoginController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/index.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Brands/referer.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php" />
@@ -115,9 +92,10 @@
         <option value="$PROJECT_DIR$/visitor/Visitor.class.php" />
         <option value="$PROJECT_DIR$/visitor/visitor.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
       </list>
     </option>
   </component>
@@ -715,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.733334">
-          <caret line="89" column="74" selection-start-line="89" selection-start-column="74" selection-end-line="89" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21647058">
@@ -851,14 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.9">
-          <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5333333">
@@ -867,14 +830,6 @@
             <marker date="1508485273353" expanded="true" signature="6106:6159" placeholder="select * fro... bt_total" />
             <marker date="1508485273353" expanded="true" signature="9164:9223" placeholder="select * fro... bt_province" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/VisitorController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.633333">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,21 +849,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/VisitorController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.466667">
-          <caret line="167" column="39" selection-start-line="167" selection-start-column="29" selection-end-line="167" selection-end-column="39" />
+        <state vertical-scroll-proportion="-17.633333">
+          <caret line="45" column="41" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.566667">
+          <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="155" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7411765">
-          <caret line="375" column="40" selection-start-line="375" selection-start-column="40" selection-end-line="375" selection-end-column="40" />
+        <state vertical-scroll-proportion="-10.266666">
+          <caret line="318" column="31" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="31" />
           <folding>
             <element signature="e#30#50#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.666666">
+          <caret line="252" column="52" selection-start-line="252" selection-start-column="41" selection-end-line="252" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24352941">
+          <caret line="193" column="8" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
