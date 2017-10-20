@@ -46,7 +46,7 @@ class CrontabController extends Controller
 
         echo $qlen;
 
-        echo mb_substr($bbb,$qlen+2);
+        echo substr($bbb,$qlen+2);
     }
 
 
