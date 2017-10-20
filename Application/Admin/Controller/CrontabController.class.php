@@ -38,6 +38,16 @@ class CrontabController extends Controller
         return true;
     }
 
+    public function demo()
+    {
+        $bbb='恩健8099+Q#1579729509';
+
+        $qlen=stripos ($bbb,'q#');
+
+        echo $qlen;
+
+        echo mb_substr($bbb,$qlen+2);
+    }
 
 
 }
