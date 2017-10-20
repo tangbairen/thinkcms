@@ -451,7 +451,7 @@ class ResourceModel extends Model
         $len=stripos ($guest_name,'t#');
         $qlen=stripos ($guest_name,'q#');
         if($len !== false){
-            $phone=substr($guest_name,$len+2);//手机号码
+            $phone=mb_substr($guest_name,$len+2);//手机号码
 
         }
         if(empty($phone)){
@@ -459,7 +459,7 @@ class ResourceModel extends Model
         }
 
         if($qlen !== false){
-            $chats=substr($guest_name,$len+2);//QQ或微信...
+            $chats=mb_substr($guest_name,$len+2);//QQ或微信...
         }
 
         if(empty($phone)){
