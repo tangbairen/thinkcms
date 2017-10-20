@@ -67,7 +67,7 @@ class VisitorRecordModel extends Model
         $end_time=I('get.end_time','');
 
         if(!empty($guest_id)){
-            $where .=" and guest_id={$guest_id}";
+            $where .=" and guest_id='{$guest_id}'";
         }
 
         if(!empty($worker_id)){
