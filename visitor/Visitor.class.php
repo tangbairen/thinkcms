@@ -23,26 +23,33 @@ class Visitor
             return false;
         }
 
-        $map=array();
-        foreach($data as $key=>$val){
-            $map[$key]=$val;
-        }
+        $map['guest_name']=$data['guest_name'];
+        $map['email']=$data['email'];
+        $map['province']=$data['province'];
+        $map['city']=$data['city'];
+        $map['qq']=$data['qq'];
+        $map['mobile']=$data['mobile'];
+        $map['guest_id']=$data['guest_id'];
+        $map['company_id']=$data['company_id'];
+        $map['zipcode']=$data['zipcode'];
+        $map['worker_id']=$data['worker_id'];
+        $map['time']=$data['time'];
+        $map['cmd']=$data['cmd'];
+        $map['token']=$data['token'];
+        $map['tag']=$data['tag'];
 
         $mysql=new MMysql($this->conf);
-
         $mysql->insert('bt_visitor_info',$map);
 
+        return true;
+
         /*$guest_id=$data['guest_id'];//访客id
-
-
         //查询聊天记录是否存在
         $recordData=$this->existData('bt_visitor_record',$guest_id);
-
         //数据存在
         if(!empty($recordData)){
             $this->addResource($data,$recordData[0]);
         }*/
-
     }
 
     /*
@@ -79,19 +86,32 @@ class Visitor
 
     public function addRecordData($sessionarr,$end,$message)
     {
-
-        $map=array_merge($sessionarr,$end);
+        $map['guest_id']=$sessionarr['guest_id'];
+        $map['talk_id']=$sessionarr['talk_id'];
+        $map['company_id']=$sessionarr['company_id'];
+        $map['id6d']=$sessionarr['id6d'];
+        $map['guest_ip']=$sessionarr['guest_ip'];
+        $map['guest_area']=$sessionarr['guest_area'];
+        $map['referer']=$sessionarr['referer'];
+        $map['talk_page']=$sessionarr['talk_page'];
+        $map['se']=$sessionarr['se'];
+        $map['kw']=$sessionarr['kw'];
+        $map['talk_type']=$sessionarr['talk_type'];
+        $map['device']=$sessionarr['device'];
+        $map['worker_id']=$sessionarr['worker_id'];
+        $map['worker_name']=$sessionarr['worker_name'];
+        $map['worker_name']=$sessionarr['worker_name'];
+        $map['message']=json_encode($message);
 
         $map['talk_time']=strtotime($sessionarr['talk_time']);
         $map['end_time']=strtotime($end['end_time']);
         $map['message']=json_encode($message);
 
-        //$id=$this->add($map);
 
         $mysql=new MMysql($this->conf);
-        $id=$mysql->insert('bt_visitor_record',$map);
+        $res=$mysql->insert('bt_visitor_record',$map);
 
-        return $id;
+        return true;
     }
 
     /*
