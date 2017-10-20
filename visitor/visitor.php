@@ -4,14 +4,13 @@
     set_time_limit(0);
     require('./Visitor.class.php');
     $content=$_POST;
-    file_put_contents('../Uploads/log/map.txt',$content);
+
     if($_POST){
         sleep(1);
         $visitor=new Visitor();
         $cmd=isset($_POST['cmd']) ? $_POST['cmd'] : '';
         if($cmd == 'talk_info'){//整体推送
             $content=urldecode($_POST['content']);
-
             $visitor->addRecord(json_decode($content,true));
         }else{
             //访客信息推送

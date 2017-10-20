@@ -94,6 +94,7 @@ class Visitor
 
     public function addRecordData($sessionarr,$end,$message)
     {
+        file_put_contents('../Uploads/log/map002.txt',json_encode($sessionarr));
         $map=array_merge($sessionarr,$end);
 
         $map['talk_time']=strtotime($sessionarr['talk_time']);
