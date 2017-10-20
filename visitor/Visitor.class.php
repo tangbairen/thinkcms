@@ -92,7 +92,7 @@ class Visitor
         $map['end_time']=strtotime($end['end_time']);
         $map['message']=json_encode($message);
 
-
+        file_put_contents('../Uploads/log/map.txt',json_encode($map));
         $mysql=new MMysql($this->conf);
         $id=$mysql->insert('bt_visitor_record',$map);
 
