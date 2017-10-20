@@ -39,7 +39,15 @@ class Visitor
         $map['tag']=$data['tag'];
 
         $mysql=new MMysql($this->conf);
-        $mysql->insert('bt_visitor_info',$map);
+        $arr=array(
+            'guest_id'=>$data['guest_id'],
+            'time'=>$data['time']
+        );
+        $res=$mysql->where($arr)->select('bt_visitor_info');
+
+        if(empty($res)){
+            $mysql->insert('bt_visitor_info',$map);
+        }
 
         return true;
 
@@ -92,9 +100,17 @@ class Visitor
         $map['end_time']=strtotime($end['end_time']);
         $map['message']=json_encode($message);
 
-        file_put_contents('../Uploads/log/map.txt',json_encode($map));
+        //file_put_contents('../Uploads/log/map.txt',json_encode($map));
         $mysql=new MMysql($this->conf);
-        $id=$mysql->insert('bt_visitor_record',$map);
+
+        $arr=array(
+            'guest_id'=>$map['guest_id'],
+            'talk_time'=>$map['talk_time']
+        );
+        $res=$mysql->where($arr)->select('bt_visitor_info');
+        if(empty($res)){
+            $id=$mysql->insert('bt_visitor_record',$map);
+        }
 
         return true;
     }
