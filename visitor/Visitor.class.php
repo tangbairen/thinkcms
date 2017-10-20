@@ -8,8 +8,8 @@ class Visitor
     public $conf=array(
         'host'=>'localhost',
         'port'=>'3306',
-        'user'=>'root',
-        'passwd'=>'root',
+        'user'=>'thinkcms',
+        'passwd'=>'bairen168',
         'dbname'=>'thinkcms'
     );
 
@@ -85,7 +85,6 @@ class Visitor
 
     public function addRecordData($sessionarr,$end,$message)
     {
-        file_put_contents('../Uploads/log/map002.txt',json_encode($sessionarr));
 
         $map['guest_id']=isset($sessionarr['guest_id']) ? $sessionarr['guest_id']:'';
         $map['talk_id']=isset($sessionarr['talk_id']) ? $sessionarr['talk_id']:'';
@@ -93,7 +92,7 @@ class Visitor
         $map['id6d']=isset($sessionarr['id6d']) ? $sessionarr['id6d']:'';
         $map['guest_ip']=isset($sessionarr['guest_ip']) ? $sessionarr['guest_ip']:'';
         $map['guest_area']=isset($sessionarr['guest_area']) ? $sessionarr['guest_area']:'';
-        $map['referer']=isset($sessionarr['referer']) ? $sessionarr['referer']:'';
+        //$map['referer']=isset($sessionarr['referer']) ? $sessionarr['referer']:'';
         $map['talk_page']=isset($sessionarr['talk_page']) ? $sessionarr['talk_page']:'';
         $map['se']=isset($sessionarr['se']) ? $sessionarr['se']:'';
         $map['kw']=isset($sessionarr['kw']) ? $sessionarr['kw']:'';
@@ -105,6 +104,8 @@ class Visitor
         $map['talk_time']=isset($sessionarr['talk_time']) ? strtotime($sessionarr['talk_time']) : '';
         $map['end_time']=isset($end['end_time']) ? strtotime($end['end_time']) : '';
         $map['message']=json_encode($message);
+
+        file_put_contents('../Uploads/log/map002.txt',json_encode($map));
 
         $mysql=new MMysql($this->conf);
 

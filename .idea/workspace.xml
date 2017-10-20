@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visitor/Visitor.class.php" afterPath="$PROJECT_DIR$/visitor/Visitor.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visitor/visitor.php" afterPath="$PROJECT_DIR$/visitor/visitor.php" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="visitor.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.592592">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state vertical-scroll-proportion="-17.148148">
+              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -40,11 +38,11 @@
       <file leaf-file-name="Visitor.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0569105">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state vertical-scroll-proportion="3.305691">
+              <caret line="107" column="73" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
               <folding>
-                <marker date="1508509856803" expanded="true" signature="7075:7128" placeholder="select * fro..bt_total..." />
-                <marker date="1508509856803" expanded="true" signature="10133:10192" placeholder="select * fro..bt_province..." />
+                <marker date="1508511229594" expanded="true" signature="7080:7133" placeholder="select * fro..bt_total..." />
+                <marker date="1508511229594" expanded="true" signature="10138:10197" placeholder="select * fro..bt_province..." />
               </folding>
             </state>
           </provider>
@@ -322,8 +320,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
-            <marker date="1508509856803" expanded="true" signature="7075:7128" placeholder="select * fro..bt_total..." />
-            <marker date="1508509856803" expanded="true" signature="10133:10192" placeholder="select * fro..bt_province..." />
+            <marker date="1508511229594" expanded="true" signature="7080:7133" placeholder="select * fro..bt_total..." />
+            <marker date="1508511229594" expanded="true" signature="10138:10197" placeholder="select * fro..bt_province..." />
           </folding>
         </state>
       </provider>
@@ -341,8 +339,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
-            <marker date="1508509856803" expanded="true" signature="7075:7128" placeholder="select * fro..bt_total..." />
-            <marker date="1508509856803" expanded="true" signature="10133:10192" placeholder="select * fro..bt_province..." />
+            <marker date="1508511229594" expanded="true" signature="7080:7133" placeholder="select * fro..bt_total..." />
+            <marker date="1508511229594" expanded="true" signature="10138:10197" placeholder="select * fro..bt_province..." />
           </folding>
         </state>
       </provider>
@@ -374,8 +372,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
-            <marker date="1508509856803" expanded="true" signature="7075:7128" placeholder="select * fro..bt_total..." />
-            <marker date="1508509856803" expanded="true" signature="10133:10192" placeholder="select * fro..bt_province..." />
+            <marker date="1508511229594" expanded="true" signature="7080:7133" placeholder="select * fro..bt_total..." />
+            <marker date="1508511229594" expanded="true" signature="10138:10197" placeholder="select * fro..bt_province..." />
           </folding>
         </state>
       </provider>
@@ -652,14 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.592592">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/visitor/MMysql.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.6308943">
@@ -672,13 +662,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.148148">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0569105">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state vertical-scroll-proportion="3.305691">
+          <caret line="107" column="73" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
           <folding>
-            <marker date="1508509856803" expanded="true" signature="7075:7128" placeholder="select * fro..bt_total..." />
-            <marker date="1508509856803" expanded="true" signature="10133:10192" placeholder="select * fro..bt_province..." />
+            <marker date="1508511229594" expanded="true" signature="7080:7133" placeholder="select * fro..bt_total..." />
+            <marker date="1508511229594" expanded="true" signature="10138:10197" placeholder="select * fro..bt_province..." />
           </folding>
         </state>
       </provider>
