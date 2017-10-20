@@ -366,6 +366,8 @@ class ResourceModel extends Model
                 if($val['group_id'] > 0){
                     $res=M('AuthGroup')->where("id={$val['group_id']}")->find();
                     $val['group_id']=$res['title'];
+                }else{
+                    $val['group_id']='';
                 }
                 if($val['brand_id'] > 0){
                     $brands=M('Brands')->where("id={$val['brand_id']}")->find();
