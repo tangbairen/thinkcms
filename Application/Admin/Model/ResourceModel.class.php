@@ -372,6 +372,8 @@ class ResourceModel extends Model
                 if($val['brand_id'] > 0){
                     $brands=M('Brands')->where("id={$val['brand_id']}")->find();
                     $val['brand_id']=$brands['name'];
+                }else{
+                    $val['brand_id']='';
                 }
 
                 if($val['province'] > 0){
