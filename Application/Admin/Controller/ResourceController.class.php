@@ -135,6 +135,11 @@ class ResourceController extends AdminBaseController
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
         $allocation=I('get.allocation','');
+        $box=I('get.box','');
+
+        if(!empty($box)){
+            $where .=" and id in({$box})";
+        }
 
         if(!empty($phone)){
             $where .=" and phone={$phone}";
@@ -156,7 +161,6 @@ class ResourceController extends AdminBaseController
         if(!empty($allocation)){
             $where .=" and allocation={$allocation}";
         }
-
 
         $field=['addtime','customer_info','province','address','username',
             'phone','chats','source','brand_id','group_id','keyword','types','allocation'];
