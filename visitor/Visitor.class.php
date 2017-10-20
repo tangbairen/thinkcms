@@ -107,7 +107,7 @@ class Visitor
             'guest_id'=>$map['guest_id'],
             'talk_time'=>$map['talk_time']
         );
-        $res=$mysql->where($arr)->select('bt_visitor_info');
+        $res=$mysql->where($arr)->select('bt_visitor_record');
         if(empty($res)){
             $id=$mysql->insert('bt_visitor_record',$map);
         }
