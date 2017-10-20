@@ -501,6 +501,7 @@ class ResourceModel extends Model
             foreach($referer as $key=>$val){
                 if(stripos($val['url'],$host) !== false){
                     $source=$val['title'];
+                    file_put_contents('../Uploads/log/source.txt',$val['url'].'|'.$val['title']);
                 }
             }
         }
@@ -520,6 +521,7 @@ class ResourceModel extends Model
                 $pos=strpos($data['kw'],$val['name']);
                 if($pos !== false){
                     $brand_id=$val['id'];
+                    file_put_contents('../Uploads/log/brand.txt',$data['kw'].'|'.$val['name']);
                 }
             }
         }
