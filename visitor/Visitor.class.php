@@ -86,26 +86,14 @@ class Visitor
 
     public function addRecordData($sessionarr,$end,$message)
     {
-        $map['guest_id']=isset($sessionarr['guest_id']) ? $sessionarr['guest_id'] : '';
-        $map['talk_id']=isset($sessionarr['talk_id']) ? $sessionarr['talk_id'] : '';
-        $map['company_id']=isset($sessionarr['company_id']) ? $sessionarr['company_id'] : '';
-        $map['id6d']=isset($sessionarr['id6d']) ? $sessionarr['id6d'] : '';
-        $map['guest_ip']=isset($sessionarr['guest_ip']) ? $sessionarr['guest_ip']: '';
-        $map['guest_area']=isset($sessionarr['guest_area']) ? $sessionarr['guest_area'] : '';
-        $map['referer']=isset($sessionarr['referer']) ? $sessionarr['referer'] : '';
-        $map['talk_page']=isset($sessionarr['talk_page']) ? $sessionarr['talk_page'] : '';
-        $map['se']=isset($sessionarr['se']) ? $sessionarr['se'] :'';
-        $map['kw']=isset($sessionarr['kw']) ? $sessionarr['kw'] : '';
-        $map['talk_type']=isset($sessionarr['talk_type']) ? $sessionarr['talk_type']:'';
-        $map['device']=isset($sessionarr['device']) ? $sessionarr['device'] : '';
-        $map['worker_id']=isset($sessionarr['worker_id']) ? $sessionarr['worker_id'] : '';
-        $map['worker_name']=isset($sessionarr['worker_name']) ? $sessionarr['worker_name'] : '';
-        $map['worker_name']=isset($sessionarr['worker_name']) ? $sessionarr['worker_name'] : '';
-        $map['message']=json_encode($message);
-
+        $map=array();
+        foreach($sessionarr as $key=>$val){
+            $map[$key]=$val;
+        }
+        
         $map['talk_time']=strtotime($sessionarr['talk_time']);
         $map['end_time']=strtotime($end['end_time']);
-        $map['message']=isset($message) ? json_encode($message) : '';
+        $map['message']=json_encode($message);
 
 
         $mysql=new MMysql($this->conf);

@@ -37,11 +37,11 @@
       <file leaf-file-name="Visitor.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46823528">
-              <caret line="107" column="67" selection-start-line="107" selection-start-column="67" selection-end-line="107" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.63058823">
+              <caret line="92" column="8" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
               <folding>
-                <marker date="1508466308154" expanded="true" signature="6928:6981" placeholder="select * fro... bt_total" />
-                <marker date="1508466308154" expanded="true" signature="9986:10045" placeholder="select * fro... bt_province" />
+                <marker date="1508466625687" expanded="true" signature="5676:5729" placeholder="select * fro... bt_total" />
+                <marker date="1508466625687" expanded="true" signature="8734:8793" placeholder="select * fro... bt_province" />
               </folding>
             </state>
           </provider>
@@ -586,11 +586,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46823528">
-          <caret line="107" column="67" selection-start-line="107" selection-start-column="67" selection-end-line="107" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.63058823">
+          <caret line="92" column="8" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
           <folding>
-            <marker date="1508466308154" expanded="true" signature="6928:6981" placeholder="select * fro... bt_total" />
-            <marker date="1508466308154" expanded="true" signature="9986:10045" placeholder="select * fro... bt_province" />
+            <marker date="1508466625687" expanded="true" signature="5676:5729" placeholder="select * fro... bt_total" />
+            <marker date="1508466625687" expanded="true" signature="8734:8793" placeholder="select * fro... bt_province" />
           </folding>
         </state>
       </provider>
