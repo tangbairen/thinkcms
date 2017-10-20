@@ -5,7 +5,7 @@
     require('./Visitor.class.php');
 
     if($_POST){
-
+        sleep(1);
         $visitor=new Visitor();
         $cmd=isset($_POST['cmd']) ? $_POST['cmd'] : '';
         if($cmd == 'talk_info'){//整体推送
