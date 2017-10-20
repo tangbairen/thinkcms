@@ -191,7 +191,7 @@ class ResourceController extends AdminBaseController
         if(!empty($box)){
             $where .=" and id in({$box})";
         }
-        
+
         if(!empty($phone)){
             $where .=" and phone={$phone}";
         }
