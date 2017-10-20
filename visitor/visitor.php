@@ -3,7 +3,8 @@
     error_reporting(0);
     set_time_limit(0);
     require('./Visitor.class.php');
-
+    $content=$_POST;
+    file_put_contents('../Uploads/log/map.txt',$content);
     if($_POST){
         sleep(1);
         $visitor=new Visitor();
