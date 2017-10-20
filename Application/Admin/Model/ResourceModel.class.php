@@ -456,7 +456,7 @@ class ResourceModel extends Model
         }else{
             $qlen=strrpos($guest_name,'#');
             if($qlen !== false){
-                $chats=substr($guest_name,$len+1);//QQ或微信...
+                $chats=substr($guest_name,$qlen+1);//QQ或微信...
             }
         }
 
@@ -465,7 +465,7 @@ class ResourceModel extends Model
         if(empty($phone)){
             $phone =$info['mobile'];
         }
-        
+
         if(empty($phone)){
             $phone = '';
         }

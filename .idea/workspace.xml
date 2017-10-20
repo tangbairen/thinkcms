@@ -70,8 +70,8 @@
       <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7835294">
-              <caret line="467" column="8" selection-start-line="467" selection-start-column="8" selection-end-line="467" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.54">
+              <caret line="458" column="47" selection-start-line="458" selection-start-column="47" selection-end-line="458" selection-end-column="47" />
               <folding>
                 <element signature="e#30#50#0#PHP" expanded="true" />
               </folding>
@@ -846,8 +846,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7835294">
-          <caret line="467" column="8" selection-start-line="467" selection-start-column="8" selection-end-line="467" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.54">
+          <caret line="458" column="47" selection-start-line="458" selection-start-column="47" selection-end-line="458" selection-end-column="47" />
           <folding>
             <element signature="e#30#50#0#PHP" expanded="true" />
           </folding>
