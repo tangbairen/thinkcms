@@ -19,7 +19,7 @@ class ResourceModel extends Model
         $allocation=I('get.allocation','');
 
         if(!empty($phone)){
-            $where .=" and phone={$phone}";
+            $where .=" and phone like '%{$phone}%'";
         }
 
         if(!empty($allocation)){
