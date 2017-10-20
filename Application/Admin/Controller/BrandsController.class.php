@@ -27,13 +27,17 @@ class BrandsController extends AdminBaseController
     {
         try{
             $name=I('post.name','','htmlspecialchars');
+            $identify=I('post.name','','htmlspecialchars');
             $name=trim($name);
+            $identify=trim($identify);
             if(empty($name)) throw new Exception('品牌名称不能为空');
+            if(empty($identify)) throw new Exception('标识不能为空');
 
             //判断是否存在
             $data=M('Brands')->where("name='{$name}'")->select();
             if($data) throw new Exception('品牌已存在');
-            $map['name']=trim($name);
+            $map['name']=$name;
+            $map['identify']=$identify;
             $map['addtime']=time();
             $res=M('Brands')->add($map);
             if(!$res) throw new Exception('添加失败');
@@ -69,10 +73,13 @@ class BrandsController extends AdminBaseController
         try{
             $id=I('post.id');
             $name=I('post.name','','htmlspecialchars');
+            $identify2=I('post.identify2','','htmlspecialchars');
             $status=I('post.status');
             if(empty($id)) throw new Exception('数据不存在！');
             if(empty($name)) throw new Exception('品牌名不能为空！');
+            if(empty($identify2)) throw new Exception('标识不能为空！');
             $map['name']=trim($name);
+            $map['identify']=trim($identify2);
             $map['status']=$status;
             $res=M('Brands')->where("id={$id}")->save($map);
 
