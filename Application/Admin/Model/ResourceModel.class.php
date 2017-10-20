@@ -412,7 +412,7 @@ class ResourceModel extends Model
         if($res){
             $this->allocation($info,$guest_name,$res);
 
-            M('VisitorInfo')->where("id={$info['info_id']}")->save(array('status'=>2));
+            M('VisitorInfo')->where("id={$info['id']}")->save(array('status'=>2));
             M('VisitorRecord')->where("id={$res['id']}")->save(array('status'=>2));
 
         }
