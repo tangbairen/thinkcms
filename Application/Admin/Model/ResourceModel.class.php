@@ -399,10 +399,10 @@ class ResourceModel extends Model
 
     /*
      * 处理定时那边的任务
-     * $info_id 访客信息id
+     * $info_id 访客信息 数组
      * $guest_id 访客id
      * */
-    public function handler($info_id,$guest_name,$guest_id)
+    public function handler($info,$guest_name,$guest_id)
     {
         $res=M('VisitorRecord')
             ->field('id,guest_id,talk_id,talk_page,guest_area,se,kw,worker_id,worker_name,status')
@@ -410,9 +410,9 @@ class ResourceModel extends Model
             ->order('id desc')
             ->find();
         if($res){
-            $this->allocation($info_id,$guest_name,$res);
+            $this->allocation($info,$guest_name,$res);
 
-            M('VisitorInfo')->where("id={$info_id}")->save(array('status'=>2));
+            M('VisitorInfo')->where("id={$info['info_id']}")->save(array('status'=>2));
             M('VisitorRecord')->where("id={$res['id']}")->save(array('status'=>2));
 
         }
@@ -424,7 +424,7 @@ class ResourceModel extends Model
     /*
      * 信息表id，访客名称（手机号），记录结果集
      * */
-    public function allocation($info_id,$guest_name,$data)
+    public function allocation($info,$guest_name,$data)
     {
 
         //选择区域id
@@ -436,9 +436,9 @@ class ResourceModel extends Model
             $province=0;
             $area_id=0;
         }
-        $brand_id=$this->getBrandId($data['kw'],$data['talk_page']);
-
-        $group_id=$this->allocationGroup($brand_id,$area_id);
+//        $brand_id=$this->getBrandId($data['kw'],$data['talk_page']);
+        $bransSource=$this->brands_source($data);
+        $group_id=$this->allocationGroup($bransSource['brand_id'],$area_id);
 
         if(empty($group_id)){
             $allocation=1;
@@ -452,17 +452,16 @@ class ResourceModel extends Model
         $qlen=stripos ($guest_name,'q#');
         if($len !== false){
             $phone=substr($guest_name,$len+2);//手机号码
-            file_put_contents('../Uploads/log/aaa.txt',$phone);
-
+        }
+        if(empty($phone)){
+            $phone =$info['mobile'];
         }
 
-        /*if($qlen !==false){
-            $chats=mb_substr($guest_name,$qlen+2);//qq获取微信
+        if($qlen !== false){
+            $chats=substr($guest_name,$len+2);//QQ或微信...
+        }
 
-        }else{
-            $len=stripos ($guest_name,'+');
-            $phone=mb_substr($guest_name,$len+1);//手机号码
-        }*/
+
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
@@ -471,16 +470,62 @@ class ResourceModel extends Model
         $map['phone']=$phone;
         $map['chats']=$chats;
         $map['customer_info']=$data['worker_id'];//客服工号
-        $map['brand_id']=$brand_id;//品牌id
+        $map['brand_id']=$bransSource['brand_id'];//品牌id
         $map['province']=$province;//省份id
         $map['area_id']=$area_id;//地区id
-        $map['source']=$data['se'];//
+        $map['source']=$bransSource['source'];//来源
         $map['keyword']=$data['kw'];
         $map['allocation']=$allocation;
         $map['types']=2;
         $res=$this->add($map);
 
         return $res;
+    }
+
+    /*
+     * 获取来源渠道和品牌
+     * */
+    public function brands_source($data)
+    {
+        //来源渠道
+        $talk_page=$data['talk_page'];
+        $res=parse_url($talk_page);
+        $host=$res['host'];//来源url
+        $path=trim($res['path'],'/');//品牌标识
+
+        $source='';
+        $brand_id='';
+        $arr=['1'=>'PC',2=>'移动',3=>'微信'];
+        $referer=M('Referer')->select();
+        if(!empty($referer)){
+            foreach($referer as $key=>$val){
+                if(stripos($val['url'],$host) !== false){
+                    $source=$val['title'];
+                }
+            }
+        }
+
+        if(empty($source)){
+            $source=$data['se'];
+        }
+
+        $brand=M('Brands')->select();
+        foreach($brand as $key=>$val){
+            if(stripos($val['identify'],$path) !== false){
+                $brand_id=$val['id'];
+            }
+        }
+        if(!empty($brand_id)){
+            foreach($brand as $key=>$val){
+                $pos=strpos($data['kw'],$val['name']);
+                if($pos !== false){
+                    $brand_id=$val['id'];
+                }
+            }
+        }
+        $device=$arr[$data['device']];
+        return array('source'=>$source.$device,'brand_id'=>$brand_id);
+
     }
 
     /*

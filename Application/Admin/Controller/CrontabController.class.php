@@ -32,7 +32,7 @@ class CrontabController extends Controller
     public function addResource($infoData)
     {
         foreach($infoData as $key=>$val){
-            D('Resource')->handler($val['id'],$val['guest_name'],$val['guest_id']);
+            D('Resource')->handler($infoData[$key],$val['guest_name'],$val['guest_id']);
         }
 
         return true;
