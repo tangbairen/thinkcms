@@ -2,6 +2,250 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/icheck.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/arrow-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/arrow-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/header-line.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/icon-fork.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/icon-github.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/icon-lab.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/icon-options.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/ie/icon-star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-bold.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/zepto.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.jquery.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/flat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/flat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/flat@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/futurico/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/futurico/futurico.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/futurico/futurico.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/futurico/futurico@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/line.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/line.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/line@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/minimal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/minimal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/minimal@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/polaris/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/polaris/polaris.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/polaris/polaris.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/polaris/polaris@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/square.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/square.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/square@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/ajax.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/ajax_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/auto_hide_scrollbar_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/auto_scrolling_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/bootstrap_examples.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/callbacks_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/colorbox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/images/border.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/images/controls.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/images/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/images/loading_background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/images/overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/jquery.colorbox-min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/complete_examples.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/disable_destroy_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/fluid_scrollbar_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/full_page_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/grid_and_snap_while_scrolling_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/iframe_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/images/img1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/images/img2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/images/img3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/images/img4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/images/img5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/images/img6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/images/img7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/infinite_scroll_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/init_hidden_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/init_position_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_accordion_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_autocomplete_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_dialog_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_resizable_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_sortable_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_tabs_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/keyboard_nav_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_each_script_separately.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_each_script_separately_via_cdn.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_scripts_via_cdn.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/logo-alt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/max-height_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/max-width_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/multiple_scrollbars_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo_alt.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo_alt_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/rtl_direction_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scrollTo_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scroll_buttons_and_snap_scrolling_examples.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scrollbar_themes_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/simple_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/simple_example_all_params.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/textarea_example.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-1.11.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-1.9.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-2.1.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-ui-1.10.4.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mCustomScrollbar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mCustomScrollbar.min.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mousewheel-3.0.6.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mousewheel.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mCustomScrollbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mousewheel-3.0.6.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mousewheel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/mCSB_buttons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/source-files/mCSB_buttons.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/css/main.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/images/bg_left.min.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/images/triangle-left-bjy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/images/triangle-right-bjy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/js/RongEmoji-2.0.2.beta.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm-extend.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm-extend.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-city-picker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-city-picker.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-extend.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-extend.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
     </list>
     <ignored path="thinkcms.iws" />
@@ -24,11 +268,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.3">
+              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7035294">
-              <caret line="44" column="68" selection-start-line="44" selection-start-column="68" selection-end-line="44" selection-end-column="68" />
+            <state vertical-scroll-proportion="1.2447059">
+              <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
@@ -37,28 +291,6 @@
                 <element signature="n#style#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.466667">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-              <folding>
-                <marker date="1508570791306" expanded="true" signature="590:742" placeholder="select FROM_... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.233334">
-              <caret line="620" column="0" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -236,83 +468,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -804,24 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16235293">
-          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.466667">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <marker date="1508570791306" expanded="true" signature="590:742" placeholder="select FROM_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.233334">
@@ -830,10 +990,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75764704">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <marker date="1508570791306" expanded="true" signature="590:742" placeholder="select FROM_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3">
+          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7035294">
-          <caret line="44" column="68" selection-start-line="44" selection-start-column="68" selection-end-line="44" selection-end-column="68" />
+        <state vertical-scroll-proportion="1.2447059">
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
