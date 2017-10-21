@@ -5,7 +5,7 @@
         <h1><i class="fa fa-home"></i> 首页</h1>
     </div>
     <div class="col-xs-12">
-        <div class="tabbable">
+        <div class="tabbable" style="margin-bottom: 50px;">
             <h4>欢迎使用后台管理系统,你本次登陆时间为:{$data.last_login_time|date="Y-m-d H:i:s",###}，登陆IP:{$data.last_login_ip}，登录地址：{$area.country}</h4>
             <table class="table table-bordered" style="width:60%;margin-top:20px;">
                 <tr>
@@ -14,29 +14,56 @@
                 </tr>
                 <tr>
                     <td>所属组（角色）</td>
-                    <td>{$group.title}</td>
+                    <td><h2>{$group.title}</h2></td>
                 </tr>
             </table>
 
         </div>
-        <notempty name="total">
-            <div>
-                <h4>客户资源分配情况</h4>
-                <table class="table" style="width:60%;margin-top:20px;">
+            <div style="float:left;width:500px">
+                <h4>今天分配情况</h4>
+                <table class="table" style="margin-top:20px;">
                     <tr>
-                        <th>日期</th>
-                        <th>数量(个)</th>
+                        <td>今日目标资源数</td><td>{$today['totalNum']}（个）</td>
                     </tr>
-                    <foreach name="total" item="val">
-                        <tr>
-                            <td>{$val['day']}</td>
-                            <td>{$val['number']}</td>
-                        </tr>
-                    </foreach>
+                    <tr>
+                        <td>今日资源数</td><td>{$today['todayTotal']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>已反馈资源数</td><td>{$today['num1'] + $today['num2']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>未反馈资源数</td><td>{$today['num1']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>有效资源数</td><td>{$today['num2']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>资源有效率</td><td>{$today['num2'] / $today['todayTotal']}%</td>
+                    </tr>
                 </table>
 
             </div>
-        </notempty>
+            <div style="float:left;width:500px;margin-left: 80px;">
+                <h4>当月分配情况</h4>
+                <table class="table" style="margin-top:20px;">
+                    <tr>
+                        <td>本月总资源数</td><td>{$month['totalTotal']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>已反馈资源数</td><td>{$month['num1'] + $month['num2']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>未反馈资源数</td><td>{$month['num1']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>有效资源数</td><td>{$month['num2']}（个）</td>
+                    </tr>
+                    <tr>
+                        <td>资源有效率</td><td>{$month['num2'] / $month['totalTotal'] }%</td>
+                    </tr>
+                </table>
+
+            </div>
     </div>
 </block>
 <block name="js"></block>

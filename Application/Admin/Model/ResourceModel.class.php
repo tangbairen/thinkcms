@@ -590,4 +590,59 @@ class ResourceModel extends Model
 
         return 0;
     }
+
+    /*
+     * 今日，当月资源汇总
+     * @param $group_id  所属组id
+     * */
+    public function summary($group_id)
+    {
+        $total=M('Total')->where("group_id={$group_id}")->find();
+        $totalNum=isset($total['total']) ? $total['total']:'';//今日总数量
+
+        // 今日开始时间戳
+        $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
+        // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
+        $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+
+        $feedback=$this->field("count(*) as total,count( case status when  0 then status end ) as num1,count( case status when 1 then status end ) as num2,
+        count( case status when 2 then status end ) as num3")
+            ->where("group_id={$group_id} and  addtime between  {$startDay} and {$endDay}")
+            ->find();
+
+        //当月
+        $firstday =date('Y-m-d', mktime(0, 0, 0, date('m'), 1));
+        $lastday =date('Y-m-d', mktime(0, 0, 0,date('m')+1,1)-1);
+
+        $data=$this->field("count(*) as total,count( case status when  0 then status end ) as num1,count( case status when 1 then status end ) as num2,
+        count( case status when 2 then status end ) as num3")
+            ->where("group_id={$group_id} and  addtime between  {$firstday} and {$lastday}")
+            ->find();
+
+
+        if(!empty($data)){
+            $month=array(
+                'todayTotal'=>$data['total'],
+                'num1'      =>$data['num1'],
+                'num2'      =>$data['num2'],
+                'num3'      =>$data['num3']
+
+            );
+        }
+
+        if(!empty($feedback)){
+            $today=array(
+                'totalNum'  =>$totalNum,
+                'todayTotal'=>$feedback['total'],
+                'num1'      =>$feedback['num1'],
+                'num2'      =>$feedback['num2'],
+                'num3'      =>$feedback['num3']
+            );
+        }
+
+
+
+        return array('today'=>$today,'month'=>$month);
+    }
+
 }
