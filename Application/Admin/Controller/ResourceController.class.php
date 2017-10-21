@@ -201,11 +201,11 @@ class ResourceController extends AdminBaseController
         $phone=trim(I('get.phone',''));
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
-
         $where="group_id = {$group['group_id']}";
-
         $box=I('get.box','');
-
+        $brand=I('get.brand','');
+        $referer=I('get.referer','');
+        
         if(!empty($box)){
             $where .=" and id in({$box})";
         }
@@ -222,6 +222,14 @@ class ResourceController extends AdminBaseController
         if(!empty($end_time)){
             $end_time=strtotime($end_time);
             $where .=" and addtime <={$end_time}";
+        }
+
+        if(!empty($brand)){
+            $where .=" and brand_id={$brand}";
+        }
+
+        if(!empty($referer)){
+            $where .=" and source like '{$referer}%'";
         }
 
         $field=['addtime','customer_info','province','address','username',
@@ -370,8 +378,24 @@ class ResourceController extends AdminBaseController
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
 
+        $referer_id=I('get.referer','');
+        $brand_id=I('get.brand','');
+        $allocation=I('get.allocation','');
 
-        $this->assign(array('phone'=>$phone,'s_group'=>$s_group,'start_time'=>$start_time,'end_time'=>$end_time));
+        $brand=M('Brands')->select();//品牌
+        $referer=M('Referer')->field('distinct title')->select();//来源渠道
+
+        $array=array(
+            'phone'=>$phone,
+            's_group'=>$s_group,
+            'start_time'=>$start_time,
+            'end_time'=>$end_time,
+            'brand'=>$brand,
+            'brand_id'=>$brand_id,
+            'referer_id'=>$referer_id,
+            'referer'=>$referer
+        );
+        $this->assign($array);
         $this->assign('group',$group);
         $this->assign($data);// 赋值数据集
 
