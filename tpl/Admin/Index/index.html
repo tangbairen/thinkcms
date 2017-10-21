@@ -39,7 +39,12 @@
                     <td>有效资源数</td><td>{$today['num2']}（个）</td>
                 </tr>
                 <tr>
-                    <td>资源有效率</td><td>{$today['num2'] / $today['todayTotal']}%</td>
+                    <td>资源有效率</td>
+                    <td>
+                        <?php
+                        echo round($today['num2'] / $today['todayTotal'], 2) * 100;
+                        ?>%
+                    </td>
                 </tr>
             </table>
 
@@ -60,7 +65,11 @@
                     <td>有效资源数</td><td>{$month['num2']}（个）</td>
                 </tr>
                 <tr>
-                    <td>资源有效率</td><td>{$month['num2'] / $month['totalTotal'] }%</td>
+                    <td>资源有效率</td><td>
+                    <?php
+                        echo round($month['num2'] / $month['todayMonth'], 2) * 100;
+                    ?>
+                    %</td>
                 </tr>
             </table>
 
