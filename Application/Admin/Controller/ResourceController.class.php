@@ -78,7 +78,7 @@ class ResourceController extends AdminBaseController
         if(!empty($allocation)){
             $where .=" and allocation={$allocation}";
         }
-        
+
         if(!empty($brand)){
             $where .=" and brand_id={$brand}";
         }
