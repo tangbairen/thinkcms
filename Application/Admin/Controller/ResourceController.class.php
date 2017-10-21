@@ -113,7 +113,7 @@ class ResourceController extends AdminBaseController
         $allocation=I('get.allocation','');
 
         $brand=M('Brands')->select();//品牌
-        $referer=M('Referer')->select();//来源渠道
+        $referer=M('Referer')->field('distinct title')->select();//来源渠道
 
         $array=array(
             'phone'=>$phone,
