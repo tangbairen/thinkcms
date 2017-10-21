@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/extend/layer.ext.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/icon-ext.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/loading-0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/loading-1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/loading-2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/layer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/layer.ext.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/layer/layer.js" afterPath="$PROJECT_DIR$/Public/statics/layer/layer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Login/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Login/index.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,26 +41,41 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3">
-              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+            <state vertical-scroll-proportion="1.5333333">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="84" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
+      <file leaf-file-name="modify.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43294117">
-              <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+            <state vertical-scroll-proportion="-13.033334">
+              <caret line="17" column="86" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="86" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <marker date="1507975254253" expanded="true" signature="10414:10452" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.333333">
+              <caret line="294" column="36" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8494118">
+              <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,10 +110,10 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Rule/group.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Public/base.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Login/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Login/index.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
       </list>
     </option>
   </component>
@@ -202,6 +231,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -247,6 +298,82 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,13 +472,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="62" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -720,32 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75764704">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Public/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0666666">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-          <folding>
-            <marker date="1508564629757" expanded="true" signature="6885:7015" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.233334">
-          <caret line="620" column="0" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75764704">
@@ -756,17 +850,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3">
-          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43294117">
+        <state vertical-scroll-proportion="-42.166668">
           <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
@@ -776,6 +862,50 @@
             <element signature="n#style#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5333333">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Public/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48705882">
+          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+          <folding>
+            <marker date="1508564629757" expanded="true" signature="6885:7015" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.033334">
+          <caret line="17" column="86" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="86" />
+          <folding>
+            <marker date="1507975254253" expanded="true" signature="10414:10452" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="294" column="36" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8494118">
+          <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

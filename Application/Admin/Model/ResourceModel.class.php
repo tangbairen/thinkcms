@@ -96,7 +96,7 @@ class ResourceModel extends Model
         $username=I('post.username');
         $phone=I('post.phone');
         $chats=I('post.chats');
-        $province_id=I('post.province');//省份id
+        $province_id=I('post.province',0);//省份id
         $customer_info=I('post.customer_info');//客服信息
         $address=I('post.address');
         $source=I('post.source');
@@ -104,7 +104,11 @@ class ResourceModel extends Model
         $brand_id=I('post.brand_id');
         $remarks=I('post.keyword');
         //选择区域id
-        $province=M('Province')->where("id={$province_id}")->find();
+        $area_id=0;
+        if(!empty($province_id)){
+            $province=M('Province')->where("id={$province_id}")->find();
+            $area_id=$province['area_id'];
+        }
 
         if(empty($group_id)){
             $allocation=1;
@@ -121,7 +125,7 @@ class ResourceModel extends Model
         $map['customer_info']=$customer_info;
         $map['brand_id']=$brand_id;
         $map['province']=$province_id;
-        $map['area_id']=$province['area_id'];
+        $map['area_id']=$area_id;
         $map['source']=$source;
         $map['keyword']=$remarks;
         $map['allocation']=$allocation;
