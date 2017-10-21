@@ -22,7 +22,6 @@ class IndexController extends AdminBaseController{
 		$total=M('Resource')->query($sql);*/
 
 		$summary=D('Resource')->summary($res['group_id']);//今日，当月汇总
-
 		$this->assign('data',$data);
 		$this->assign('area',$area);
 		$this->assign('group',$group);
