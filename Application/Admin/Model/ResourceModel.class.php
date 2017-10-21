@@ -618,10 +618,9 @@ class ResourceModel extends Model
         count( case status when 2 then status end ) as num3")
             ->where("group_id={$group_id} and  addtime between  {$firstday} and {$lastday}")
             ->find();
-
         if(!empty($data)){
             $month=array(
-                'todayTotal'=>$data['total'],
+                'todayMonth'=>$data['total'],
                 'num1'      =>$data['num1'],
                 'num2'      =>$data['num2'],
                 'num3'      =>$data['num3']
@@ -638,8 +637,6 @@ class ResourceModel extends Model
                 'num3'      =>$feedback['num3']
             );
         }
-
-
 
         return array('today'=>$today,'month'=>$month);
     }
