@@ -611,14 +611,13 @@ class ResourceModel extends Model
             ->find();
 
         //当月
-        $firstday =date('Y-m-d', mktime(0, 0, 0, date('m'), 1));
-        $lastday =date('Y-m-d', mktime(0, 0, 0,date('m')+1,1)-1);
+        $firstday =mktime(0, 0, 0, date('m'), 1);
+        $lastday = mktime(0, 0, 0,date('m')+1,1)-1;
 
         $data=$this->field("count(*) as total,count( case status when  0 then status end ) as num1,count( case status when 1 then status end ) as num2,
         count( case status when 2 then status end ) as num3")
             ->where("group_id={$group_id} and  addtime between  {$firstday} and {$lastday}")
             ->find();
-
 
         if(!empty($data)){
             $month=array(
