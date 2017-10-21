@@ -464,8 +464,6 @@ class ResourceModel extends Model
             }
         }
 
-
-
         if(empty($phone)){
             $phone =$info['mobile'];
         }
@@ -476,6 +474,8 @@ class ResourceModel extends Model
         if(empty($chats)){
             $chats = '';
         }
+        $array=parse_url_param($data['talk_page']);
+        $keyword=isset($array['keyword']) ? urldecode($array['keyword']) : $data['kw'];
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
@@ -489,7 +489,7 @@ class ResourceModel extends Model
         $map['province']=$province;//省份id
         $map['area_id']=$area_id;//地区id
         $map['source']=$bransSource['source'];//来源
-        $map['keyword']=$data['kw'];
+        $map['keyword']=$keyword;
         $map['allocation']=$allocation;
         $map['types']=2;
         $res=$this->add($map);
