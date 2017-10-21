@@ -17,7 +17,8 @@ class ResourceModel extends Model
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
         $allocation=I('get.allocation','');
-
+        $brand_id=I('get.brand','');
+        $referer_id=I('get.referer','');
         if(!empty($phone)){
             $where .=" and phone like '%{$phone}%'";
         }
@@ -39,7 +40,12 @@ class ResourceModel extends Model
             $end_time=strtotime($end_time);
             $where .=" and addtime <={$end_time}";
         }
-
+        if(!empty($brand_id)){
+            $where .=" and brand_id={$brand_id}";
+        }
+        if(!empty($referer_id)){
+            $where .=" and source like '{$referer_id}%'";
+        }
 
         import('@.Class.Page'); //引入Page类
         // 查询满足要求的总记录数
