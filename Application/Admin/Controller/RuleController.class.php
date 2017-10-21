@@ -355,11 +355,11 @@ class RuleController extends AdminBaseController{
             $result=$User->where($map)->save($data);
             if($result){
                 // 操作成功
-                $this->success('编辑成功',U('Admin/Rule/edit_admin',array('id'=>$uid)));
+                $this->success('编辑成功',U('Admin/Rule/admin_user_list',array('id'=>$uid)));
             }else{
                 $error_word=D('Users')->getError();
                 if (empty($error_word)) {
-                    $this->success('编辑成功',U('Admin/Rule/edit_admin',array('id'=>$uid)));
+                    $this->success('编辑失败',U('Admin/Rule/admin_user_list',array('id'=>$uid)));
                 }else{
                     // 操作失败
                     $this->error($error_word);                  

@@ -141,17 +141,17 @@
             var group=$('#group').val();
 
             if(title == ''){
-                alert('请填入标题');
+                layer.msg('请填入标题', {icon: 5,time:2000});
                 return false;
             }
 
             if(group == ''){
-                alert('请选择用户组');
+                layer.msg('请选择用户组', {icon: 5,time:2000});
                 return false;
             }
 
             if(total == ''){
-                alert('请输入分配数量');
+                layer.msg('请输入分配数量', {icon: 5,time:2000});
                 return false;
             }
 
@@ -161,7 +161,7 @@
             var total=$("input[name='total_count']").val();
 
             if(total == '' || total== 0){
-                alert('请输入分配数量');
+                layer.msg('请输入分配数量', {icon: 5,time:2000});
                 return false;
             }
 

@@ -204,7 +204,6 @@
 <block name="js">
     <script src="__PUBLIC__/statics/laydate/laydate.js"></script>
     <script>
-
         function selectAll(obj){
             if(obj.checked){
                 $("tr :checkbox").prop("checked", true);
@@ -253,11 +252,11 @@
             var assistant=$("input[name='assistant']").val();
 
             if(assistant == ''){
-                alert('请填入回访人');
+                layer.msg('请填入回访人', {icon: 5,time:2000});
                 return false;
             }
             if(!$("input[name='status']").is(':checked')) {
-                alert('请选择是否跟踪');
+                layer.msg('请选择是否跟踪', {icon: 5,time:2000});
                 return false;
             }
 

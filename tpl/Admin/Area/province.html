@@ -4,7 +4,7 @@
 </block>
 <block name="content">
     <div class="page-header">
-        <h1><i class="fa fa-home"></i> 首页 &gt; 后台管理 &gt; 修改管理员</h1>
+        <h1><i class="fa fa-home"></i> 首页 &gt; 区域管理 &gt; 区域分配</h1>
     </div>
     <div class="col-xs-12">
         <div class="tabbable">
@@ -103,7 +103,7 @@
         function addData(){
             var name=$("input[name='name']").val();
             if(name == ''){
-                alert('省份名称不能为空');
+                layer.msg('省份名称不能为空', {icon: 5,time:2000});
                 return false;
             }
 

@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/extend/layer.ext.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/icon-ext.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/loading-0.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/loading-1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/default/loading-2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/layer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/statics/layer/skin/layer.ext.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/layer/layer.js" afterPath="$PROJECT_DIR$/Public/statics/layer/layer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Login/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Login/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Area/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Area/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Area/province.html" afterPath="$PROJECT_DIR$/tpl/Admin/Area/province.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Brands/allot.html" afterPath="$PROJECT_DIR$/tpl/Admin/Brands/allot.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Brands/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Brands/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Brands/referer.html" afterPath="$PROJECT_DIR$/tpl/Admin/Brands/referer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Brands/total.html" afterPath="$PROJECT_DIR$/tpl/Admin/Brands/total.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Personal/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Personal/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Public/base.html" afterPath="$PROJECT_DIR$/tpl/Admin/Public/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/add_admin.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/add_admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/group.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/group.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,43 +37,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
+      <file leaf-file-name="audit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5333333">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modify.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.033334">
-              <caret line="17" column="86" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="86" />
+            <state vertical-scroll-proportion="-13.766666">
+              <caret line="258" column="58" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="58" />
               <folding>
-                <marker date="1507975254253" expanded="true" signature="10414:10452" placeholder="..." />
+                <element signature="n#style#0;n#span#0;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
-              <caret line="294" column="36" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="36" />
+            <state vertical-scroll-proportion="-22.233334">
+              <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
+      <file leaf-file-name="allot.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/allot.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8494118">
-              <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+            <state vertical-scroll-proportion="-20.7">
+              <caret line="162" column="43" selection-start-line="162" selection-start-column="43" selection-end-line="162" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="total.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/total.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.666666">
+              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="referer.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/referer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6282353">
+              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -92,9 +102,7 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CrontabControll.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/LoginController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorInfoModel.class.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Brands/referer.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Brands/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Brands/detail.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" />
@@ -102,18 +110,26 @@
         <option value="$PROJECT_DIR$/visitor/Visitor.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Area/index.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Area/province.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Rule/group.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Public/base.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Login/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Public/base.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Personal/index.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Area/index.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Area/province.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Rule/add_admin.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Rule/group.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Brands/index.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Brands/allot.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Brands/total.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Brands/referer.html" />
       </list>
     </option>
   </component>
@@ -231,6 +247,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Rule" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Resource" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -275,6 +313,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Personal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Login" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -298,6 +358,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Brands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Area" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -472,39 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visitor/Visitor.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding>
-            <marker date="1508551999274" expanded="true" signature="7080:7133" placeholder="select * fro... bt_total" />
-            <marker date="1508551999274" expanded="true" signature="10138:10197" placeholder="select * fro... bt_province" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="364" column="1" selection-start-line="364" selection-start-column="1" selection-end-line="364" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/referer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -582,20 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/total.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="172" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/referer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03089431">
-          <caret line="91" column="91" selection-start-line="91" selection-start-column="83" selection-end-line="91" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34470588">
@@ -609,13 +666,6 @@
         <state vertical-scroll-proportion="0.34470588">
           <caret line="498" column="9" selection-start-line="498" selection-start-column="9" selection-end-line="498" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.966666">
-          <caret line="55" column="93" selection-start-line="55" selection-start-column="93" selection-end-line="55" selection-end-column="93" />
         </state>
       </provider>
     </entry>
@@ -637,13 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5411765">
           <caret line="20" column="73" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.32470587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -756,38 +799,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Area/province.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86588234">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Area/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.027058823">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/visitor/visitor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.86588234">
           <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="51" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -799,9 +815,128 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75764704">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <marker date="1508570791306" expanded="true" signature="590:742" placeholder="select FROM_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-42.166668">
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5517647">
+          <caret line="104" column="35" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47058824">
+          <caret line="294" column="36" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.5">
+          <caret line="108" column="44" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Public/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6666665">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <folding>
+            <marker date="1508577628778" expanded="true" signature="7048:7178" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/add_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.833334">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.033334">
+          <caret line="17" column="86" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="86" />
+          <folding>
+            <marker date="1507975254253" expanded="true" signature="10414:10452" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.733334">
+          <caret line="14" column="86" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48588234">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6870588">
+          <caret line="361" column="71" selection-start-line="361" selection-start-column="71" selection-end-line="361" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Area/province.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16235293">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Area/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.812941">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.966666">
+        <state vertical-scroll-proportion="-0.10941176">
           <caret line="164" column="11" selection-start-line="164" selection-start-column="11" selection-end-line="166" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#block#1;n#!!top" expanded="false" />
@@ -832,79 +967,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/group.html">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Personal/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5682353">
-          <caret line="21" column="103" selection-start-line="21" selection-start-column="103" selection-end-line="21" selection-end-column="103" />
+        <state vertical-scroll-proportion="0.6211765">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75764704">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <marker date="1508570791306" expanded="true" signature="590:742" placeholder="select FROM_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-42.166668">
-          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5333333">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="84" />
+        <state vertical-scroll-proportion="-22.233334">
+          <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Public/base.html">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/allot.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48705882">
-          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
-          <folding>
-            <marker date="1508564629757" expanded="true" signature="6885:7015" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.033334">
-          <caret line="17" column="86" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="86" />
-          <folding>
-            <marker date="1507975254253" expanded="true" signature="10414:10452" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="294" column="36" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="36" />
+        <state vertical-scroll-proportion="-20.7">
+          <caret line="162" column="43" selection-start-line="162" selection-start-column="43" selection-end-line="162" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/total.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8494118">
-          <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+        <state vertical-scroll-proportion="-20.666666">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.766666">
+          <caret line="258" column="58" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/referer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6282353">
+          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
           <folding />
         </state>
       </provider>

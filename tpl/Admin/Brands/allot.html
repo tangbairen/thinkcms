@@ -124,11 +124,11 @@
             var brand_id=$("input[name='brand_id']").val();
             var count=$("input[name='count']").val();
             if(group_id == ''){
-                alert('请选择用户组');
+                layer.msg('请选择用户组', {icon: 5,time:2000});
                 return false;
             }
             if(brand_id == ''){
-                alert('请选择品牌');
+                layer.msg('请选择品牌', {icon: 5,time:2000});
                 return false;
             }
 
@@ -143,7 +143,7 @@
             var groupid=$("input[name='group_user']:checked").val();
             var groupName=$("input[name='group_user']:checked").attr('groupName');
             if(typeof(groupid) == 'undefined'){
-                alert('请选择所属组');
+                layer.msg('请选择所属组', {icon: 5,time:2000});
                 return false;
             }
 
@@ -156,7 +156,7 @@
             var brand_id=$("input[name='brand_title']:checked").val();
             var brandName=$("input[name='brand_title']:checked").attr('brandName');
             if(typeof(brand_id) == 'undefined'){
-                alert('请选择分配品牌');
+                layer.msg('请选择分配品牌', {icon: 5,time:2000});
                 return false;
             }
 

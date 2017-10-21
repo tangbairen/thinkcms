@@ -40,7 +40,7 @@
         function edit(){
             var username=$("input[name='username']").val();
             if(username == ''){
-                alert('登录名不能为空！');
+                layer.msg('登录名不能为空', {icon: 5,time:2000});
                 return false;
             }
 
@@ -48,7 +48,7 @@
             var password2=$("input[name='password2']").val();
             if(password != '' || password2 != ''){
                 if(password != password2){
-                    alert('两个密码不一致！');
+                    layer.msg('两个密码不一致', {icon: 5,time:2000});
                     return false;
                 }
             }

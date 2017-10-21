@@ -65,15 +65,15 @@
                 checked.push($(this).val());
             });
             if(checked.length < 1){
-                alert('请选择管理组');
+                layer.msg('请选择管理组', {icon: 5,time:2000});
                 return false;
             }
             if(username == ''){
-                alert('请输入用户名');
+                layer.msg('请输入用户名', {icon: 5,time:2000});
                 return false;
             }
             if(password == ''){
-                alert('请输入密码');
+                layer.msg('请输入密码', {icon: 5,time:2000});
                 return false;
             }
 

@@ -135,11 +135,11 @@
             var name=$("input[name='name']").val();
             var identify=$("input[name='identify']").val();
             if(name == ''){
-                alert('品牌名称不能为空');
+                layer.msg('品牌名称不能为空', {icon: 5,time:2000});
                 return false;
             }
             if(identify == ''){
-                alert('标识不能为空');
+                layer.msg('标识不能为空', {icon: 5,time:2000});
                 return false;
             }
 
@@ -149,17 +149,15 @@
             var name=$('#brands_name').val();
             var identify2=$('#identify2').val();
             if(name == ''){
-                alert('品牌名称不能为空');
+                layer.msg('品牌名称不能为空', {icon: 5,time:2000});
                 return false;
             }
 
             if(identify2 == ''){
-                alert('标识不能为空');
+                layer.msg('标识不能为空', {icon: 5,time:2000});
                 return false;
             }
-
         }
-
 
     </script>
 
