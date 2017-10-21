@@ -19,51 +19,54 @@
             </table>
 
         </div>
-            <div style="float:left;width:500px">
-                <h4>今天分配情况</h4>
-                <table class="table" style="margin-top:20px;">
-                    <tr>
-                        <td>今日目标资源数</td><td>{$today['totalNum']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>今日资源数</td><td>{$today['todayTotal']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>已反馈资源数</td><td>{$today['num1'] + $today['num2']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>未反馈资源数</td><td>{$today['num1']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>有效资源数</td><td>{$today['num2']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>资源有效率</td><td>{$today['num2'] / $today['todayTotal']}%</td>
-                    </tr>
-                </table>
+        <notempty name="total">
+        <div style="float:left;width:500px">
+            <h4>今天分配情况</h4>
+            <table class="table" style="margin-top:20px;">
+                <tr>
+                    <td>今日目标资源数</td><td>{$today['totalNum']}（个）</td>
+                </tr>
+                <tr>
+                    <td>今日资源数</td><td>{$today['todayTotal']}（个）</td>
+                </tr>
+                <tr>
+                <td>已反馈资源数</td><td>{$today['num1'] + $today['num2']}（个）</td>
+                </tr>
+                <tr>
+                    <td>未反馈资源数</td><td>{$today['num1']}（个）</td>
+                </tr>
+                <tr>
+                    <td>有效资源数</td><td>{$today['num2']}（个）</td>
+                </tr>
+                <tr>
+                    <td>资源有效率</td><td>{$today['num2'] / $today['todayTotal']}%</td>
+                </tr>
+            </table>
 
-            </div>
-            <div style="float:left;width:500px;margin-left: 80px;">
-                <h4>当月分配情况</h4>
-                <table class="table" style="margin-top:20px;">
-                    <tr>
-                        <td>本月总资源数</td><td>{$month['totalTotal']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>已反馈资源数</td><td>{$month['num1'] + $month['num2']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>未反馈资源数</td><td>{$month['num1']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>有效资源数</td><td>{$month['num2']}（个）</td>
-                    </tr>
-                    <tr>
-                        <td>资源有效率</td><td>{$month['num2'] / $month['totalTotal'] }%</td>
-                    </tr>
-                </table>
+        </div>
+        <div style="float:left;width:500px;margin-left: 80px;">
+            <h4>当月分配情况</h4>
+            <table class="table" style="margin-top:20px;">
+                <tr>
+                    <td>本月总资源数</td><td>{$month['totalTotal']}（个）</td>
+                </tr>
+                <tr>
+                    <td>已反馈资源数</td><td>{$month['num1'] + $month['num2']}（个）</td>
+                </tr>
+                <tr>
+                    <td>未反馈资源数</td><td>{$month['num1']}（个）</td>
+                </tr>
+                <tr>
+                    <td>有效资源数</td><td>{$month['num2']}（个）</td>
+                </tr>
+                <tr>
+                    <td>资源有效率</td><td>{$month['num2'] / $month['totalTotal'] }%</td>
+                </tr>
+            </table>
 
-            </div>
+        </div>
+        </notempty>
+
     </div>
 </block>
 <block name="js"></block>
