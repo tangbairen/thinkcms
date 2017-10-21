@@ -22,13 +22,22 @@ class ResourceController extends AdminBaseController
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
         $allocation=I('get.allocation','');
+        $brand_id=I('get.brand','');
+        $referer_id=I('get.referer','');
+
+        $brand=M('Brands')->select();//品牌
+        $referer=M('Referer')->field('distinct title')->select();//来源渠道
 
         $array=array(
             'phone'=>$phone,
             's_group'=>$s_group,
             'start_time'=>$start_time,
             'end_time'=>$end_time,
-            'allocation'=>$allocation
+            'allocation'=>$allocation,
+            'brand'=>$brand,
+            'brand_id'=>$brand_id,
+            'referer_id'=>$referer_id,
+            'referer'=>$referer
         );
         $this->assign($array);
         $this->assign('group',$group);
@@ -47,6 +56,8 @@ class ResourceController extends AdminBaseController
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
         $allocation=I('get.allocation','');
+        $brand_id=I('get.brand','');
+        $referer_id=I('get.referer','');
         if(!empty($phone)){
             $where .=" and phone={$phone}";
         }
@@ -66,6 +77,14 @@ class ResourceController extends AdminBaseController
 
         if(!empty($allocation)){
             $where .=" and allocation={$allocation}";
+        }
+        
+        if(!empty($brand)){
+            $where .=" and brand_id={$brand}";
+        }
+
+        if(!empty($referer)){
+            $where .=" and source like '{$referer}%'";
         }
 
         $field=['addtime','customer_info','province','address','username',
@@ -205,7 +224,7 @@ class ResourceController extends AdminBaseController
         $box=I('get.box','');
         $brand=I('get.brand','');
         $referer=I('get.referer','');
-        
+
         if(!empty($box)){
             $where .=" and id in({$box})";
         }
