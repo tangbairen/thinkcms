@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="ResourceController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64941174">
-              <caret line="115" column="52" selection-start-line="115" selection-start-column="52" selection-end-line="115" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.51411766">
+              <caret line="179" column="54" selection-start-line="179" selection-start-column="54" selection-end-line="179" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -37,8 +38,8 @@
       <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.6">
-              <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+            <state vertical-scroll-proportion="-17.633333">
+              <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="47" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -47,8 +48,8 @@
       <file leaf-file-name="customer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.8">
-              <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+            <state vertical-scroll-proportion="-15.333333">
+              <caret line="177" column="23" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#block#1;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#block#1;n#!!top" expanded="false" />
@@ -72,10 +73,8 @@
                 <element signature="e#7421#7609#0" expanded="false" />
                 <element signature="e#7450#7522#0" expanded="false" />
                 <element signature="e#7526#7599#0" expanded="false" />
-                <element signature="e#8000#8659#0" expanded="false" />
-                <element signature="e#8384#8437#0" expanded="false" />
-                <element signature="e#8701#8769#0" expanded="false" />
-                <element signature="e#8795#8863#0" expanded="false" />
+                <element signature="e#8471#8524#0" expanded="false" />
+                <element signature="e#8824#8892#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -111,8 +110,8 @@
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/index.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Area/index.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Area/province.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
       </list>
     </option>
@@ -502,7 +501,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -883,10 +884,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.633333">
+          <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="47" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.8">
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+        <state vertical-scroll-proportion="-15.333333">
+          <caret line="177" column="23" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#block#1;n#!!top" expanded="false" />
             <element signature="n#div#0;n#block#1;n#!!top" expanded="false" />
@@ -910,26 +919,16 @@
             <element signature="e#7421#7609#0" expanded="false" />
             <element signature="e#7450#7522#0" expanded="false" />
             <element signature="e#7526#7599#0" expanded="false" />
-            <element signature="e#8000#8659#0" expanded="false" />
-            <element signature="e#8384#8437#0" expanded="false" />
-            <element signature="e#8701#8769#0" expanded="false" />
-            <element signature="e#8795#8863#0" expanded="false" />
+            <element signature="e#8471#8524#0" expanded="false" />
+            <element signature="e#8824#8892#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.6">
-          <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64941174">
-          <caret line="115" column="52" selection-start-line="115" selection-start-column="52" selection-end-line="115" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.51411766">
+          <caret line="179" column="54" selection-start-line="179" selection-start-column="54" selection-end-line="179" selection-end-column="54" />
           <folding />
         </state>
       </provider>

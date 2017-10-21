@@ -145,6 +145,8 @@ class ResourceController extends AdminBaseController
         $end_time=I('get.end_time','');
         $allocation=I('get.allocation','');
         $box=I('get.box','');
+        $brand=I('get.brand','');
+        $referer=I('get.referer','');
 
         if(!empty($box)){
             $where .=" and id in({$box})";
@@ -169,6 +171,13 @@ class ResourceController extends AdminBaseController
 
         if(!empty($allocation)){
             $where .=" and allocation={$allocation}";
+        }
+        if(!empty($brand)){
+            $where .=" and brand_id={$brand}";
+        }
+
+        if(!empty($referer)){
+            $where .=" and source like '{$referer}%'";
         }
 
         $field=['addtime','customer_info','province','address','username',

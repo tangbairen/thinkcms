@@ -174,13 +174,16 @@
             var end_time=$("input[name='end_time']").val();
             var group=$('#group').val();
             var allocation=$('#allocation').val();
+            var brand=$('#brand').val();
+            var referer=$('#referer').val();
+
             var box=$('input[name="box[]"]:checked');
             var arr=[];
             box.each(function(i,v){
                 arr[i]=$(this).val();
             });
 
-            var url="{:U('Admin/Resource/customerExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&allocation='+allocation+'&box='+arr;
+            var url="{:U('Admin/Resource/customerExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&allocation='+allocation+'&box='+arr+'&brand='+brand+'&referer='+referer;
 
             location.href=url;
 
