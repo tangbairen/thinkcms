@@ -19,6 +19,7 @@ class ResourceModel extends Model
         $allocation=I('get.allocation','');
         $brand_id=I('get.brand','');
         $referer_id=I('get.referer','');
+        $status=I('get.status','');
         if(!empty($phone)){
             $where .=" and phone like '%{$phone}%'";
         }
@@ -45,6 +46,9 @@ class ResourceModel extends Model
         }
         if(!empty($referer_id)){
             $where .=" and source like '{$referer_id}%'";
+        }
+        if(!empty($status)){
+            $where .=" and status={$status}";
         }
 
         import('@.Class.Page'); //引入Page类

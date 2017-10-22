@@ -224,6 +224,7 @@ class ResourceController extends AdminBaseController
         $box=I('get.box','');
         $brand=I('get.brand','');
         $referer=I('get.referer','');
+        $status=I('get.status','');
 
         if(!empty($box)){
             $where .=" and id in({$box})";
@@ -249,6 +250,9 @@ class ResourceController extends AdminBaseController
 
         if(!empty($referer)){
             $where .=" and source like '{$referer}%'";
+        }
+        if(!empty($status)){
+            $where .=" and status={$status}";
         }
 
         $field=['addtime','customer_info','province','address','username',
@@ -399,6 +403,7 @@ class ResourceController extends AdminBaseController
 
         $referer_id=I('get.referer','');
         $brand_id=I('get.brand','');
+        $status=I('get.status','');
         $allocation=I('get.allocation','');
 
         $brand=M('Brands')->select();//品牌
@@ -412,7 +417,8 @@ class ResourceController extends AdminBaseController
             'brand'=>$brand,
             'brand_id'=>$brand_id,
             'referer_id'=>$referer_id,
-            'referer'=>$referer
+            'referer'=>$referer,
+            'status'=>$status
         );
         $this->assign($array);
         $this->assign('group',$group);

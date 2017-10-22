@@ -50,6 +50,16 @@
                     </select>
                 </div>
             </div>
+            <div class="form-group">
+                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
+                <div class="col-sm-12">
+                    <select class="form-control" name="status" id="status">
+                        <option value="">是否可跟</option>
+                        <option value="1" <if condition="$status eq 1">selected</if> >是</option>
+                        <option value="2" <if condition="$status eq 2">selected</if> >否</option>
+                    </select>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary">搜索</button>
             <a class="btn btn-default" onclick="clean();">清空</a>
             <span style="padding-left: 20px;">总条数（{$count}）</span>
@@ -222,6 +232,7 @@
             $("input[name='end_time']").val('');
             $("select[name='brand']").val('');
             $("select[name='referer']").val('');
+            $("select[name='status']").val('');
             $("#group").val('');
         }
 
@@ -274,13 +285,14 @@
 
             var brand=$('#brand').val();
             var referer=$('#referer').val();
+            var status=$('#status').val();
 
             var arr=[];
             box.each(function(i,v){
                 arr[i]=$(this).val();
             });
 
-            var url="{:U('Admin/Resource/auditExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&box='+arr+'&brand='+brand+'&referer='+referer;
+            var url="{:U('Admin/Resource/auditExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&box='+arr+'&brand='+brand+'&referer='+referer+'&status='+status;
 
             location.href=url;
 
