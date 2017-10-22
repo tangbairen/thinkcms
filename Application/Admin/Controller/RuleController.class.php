@@ -284,6 +284,7 @@ class RuleController extends AdminBaseController{
                 $map['phone']=$data['phone'];
             }
             $map['email']=$data['email'];
+            $map['company']=$data['company'];
             $map['password']=md5($data['password']);
             $map['status']=$data['status'];
             $map['register_time']=time();
@@ -329,6 +330,7 @@ class RuleController extends AdminBaseController{
     public function edit_admin(){
         if(IS_POST){
             $data=I('post.');
+//            dump($data);exit;
             // 组合where数组条件
             $uid=$data['id'];
             $map=array(

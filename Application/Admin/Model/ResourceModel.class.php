@@ -339,10 +339,20 @@ class ResourceModel extends Model
         if(empty($assistant)) throw new Exception('请填入回访人');
         if($status === '') throw new Exception('请选择是否可跟');
 
+        if(!empty($company)){
+
+            $array['company']=$company;
+
+        }else{
+            $id=session('user.id');
+            $data=M('Users')->where("id={$id}")->find();
+            $company=isset($data['company']) ? $data['company']: '';
+            $array['company']=$company;
+        }
+
         $map['id']=$resId;
         $map['group_id']=$groupId;
 
-        $array['company']=$company;
         $array['confirm_address']=$confirm_address;
         $array['assistant']=$assistant;
         $array['remark']=$confirm_remark;
