@@ -16,7 +16,7 @@ class CrontabController extends Controller
     public function allot()
     {
         $time=time();//当前时间
-        $beterTime=$time - 7200000;//前一小时的时间
+        $beterTime=$time - (3600*24);//前一天的时间
 
         $map['status']=1;
         $map['time']=array('between',array($beterTime,$time));
