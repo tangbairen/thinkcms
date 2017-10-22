@@ -19,8 +19,7 @@
     //忽略重复的错误来源
 //    ini_set('ignore_repeated_source', 'on');
 
-    echo '<pre>';
-    var_dump($_SERVER);
+
     if($_POST){
         require('./Visitor.class.php');
         sleep(0.5);
