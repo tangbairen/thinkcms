@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/modify.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/modify.html" />
     </list>
     <ignored path="thinkcms.iws" />
@@ -28,10 +27,10 @@
       <file leaf-file-name="modify.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36199096">
-              <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.54751134">
+              <caret line="101" column="54" selection-start-line="101" selection-start-column="54" selection-end-line="101" selection-end-column="54" />
               <folding>
-                <marker date="1508719978069" expanded="true" signature="10423:10461" placeholder="..." />
+                <marker date="1508720154380" expanded="true" signature="10401:10439" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -861,10 +860,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36199096">
-          <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.54751134">
+          <caret line="101" column="54" selection-start-line="101" selection-start-column="54" selection-end-line="101" selection-end-column="54" />
           <folding>
-            <marker date="1508719978069" expanded="true" signature="10423:10461" placeholder="..." />
+            <marker date="1508720154380" expanded="true" signature="10401:10439" placeholder="..." />
           </folding>
         </state>
       </provider>
