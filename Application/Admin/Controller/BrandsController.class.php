@@ -239,7 +239,8 @@ class BrandsController extends AdminBaseController
     {
         $data=M('Total')->alias('t')
             ->field('t.id,t.title,t.group_id,t.total,g.title as group_name')
-            ->join('bt_auth_group as g on t.group_id = g.id')
+            ->join('right join bt_auth_group as g on t.group_id = g.id')
+            ->where('t.id > 0 ')
             ->select();
 
         //所有组
