@@ -381,6 +381,8 @@ class BrandsController extends AdminBaseController
     {
 
         $id=I('get.id');
+        $group_id=I('get.group_id');
+        M('BrandsAuth')->where("gid={$group_id}")->delete();
         $res=M('Total')->where("id={$id}")->delete();
         if($res){
             $this->success('删除成功',U('Admin/Brands/total'));

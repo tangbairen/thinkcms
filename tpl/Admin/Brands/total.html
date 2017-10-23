@@ -31,7 +31,7 @@
                             <td>{$val['total']}</td>
                             <td>
                                 <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" total="{$val['total']}" totalTitle="{$val['title']}" onclick="edit(this)">修改</button>
-                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Brands/del_total',array('id'=>$val['id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>
+                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Brands/del_total',array('id'=>$val['id'],'group_id'=>$val['group_id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>
                             </td>
                         </tr>
                     </foreach>
