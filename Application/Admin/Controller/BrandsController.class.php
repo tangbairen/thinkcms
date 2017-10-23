@@ -27,7 +27,7 @@ class BrandsController extends AdminBaseController
     {
         try{
             $name=I('post.name','','htmlspecialchars');
-            $identify=I('post.identify','','htmlspecialchars');
+            $identify=I('post.name','','htmlspecialchars');
             $name=trim($name);
             $identify=trim($identify);
             if(empty($name)) throw new Exception('品牌名称不能为空');
@@ -116,11 +116,13 @@ class BrandsController extends AdminBaseController
             ->join('left join bt_total as z on z.group_id=g.id')
             ->group('b.gid,total')
             ->order('g.id')
+            ->where('z.id > 0')
             ->select();
 
         $array=array(
             'data'=>$data
         );
+
         $this->assign($array);
         $this->display();
     }
@@ -239,8 +241,7 @@ class BrandsController extends AdminBaseController
     {
         $data=M('Total')->alias('t')
             ->field('t.id,t.title,t.group_id,t.total,g.title as group_name')
-            ->join('right join bt_auth_group as g on t.group_id = g.id')
-            ->where('t.id > 0 ')
+            ->join('bt_auth_group as g on t.group_id = g.id')
             ->select();
 
         //所有组
@@ -283,9 +284,9 @@ class BrandsController extends AdminBaseController
         $total=I('post.total_count');
         $id=I('post.id');
         $total_title=I('post.total_title');
-        $total_title=trim($total_title);
 
-        $data=M('Total')->where("id={$id}")->save(array('total'=>$total,'title'=>$total_title));
+
+        $data=M('Total')->where("id={$id}")->save(array('total'=>$total));
 
         if($data){
             $this->success('修改成功',U('Admin/Brands/total'));
@@ -388,5 +389,22 @@ class BrandsController extends AdminBaseController
         }
 
     }
+
+    /*
+     * 删除品牌分配规则
+     * */
+    public function del_data()
+    {
+        $gid=I('get.gid',0);
+
+        M('BrandsAuth')->where("gid={$gid}")->delete();
+        $res=M('Total')->where("group_id={$gid}")->delete();
+        if($res){
+            $this->success('删除成功',U('Admin/Brands/brand_auth'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
+
 
 }
