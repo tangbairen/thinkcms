@@ -185,7 +185,6 @@ class ResourceModel extends Model
         $map['allocation']=$allocation;
 
         $res=$this->add($map);
-
         return $res;
     }
 
@@ -251,6 +250,7 @@ class ResourceModel extends Model
             $count=$this->where("group_id={$val['group_id']} and brand_id={$brand_id} and addtime  between {$startDay} and {$endDay}")->count();
             $arr[$val['group_id']]=$count;
         }
+
         $total=0;
         $brand=M('BrandsAuth')->where("brands_id={$brand_id}")->select();
         //清除个数已满的
@@ -262,7 +262,7 @@ class ResourceModel extends Model
                 }
             }
 
-            $total +=$val['count'];//这个品牌总分配数
+            $total +=$val['count']+$arr[$val['gid']];//这个品牌总分配数+已分配的
         }
 
         if(empty($arr)){
