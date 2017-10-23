@@ -60,4 +60,16 @@ return array(
         'BUCKET'             => ''  // bucken 名称
         ),
 
+    //数据库配置1 (柏特留言)
+    'DB_CONFIG1' => array(
+        'DB_TYPE'  => 'mysqli',
+        'DB_USER'  => 'root',
+        'DB_PWD'   => 'root',
+        'DB_HOST'  => 'localhost',
+        'DB_PORT'  => '3306',
+        'DB_NAME'  => 'btmessage1_msg',
+        'DB_CHARSET'=>    'utf8',
+        'DB_PREFIX' => '', // 数据库表前缀
+    ),
+
 );

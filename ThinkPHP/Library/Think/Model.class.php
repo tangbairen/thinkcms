@@ -92,6 +92,9 @@ class Model
             $this->tablePrefix = '';
         } elseif ('' != $tablePrefix) {
             $this->tablePrefix = $tablePrefix;
+        } elseif($this->connection){//多个数据库不同前缀(修改)
+            $config = C($this->connection);
+            $this->tablePrefix = $config['DB_PREFIX'];
         } elseif (!isset($this->tablePrefix)) {
             $this->tablePrefix = C('DB_PREFIX');
         }
