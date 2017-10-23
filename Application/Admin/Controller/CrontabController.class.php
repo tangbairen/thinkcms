@@ -16,7 +16,11 @@ class CrontabController extends Controller
     public function allot()
     {
         $ip = get_client_ip();
-        file_put_contents('./Uploads/log/ip.txt',$ip);
+        if($ip != '47.52.59.51'){
+
+            return false;
+        }
+
         $time=time();//当前时间
         $beterTime=$time - (3600*24);//前一天的时间
 
