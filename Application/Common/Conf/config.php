@@ -1,7 +1,7 @@
 <?php
 return array(
 //*************************************附加设置***********************************
-    'SHOW_PAGE_TRACE'        => true,                          // 是否显示调试面板
+    'SHOW_PAGE_TRACE'        => false,                          // 是否显示调试面板
     'URL_CASE_INSENSITIVE'   => false,                          // url区分大小写
     'LOAD_EXT_CONFIG'        => 'db',                           // 加载网站设置文件
     'TMPL_PARSE_STRING'      => array(                          // 定义常用路径
