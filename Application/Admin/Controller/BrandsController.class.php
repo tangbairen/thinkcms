@@ -27,7 +27,7 @@ class BrandsController extends AdminBaseController
     {
         try{
             $name=I('post.name','','htmlspecialchars');
-            $identify=I('post.name','','htmlspecialchars');
+            $identify=I('post.identify','','htmlspecialchars');
             $name=trim($name);
             $identify=trim($identify);
             if(empty($name)) throw new Exception('品牌名称不能为空');
