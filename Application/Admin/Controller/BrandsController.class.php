@@ -281,8 +281,10 @@ class BrandsController extends AdminBaseController
     {
         $total=I('post.total_count');
         $id=I('post.id');
+        $total_title=I('post.total_title');
+        $total_title=trim($total_title);
 
-        $data=M('Total')->where("id={$id}")->save(array('total'=>$total));
+        $data=M('Total')->where("id={$id}")->save(array('total'=>$total,'title'=>$total_title));
 
         if($data){
             $this->success('修改成功',U('Admin/Brands/total'));
@@ -367,6 +369,23 @@ class BrandsController extends AdminBaseController
             $message=$e->getMessage();
             $this->error($message);
         }
+    }
+
+
+    /*
+     * 删除总数
+     * */
+    public function del_total()
+    {
+
+        $id=I('get.id');
+        $res=M('Total')->where("id={$id}")->delete();
+        if($res){
+            $this->success('删除成功',U('Admin/Brands/total'));
+        }else{
+            $this->error('删除失败');
+        }
+
     }
 
 }

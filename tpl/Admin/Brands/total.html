@@ -30,7 +30,8 @@
                             <td>{$val['title']}</td>
                             <td>{$val['total']}</td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" total="{$val['total']}" onclick="edit(this)">修改</button>
+                                <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" total="{$val['total']}" totalTitle="{$val['title']}" onclick="edit(this)">修改</button>
+                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Brands/del_total',array('id'=>$val['id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>
                             </td>
                         </tr>
                     </foreach>
@@ -95,6 +96,10 @@
                         <input type="hidden" name="id">
                         <table class="table table-striped table-bordered table-hover table-condensed">
                             <tr>
+                                <th width="15%">标题：</th>
+                                <td> <input class="input-medium" type="text" name="total_title"></td>
+                            </tr>
+                            <tr>
                                 <th width="15%">分配数量：</th>
                                 <td> <input class="input-medium" type="text" name="total_count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></td>
                             </tr>
@@ -122,8 +127,10 @@
         function edit(obj){
             var totalId=$(obj).attr('totalId');
             var total=$(obj).attr('total');
+            var totalTitle=$(obj).attr('totalTitle');
             $("input[name='id']").val(totalId);
             $("input[name='total_count']").val(total);
+            $("input[name='total_title']").val(totalTitle);
 
             $('#bjy-edit').modal('show');
         }
@@ -159,9 +166,15 @@
 
         function edit_total(){
             var total=$("input[name='total_count']").val();
+            var title=$("input[name='total_title']").val();
 
             if(total == '' || total== 0){
                 layer.msg('请输入分配数量', {icon: 5,time:2000});
+                return false;
+            }
+
+            if(title == ''){
+                layer.msg('请输入标题', {icon: 5,time:2000});
                 return false;
             }
 
