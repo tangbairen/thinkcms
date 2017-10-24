@@ -19,12 +19,12 @@
             </table>
 
         </div>
-        <notempty name="status">
+        <notempty name="status or month">
         <div style="float:left;width:500px">
-            <h4>今天分配情况</h4>
+            <h4>今日分配情况</h4>
             <table class="table" style="margin-top:20px;">
                 <tr>
-                    <td>今日目标资源数</td><td>{$today['totalNum']}</td>
+                    <td>今日目标资源数</td><td>{$today['totalNum']|default=0}</td>
                 </tr>
                 <tr>
                     <td>今日资源数</td><td>{$today['todayTotal']}</td>
@@ -42,7 +42,7 @@
                     <td>资源有效率</td>
                     <td>
                         <?php
-                        echo round($today['num2'] / $today['totalNum'], 2) * 100;
+                        echo round($today['num2'] / $today['todayTotal'], 2) * 100;
                         ?>%
                     </td>
                 </tr>
@@ -50,7 +50,7 @@
 
         </div>
         <div style="float:left;width:500px;margin-left: 80px;">
-            <h4>当月分配情况</h4>
+            <h4>本月分配情况</h4>
             <table class="table" style="margin-top:20px;">
                 <tr>
                     <td style="height: 30px;"></td>

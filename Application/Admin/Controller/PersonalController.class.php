@@ -32,14 +32,14 @@ class PersonalController extends AdminBaseController
 
         try{
             if(!IS_POST) throw new Exception('非法请求');
-            $username=I('post.username','','htmlspecialchars');
+            //$username=I('post.username','','htmlspecialchars');
             $phone=I('post.phone','','htmlspecialchars');
             $email=I('post.email','','htmlspecialchars');
             $password=I('post.password','','htmlspecialchars');
             $password2=I('post.password2','','htmlspecialchars');
-            if(empty($username)) throw new Exception('登录名不能为空');
+            //if(empty($username)) throw new Exception('登录名不能为空');
 
-            $map['username']=$username;
+            //$map['username']=$username;
             $map['phone']=$phone;
             $map['email']=$email;
             if(!empty($password) || !empty($password2)){

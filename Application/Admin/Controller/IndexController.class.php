@@ -23,7 +23,6 @@ class IndexController extends AdminBaseController{
 
 		$summary=D('Resource')->summary($res['group_id']);//今日，当月汇总
 		$status=M('Total')->where("group_id={$res['group_id']}")->find();
-
 		$this->assign('data',$data);
 		$this->assign('area',$area);
 		$this->assign('group',$group);
