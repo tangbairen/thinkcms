@@ -533,4 +533,23 @@ class ResourceController extends AdminBaseController
         $this->ajaxReturn($group);
     }
 
+    /*
+     * 各部门资源情况统计
+     * */
+    public function group_total()
+    {
+        // 今日开始时间戳
+        $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
+        // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
+        $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+
+        $sql="select t.group_id,g.title,t.total ,(SELECT COUNT(*) FROM  bt_resource as r WHERE t.group_id=r.group_id and  r.addtime >={$startDay} and r.addtime <={$endDay} ) AS number
+from bt_total as t left JOIN bt_auth_group as g on t.group_id=g.id
+GROUP BY  t.group_id";
+        $data=M()->query($sql);
+
+        $this->assign('data',$data);
+        $this->display();
+    }
+
 }
