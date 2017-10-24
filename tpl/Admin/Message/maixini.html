@@ -5,7 +5,7 @@
         .form-group>label[class*="col-"] {padding-top: 10px;}
     </style>
     <div class="page-header">
-        <h1><i class="fa fa-home"></i> 首页 &gt; 留言管理 &gt; 柏特留言</h1>
+        <h1><i class="fa fa-home"></i> 首页 &gt; 留言管理 &gt; 迈锡尼留言</h1>
     </div>
     <div class="col-xs-12">
         <form class="form-inline" style="margin-bottom: 10px;">
@@ -55,22 +55,22 @@
                         <th>操作</th>
                     </tr>
                     <foreach name="data" item="val">
-                    <tr style=" height:70px;">
-                        <td><input type="checkbox" name="box[]" value="{$val['id']}"></td>
-                        <td>{$val['username']}</td>
-                        <td>{$val['tel']/863}</td>
-                        <td>{$val['area']}</td>
-                        <td>{$val['xm']}</td>
-                        <td>{$val['qq']}</td>
-                        <td width="300px;">{$val['content']}</td>
-                        <td width="400px;">{$val['url']}</td>
-                        <td>{$val['ip']}</td>
-                        <td>{$val['create_time']}</td>
-                        <td>
-                            <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Message/del_data',array('id'=>$val['id']))}'}"
-                               type="button" class="btn btn-danger btn-xs">删除</a>
-                        </td>
-                    </tr>
+                        <tr style=" height:70px;">
+                            <td><input type="checkbox" name="box[]" value="{$val['id']}"></td>
+                            <td>{$val['username']}</td>
+                            <td>{$val['tel']/863}</td>
+                            <td>{$val['area']}</td>
+                            <td>{$val['xm']}</td>
+                            <td>{$val['qq']}</td>
+                            <td width="300px;">{$val['content']}</td>
+                            <td width="400px;">{$val['url']}</td>
+                            <td>{$val['ip']}</td>
+                            <td>{$val['create_time']}</td>
+                            <td>
+                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Message/del_mai',array('id'=>$val['id']))}'}"
+                                   type="button" class="btn btn-danger btn-xs">删除</a>
+                            </td>
+                        </tr>
                     </foreach>
                 </table>
                 <div style="margin-bottom: 100px;margin-top: 50px;">
@@ -109,7 +109,7 @@
                 arr[i]=$(this).val();
             });
 
-            var url="{:U('Admin/message/boteExport')}?phone="+phone+'&start_time='+start_time+'&end_time='+end_time+'&box='+arr;
+            var url="{:U('Admin/message/maiExport')}?phone="+phone+'&start_time='+start_time+'&end_time='+end_time+'&box='+arr;
             location.href=url;
 
         }

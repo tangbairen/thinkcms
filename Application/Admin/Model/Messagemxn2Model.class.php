@@ -5,9 +5,9 @@ use Think\Db;
 use Think\Model;
 
 /*
- * 柏特留言表
+ * 迈锡尼留言表
  * */
-class MessageModel extends Model
+class Messagemxn2Model extends Model
 {
     //调用配置文件中的数据库配置1
     protected $connection = 'DB_CONFIG1';

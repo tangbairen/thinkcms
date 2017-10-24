@@ -60,14 +60,26 @@ return array(
         'BUCKET'             => ''  // bucken 名称
         ),
 
-    //数据库配置1 (柏特留言)
+    //数据库配置1 (柏特,迈锡尼 留言)
     'DB_CONFIG1' => array(
         'DB_TYPE'  => 'mysqli',
-        'DB_USER'  => 'root',
-        'DB_PWD'   => 'root',
-        'DB_HOST'  => 'localhost',
+        'DB_USER'  => 'btmessage1_msg',
+        'DB_PWD'   => 'mJD76^u2',
+        'DB_HOST'  => '116.31.118.96',
         'DB_PORT'  => '3306',
         'DB_NAME'  => 'btmessage1_msg',
+        'DB_CHARSET'=>    'utf8',
+        'DB_PREFIX' => '', // 数据库表前缀
+    ),
+
+    //数据库配置2 (SEO留言)
+    'DB_CONFIG2' => array(
+        'DB_TYPE'  => 'mysqli',
+        'DB_USER'  => 'maixini_sliuyan',
+        'DB_PWD'   => 'cGN28%z7',
+        'DB_HOST'  => '116.31.118.96',
+        'DB_PORT'  => '3306',
+        'DB_NAME'  => 'maixini_sliuyan',
         'DB_CHARSET'=>    'utf8',
         'DB_PREFIX' => '', // 数据库表前缀
     ),

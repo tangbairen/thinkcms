@@ -7,10 +7,10 @@ use Think\Model;
 /*
  * 柏特留言表
  * */
-class MessageModel extends Model
+class MessageseoModel extends Model
 {
     //调用配置文件中的数据库配置1
-    protected $connection = 'DB_CONFIG1';
+    protected $connection = 'DB_CONFIG2';
 
 
     public function getBoteData()
@@ -35,7 +35,6 @@ class MessageModel extends Model
             $end_time=strtotime($end_time);
             $where['unix_timestamp(create_time)']=array('elt',$end_time);
         }
-
         import('@.Class.Page'); //引入Page类
         // 查询满足要求的总记录数
         $count = $this->where($where)->count();
@@ -67,7 +66,7 @@ class MessageModel extends Model
     }
 
     /*
-     * 柏特导出
+     * 导出
      * */
     public function boteExport($field,$where)
     {
