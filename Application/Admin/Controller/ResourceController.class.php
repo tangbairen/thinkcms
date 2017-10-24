@@ -119,6 +119,7 @@ class ResourceController extends AdminBaseController
      * */
     public function customer()
     {
+
         $data=D('Resource')->selectData();
         //所有组
         $group=M('AuthGroup')->select();

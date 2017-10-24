@@ -201,7 +201,6 @@ class ResourceModel extends Model
         }
 
         $group=M('AuthGroup')->field('id,title,area_id')->select();
-
         $group_id='';
         foreach($group as $key=>$val){
             $arr=explode(',',$val['area_id']);
@@ -209,8 +208,8 @@ class ResourceModel extends Model
                 unset($group[$key]);
             }
 
-
         }
+
         //清除没有品牌的组
         foreach($group as $k=>$v){
             $res=M('BrandsAuth')->where("brands_id={$brand_id} and gid={$v['id']}")->find();
@@ -265,7 +264,7 @@ class ResourceModel extends Model
             $total +=$val['count']+$arr[$val['gid']];//这个品牌总分配数+已分配的
         }
 
-        if(empty($arr)){
+        if(empty($brand)){
             return 0;
         }
 
