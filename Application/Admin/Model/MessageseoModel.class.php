@@ -26,14 +26,18 @@ class MessageseoModel extends Model
             $where['tel']=array('like',"{$phone}%");
         }
 
-        if(!empty($start_time)){
+        if(!empty($start_time) &&  !empty($end_time)){
             $start_time=strtotime($start_time);
-            $where['unix_timestamp(create_time)']=array('egt',$start_time);
-        }
-
-        if(!empty($end_time)){
             $end_time=strtotime($end_time);
-            $where['unix_timestamp(create_time)']=array('elt',$end_time);
+            $where['unix_timestamp(create_time)']=array('between',array($start_time,$end_time));
+        }else{
+
+            if(!empty($start_time)){
+                $start_time=strtotime($start_time);
+                $where['unix_timestamp(create_time)']=array('EGT',$start_time);
+            }else if(!empty($end_time)){
+                return [];
+            }
         }
         import('@.Class.Page'); //引入Page类
         // 查询满足要求的总记录数
