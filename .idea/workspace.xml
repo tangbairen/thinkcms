@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="thinkcms.iws" />
@@ -27,11 +28,12 @@
       <file leaf-file-name="ResourceController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.714285">
-              <caret line="549" column="0" selection-start-line="549" selection-start-column="0" selection-end-line="549" selection-end-column="0" />
+            <state vertical-scroll-proportion="-22.285715">
+              <caret line="547" column="28" selection-start-line="547" selection-start-column="28" selection-end-line="547" selection-end-column="28" />
               <folding>
-                <marker date="1508839038233" expanded="true" signature="15010:15267" placeholder="select t.gro... bt_total" />
-                <marker date="1508839038233" expanded="true" signature="15046:15158" placeholder="SELECT COUNT... bt_resource" />
+                <marker date="1508839295373" expanded="true" signature="15010:15259" placeholder="select t.gro... bt_total" />
+                <marker date="1508839295373" expanded="true" signature="15010:15275" placeholder="select t.gro... bt_total" />
+                <marker date="1508839295373" expanded="true" signature="15046:15158" placeholder="SELECT COUNT... bt_resource" />
               </folding>
             </state>
           </provider>
@@ -53,8 +55,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3167421">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.42986426">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -880,17 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.714285">
-          <caret line="549" column="0" selection-start-line="549" selection-start-column="0" selection-end-line="549" selection-end-column="0" />
-          <folding>
-            <marker date="1508839038233" expanded="true" signature="15010:15267" placeholder="select t.gro... bt_total" />
-            <marker date="1508839038233" expanded="true" signature="15046:15158" placeholder="SELECT COUNT... bt_resource" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.142857">
@@ -910,10 +901,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.285715">
+          <caret line="547" column="28" selection-start-line="547" selection-start-column="28" selection-end-line="547" selection-end-column="28" />
+          <folding>
+            <marker date="1508839295373" expanded="true" signature="15010:15259" placeholder="select t.gro... bt_total" />
+            <marker date="1508839295373" expanded="true" signature="15010:15275" placeholder="select t.gro... bt_total" />
+            <marker date="1508839295373" expanded="true" signature="15046:15158" placeholder="SELECT COUNT... bt_resource" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3167421">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.42986426">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="24" />
           <folding />
         </state>
       </provider>

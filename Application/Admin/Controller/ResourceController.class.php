@@ -545,7 +545,7 @@ class ResourceController extends AdminBaseController
 
         $sql="select t.group_id,g.title,t.total ,(SELECT COUNT(*) FROM  bt_resource as r WHERE t.group_id=r.group_id and  r.addtime >={$startDay} and r.addtime <={$endDay} ) AS number
 from bt_total as t left JOIN bt_auth_group as g on t.group_id=g.id
-GROUP BY  t.group_id";
+GROUP BY  t.group_id,t.total";
         $data=M()->query($sql);
 
         $this->assign('data',$data);
