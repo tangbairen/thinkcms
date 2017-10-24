@@ -252,7 +252,13 @@ class ResourceController extends AdminBaseController
         if(!empty($referer)){
             $where .=" and source like '{$referer}%'";
         }
-        if(!empty($status)){
+        /*if(!empty($status)){
+            $where .=" and status={$status}";
+        }*/
+
+        if(!empty($status) && $status == 3){
+            $where .=" and status=0";
+        }else if(!empty($status)){
             $where .=" and status={$status}";
         }
 
