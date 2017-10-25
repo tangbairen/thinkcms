@@ -199,7 +199,7 @@ class VisitorInfoModel extends Model
             ->where($where)
             ->order($order)
             ->select();
-        
+
         if(!empty($data)){
             foreach($data as $key=>&$val){
                 $val['time']=date('Y-m-d H:i:s',$val['time']);
