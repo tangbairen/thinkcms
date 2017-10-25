@@ -51,8 +51,8 @@ class CrontabController extends Controller
      * */
     public function getbote()
     {
+
         $toten=$this->getBoteToken();
-        echo $toten;exit;
         $url='http://api.saas.53kf.com/push?app_id=19822FCB&cmd=unsent_message&53kf_token='.$toten;
         //$url='./Uploads/log/message.txt';
         $content=file_get_contents($url);
@@ -198,6 +198,7 @@ class CrontabController extends Controller
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT,60);
         // 抓取URL并把它传递给浏览器
         $res=curl_exec($ch);
         // 关闭cURL资源，并且释放系统资源
