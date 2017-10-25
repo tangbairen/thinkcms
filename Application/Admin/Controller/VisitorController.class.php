@@ -124,6 +124,7 @@ class VisitorController extends AdminBaseController
         $status=I('get.status','');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
+        $guest_name=I('get.guest_name','',false);
 
         if(!empty($guest_id)){
             $where .=" and guest_id={$guest_id}";
@@ -144,6 +145,13 @@ class VisitorController extends AdminBaseController
 
         if(!empty($end_time)){
             $where .=" and time <={$end_time}";
+        }
+
+        if(!empty($guest_name)){
+            $guest_name=trim($guest_name);
+            $guest_name=str_replace('A','#',$guest_name);
+            $guest_name=str_replace('B','+',$guest_name);
+            $where .= " and guest_name like '%{$guest_name}%'";
         }
 
         $field=array('id','guest_id','guest_name','mobile','worker_id','time','status');

@@ -42,8 +42,14 @@
 
                 <div class="form-group" style="padding-top:5px;">
                     <label for="inputEmail3" class="col-sm-5 control-label">客服工号：</label>
-                    <div class="col-sm-7">
+                    <div class="col-sm-7" style="margin-left: -50px;">
                         <input style="width: 250px;" type="text" name="worker_id" value="{$get['worker_id']}" class="form-control" id="inputEmail3" placeholder="客服工号">
+                    </div>
+                </div>
+                <div class="form-group" style="padding-top:5px;margin-left: 40px;">
+                    <label for="inputEmail3" class="col-sm-5 control-label">访客名称：</label>
+                    <div class="col-sm-7" style="margin-left: -50px;">
+                        <input style="width: 250px;" type="text" name="guest_name" value="{$get['guest_name']}" class="form-control" id="inputEmail3" placeholder="访客名称">
                     </div>
                 </div>
 
@@ -119,6 +125,7 @@
             $("input[name='start_time']").val('');
             $("input[name='end_time']").val('');
             $("input[name='worker_id']").val('');
+            $("input[name='guest_name']").val('');
             $("#status").val('');
         }
 
@@ -127,8 +134,12 @@
             var worker_id=$("input[name='worker_id']").val();
             var start_time=$("input[name='start_time']").val();
             var end_time=$("input[name='end_time']").val();
+            var guest_name=$("input[name='guest_name']").val();
+            var guest=guest_name.replace('#','A');
+            guest=guest.replace('+','B');
+
             var status=$('#status').val();
-            var url="{:U('Admin/Visitor/infoExport')}?guest_id="+guest_id+'&worker_id='+worker_id+'&start_time='+start_time+'&end_time='+end_time+'&status='+status;
+            var url="{:U('Admin/Visitor/infoExport')}?guest_id="+guest_id+'&worker_id='+worker_id+'&start_time='+start_time+'&end_time='+end_time+'&status='+status+'&guest_name='+guest;
 
             location.href=url;
 

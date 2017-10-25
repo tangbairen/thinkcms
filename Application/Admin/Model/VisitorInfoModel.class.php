@@ -122,6 +122,7 @@ class VisitorInfoModel extends Model
         $status=I('get.status','');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
+        $guest_name=I('get.guest_name','');
 
         if(!empty($guest_id)){
             $where .=" and guest_id={$guest_id}";
@@ -143,6 +144,11 @@ class VisitorInfoModel extends Model
         if(!empty($end_time)){
             $end_time=strtotime($end_time);
             $where .=" and time <={$end_time}";
+        }
+
+        if(!empty($guest_name)){
+            $guest_name=trim($guest_name);
+            $where .= " and guest_name like '%{$guest_name}%'";
         }
 
         import('@.Class.Page'); //引入Page类
@@ -193,6 +199,7 @@ class VisitorInfoModel extends Model
             ->where($where)
             ->order($order)
             ->select();
+        
         if(!empty($data)){
             foreach($data as $key=>&$val){
                 $val['time']=date('Y-m-d H:i:s',$val['time']);
