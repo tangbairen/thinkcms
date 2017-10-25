@@ -60,6 +60,8 @@ class CrontabController extends Controller
 
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
+        dump($data);exit;
+
         if($cmd != 'error'){
             array_pop($data);
             foreach($data as $ke=>$val){
