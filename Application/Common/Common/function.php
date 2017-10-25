@@ -2,6 +2,34 @@
 
 header("Content-type:text/html;charset=utf-8");
 
+/*
+     * 返回几维数组
+     * */
+function getmaxdim($arr){
+
+    if(!is_array($arr)){
+
+        return 0;
+
+    }else{
+
+        $dimension = 0;
+
+        foreach($arr as $item1)
+
+        {
+
+            $t1=getmaxdim($item1);
+
+            if($t1>$dimension){$dimension = $t1;}
+
+        }
+
+        return $dimension+1;
+
+    }
+}
+
 function parse_url_param($str)
 {
     $data = array();

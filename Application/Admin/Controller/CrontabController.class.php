@@ -45,4 +45,163 @@ class CrontabController extends Controller
     }
 
 
+    /*
+     * 53kf bote 获取失败消息
+     *
+     * */
+    public function getbote()
+    {
+        $toten=$this->getBoteToken();
+
+        $url='http://api.saas.53kf.com/push?app_id=19822FCB&cmd=unsent_message&53kf_token='.$toten;
+        //$url='./Uploads/log/message.txt';
+        $content=file_get_contents($url);
+        $data=json_decode($content,true);
+
+        $cmd=isset($data['cmd']) ? $data['cmd'] : '';
+
+        if($cmd != 'error'){
+            array_pop($data);
+            foreach($data as $ke=>$val){
+                $result=json_decode(urldecode($val),true);
+                $count=getmaxdim($result);
+                if($count > 1){//整体推送
+                    D('VisitorRecord')->kfAddRecord($result);
+                }else{//客户信息
+
+                    $cmd=isset($result['cmd']) ? $result['cmd'] : '';
+                    if($cmd == 'customer'){
+                        D('VisitorInfo')->addInfo($result);
+                    }
+                }
+
+            }
+
+        }
+
+        return true;
+
+    }
+
+    /*
+     * 53kf ditie 获取失败消息
+     *
+     * */
+    public function getditie()
+    {
+        $toten=$this->getToken();
+
+        $url='http://api.saas.53kf.com/push?app_id=19832QKB&cmd=unsent_message&53kf_token='.$toten;
+        //$url='./Uploads/log/message.txt';
+        $content=file_get_contents($url);
+        $data=json_decode($content,true);
+
+        $cmd=isset($data['cmd']) ? $data['cmd'] : '';
+
+        if($cmd != 'error'){
+            array_pop($data);
+            foreach($data as $ke=>$val){
+                $result=json_decode(urldecode($val),true);
+                $count=getmaxdim($result);
+                if($count > 1){//整体推送
+                    D('VisitorRecord')->kfAddRecord($result);
+                }else{//客户信息
+
+                    $cmd=isset($result['cmd']) ? $result['cmd'] : '';
+                    if($cmd == 'customer'){
+                        D('VisitorInfo')->addInfo($result);
+                    }
+                }
+
+            }
+
+        }
+
+        return true;
+
+    }
+
+    /*
+     * 获取接口调用权限 53 bote kf_token
+     * */
+    public function getBoteToken()
+    {
+        S(array('type'=>'File','expire'=>60));
+
+        $url='http://api.saas.53kf.com/token';
+        $data=array(
+            'cmd'       =>'53kf_token',
+            'appid'     =>'19822FCB',
+            'appsecret' =>'19822XPI'
+        );
+
+        // 采用文件方式缓存数据300秒
+        $bote_token = S('bote_token');
+        if(!$bote_token){
+            $res=$this->getCurl($url,$data);
+            $token=json_decode($res,true);
+            $bote_token=$token['server_response']['53kf_token'];
+            S('bote_token',$bote_token,array('type'=>'file','expire'=>86000));
+        }
+
+
+        return $bote_token;
+    }
+
+    /*
+     * 获取接口调用权限 53地铁站  kf_token
+     * */
+    public function getToken()
+    {
+        S(array('type'=>'File','expire'=>60));
+
+        $url='http://api.saas.53kf.com/token';
+        $data=array(
+            'cmd'       =>'53kf_token',
+            'appid'     =>'19832QKB',
+            'appsecret' =>'19832CTI'
+        );
+
+        // 采用文件方式缓存数据300秒
+        $bote_token = S('ditie_token');
+        if(!$bote_token){
+            $res=$this->getCurl($url,$data);
+            $token=json_decode($res,true);
+            $bote_token=$token['server_response']['53kf_token'];
+            S('ditie_token',$bote_token,array('type'=>'file','expire'=>86000));
+        }
+
+
+        return $bote_token;
+    }
+
+    /*
+     * get curl操作
+     * @param $url 地址
+     * @param $data array 请求的参数
+     * */
+    public function getCurl($url,$data)
+    {
+        $str='';
+        foreach($data as $key=>$val){
+            $str .='&'.$key.'='.$val;
+        }
+
+        $map=trim($str,'&');
+
+        $url=$url.'?'.$map;
+
+        $ch=curl_init();
+        // 设置URL和相应的选项
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // 抓取URL并把它传递给浏览器
+        $res=curl_exec($ch);
+        // 关闭cURL资源，并且释放系统资源
+        curl_close($ch);
+
+        return $res;
+    }
+
 }
