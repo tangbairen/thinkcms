@@ -53,14 +53,19 @@ class CrontabController extends Controller
     {
 
         $toten=$this->getBoteToken();
-        $url='http://api.saas.53kf.com/push?app_id=19822FCB&cmd=unsent_message&53kf_token='.$toten;
-        //$url='./Uploads/log/message.txt';
-        $content=file_get_contents($url);
+        $url='http://api.saas.53kf.com/push';
+        $post_data = array(
+            "app_id" => "19822FCB",
+            "cmd" => "unsent_message",
+            "53kf_token" =>$toten
+        );
+
+        $content=$this->postCurl($url,$post_data);
+        //显示获得的数据
+
         $data=json_decode($content,true);
 
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
-
-        dump($data);exit;
 
         if($cmd != 'error'){
             array_pop($data);
@@ -91,11 +96,16 @@ class CrontabController extends Controller
      * */
     public function getditie()
     {
-        $toten=$this->getToken();
 
-        $url='http://api.saas.53kf.com/push?app_id=19832QKB&cmd=unsent_message&53kf_token='.$toten;
-        //$url='./Uploads/log/message.txt';
-        $content=file_get_contents($url);
+        $toten=$this->getToken();
+        $url='http://api.saas.53kf.com/push';
+        $post_data = array(
+            "app_id" => "19832QKB",
+            "cmd" => "unsent_message",
+            "53kf_token" =>$toten
+        );
+        $content=$this->postCurl($url,$post_data);
+
         $data=json_decode($content,true);
 
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
@@ -198,6 +208,8 @@ class CrontabController extends Controller
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //设置自动重定向
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_TIMEOUT,60);
         // 抓取URL并把它传递给浏览器
         $res=curl_exec($ch);
@@ -206,5 +218,35 @@ class CrontabController extends Controller
 
         return $res;
     }
+
+    /*
+     * curl post 操作
+     * */
+    public function postCurl($url,$post_data)
+    {
+        //初始化
+        $curl = curl_init();
+        //设置抓取的url
+        curl_setopt($curl, CURLOPT_URL, $url);
+        //设置头文件的信息作为数据流输出
+        curl_setopt($curl, CURLOPT_HEADER, 0);
+        //设置获取的信息以文件流的形式返回，而不是直接输出。
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT,60);
+        //设置自动重定向
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        //设置post方式提交
+        curl_setopt($curl, CURLOPT_POST, 1);
+        //设置post数据
+
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
+        //执行命令
+        $content = curl_exec($curl);
+
+        curl_close($curl);
+
+        return $content;
+    }
+
 
 }
