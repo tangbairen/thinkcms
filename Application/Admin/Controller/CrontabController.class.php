@@ -61,6 +61,7 @@ class CrontabController extends Controller
         );
 
         $content=$this->postCurl($url,$post_data);
+        file_put_contents('./Uploads/log/bote.txt',$content);
         //显示获得的数据
 
         $data=json_decode($content,true);
@@ -105,7 +106,7 @@ class CrontabController extends Controller
             "53kf_token" =>$toten
         );
         $content=$this->postCurl($url,$post_data);
-
+        file_put_contents('./Uploads/log/ditie.txt',$content);
         $data=json_decode($content,true);
 
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
