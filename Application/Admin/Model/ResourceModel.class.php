@@ -199,6 +199,7 @@ class ResourceModel extends Model
     public function allocationGroup($brand_id,$area_id)
     {
         if(empty($brand_id) || empty($area_id)){
+            file_put_contents('./Uploads/log/num1.txt',$brand_id,$area_id);
             return 0;
         }
 
@@ -214,6 +215,7 @@ class ResourceModel extends Model
         }
 
         if(empty($group)){
+            file_put_contents('./Uploads/log/num2.txt',$brand_id,$area_id);
             return 0;
         }
 
@@ -229,6 +231,7 @@ class ResourceModel extends Model
         }
 
         if(empty($group_id)){
+            file_put_contents('./Uploads/log/num3.txt',$brand_id,$area_id);
             return 0;
         }
 
@@ -245,12 +248,13 @@ class ResourceModel extends Model
                 ->where("group_id={$val['group_id']} and addtime  between {$startDay} and {$endDay}")
                 ->select();
             if($group_total[0]['num'] >= $val['total']){
-                file_put_contents('./Uploads/log/num.txt',json_encode($total_count));
+                file_put_contents('./Uploads/log/num4.txt',json_encode($total_count));
                 unset($total_count[$key]);
             }
         }
         //总数都满了
         if(empty($total_count)){
+            file_put_contents('./Uploads/log/num5.txt',$brand_id,$area_id);
             return 0;
         }
 
@@ -277,6 +281,7 @@ class ResourceModel extends Model
         }
 
         if(empty($arr)){
+            file_put_contents('./Uploads/log/num6.txt',$brand_id,$area_id);
             return 0;
         }
 
