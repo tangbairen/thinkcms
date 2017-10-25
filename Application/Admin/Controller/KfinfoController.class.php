@@ -14,7 +14,7 @@ class KfinfoController extends Controller
         try{
             if(!IS_POST) throw new Exception('非法请求');
             $ip = get_client_ip();
-            if($ip != '122.227.58.170')throw new Exception('非法情况');
+            if($ip != '122.227.58.170')throw new Exception('非法请求');
 
             $cmd=I('post.cmd','');
             if($cmd == 'talk_info'){//整体推送
