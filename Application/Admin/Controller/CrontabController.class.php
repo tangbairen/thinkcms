@@ -69,6 +69,7 @@ class CrontabController extends Controller
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
         if($cmd != 'error'){
+            file_put_contents('./Uploads/log/bote1.txt',$content);
             array_pop($data);
             foreach($data as $ke=>$val){
                 $result=json_decode(urldecode($val),true);
@@ -112,6 +113,7 @@ class CrontabController extends Controller
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
         if($cmd != 'error'){
+            file_put_contents('./Uploads/log/ditie1.txt',$content);
             array_pop($data);
             foreach($data as $ke=>$val){
                 $result=json_decode(urldecode($val),true);
