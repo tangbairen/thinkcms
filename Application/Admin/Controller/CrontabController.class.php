@@ -52,7 +52,7 @@ class CrontabController extends Controller
     public function getbote()
     {
         $toten=$this->getBoteToken();
-
+        echo $toten;exit;
         $url='http://api.saas.53kf.com/push?app_id=19822FCB&cmd=unsent_message&53kf_token='.$toten;
         //$url='./Uploads/log/message.txt';
         $content=file_get_contents($url);
