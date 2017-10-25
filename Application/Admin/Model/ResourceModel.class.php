@@ -203,15 +203,20 @@ class ResourceModel extends Model
         }
 
         $group=M('AuthGroup')->field('id,title,area_id')->select();
-        dump($group);
+
         $group_id='';
-        foreach($group as $key=>$val){
+        foreach($group as $key=>$val){//清除没有分配的地区的组
             $arr=explode(',',$val['area_id']);
             if(!in_array($area_id,$arr)){
                 unset($group[$key]);
             }
 
         }
+
+        if(empty($group)){
+            return 0;
+        }
+
         //清除没有品牌的组
         foreach($group as $k=>$v){
             $res=M('BrandsAuth')->where("brands_id={$brand_id} and gid={$v['id']}")->find();
@@ -223,6 +228,10 @@ class ResourceModel extends Model
             }
         }
 
+        if(empty($group_id)){
+            return 0;
+        }
+
         $group_id=trim($group_id,',');          //所有用户组id
         $map['group_id']  = array('in',$group_id);
         $total_count=M('Total')->where($map)->select();//总数
@@ -231,11 +240,12 @@ class ResourceModel extends Model
         // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
         $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
         foreach($total_count as $key=>$val){
-            $group_total=M('Resource')->
-            field('count(*) as num')
+            $group_total=M('Resource')
+                ->field('count(*) as num')
                 ->where("group_id={$val['group_id']} and addtime  between {$startDay} and {$endDay}")
                 ->select();
             if($group_total[0]['num'] >= $val['total']){
+                file_put_contents('./Uploads/log/num.txt',json_encode($total_count));
                 unset($total_count[$key]);
             }
         }
@@ -245,7 +255,7 @@ class ResourceModel extends Model
         }
 
         //品牌超出 删除
-        $arr=array();
+        $arr=array();//所属组 今日的资源数量
         foreach($total_count as $key=>$val){
             //今天这个品牌的数量
             $count=$this->where("group_id={$val['group_id']} and brand_id={$brand_id} and addtime  between {$startDay} and {$endDay}")->count();
@@ -273,47 +283,6 @@ class ResourceModel extends Model
         $gid=$this->getGid($arr,$total);
 
         return $gid;
-
-        /*dump($gid);
-        dump($arr);
-        dump($total_count);exit;*/
-        /*//搜索这个品牌的，所有组的数量
-        $group_num=M('Resource')->
-            field('group_id,count(*) as num')
-            ->where("brand_id={$brand_id} and area_id={$area_id}")
-            ->group('group_id')
-            ->select();
-
-        $auth['brands_id']=$brand_id;
-        $auth['git']=array('in',$group_id);
-
-        $brand=M('BrandsAuth')->where($auth)->select();
-        //如果没有设置分配规则
-        if(empty($brand)){
-            return 0;
-        }
-        $array=[];
-        $total=0;
-        foreach($brand as $key=>$val){
-            $count=$this->where("group_id={$val['gid']} and brand_id={$val['brands_id']}")->count();
-            $array[$val['gid']][]=$count;//记录用户组分配了多少个品牌
-            $total +=$val['count'];//这个品牌总分配数
-        }
-
-        //清除个数已满的
-        foreach($brand as $key=>$val){
-            if($val['count'] >= $array[$val['gid']]){
-                unset($array[$val['gid']]);
-            }
-
-        }
-        if(empty($array)){
-            return 0;
-        }
-
-        $gid=$this->getGid($array,$total);
-
-        return $gid;*/
 
     }
 
@@ -553,8 +522,11 @@ class ResourceModel extends Model
 
         $brand=M('Brands')->select();
         foreach($brand as $key=>$val){
-
-            if(stripos($val['identify'],$path) !== false){
+            $arrFy=explode(',',$val['identify']);
+            /*if(stripos($val['identify'],$path) !== false){
+                $brand_id=$val['id'];
+            }*/
+            if(in_array($path,$arrFy)){
                 $brand_id=$val['id'];
             }
 
