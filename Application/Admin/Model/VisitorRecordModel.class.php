@@ -152,4 +152,58 @@ class VisitorRecordModel extends Model
         return $data;
     }
 
+    /*
+     * kf 接口调用
+     * 访客聊天记录
+     * */
+    public function kfAddRecord($data)
+    {
+        if(empty($data)){
+            return false;
+        }
+
+        $sessionarr=isset($data['session']) ? $data['session'] : '';
+        $end=isset($data['end']) ? $data['end'] : '';
+        $message=isset($data['message']) ? $data['message'] : '';
+
+        $this->addRecordData($sessionarr,$end,$message);
+
+        return true;
+    }
+    public function addRecordData($sessionarr,$end,$message)
+    {
+
+        $map['guest_id']=isset($sessionarr['guest_id']) ? $sessionarr['guest_id']:'';
+        $map['talk_id']=isset($sessionarr['talk_id']) ? $sessionarr['talk_id']:'';
+        $map['company_id']=isset($sessionarr['company_id']) ? $sessionarr['company_id']:'';
+        $map['id6d']=isset($sessionarr['id6d']) ? $sessionarr['id6d']:'';
+        $map['guest_ip']=isset($sessionarr['guest_ip']) ? $sessionarr['guest_ip']:'';
+        $map['guest_area']=isset($sessionarr['guest_area']) ? $sessionarr['guest_area']:'';
+        $map['talk_page']=isset($sessionarr['talk_page']) ? $sessionarr['talk_page']:'';
+        $map['se']=isset($sessionarr['se']) ? $sessionarr['se']:'';
+        $map['kw']=isset($sessionarr['kw']) ? $sessionarr['kw']:'';
+        $map['talk_type']=isset($sessionarr['talk_type']) ? $sessionarr['talk_type']:'';
+        $map['device']=isset($sessionarr['device']) ? $sessionarr['device']:'';
+        $map['worker_id']=isset($sessionarr['worker_id']) ? $sessionarr['worker_id']:'';
+        $map['worker_name']=isset($sessionarr['worker_name']) ? $sessionarr['worker_name']:'';
+        $map['message']=isset($message) ? json_encode($message):'';
+        $map['talk_time']=isset($sessionarr['talk_time']) ? strtotime($sessionarr['talk_time']) : '';
+        $map['end_time']=isset($end['end_time']) ? strtotime($end['end_time']) : '';
+        $map['message']=json_encode($message);
+
+
+        $arr=array(
+            'guest_id'=>$map['guest_id'],
+            'talk_time'=>$map['talk_time']
+        );
+        $res=$this->where($arr)->find();
+
+        if(empty($res)){
+
+            $this->add($map);
+        }
+
+        return true;
+    }
+
 }

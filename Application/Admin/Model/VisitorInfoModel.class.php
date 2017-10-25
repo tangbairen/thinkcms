@@ -208,5 +208,46 @@ class VisitorInfoModel extends Model
         return $data;
     }
 
+    /*
+     * kf 调用
+     * 访客信息
+     * */
+    public function addInfo($data)
+    {
+
+        if(empty($data)){
+            return false;
+        }
+
+        $map['guest_name']=$data['guest_name'];
+        $map['email']=$data['email'];
+        $map['province']=$data['province'];
+        $map['city']=$data['city'];
+        $map['qq']=$data['qq'];
+        $map['mobile']=$data['mobile'];
+        $map['guest_id']=$data['guest_id'];
+        $map['company_id']=$data['company_id'];
+        $map['zipcode']=$data['zipcode'];
+        $map['worker_id']=$data['worker_id'];
+        $map['time']=$data['time'];
+        $map['cmd']=$data['cmd'];
+        $map['token']=$data['token'];
+        $map['tag']=$data['tag'];
+
+
+        $arr=array(
+            'guest_id'=>$data['guest_id'],
+            'time'=>$data['time']
+        );
+        $res=$this->where($arr)->find();
+
+        if(empty($res)){
+            $this->add($map);
+        }
+
+        return true;
+
+    }
+
 
 }

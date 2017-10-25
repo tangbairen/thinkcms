@@ -3,6 +3,7 @@ return array(
 //*************************************附加设置***********************************
     'SHOW_PAGE_TRACE'        => false,                          // 是否显示调试面板
     'URL_CASE_INSENSITIVE'   => false,                          // url区分大小写
+    'DEFAULT_FILTER'        => 'htmlspecialchars,trim',              //系统默认的变量过滤机制
     'LOAD_EXT_CONFIG'        => 'db',                           // 加载网站设置文件
     'TMPL_PARSE_STRING'      => array(                          // 定义常用路径
         '__OSS__'            => OSS_URL,
