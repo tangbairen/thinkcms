@@ -53,7 +53,6 @@ class CrontabController extends Controller
     {
 
         $toten=$this->getBoteToken();
-        echo $toten;
         $url='http://api.saas.53kf.com/push';
         $post_data = array(
             "app_id" => "19822FCB",
@@ -66,7 +65,6 @@ class CrontabController extends Controller
         //显示获得的数据
 
         $data=json_decode($content,true);
-        dump($data);
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
         if($cmd != 'error'){
@@ -76,6 +74,7 @@ class CrontabController extends Controller
                 $result=json_decode(urldecode($val),true);
                 $count=getmaxdim($result);
                 if($count > 1){//整体推送
+                    echo 1;
                     D('VisitorRecord')->kfAddRecord($result);
                 }else{//客户信息
 
@@ -110,7 +109,6 @@ class CrontabController extends Controller
         $content=$this->getCurl($url,$post_data);
         file_put_contents('./Uploads/log/ditie.txt',$content);
         $data=json_decode($content,true);
-        dump($data);
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
         if($cmd != 'error'){
