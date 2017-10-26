@@ -30,6 +30,7 @@ class CrontabController extends Controller
             ->field('id,guest_id,guest_name,worker_id,status')
             ->where($map)
             ->select();
+        dump($infoData);
         if(!empty($infoData)){
             $this->addResource($infoData);//匹配，分配
         }
