@@ -126,7 +126,7 @@ class CrontabController extends Controller
                         D('VisitorInfo')->addInfo($result);
                     }
                 }
-                
+
             }
 
         }
