@@ -21,7 +21,7 @@ class ResourceModel extends Model
         $referer_id=I('get.referer','');
         $status=I('get.status','');
         if(!empty($phone)){
-            $where .=" and phone like '%{$phone}%'";
+            $where .=" and phone like '%{$phone}%' or chats like '%{$phone}%'";
         }
 
         if(!empty($allocation)){

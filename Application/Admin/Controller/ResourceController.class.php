@@ -59,7 +59,8 @@ class ResourceController extends AdminBaseController
         $brand_id=I('get.brand','');
         $referer_id=I('get.referer','');
         if(!empty($phone)){
-            $where .=" and phone={$phone}";
+            //$where .=" and phone={$phone}";
+            $where .=" and phone like '%{$phone}%' or chats like '%{$phone}%'";
         }
         if(!empty($s_group)){
             $where .=" and group_id={$s_group}";
@@ -173,7 +174,8 @@ class ResourceController extends AdminBaseController
         }
 
         if(!empty($phone)){
-            $where .=" and phone={$phone}";
+            //$where .=" and phone={$phone}";
+            $where .=" and phone like '%{$phone}%' or chats like '%{$phone}%'";
         }
         if(!empty($s_group)){
             $where .=" and group_id={$s_group}";
