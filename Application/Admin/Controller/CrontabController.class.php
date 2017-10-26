@@ -53,6 +53,7 @@ class CrontabController extends Controller
     {
 
         $toten=$this->getBoteToken();
+        echo $toten;
         $url='http://api.saas.53kf.com/push';
         $post_data = array(
             "app_id" => "19822FCB",
@@ -65,6 +66,8 @@ class CrontabController extends Controller
         //显示获得的数据
 
         $data=json_decode($content,true);
+
+        dump($data);
 
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
