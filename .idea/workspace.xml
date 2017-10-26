@@ -27,8 +27,8 @@
       <file leaf-file-name="CrontabController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28733033">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.67873305">
+              <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -740,6 +740,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.0">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <marker date="1508921242634" expanded="true" signature="3436:3646" placeholder="..." />
+            <marker date="1508921242634" expanded="true" signature="36505:36514" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -779,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28733033">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.67873305">
+          <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
           <folding />
         </state>
       </provider>
