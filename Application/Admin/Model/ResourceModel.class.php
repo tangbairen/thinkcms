@@ -122,7 +122,7 @@ class ResourceModel extends Model
             $allocation=2;
         }
 
-        $map['addtime']=time();
+        //$map['addtime']=time();
         $map['group_id']=$group_id;
         $map['address']=$address;
         $map['username']=$username;
