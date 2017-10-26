@@ -141,7 +141,7 @@ class CrontabController extends Controller
      * */
     public function getBoteToken()
     {
-        S(array('type'=>'File','expire'=>60));
+        //S(array('type'=>'File','expire'=>60));
 
         $url='http://api.saas.53kf.com/token';
         $data=array(
@@ -151,14 +151,15 @@ class CrontabController extends Controller
         );
 
         // 采用文件方式缓存数据300秒
-        $bote_token = S('bote_token');
+        /*$bote_token = S('bote_token');
         if(!$bote_token){
-            $res=$this->getCurl($url,$data);
-            $token=json_decode($res,true);
-            $bote_token=$token['server_response']['53kf_token'];
-            S('bote_token',$bote_token,array('type'=>'file','expire'=>86000));
-        }
 
+            S('bote_token',$bote_token,array('type'=>'file','expire'=>86000));
+        }*/
+
+        $res=$this->getCurl($url,$data);
+        $token=json_decode($res,true);
+        $bote_token=$token['server_response']['53kf_token'];
 
         return $bote_token;
     }
@@ -168,7 +169,7 @@ class CrontabController extends Controller
      * */
     public function getToken()
     {
-        S(array('type'=>'File','expire'=>60));
+        //S(array('type'=>'File','expire'=>60));
 
         $url='http://api.saas.53kf.com/token';
         $data=array(
@@ -178,14 +179,14 @@ class CrontabController extends Controller
         );
 
         // 采用文件方式缓存数据300秒
-        $bote_token = S('ditie_token');
+        /*$bote_token = S('ditie_token');
         if(!$bote_token){
-            $res=$this->getCurl($url,$data);
-            $token=json_decode($res,true);
-            $bote_token=$token['server_response']['53kf_token'];
-            S('ditie_token',$bote_token,array('type'=>'file','expire'=>86000));
-        }
 
+            S('ditie_token',$bote_token,array('type'=>'file','expire'=>86000));
+        }*/
+        $res=$this->getCurl($url,$data);
+        $token=json_decode($res,true);
+        $bote_token=$token['server_response']['53kf_token'];
 
         return $bote_token;
     }
