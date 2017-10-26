@@ -45,7 +45,7 @@
                         <th></th>
                         <td>
                             <input class="btn btn-success" type="submit" onclick="return edit();" value="保存">
-                            <input class="btn btn-danger" type="submit" onclick="check();" value="取消">
+                            <a class="btn btn-danger"  onclick="check();" >取消</a>
                         </td>
                     </tr>
                 </table>
@@ -86,13 +86,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">修改咨询品牌</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">选择咨询品牌</h4>
                 </div>
                 <div class="modal-body">
+                    <input type="text" onkeyup="search(this);" maxlength="15" >
                     <form>
                         <foreach name="brandArr" item="val">
                             <span style="padding-right: 15px;padding-left: 5px;">{$val['name']}
-                                <input class="xb-icheck" type="radio" name="brand_title"
+                                <input class="xb-icheck" type="radio" id="brand_title" name="brand_title"
                                        brandName="{$val['name']}" value="{$val['id']}"
                                 <if condition="$val['id'] eq $data['brand_id']"> checked </if> >
                             </span>
@@ -114,6 +115,23 @@
 <block name="js">
     <icheckjs color="blue"/>
     <script>
+
+        function search(obj){
+            var name=$(obj).val();
+            if(name != ''){
+                $("input[name='brand_title']").each(function(k,v){
+
+                    var checkValue = $(this).attr('brandname');
+                    var num=checkValue.indexOf(name);
+                    if(num > -1){
+
+                        var aaa=$("input[name='brand_title']").eq(k).parent().css("color","red");
+                        var aaa=$("input[name='brand_title']").eq(k).parent().siblings().css('color','');
+                    }
+                });
+            }
+
+        }
 
         function check(){
             window.history.go(-1);

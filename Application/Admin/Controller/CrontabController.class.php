@@ -61,9 +61,8 @@ class CrontabController extends Controller
         );
 
         $content=$this->getCurl($url,$post_data);
-        dump($content);
 
-        file_put_contents('./Uploads/log/aaa.txt',$content);
+        file_put_contents('./Uploads/log/mess01.txt',$content);
         //显示获得的数据
 
         $data=json_decode($content,true);
@@ -89,7 +88,7 @@ class CrontabController extends Controller
 
         }
 
-        return true;
+        return json_encode(array('code'=>200,'message'=>'获取成功'));
 
     }
 
@@ -108,7 +107,7 @@ class CrontabController extends Controller
             "53kf_token" =>$toten
         );
         $content=$this->getCurl($url,$post_data);
-        file_put_contents('./Uploads/log/ditie.txt',$content);
+        file_put_contents('./Uploads/log/mess02.txt',$content);
         $data=json_decode($content,true);
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
@@ -133,7 +132,7 @@ class CrontabController extends Controller
 
         }
 
-        return true;
+        return json_encode(array('code'=>200,'message'=>'获取成功'));
 
     }
 
