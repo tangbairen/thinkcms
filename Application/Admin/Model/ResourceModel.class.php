@@ -474,7 +474,7 @@ class ResourceModel extends Model
             $chats = '';
         }
         $array=parse_url_param($data['talk_page']);
-        $keyword=isset($array['keyword']) ? urldecode($array['keyword']) : $data['kw'];
+        $keyword=isset($array['keyword']) ? $array['keyword'] : urlencode($data['kw']);
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
