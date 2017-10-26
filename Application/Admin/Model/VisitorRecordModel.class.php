@@ -202,7 +202,8 @@ class VisitorRecordModel extends Model
 
             $id=$this->add($map);
         }
-        echo $id.'<br>';
+
+
         return true;
     }
 

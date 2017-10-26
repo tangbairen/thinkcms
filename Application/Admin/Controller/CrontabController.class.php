@@ -82,7 +82,7 @@ class CrontabController extends Controller
                         D('VisitorInfo')->addInfo($result);
                     }
                 }
-
+                sleep(1);
             }
 
         }
@@ -126,7 +126,7 @@ class CrontabController extends Controller
                         D('VisitorInfo')->addInfo($result);
                     }
                 }
-
+                sleep(1);
             }
 
         }
