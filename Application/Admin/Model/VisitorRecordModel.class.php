@@ -200,9 +200,9 @@ class VisitorRecordModel extends Model
 
         if(empty($res)){
 
-            $this->add($map);
+            $id=$this->add($map);
         }
-
+        echo $id;
         return true;
     }
 
