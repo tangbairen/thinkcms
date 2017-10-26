@@ -62,7 +62,8 @@ class CrontabController extends Controller
 
         $content=$this->getCurl($url,$post_data);
         dump($content);
-        file_put_contents('./Uploads/log/bote.txt',$content);
+
+        file_put_contents('./Uploads/log/aaa.txt',$content);
         //显示获得的数据
 
         $data=json_decode($content,true);
