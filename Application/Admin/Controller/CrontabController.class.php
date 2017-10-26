@@ -116,7 +116,7 @@ class CrontabController extends Controller
             foreach($data as $ke=>$val){
                 $result=json_decode(urldecode($val),true);
                 $count=getmaxdim($result);
-                dump($result);
+
                 if($count > 1){//整体推送
                     D('VisitorRecord')->kfAddRecord($result);
                 }else{//客户信息
