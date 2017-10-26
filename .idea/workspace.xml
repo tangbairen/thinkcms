@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Brands/allot.html" afterPath="$PROJECT_DIR$/tpl/Admin/Brands/allot.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/modify.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/modify.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,19 +27,31 @@
       <file leaf-file-name="CrontabController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.285715">
-              <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+            <state vertical-scroll-proportion="-33.285713">
+              <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="allot.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="allot.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/allot.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49773756">
-              <caret line="91" column="79" selection-start-line="91" selection-start-column="79" selection-end-line="91" selection-end-column="79" />
+            <state vertical-scroll-proportion="-20.535715">
+              <caret line="91" column="20" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="79" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modify.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49773756">
+              <caret line="146" column="79" selection-start-line="146" selection-start-column="79" selection-end-line="146" selection-end-column="79" />
+              <folding>
+                <marker date="1509002190327" expanded="true" signature="11066:11104" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,7 +77,6 @@
         <option value="$PROJECT_DIR$/Application/Common/Model/AuthGroupAccessModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Public/base.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Resource/modify.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html" />
         <option value="$PROJECT_DIR$/visitor/visitor.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/MessageContoller.class.php" />
@@ -104,6 +114,7 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Brands/allot.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Resource/modify.html" />
       </list>
     </option>
   </component>
@@ -518,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54751134">
-          <caret line="101" column="54" selection-start-line="101" selection-start-column="54" selection-end-line="101" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24886878">
@@ -849,17 +853,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.285715">
-          <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+        <state vertical-scroll-proportion="-33.285713">
+          <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/allot.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49773756">
-          <caret line="91" column="79" selection-start-line="91" selection-start-column="79" selection-end-line="91" selection-end-column="79" />
+        <state vertical-scroll-proportion="-20.535715">
+          <caret line="91" column="20" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="79" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49773756">
+          <caret line="146" column="79" selection-start-line="146" selection-start-column="79" selection-end-line="146" selection-end-column="79" />
+          <folding>
+            <marker date="1509002190327" expanded="true" signature="11066:11104" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

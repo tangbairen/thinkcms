@@ -144,6 +144,7 @@
                     <h4 class="modal-title" id="exampleModalLabel">修改咨询品牌</h4>
                 </div>
                 <div class="modal-body">
+                    <input type="text" onkeyup="search(this);" maxlength="15" >
                     <form>
                         <foreach name="brandArr" item="val">
                             <span style="padding-right: 15px;padding-left: 5px;">{$val['name']}
@@ -169,6 +170,22 @@
 <block name="js">
     <icheckjs color="blue"/>
     <script>
+        function search(obj){
+            var name=$(obj).val();
+            if(name != ''){
+                $("input[name='brand_title']").each(function(k,v){
+
+                    var checkValue = $(this).attr('brandname');
+                    var num=checkValue.indexOf(name);
+                    if(num > -1){
+
+                        var aaa=$("input[name='brand_title']").eq(k).parent().css("color","red");
+                        var aaa=$("input[name='brand_title']").eq(k).parent().siblings().css('color','');
+                    }
+                });
+            }
+
+        }
 
         function check(){
 
