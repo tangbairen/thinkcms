@@ -122,6 +122,14 @@ class AreaController extends AdminBaseController
             $this->error('省份名称不能为空');
         }
 
+        $data=M('Province')->where("name='{$name}'")->find();
+
+        if($data){
+            $this->error('该名称已添加过了');
+            return false;
+        }
+
+
         $res=M('Province')->add(array('name'=>$name));
 
         if($res){
@@ -129,6 +137,8 @@ class AreaController extends AdminBaseController
         }else{
             $this->error('添加失败');
         }
+
+
 
     }
 
