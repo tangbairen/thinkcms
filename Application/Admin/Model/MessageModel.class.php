@@ -79,6 +79,8 @@ class MessageModel extends Model
         // 得到分页
         $show = $page->get_page();
 
+
+
         return array('data'=>$data,'show'=>$show,'count'=>$count);
 
     }
@@ -100,6 +102,19 @@ class MessageModel extends Model
                 ->field($field)
                 ->order('id desc')
                 ->select();
+        }
+
+        if(!empty($data)){
+            foreach($data as $key=>&$val){
+                //来源渠道
+                $talk_page=isset($val['url']) ? $val['url']:'';
+                $res=parse_url($talk_page);
+                $host=isset($res['host']) ? $res['host']:'';//来源url
+                $res=M('Referer')->where("url='{$host}'")->find();
+                if(!empty($res)){
+                    $val['company']=$res['company'];
+                }
+            }
         }
 
         return $data;

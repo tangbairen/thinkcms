@@ -27,7 +27,7 @@ class MessageController extends AdminBaseController
         $array=array(
             'phone'         =>$phone,
             'start_time'    =>$start_time,
-            'end_time'      =>$end_time
+            'end_time'      =>$end_time,
 
         );
         $this->assign($data);
@@ -89,7 +89,7 @@ class MessageController extends AdminBaseController
         $model=new MessageModel();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间'];
+        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
 
         export($header,$data);
 
@@ -175,7 +175,7 @@ class MessageController extends AdminBaseController
         $model=new Messagemxn2Model();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间'];
+        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
 
         export($header,$data);
 
@@ -260,7 +260,7 @@ class MessageController extends AdminBaseController
         $model=new MessageseoModel();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间'];
+        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
 
         export($header,$data);
 
