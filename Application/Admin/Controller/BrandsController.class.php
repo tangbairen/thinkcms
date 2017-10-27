@@ -314,14 +314,19 @@ class BrandsController extends AdminBaseController
     {
         try{
             $title=I('post.title');
+            $company=I('post.company','');
             $url=I('post.url');
             if(empty($title)) throw new Exception('标题不能为空');
             if(empty($url)) throw new Exception('url地址不能为空');
 
             $map['title']=$title;
             $map['url']=$url;
+            $map['company']=$company;
+            $data=M('Referer')->where("url='{$url}'")->select();
+            if($data) throw new Exception('url地址已添加过了');
 
             $res=M('Referer')->add($map);
+
             if(!$res) throw new Exception('添加失败');
 
             $this->success('添加成功',U('Admin/Brands/referer'));
@@ -356,11 +361,13 @@ class BrandsController extends AdminBaseController
             $edit_id=I('post.edit_id');
             $edit_title=I('post.edit_title');
             $edit_url=I('post.edit_url');
+            $edit_company=I('post.edit_company');
             if(empty($edit_title)) throw new Exception('标题不能为空');
             if(empty($edit_url)) throw new Exception('url地址不能为空');
 
             $map['title']=$edit_title;
             $map['url']=$edit_url;
+            $map['company']=$edit_company;
 
             $res=M('Referer')->where("id={$edit_id}")->save($map);
             if(!$res) throw new Exception('修改失败');

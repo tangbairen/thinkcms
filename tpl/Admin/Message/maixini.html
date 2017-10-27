@@ -48,6 +48,7 @@
                         <th>地址</th>
                         <th>项目</th>
                         <th>QQ</th>
+                        <th>所属公司</th>
                         <th>留言内容</th>
                         <th>来源url</th>
                         <th>来源ip</th>
@@ -61,7 +62,8 @@
                             <td>{$val['tel']/863}</td>
                             <td>{$val['area']}</td>
                             <td>{$val['xm']}</td>
-                            <td>{$val['qq']}</td>
+                            <td><if condition="$val['qq'] neq 0">{$val['qq']}</if></td>
+                            <td>{$val['company']}</td>
                             <td width="300px;">{$val['content']}</td>
                             <td width="400px;">{$val['url']}</td>
                             <td>{$val['ip']}</td>

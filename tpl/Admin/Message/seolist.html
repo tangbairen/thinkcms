@@ -48,6 +48,7 @@
                         <th>地址</th>
                         <th>项目</th>
                         <th>QQ</th>
+                        <th>所属公司</th>
                         <th>留言内容</th>
                         <th>来源url</th>
                         <th>来源ip</th>
@@ -59,11 +60,12 @@
                             <td><input type="checkbox" name="box[]" value="{$val['id']}"></td>
                             <td>{$val['username']}</td>
                             <td>{$val['tel']/863}</td>
-                            <td>{$val['area']}</td>
-                            <td>{$val['xm']}</td>
-                            <td>{$val['qq']}</td>
-                            <td width="300px;">{$val['content']}</td>
-                            <td width="400px;">{$val['url']}</td>
+                            <td width="150px;">{$val['area']}</td>
+                            <td width="150px;">{$val['xm']}</td>
+                            <td><if condition="$val['qq'] neq 0">{$val['qq']}</if></td>
+                            <td>{$val['company']}</td>
+                            <td width="250px;">{$val['content']}</td>
+                            <td width="350px;">{$val['url']}</td>
                             <td>{$val['ip']}</td>
                             <td>{$val['create_time']}</td>
                             <td>
