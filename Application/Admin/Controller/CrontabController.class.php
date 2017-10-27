@@ -60,7 +60,6 @@ class CrontabController extends Controller
             "cmd" => "unsent_message",
             "53kf_token" =>$toten
         );
-        echo $toten;
         $content=$this->getCurl($url,$post_data);
 
         file_put_contents('./Uploads/log/mess01.txt',$content);
@@ -68,7 +67,6 @@ class CrontabController extends Controller
 
         $data=json_decode($content,true);
 
-        dump($data);
 
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
@@ -92,7 +90,7 @@ class CrontabController extends Controller
 
         }
 
-        return json_encode(array('code'=>200,'message'=>'获取成功'));
+        echo  json_encode(array('code'=>200,'message'=>'获取成功'));
 
     }
 
@@ -110,12 +108,11 @@ class CrontabController extends Controller
             "cmd" => "unsent_message",
             "53kf_token" =>$toten
         );
-        echo $toten;
+
         $content=$this->getCurl($url,$post_data);
         file_put_contents('./Uploads/log/mess02.txt',$content);
         $data=json_decode($content,true);
 
-        dump($data);
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
         if($cmd != 'error'){
@@ -139,7 +136,7 @@ class CrontabController extends Controller
 
         }
 
-        return json_encode(array('code'=>200,'message'=>'获取成功'));
+        echo  json_encode(array('code'=>200,'message'=>'获取成功'));
 
     }
 
