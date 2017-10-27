@@ -478,7 +478,7 @@ class ResourceModel extends Model
 
         $map['addtime']=time();
         $map['group_id']=$group_id;
-        $map['talk_id']=$data['talk_id'];
+        $map['talk_id']=$data['guest_id'];
         $map['address']=$data['guest_area'];
         $map['username']='';
         $map['phone']=$phone;
