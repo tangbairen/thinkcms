@@ -40,7 +40,6 @@ class VisitorController extends AdminBaseController
      * */
     public function data_source()
     {
-
         $get=I('get.');
 
         $data=D('VisitorRecord')->getData();
