@@ -418,6 +418,42 @@ class ResourceModel extends Model
             M('VisitorInfo')->where("id={$info['id']}")->save(array('status'=>2));
             M('VisitorRecord')->where("id={$res['id']}")->save(array('status'=>2));
 
+        }else{//存在 修改资源
+            $data=M('VisitorRecord')
+                ->field('id,guest_id,talk_id,talk_page,guest_area,se,kw,worker_id,worker_name,device,status')
+                ->where("guest_id={$guest_id} and status=2")
+                ->order('id desc')
+                ->find();
+            if($data){
+                $phone='';
+                $chats='';
+                $len=stripos ($guest_name,'t#');
+
+                if($len !== false){
+                    $phone=substr($guest_name,$len+2);//手机号码
+
+                }else{
+                    $qlen=strrpos($guest_name,'#');
+                    if($qlen !== false){
+                        $chats=substr($guest_name,$qlen+1);//QQ或微信...
+                    }
+                }
+
+                if(empty($phone)){
+                    $phone =$info['mobile'];
+                }
+
+                if(empty($phone)){
+                    $phone = '';
+                }
+                if(empty($chats)){
+                    $chats = '';
+                }
+                $map['phone']=$phone;
+                $map['chats']=$chats;
+                $this->where("talk_id='{$guest_id}'")->save($map);
+            }
+
         }
 
         return true;
