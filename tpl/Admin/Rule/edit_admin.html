@@ -35,8 +35,16 @@
                         <td> <input class="input-medium" type="text" name="email" value="{$user_data['email']}"></td>
                     </tr>
                     <tr>
-                        <th>公司</th>
-                        <td> <input class="input-medium" type="text" name="company" value="{$user_data['company']}"></td>
+                        <th>所属公司（选填）</th>
+                        <td>
+                            <select name="company_id" id="company_id">
+                                <option value="0">选择所属公司</option>
+                                <foreach name="company" item="val">
+                                    <option value="{$val['id']}" <if condition="$comp['cid'] eq $val['id']">selected</if> >{$val['company']}</option>
+                                </foreach>
+                            </select>
+                            <span>（对应电销部门）</span>
+                        </td>
                     </tr>
                     <tr>
                         <th>初始密码</th>

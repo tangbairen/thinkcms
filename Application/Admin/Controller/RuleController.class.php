@@ -266,6 +266,12 @@ class RuleController extends AdminBaseController{
      */
     public function admin_user_list(){
         $data=D('AuthGroupAccess')->getAllData();
+        foreach($data as $key=>&$val){
+            $company=M('Company')->alias('c')->join('bt_users as u  on  c.cid=u.id')->where("uid={$val['id']}")->select();
+            if(!empty($company)){
+                $val['company_name']=$company[0]['company'];
+            }
+        }
         $assign=array(
             'data'=>$data
             );
@@ -366,7 +372,20 @@ class RuleController extends AdminBaseController{
             $User = M("Users");
 
             $result=$User->where($map)->save($data);
-            if($result){
+
+            $company=M('Company')->where("uid={$uid}")->find();
+            $company_id=$data['company_id']+0;
+            if(empty($company)){//添加
+                if($company_id > 0){
+                    M('Company')->add(array('uid'=>$uid,'cid'=>$company_id));
+                }
+            }else{//修改
+                M('Company')->where("id={$company['id']}")->save(array('cid'=>$company_id));
+            }
+
+            $this->success('编辑成功',U('Admin/Rule/admin_user_list',array('id'=>$uid)));
+
+           /* if($result){
                 // 操作成功
                 $this->success('编辑成功',U('Admin/Rule/admin_user_list',array('id'=>$uid)));
             }else{
@@ -378,7 +397,7 @@ class RuleController extends AdminBaseController{
                     $this->error($error_word);                  
                 }
 
-            }
+            }*/
         }else{
             $id=I('get.id',0,'intval');
             // 获取用户数据
@@ -390,10 +409,18 @@ class RuleController extends AdminBaseController{
             // 全部用户组
             $data=D('AuthGroup')->select();
 
+            //获取所属公司
+            $company=M('Users')->where('level=3')->select();
+
+            //
+            $comp=M('Company')->where("uid={$id}")->find();
+
             $assign=array(
                 'data'=>$data,
                 'user_data'=>$user_data,
                 'group_data'=>$group_data,
+                'company'=>$company,
+                'comp'=>$comp
                 );
             $this->assign($assign);
             $this->display();

@@ -307,7 +307,7 @@ class ResourceModel extends Model
      * */
     public function groupModify()
     {
-        $company=I('post.company'); //公司名
+        //$company=I('post.company'); //公司名
         $confirm_address=I('post.confirm_address'); //确认地址
         $assistant=I('post.assistant'); //回访人
         $confirm_remark=I('post.confirm_remark'); //备注
@@ -318,7 +318,7 @@ class ResourceModel extends Model
         if(empty($assistant)) throw new Exception('请填入回访人');
         if($status === '') throw new Exception('请选择是否可跟');
 
-        if(!empty($company)){
+        /*if(!empty($company)){
 
             $array['company']=$company;
 
@@ -327,8 +327,14 @@ class ResourceModel extends Model
             $data=M('Users')->where("id={$id}")->find();
             $company=isset($data['company']) ? $data['company']: '';
             $array['company']=$company;
+        }*/
+        $id=session('user.id');
+        $company=M('Company')->field('company')->alias('c')->join('bt_users as u  on  c.cid=u.id')->where("c.uid={$id}")->find();
+        if(empty($company)){
+            $array['company']='';
+        }else{
+            $array['company']=$company['company'];
         }
-
         $map['id']=$resId;
         $map['group_id']=$groupId;
 
