@@ -43,7 +43,9 @@
                                 <p id="js_login" style="height:28px;color:red;"></p>
                                 <label class="block clearfix">
 										<span class="block input-icon input-icon-right">
-											<input type="text" class="form-control" placeholder="登录名" name="name">
+
+
+											<input type="text" class="form-control" placeholder="登录名" name="name" value="<php>if(cookie('username')){ echo cookie('username');}</php>">
 											<i class="icon-user"></i>
 										</span>
                                 </label>

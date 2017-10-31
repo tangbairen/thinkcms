@@ -38,6 +38,7 @@ class UsersModel extends Model
         $this->where("id={$data['id']}")->save($map);
 
         session('user',array('id'=>$data['id'],'username'=>$data['username']));
+        cookie('loginname',$username,3600*24*7); // 指定cookie保存时间
 
         return '登录成功';
     }

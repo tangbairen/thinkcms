@@ -9,6 +9,7 @@ return array(
         '__OSS__'            => OSS_URL,
         '__PUBLIC__'         => OSS_URL.__ROOT__.'/Public',
         '__HOME_CSS__'       => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/css',
+        '__HOME_CSS__'       => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/css',
         '__HOME_JS__'        => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/js',
         '__HOME_IMAGES__'    => OSS_URL.trim(TMPL_PATH,'.').'Home/Public/images',
         '__ADMIN_CSS__'      => __ROOT__.trim(TMPL_PATH,'.').'Admin/Public/css',
@@ -40,6 +41,7 @@ return array(
         'use_trans_sid'      => 1,//跨页传递
         'use_only_cookies'   => 0,//是否只开启基于cookies的session的会话方式
     ),
+    'COOKIE_PREFIX'          =>'bote_',
 //***********************************页面设置**************************************
     'TMPL_EXCEPTION_FILE'    => APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',
     'TMPL_ACTION_ERROR'      => TMPL_PATH.'/Public/dispatch_jump.tpl', // 默认错误跳转对应的模板文件
