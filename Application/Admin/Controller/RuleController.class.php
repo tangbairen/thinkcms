@@ -284,7 +284,7 @@ class RuleController extends AdminBaseController{
                 $map['phone']=$data['phone'];
             }
             $map['email']=$data['email'];
-            $map['company']=$data['company'];
+//            $map['company']='';
             $map['password']=md5($data['password']);
             $map['status']=$data['status'];
             $map['register_time']=time();
@@ -307,6 +307,11 @@ class RuleController extends AdminBaseController{
                         D('AuthGroupAccess')->addData($group);
                     }                   
                 }
+
+                if($data['company_id'] > 0){
+                    M('Company')->add(array('uid'=>$result,'cid'=>$data['company_id']));
+                }
+
                 // 操作成功
                 $this->success('添加成功',U('Admin/Rule/admin_user_list'));
             }else{
@@ -316,8 +321,14 @@ class RuleController extends AdminBaseController{
             }
         }else{
             $data=D('AuthGroup')->select();
+
+            //获取所属公司
+            $company=M('Users')->where('level=3')->select();
+
+
             $assign=array(
-                'data'=>$data
+                'data'=>$data,
+                'company'=>$company
                 );
             $this->assign($assign);
             $this->display();
@@ -378,10 +389,11 @@ class RuleController extends AdminBaseController{
                 ->getField('group_id',true);
             // 全部用户组
             $data=D('AuthGroup')->select();
+
             $assign=array(
                 'data'=>$data,
                 'user_data'=>$user_data,
-                'group_data'=>$group_data
+                'group_data'=>$group_data,
                 );
             $this->assign($assign);
             $this->display();
@@ -401,5 +413,64 @@ class RuleController extends AdminBaseController{
             $this->error('删除失败');
         }
     }
+
+    /*
+     * 添加公司账号（电销）用来查看部门所属公司的资源情况
+     * */
+    public function add_company()
+    {
+        if(IS_POST){
+
+            $data=I('post.');
+            $map['username']=$data['username'];
+            if(!empty($data['phone'])){
+                $map['phone']=$data['phone'];
+            }
+            $map['email']=$data['email'];
+            $map['company']=$data['company'];
+            $map['password']=md5($data['password']);
+            $map['status']=$data['status'];
+            $map['register_time']=time();
+            $map['level']=3;
+
+            //查询是否存在
+            $res=M('Users')->where("username='{$data['username']}'")->find();
+            if($res){
+                $this->error('该用户名已经存在了！');
+                exit;
+            }
+
+            $result=M('Users')->data($map)->add();
+            if($result){
+                if (!empty($data['group_ids'])) {
+                    foreach ($data['group_ids'] as $k => $v) {
+                        $group=array(
+                            'uid'=>$result,
+                            'group_id'=>$v
+                        );
+                        D('AuthGroupAccess')->addData($group);
+                    }
+                }
+                // 操作成功
+                $this->success('添加成功',U('Admin/Rule/admin_user_list'));
+            }else{
+                $error_word=D('Users')->getError();
+                // 操作失败
+                $this->error($error_word);
+            }
+
+
+        }else{
+            $data=D('AuthGroup')->select();
+            $assign=array(
+                'data'=>$data
+            );
+            $this->assign($assign);
+            $this->display();
+        }
+
+    }
+
+
 
 }
