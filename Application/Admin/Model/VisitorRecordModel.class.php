@@ -105,7 +105,7 @@ class VisitorRecordModel extends Model
         /*实例化第三方分页类库*/
         $page = new \Page($page);
 
-        $data=$this->where($where)->order('end_time desc')->limit($page->pagerows(),$page->maxrows())->select();
+        $data=$this->where($where)->order('talk_time desc')->limit($page->pagerows(),$page->maxrows())->select();
 
         if(!empty($data)){
             foreach($data as $key=>&$val){
