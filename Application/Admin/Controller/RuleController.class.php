@@ -199,6 +199,7 @@ class RuleController extends AdminBaseController{
             $group_data['rules']=explode(',', $group_data['rules']);
             // 获取规则数据
             $rule_data=D('AuthRule')->getTreeData('level','id','title');
+//            p($rule_data);
             $assign=array(
                 'group_data'=>$group_data,
                 'rule_data'=>$rule_data
@@ -293,6 +294,7 @@ class RuleController extends AdminBaseController{
 //            $map['company']='';
             $map['password']=md5($data['password']);
             $map['status']=$data['status'];
+            $map['level']=$data['level']+0;
             $map['register_time']=time();
 
             //查询是否存在

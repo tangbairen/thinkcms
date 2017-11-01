@@ -41,11 +41,25 @@ class AdminNavModel extends BaseModel{
 			$data=\Org\Nx\Data::channelLevel($data,0,'&nbsp;','id');
 			// 显示有权限的菜单
 			$auth=new \Think\Auth();
+
 			foreach ($data as $k => $v) {
 				if ($auth->check($v['mca'],$_SESSION['user']['id'])) {
 					foreach ($v['_data'] as $m => $n) {
-						if(!$auth->check($n['mca'],$_SESSION['user']['id'])){
+						if($auth->check($n['mca'],$_SESSION['user']['id'])){
+
+							/*三级目录*/
+							if(!empty($n['_data'])){
+								foreach($n['_data'] as $h=>$j){
+									if(!$auth->check($j['mca'],$_SESSION['user']['id'])){
+										unset($data[$k]['_data'][$m]['_data'][$h]);
+									}
+								}
+							}
+
+
+						}else{
 							unset($data[$k]['_data'][$m]);
+
 						}
 					}
 				}else{

@@ -93,7 +93,8 @@
                         <span class="menu-text">首页</span>
                     </a>
                 </li>
-                <foreach name="nav_data" item="v"><empty name="v['_data']">
+                <foreach name="nav_data" item="v">
+                    <empty name="v['_data']">
                     <li class="b-nav-li">
                         <a href="{:U($v['mca'])}">
                             <i class="fa fa-{$v['ico']} icon-test"></i>
@@ -109,9 +110,28 @@
                         </a>
                         <ul class="submenu">
                             <foreach name="v['_data']" item="n">
+                                <empty name="n['_data']">
                                 <li class="b-nav-li <if condition="(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME) eq $n['mca']">active</if>">
                                 <a href="{:U($n['mca'])}"><i class="icon-double-angle-right"></i> {$n['name']}</a>
                                 </li>
+                                    <else/>
+                                    <li class="b-has-child">
+                                        <a href="#" class="dropdown-toggle b-nav-parent">
+                                            <i class="fa fa-{$n['ico']} icon-test"></i>
+                                            <span class="menu-text">{$n['name']}</span>
+                                            <b class="arrow icon-angle-down"></b>
+                                        </a>
+                                        <ul class="submenu">
+                                            <foreach name="n['_data']" item="m">
+                                                <empty name="m['_data']">
+                                                    <li class="b-has-child b-nav-li <if condition="(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME) eq $m['mca']">active</if>">
+                                                    <a href="{:U($m['mca'])}"><i class="icon-double-angle-right"></i> {$m['name']}</a>
+                                                    </li>
+                                                </empty>
+                                            </foreach>
+                                        </ul>
+                                    </li>
+                                </empty>
                             </foreach>
                         </ul>
                     </li>
@@ -162,6 +182,7 @@
 <script>
     $(function(){
         $('.b-has-child .active').parents('.b-has-child').eq(0).find('.b-nav-parent').click();
+//        $('.b-has-child .active').parents('.b-has-child').eq(1).find('.b-nav-parent').click();
     })
 </script>
 </body>

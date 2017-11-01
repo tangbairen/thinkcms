@@ -32,7 +32,17 @@
 											</th>
 												<td>
 													<notempty name="n['_data']">
-														<volist name="n['_data']" id="c"> <label>&emsp;{$c['title']} <input type="checkbox" name="rule_ids[]" value="{$c['id']}" <if condition="in_array($c['id'],$group_data['rules'])"> checked="checked"</if> ></label></volist>
+														<volist name="n['_data']" id="c">
+															<label>&emsp;{$c['title']}
+															<input type="checkbox" name="rule_ids[]" value="{$c['id']}" <if condition="in_array($c['id'],$group_data['rules'])"> checked="checked"</if> >
+															</label>
+															<volist name="c['_data']" id="m">
+																<label>&emsp;{$m['title']}
+																	<input type="checkbox" name="rule_ids[]" value="{$m['id']}" <if condition="in_array($m['id'],$group_data['rules'])"> checked="checked"</if> >
+																</label>
+
+															</volist>
+														</volist>
 													</notempty>
 												</td>
 											</tr>
