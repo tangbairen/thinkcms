@@ -500,6 +500,10 @@ class RuleController extends AdminBaseController{
 
     }
 
+    /*
+     * 部门
+     * */
+//    public function
 
 
 }
