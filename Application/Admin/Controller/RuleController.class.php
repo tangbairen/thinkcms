@@ -501,9 +501,53 @@ class RuleController extends AdminBaseController{
     }
 
     /*
-     * 部门
+     * 部门列表
      * */
-//    public function
+    public function department()
+    {
+        if(IS_POST){
+
+            try{
+                $name=I('post.name');
+                $parent_id=I('post.parent_id');
+                $description=I('post.description');//描述
+                $check2=I('post.check2');
+                $group_id=I('post.group_id');
+                if($parent_id == 'top'){
+                    $map['parent_id'] = 0;
+                }
+                if(!empty($check2)){
+                    $map['area_id']=implode($check2,',');
+                }
+
+                $map['name']=$name;
+                $map['parent_id']=$parent_id;
+                $map['description']=$description;
+                $map['group_id']=$group_id;
+
+                $res=M('RoleDepartment')->add($map);
+                if(empty($res)) throw new Exception('添加失败');
+
+                $this->success('添加成功',U('Admin/Rule/department'));
+
+            }catch (Exception $e){
+                $message=$e->getMessage();
+                $this->error($message);
+            }
+
+        }else{
+            $area=M('Area')->select();
+            $depart=M('RoleDepartment')->select();
+            $data=\Org\Nx\Data::tree($depart,'name','id','parent_id');
+            $group=M('AuthGroup')->select();
+
+            $this->assign('area',$area);
+            $this->assign('data',$data);
+            $this->assign('group',$group);
+            $this->display('department');
+        }
+
+    }
 
 
 }

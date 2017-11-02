@@ -2,6 +2,48 @@
 
 header("Content-type:text/html;charset=utf-8");
 
+
+/*
+ * 获取上级部门
+ * */
+function department($depart_id){
+    $res=M('RoleDepartment')->where("id={$depart_id}")->find();
+    if($res){
+        return $res['name'];
+    }else{
+        return '顶级部门';
+    }
+}
+
+/*
+ * 获取所属区域
+ * */
+function getarea($area_id){
+    if(!empty($area_id)){
+        $map['id']=array('in',$area_id);
+        $data=M('area')->where($map)->select();
+        $str='';
+        foreach($data as $val){
+           $str .=$val['area_name'].',';
+       }
+        return rtrim($str,',');
+    }else{
+        return '';
+    }
+}
+
+/*
+ * 获取角色
+ * */
+function getrule($rule_id){
+    $data=M('AuthGroup')->where("id={$rule_id}")->find();
+    if(empty($data)){
+        return '';
+    }else{
+        return $data['title'];
+    }
+}
+
 /*
      * 返回几维数组
      * */

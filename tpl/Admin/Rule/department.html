@@ -1,0 +1,118 @@
+<extend name="Public:base"/>
+<block name="title">部门管理</block>
+<block name="content">
+    <div class="page-header">
+        <h1> 首页 &gt; 部门管理</h1>
+    </div>
+    <div class="col-xs-12">
+        <div class="tabbable">
+            <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
+                <li class="active"> <a href="#home" data-toggle="tab">部门列表</a></li>
+                <li> <a href="javascript:;"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">添加部门</a></li>
+
+            </ul>
+            <table class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>部门名称</th>
+                    <th>上级部门</th>
+                    <th>所属区域</th>
+                    <th>所属角色</th>
+                    <th>部门描述</th>
+                    <th>操作</th>
+                </tr>
+                <foreach name="data" item="val">
+                <tr>
+                    <td>{$val['id']}</td>
+                    <td>{$val['_name']}</td>
+                    <td><?php echo department($val['parent_id'])?></td>
+                    <td><?php echo getarea($val['area_id'])?></td>
+                    <td><?php echo getrule($val['group_id'])?></td>
+                    <td>{$val['description']}</td>
+                    <td>
+                        <div class="layui-btn-group">
+                            <button class="layui-btn layui-btn-small"><i class="layui-icon"></i></button>
+                            <button class="layui-btn layui-btn-small"><i class="layui-icon"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                </foreach>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">添加部门</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" method="post">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">部门名称</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="部门名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">上级部门</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="parent_id">
+                                    <option value="top">顶级域名</option>
+                                    <foreach name="data" item="v">
+                                        <option value="{$v['id']}">{$v['name']}</option>
+                                    </foreach>
+
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">所属区域</label>
+                            <div class="col-sm-10">
+                                <foreach name="area" item="val">
+                                    <input type="checkbox" name="check2[]" value="{$val['id']}">
+                                    <span style="padding-right: 10px;">{$val['area_name']}</span>
+                                </foreach>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">角色</label>
+                            <div class="col-sm-10">
+
+                                    <select class="form-control" name="group_id">
+                                        <foreach name="group" item="v">
+                                            <option value="{$v['id']}">{$v['title']}</option>
+                                        </foreach>
+
+                                    </select>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">部门描述</label>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                    <textarea class="form-control" name="description" rows="3"></textarea>
+                            </div>
+                        </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary">添加</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</block>
+<block name="js">
+
+</block>
