@@ -40,7 +40,7 @@
             </table>
         </div>
     </div>
-
+    <!--添加部门-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -62,7 +62,7 @@
                                 <select class="form-control" name="parent_id">
                                     <option value="top">顶级域名</option>
                                     <foreach name="data" item="v">
-                                        <option value="{$v['id']}">{$v['name']}</option>
+                                        <option value="{$v['id']}">{$v['_name']}</option>
                                     </foreach>
 
                                 </select>
@@ -105,14 +105,25 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="submit" class="btn btn-primary">添加</button>
+                    <button type="submit" class="btn btn-primary" onclick="return addData();">添加</button>
                 </div>
                 </form>
             </div>
         </div>
     </div>
+    <!--添加部门-->
 
 </block>
 <block name="js">
+    <script>
+        function addData(){
+            var name=$("input[name='name']").val();
+            if(name == ''){
+                layer.msg('部门名称不能为空',{'icon':2});
+                return false;
+            }
+        }
 
+
+    </script>
 </block>

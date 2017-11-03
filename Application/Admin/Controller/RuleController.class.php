@@ -549,5 +549,140 @@ class RuleController extends AdminBaseController{
 
     }
 
+    /*
+     * 添加用户  （改）
+     * @param date 2017-11-03 09:35
+     * */
+    public function adduser()
+    {
+        if(IS_POST){//添加用户
+            try{
+                $this->handler_user();
+                $this->success('添加成功',U('Admin/Rule/adduser'));
+            }catch(Exception $e){
+                $message=$e->getMessage();
+                $this->error($message);
+            }
+
+
+
+        }else{//用户列表
+            $data=D('AuthGroupAccess')->getAllData();
+            foreach($data as $key=>&$val){
+                /*$company=M('Company')->alias('c')->join('bt_users as u  on  c.cid=u.id')->where("uid={$val['id']}")->select();
+                if(!empty($company)){
+                    $val['company_name']=$company[0]['company'];
+                }*/
+
+                $depart=M('RoleDepartment')->where("id={$val['department_id']}")->find();
+                if(!empty($depart)){
+                    $val['department_name']=$depart['name'];
+                }else{
+                    $val['department_name']='';
+                }
+
+            }
+
+            $depart=M('RoleDepartment')->select();
+            $departdata=\Org\Nx\Data::tree($depart,'name','id','parent_id');
+
+            $assign=array(
+                'data'=>$data,
+                'departdata'=>$departdata
+            );
+            $this->assign($assign);
+            $this->display();
+        }
+
+    }
+
+
+    public function handler_user()
+    {
+        $name=I('post.name');
+        $phone=I('post.phone');
+        $email=I('post.email');
+        $pass=I('post.pass');
+        $department_id=I('post.department_id');
+        $level=I('post.level');
+        $remarks=I('post.remarks');
+        $status=I('post.status')+0;
+
+        if(empty($name)) throw new Exception('用户名不能为空');
+        if(empty($pass)) throw new Exception('初始密码不能为空');
+        if(empty($department_id)) throw new Exception('请选择部门');
+        if(empty($level)) throw new Exception('请选择用户类别');
+
+        $map['department_id']=$department_id;
+        $map['username']=$name;
+        $map['password']=md5($pass);
+        $map['email']=$email;
+        $map['phone']=$phone;
+        $map['register_time']=time();
+        $map['level']=$level;
+        $map['remarks']=$remarks;
+        $map['status']=$status;
+
+        $res=M('Users')->add($map);
+
+        if(empty($res)) throw new Exception('添加失败');
+
+        return true;
+    }
+
+    /*
+    * 删除管理员
+    * @Param date 2017-11-03 10:31
+    * */
+    public function del_user()
+    {
+        $id=I('get.id');
+        $result=M('Users')->where("id={$id}")->delete();
+        if ($result) {
+            $this->success('删除成功',U('Admin/Rule/adduser'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
+
+    public function edit_user()
+    {
+        try{
+            $edit_name=trim(I('post.edit_name'));
+            $user_id=I('post.user_id')+0;
+            $edit_phone=trim(I('post.edit_phone'));
+            $edit_pass=trim(I('post.edit_pass'));
+            $edit_department_id=trim(I('post.edit_department_id'));
+            $edit_level=trim(I('post.edit_level'));
+            $edit_remarks=trim(I('post.edit_remarks'));
+            $edit_email=trim(I('post.edit_email'));
+            $status=trim(I('post.status'));
+
+            if(empty($user_id)) throw new Exception('刷新重试');
+            if(empty($edit_name)) throw new Exception('用户名不能为空');
+            if(empty($edit_department_id)) throw new Exception('请选择部门');
+            if(empty($edit_level)) throw new Exception('请选择用户类别');
+
+            if(!empty($edit_pass)){
+                $map['password']=md5($edit_pass);
+            }
+            $map['department_id']=$edit_department_id;
+            $map['username']=$edit_name;
+            $map['email']=$edit_email;
+            $map['phone']=$edit_phone;
+            $map['level']=$edit_level;
+            $map['remarks']=$edit_remarks;
+            $map['status']=$status;
+
+            $res=M('Users')->where("id={$user_id}")->save($map);
+            if(empty($res)) throw new Exception('修改失败');
+
+            $this->success('修改成功',U('Admin/Rule/adduser'));
+        }catch(Exception $e){
+            $message=$e->getMessage();
+            $this->error($message);
+        }
+    }
+
 
 }

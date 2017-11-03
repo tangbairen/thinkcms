@@ -18,8 +18,10 @@ class AdminBaseController extends BaseController
 			exit;
 		}
 
-		$auth=new \Think\Auth();
+//		$auth=new \Think\Auth();
+		$auth=new \Think\Authde();
 		$rule_name=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME;
+
 		$result=$auth->check($rule_name,$_SESSION['user']['id']);
 		if(!$result){
 			$this->error('您没有权限访问');
@@ -28,9 +30,36 @@ class AdminBaseController extends BaseController
 		$nav_data=D('AdminNav')->getTreeData('level','order_number,id');
 		$assign=array(
 			'nav_data'=>$nav_data
-			);
+		);
 		$this->assign($assign);
 	}
+
+	/**
+	 * 初始化方法
+	 */
+	/*public function _initialize()
+	{
+		parent::_initialize();
+
+		if(empty($_SESSION['user'])){
+			$this->error('请登录',U('Login/index'));
+			exit;
+		}
+
+		$auth=new \Think\Auth();
+		$rule_name=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME;
+
+		$result=$auth->check($rule_name,$_SESSION['user']['id']);
+		if(!$result){
+//			$this->error('您没有权限访问');
+		}
+		// 分配菜单数据
+		$nav_data=D('AdminNav')->getTreeData('level','order_number,id');
+		$assign=array(
+			'nav_data'=>$nav_data
+			);
+		$this->assign($assign);
+	}*/
 
 	/**
 	 * 获取服务器信息

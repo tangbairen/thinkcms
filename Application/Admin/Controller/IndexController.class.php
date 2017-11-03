@@ -15,19 +15,19 @@ class IndexController extends AdminBaseController{
 		$Ip = new \Org\Net\IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
 		$area = $Ip->getlocation($data['last_login_ip']); // 获取某个IP地址所在的位置
 
-		$res=M('AuthGroupAccess')->where("uid={$uid}")->find();
-		$group=M('AuthGroup')->where("id={$res['group_id']}")->find();
+		/*$res=M('AuthGroupAccess')->where("uid={$uid}")->find();
+		$group=M('AuthGroup')->where("id={$res['group_id']}")->find();*/
 
 		/*$sql="select FROM_UNIXTIME(addtime,'%Y-%m-%d') as day,count(*)as number  from  bt_resource where group_id={$res['group_id']}   GROUP BY day  order by day desc";
 		$total=M('Resource')->query($sql);*/
 
-		$summary=D('Resource')->summary($res['group_id']);//今日，当月汇总
+		/*$summary=D('Resource')->summary($res['group_id']);//今日，当月汇总
 		$status=M('Total')->where("group_id={$res['group_id']}")->find();
 		$this->assign('data',$data);
 		$this->assign('area',$area);
 		$this->assign('group',$group);
 		$this->assign('status',$status);
-		$this->assign($summary);
+		$this->assign($summary);*/
 		//$this->assign('total',$total);
 		$this->display();
 	}

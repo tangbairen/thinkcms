@@ -1,0 +1,361 @@
+<extend name="Public:base"/>
+<block name="title">用户列表</block>
+<block name="css">
+    <style>
+        .modal.in .modal-dialog{margin-top: 85px;}
+    </style>
+</block>
+<block name="content">
+    <div class="page-header">
+        <h1> 首页 &gt; 用户列表</h1>
+    </div>
+    <div class="col-xs-12">
+        <div class="tabbable">
+            <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
+                <li class="active"> <a href="#home" data-toggle="tab">用户列表</a></li>
+                <li> <a href="javascript:;"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">添加用户</a></li>
+
+            </ul>
+            <table class="table table-hover">
+
+                <tr>
+                    <th>用户ID</th>
+                    <th>用户名</th>
+                    <th>所属部门</th>
+                    <th>登录IP</th>
+                    <th>登录次数</th>
+                    <th>登录时间</th>
+                    <th>邮箱</th>
+                    <th>手机</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                <foreach name="data" item="v">
+                    <tr>
+                        <td>{$v['id']}</td>
+                        <td>{$v['username']}</td>
+                        <td>{$v['department_name']}</td>
+                        <td>{$v['last_login_ip']}</td>
+                        <td>{$v['login_count']}</td>
+                        <td>
+                            <?php
+                                    if(empty($v['last_login_time'])){
+                                        echo '暂未登录';
+                                    }else{
+                                        echo date('Y-m-d H:i:s',$v['last_login_time']);
+                                    }
+                                ?>
+
+                        </td>
+                        <td>{$v['email']}</td>
+                        <td>{$v['phone']}</td>
+                        <td>
+                            <if condition="$v['status'] eq 1 ">
+                                <span >正常</span>
+                                <else />
+                                <span>禁用</span>
+                            </if>
+                        </td>
+                        <td>
+
+                            <a data-toggle="modal" data-target="#exampleModal1" class="layui-btn layui-btn-primary layui-btn-small"
+                               userId="{$v['id']}" userName="{$v['username']}" department_id="{$v['department_id']}"
+                               phone="{$v['phone']}" email="{$v['email']}" remarks="{$v['remarks']}" level="{$v['level']}"
+                               onclick="edit(this)">
+                                <i class="layui-icon"></i>
+                            </a>
+                            <a href="javascript:if(confirm('确定删除？'))location='{:U('Admin/Rule/del_user',array('id'=>$v['id']))}'" class="layui-btn layui-btn-primary layui-btn-small" ><i class="layui-icon"></i></a>
+                        </td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+    </div>
+    <!--添加用户-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">添加用户</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" method="post">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">用户名 *</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="name" maxlength="20" class="form-control" id="inputEmail3" placeholder="用户名">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">手机号</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="phone" maxlength="15" class="form-control" id="inputEmail3" placeholder="手机号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="email" maxlength="20" class="form-control" id="inputEmail3" placeholder="邮箱">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">初始密码 *</label>
+                            <div class="col-sm-10">
+                                <input type="password" maxlength="20" name="pass" class="form-control" id="inputEmail3" placeholder="初始密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">所属部门 *</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="department_id">
+                                    <option value="">请选择部门</option>
+                                    <foreach name="departdata" item="v">
+                                        <option value="{$v['id']}">{$v['_name']}</option>
+                                    </foreach>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">用户类别 *</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="level">
+                                    <option value="">请选择类别</option>
+                                    <option value="2">管理员</option>
+                                    <option value="4">员工</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">备注</label>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <textarea class="form-control" name="remarks" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">状态</label>
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline">
+                                    <input type="radio" id="inlineCheckbox1" name="status" checked value="1"> 正常
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" id="inlineCheckbox2" name="status" value="2"> 禁用
+                                </label>
+
+                            </div>
+                        </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary" onclick="return addData();">添加</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--添加用户-->
+
+    <!--修改用户-->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">修改用户</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" method="post" action="{:U('rule/edit_user')}">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">用户名 *</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="edit_name" maxlength="20" class="form-control" id="inputEmail3" placeholder="用户名">
+                            </div>
+                            <input type="hidden" name="user_id">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">手机号</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="edit_phone" maxlength="15" class="form-control" id="inputEmail3" placeholder="手机号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="edit_email" maxlength="20" class="form-control" id="inputEmail3" placeholder="邮箱">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">修改密码 *</label>
+                            <div class="col-sm-10">
+                                <input type="password" maxlength="20" name="edit_pass" class="form-control" id="inputEmail3" placeholder="初始密码,不修改就不填">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">所属部门 *</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="edit_department_id" id="departarr">
+                                    <option value="">请选择部门</option>
+                                    <!--<foreach name="departdata" item="v">
+                                        <option value="{$v['id']}">{$v['_name']}</option>
+                                    </foreach>-->
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">用户类别 *</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="edit_level" id="edit_level">
+                                    <option value="">请选择类别</option>
+                                    <option value="2">管理员</option>
+                                    <option value="4">员工</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">备注</label>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <textarea class="form-control" name="edit_remarks" id="edit_remarks" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">状态</label>
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline">
+                                    <input type="radio" id="inlineCheckbox1" name="status" checked value="1"> 正常
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" id="inlineCheckbox2" name="status" value="2"> 禁用
+                                </label>
+
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary" onclick="return editData();">修改</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--添加用户-->
+
+
+</block>
+<block name="js">
+    <script>
+
+        var departdata='<?php echo json_encode($departdata);?>';
+        var arr=JSON.parse(departdata);
+        function edit(obj){
+            var userId=$(obj).attr('userId');
+            var userName=$(obj).attr('userName');
+            var department_id=$(obj).attr('department_id');
+            var phone=$(obj).attr('phone');
+            var email=$(obj).attr('email');
+            var remarks=$(obj).attr('remarks');
+            var level=$(obj).attr('level');
+            $("input[name='edit_name']").val(userName);
+            $("input[name='user_id']").val(userId);
+            $("input[name='edit_phone']").val(phone);
+            $("input[name='edit_email']").val(email);
+            $("#edit_remarks").val(remarks);
+            var option='<option value="">选择部门</option>';
+            var selected='';
+            $('#departarr').empty();
+            $('#edit_level').empty();
+            $.each(arr,function(k,v){
+                if(department_id == v['id']){
+                    selected='selected';
+                }else{
+                    selected='';
+                }
+                option +="<option value='"+v['id']+"' "+selected+">"+v['_name']+"</option>";
+            });
+            var xuan1='';
+            var xuan2='';
+            if(level == 2){
+                xuan1='selected';
+            }
+            if(level == 4){
+                xuan2='selected';
+            }
+
+            var leveloption="<option value=''>请选择类别</option>";
+            leveloption +="<option value='2' "+xuan1+">管理员</option>";
+            leveloption +="<option value='4' "+xuan2+">员工</option>";
+
+            $('#departarr').append(option);
+            $('#edit_level').append(leveloption);
+
+        }
+
+        function editData(){
+
+            var name=$("input[name='edit_name']").val();
+            var user_id=$("input[name='user_id']").val();
+            var level=$("select[name='edit_level']").val();
+            var departarr=$("#departarr").val();
+            console.log(departarr);
+            if(name == ''){
+                layer.msg('用户名不能为空',{'icon':2});
+                return false;
+            }
+
+            if(departarr == ''){
+                layer.msg('请选择所属部门',{'icon':2});
+                return false;
+            }
+
+            if(level == ''){
+                layer.msg('请选择用户类别',{'icon':2});
+                return false;
+            }
+
+
+        }
+
+
+        function addData(){
+            var name=$("input[name='name']").val();
+            var pass=$("input[name='pass']").val();
+            var department_id=$("select[name='department_id']").val();
+            var level=$("select[name='level']").val();
+            if(name == ''){
+                layer.msg('用户名不能为空',{'icon':2});
+                return false;
+            }
+            if(pass == ''){
+                layer.msg('初始密码不能为空',{'icon':2});
+                return false;
+            }
+            if(department_id == ''){
+                layer.msg('请选择所属部门',{'icon':2});
+                return false;
+            }
+
+            if(level == ''){
+                layer.msg('请选择用户类别',{'icon':2});
+                return false;
+            }
+
+        }
+
+
+    </script>
+</block>
