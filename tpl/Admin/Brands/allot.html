@@ -19,7 +19,7 @@
                 <table class="table table-striped table-bordered table-hover table-condensed">
 
                     <tr>
-                        <th>用户组（所属）</th>
+                        <th>部门（所属）</th>
                         <td>
                             <input class="input-medium" type="text" name="group" value="{$group_name}" readonly>
                             <input type="hidden" name="group_id" value="">
@@ -58,14 +58,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">修改所属组</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">选择部门</h4>
                 </div>
                 <div class="modal-body">
                     <form>
                         <foreach name="autGroup" item="val">
-                            <span style="padding-right: 15px;padding-left: 5px;">{$val['title']}
+                            <span style="padding-right: 15px;padding-left: 5px;">{$val['name']}
                                 <input class="xb-icheck" type="radio" name="group_user"
-                                       groupName="{$val['title']}" value="{$val['id']}"
+                                       groupName="{$val['name']}" value="{$val['id']}"
                                 <if condition="$val['id'] eq $data['group_id']"> checked </if> >
                             </span>
                         </foreach>

@@ -179,7 +179,7 @@
                     $('#groupform').html('');
                     $str='';
                     $.each(data,function(i,val){
-                        $str +="<span style='padding-right: 15px;padding-left: 5px;'>"+val['title']+"<input class='xb-icheck' type='radio' name='group_user' groupName='"+val['title']+"' value='"+val['id']+"'> </span>";
+                        $str +="<span style='padding-right: 15px;padding-left: 5px;'>"+val['name']+"<input class='xb-icheck' type='radio' name='group_user' groupName='"+val['name']+"' value='"+val['id']+"'> </span>";
                     });
 
                     $('#groupform').append($str);

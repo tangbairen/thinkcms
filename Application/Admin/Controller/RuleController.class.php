@@ -501,7 +501,7 @@ class RuleController extends AdminBaseController{
     }
 
     /*
-     * 部门列表
+     * 部门列表 （新）
      * */
     public function department()
     {
@@ -524,6 +524,11 @@ class RuleController extends AdminBaseController{
                 $map['parent_id']=$parent_id;
                 $map['description']=$description;
                 $map['group_id']=$group_id;
+
+                //判断是否存在
+                $arr['name']=$name;
+                $count=M('RoleDepartment')->where($arr)->find();
+                if(!empty($count)) throw new Exception('该部门名称已经存在');
 
                 $res=M('RoleDepartment')->add($map);
                 if(empty($res)) throw new Exception('添加失败');
@@ -548,6 +553,40 @@ class RuleController extends AdminBaseController{
         }
 
     }
+
+    /*
+     * 删除部门
+     * 2017-11-04 15:20
+     * */
+    public function del_bumen()
+    {
+        try{
+
+            D('RoleDepartment')->delData();
+
+            $this->success('删除成功',U('Admin/Rule/department'));
+        }catch(Exception $e){
+            $message=$e->getMessage();
+            $this->error($message);
+        }
+    }
+
+    /*
+     * 修改部门
+     * */
+    public function editbumen()
+    {
+        try{
+
+            D('RoleDepartment')->editData();
+            $this->success('修改成功',U('Admin/Rule/department'));
+        }catch(Exception $e){
+            $message=$e->getMessage();
+            $this->error($message);
+        }
+
+    }
+
 
     /*
      * 添加用户  （改）
@@ -599,13 +638,13 @@ class RuleController extends AdminBaseController{
 
     public function handler_user()
     {
-        $name=I('post.name');
-        $phone=I('post.phone');
-        $email=I('post.email');
-        $pass=I('post.pass');
+        $name=trim(I('post.name'));
+        $phone=trim(I('post.phone'));
+        $email=trim(I('post.email'));
+        $pass=trim(I('post.pass'));
         $department_id=I('post.department_id');
         $level=I('post.level');
-        $remarks=I('post.remarks');
+        $remarks=trim(I('post.remarks'));
         $status=I('post.status')+0;
 
         if(empty($name)) throw new Exception('用户名不能为空');
@@ -622,6 +661,11 @@ class RuleController extends AdminBaseController{
         $map['level']=$level;
         $map['remarks']=$remarks;
         $map['status']=$status;
+
+        //判断是否存在
+        $arr['username']=$name;
+        $count=M('Users')->where($arr)->find();
+        if(!empty($count)) throw new Exception('该用户名已经注册过了');
 
         $res=M('Users')->add($map);
 
@@ -644,7 +688,9 @@ class RuleController extends AdminBaseController{
             $this->error('删除失败');
         }
     }
-
+    /*
+     * 修改
+     * */
     public function edit_user()
     {
         try{
@@ -673,6 +719,11 @@ class RuleController extends AdminBaseController{
             $map['level']=$edit_level;
             $map['remarks']=$edit_remarks;
             $map['status']=$status;
+
+            //判断是否存在
+            $arr['username']=$edit_name;
+            $count=M('Users')->where($arr)->find();
+            if(!empty($count)) throw new Exception('该用户名已经注册过了');
 
             $res=M('Users')->where("id={$user_id}")->save($map);
             if(empty($res)) throw new Exception('修改失败');

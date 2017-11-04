@@ -21,7 +21,7 @@
                     <select class="form-control" name="group" id="group">
                         <option value="">全部</option>
                         <foreach name="group" item="val">
-                            <option value="{$val['id']}" <if condition="$s_group eq $val['id']">selected</if> >{$val['title']}</option>
+                            <option value="{$val['id']}" <if condition="$s_group eq $val['id']">selected</if> >{$val['name']}</option>
                         </foreach>
                     </select>
                 </div>

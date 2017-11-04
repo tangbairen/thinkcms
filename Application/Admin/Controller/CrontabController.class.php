@@ -62,7 +62,6 @@ class CrontabController extends Controller
         );
         $content=$this->getCurl($url,$post_data);
 
-        file_put_contents('./Uploads/log/mess01.txt',$content);
         //显示获得的数据
 
         $data=json_decode($content,true);
@@ -71,7 +70,7 @@ class CrontabController extends Controller
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
         if($cmd != 'error'){
-            file_put_contents('./Uploads/log/bote1.txt',$content);
+
             array_pop($data);
             foreach($data as $ke=>$val){
                 $result=json_decode(urldecode($val),true);
@@ -110,13 +109,13 @@ class CrontabController extends Controller
         );
 
         $content=$this->getCurl($url,$post_data);
-        file_put_contents('./Uploads/log/mess02.txt',$content);
+
         $data=json_decode($content,true);
 
         $cmd=isset($data['cmd']) ? $data['cmd'] : '';
 
         if($cmd != 'error'){
-            file_put_contents('./Uploads/log/ditie1.txt',$content);
+
             array_pop($data);
             foreach($data as $ke=>$val){
                 $result=json_decode(urldecode($val),true);

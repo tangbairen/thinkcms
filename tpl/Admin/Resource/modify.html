@@ -223,7 +223,7 @@
             var brand_name=$("input[name='brand_name']").val();
             var brand_id=$("input[name='brand_id']").val();
             var group_id=$("input[name='group_id']").val();
-            console.log(group_id);
+
             if(province == ''){
                 alert('请先选择省份');
                 return false;
@@ -242,13 +242,13 @@
                 'success':function(data){
                     $('#groupform').html('');
                     $str='';
-                    var select='';
+
                     $.each(data,function(i,val){
-                        console.log(val['id']);
+                        var select='';
                         if(group_id == val['id']){
                             select ='checked';
                         }
-                        $str +="<span style='padding-right: 15px;padding-left: 5px;'>"+val['title']+"<input class='xb-icheck' type='radio' name='group_user' "+select+" groupName='"+val['title']+"' value='"+val['id']+"'> </span>";
+                        $str +="<span style='padding-right: 15px;padding-left: 5px;'>"+val['name']+"<input class='xb-icheck' type='radio' name='group_user' "+select+" groupName='"+val['name']+"' value='"+val['id']+"'> </span>";
                     });
 
                     $('#groupform').append($str);

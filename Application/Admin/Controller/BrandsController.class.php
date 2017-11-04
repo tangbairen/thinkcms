@@ -110,15 +110,14 @@ class BrandsController extends AdminBaseController
 
         $data=M('BrandsAuth')
             ->alias('b')
-            ->field("b.gid,g.title,group_CONCAT(`name`,'( ',count,' )') as brand_count,ifnull(z.total,0) as total")
+            ->field("b.gid,g.name,group_CONCAT(t.`name`,'( ',count,' )') as brand_count,ifnull(z.total,0) as total")
             ->join('left join bt_brands as t on b.brands_id=t.id ')
-            ->join('left join bt_auth_group as g on b.gid=g.id')
+            ->join('left join bt_role_department as g on b.gid=g.id')
             ->join('left join bt_total as z on z.group_id=g.id')
             ->group('b.gid,total')
             ->order('g.id')
             ->where('z.id > 0')
             ->select();
-
         $array=array(
             'data'=>$data
         );
@@ -133,7 +132,7 @@ class BrandsController extends AdminBaseController
     public function detail()
     {
         $gid=I('get.gid')+0;
-        $group=M('AuthGroup')->where("id={$gid}")->find();
+        $group=M('RoleDepartment')->where("id={$gid}")->find();
         $data=M('BrandsAuth')
             ->alias('b')
             ->field('b.id,b.gid,t.name,b.count')
@@ -143,7 +142,7 @@ class BrandsController extends AdminBaseController
 
         $array=array(
             'data'=>$data,
-            'group_name'=>$group['title']
+            'group_name'=>$group['name']
         );
         $this->assign($array);
 
@@ -220,7 +219,11 @@ class BrandsController extends AdminBaseController
         }else{
 
             //用户组
-            $autGroup=M('AuthGroup')->select();
+            //$autGroup=M('AuthGroup')->select();
+
+            //部门
+            $autGroup=M('RoleDepartment')->select();
+
             //品牌
             $brandArr=M('Brands')->select();
             $array=array(
@@ -240,14 +243,15 @@ class BrandsController extends AdminBaseController
     public function total()
     {
         $data=M('Total')->alias('t')
-            ->field('t.id,t.title,t.group_id,t.total,g.title as group_name')
-            ->join('bt_auth_group as g on t.group_id = g.id')
+            ->field('t.id,t.title,t.group_id,t.total,g.name as group_name')
+            ->join('bt_role_department as g on t.group_id = g.id')
             ->select();
 
         //所有组
-        $group=M('AuthGroup')->select();
+        //$group=M('AuthGroup')->select();
 
-
+        //部门
+        $group=M('RoleDepartment')->select();
         $this->assign('data',$data);
         $this->assign('group',$group);
         $this->display();

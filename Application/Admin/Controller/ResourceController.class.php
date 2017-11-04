@@ -15,8 +15,8 @@ class ResourceController extends AdminBaseController
     public function index()
     {
         $data=D('Resource')->selectData();
-        //所有组
-        $group=M('AuthGroup')->select();
+        //部门
+        $group=M('RoleDepartment')->select();
         $phone=I('get.phone');
         $s_group=I('get.group');
         $start_time=I('get.start_time','');
@@ -122,8 +122,8 @@ class ResourceController extends AdminBaseController
     {
 
         $data=D('Resource')->selectData();
-        //所有组
-        $group=M('AuthGroup')->select();
+            //部门
+        $group=M('RoleDepartment')->select();
         $phone=I('get.phone');
         $s_group=I('get.group');
         $start_time=I('get.start_time','');
@@ -323,7 +323,7 @@ class ResourceController extends AdminBaseController
 
                 $group_name='';
                 if($data['group_id'] > 0){
-                    $group=M('AuthGroup')->field('title')->where("id={$data['group_id']}")->find();
+                    $group=M('RoleDepartment')->field('name')->where("id={$data['group_id']}")->find();
                     $group_name=$group;
                 }
 
@@ -341,7 +341,7 @@ class ResourceController extends AdminBaseController
                 //品牌
                 $brandArr=M('Brands')->select();
                 $array=array(
-                    'group_name'=>$group_name['title'],
+                    'group_name'=>$group_name['name'],
                     'brand_name'=>$brand_name,
 //                    'autGroup'=>$autGroup,
                     'brandArr'=>$brandArr,
@@ -514,9 +514,12 @@ class ResourceController extends AdminBaseController
         $province_id=I('get.province');
         $brand_id=I('get.brand_id');
 
-        //选择区域id
+        //选择区域id  得到区域id
         $province=M('Province')->where("id={$province_id}")->find();
-        $group=M('AuthGroup')->field('id,title,area_id')->select();
+        //组
+        //$group=M('AuthGroup')->field('id,title,area_id')->select();
+        //部门
+        $group=M('RoleDepartment')->select();
         foreach($group as $key=>$val){
             $arr=explode(',',$val['area_id']);
             if(!in_array($province['area_id'],$arr)){

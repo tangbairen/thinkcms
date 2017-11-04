@@ -75,8 +75,8 @@ class ResourceModel extends Model
         if(!empty($data)){
             foreach($data as $key=>&$val){
                 if($val['group_id'] > 0){
-                    $res=M('AuthGroup')->where("id={$val['group_id']}")->find();
-                    $val['group_name']=$res['title'];
+                    $res=M('RoleDepartment')->where("id={$val['group_id']}")->find();
+                    $val['group_name']=$res['name'];
                 }
                 if($val['brand_id'] > 0){
                     $brands=M('Brands')->where("id={$val['brand_id']}")->find();
@@ -186,6 +186,7 @@ class ResourceModel extends Model
         $map['keyword']=$remarks;
         $map['allocation']=$allocation;
 
+
         $res=$this->add($map);
         return $res;
     }
@@ -199,12 +200,15 @@ class ResourceModel extends Model
     public function allocationGroup($brand_id,$area_id)
     {
         if(empty($brand_id) || empty($area_id)){
-            file_put_contents('./Uploads/log/num1.txt',$brand_id,$area_id);
+
             return 0;
         }
 
-        $group=M('AuthGroup')->field('id,title,area_id')->select();
+        //组
+        //$group=M('AuthGroup')->field('id,title,area_id')->select();
 
+        //部门
+        $group=M('RoleDepartment')->select();
         $group_id='';
         foreach($group as $key=>$val){//清除没有分配的地区的组
             $arr=explode(',',$val['area_id']);
@@ -215,7 +219,7 @@ class ResourceModel extends Model
         }
 
         if(empty($group)){
-            file_put_contents('./Uploads/log/num2.txt',$brand_id,$area_id);
+
             return 0;
         }
 
@@ -225,17 +229,15 @@ class ResourceModel extends Model
             if(empty($res)){
                 unset($group[$k]);
             }else{
-
                 $group_id .=$v['id'].',';
             }
         }
 
         if(empty($group_id)){
-            file_put_contents('./Uploads/log/num3.txt',$brand_id,$area_id);
             return 0;
         }
 
-        $group_id=trim($group_id,',');          //所有用户组id
+        $group_id=trim($group_id,',');          //所有部门id
         $map['group_id']  = array('in',$group_id);
         $total_count=M('Total')->where($map)->select();//总数
         // 今日开始时间戳
@@ -248,13 +250,12 @@ class ResourceModel extends Model
                 ->where("group_id={$val['group_id']} and addtime  between {$startDay} and {$endDay}")
                 ->select();
             if($group_total[0]['num'] >= $val['total']){
-                file_put_contents('./Uploads/log/num4.txt',json_encode($total_count));
+
                 unset($total_count[$key]);
             }
         }
         //总数都满了
         if(empty($total_count)){
-            file_put_contents('./Uploads/log/num5.txt',$brand_id,$area_id);
             return 0;
         }
 
@@ -281,7 +282,7 @@ class ResourceModel extends Model
         }
 
         if(empty($arr)){
-            file_put_contents('./Uploads/log/num6.txt',$brand_id,$area_id);
+
             return 0;
         }
 
@@ -369,8 +370,8 @@ class ResourceModel extends Model
             foreach($data as $key=>&$val){
                 $val['addtime']=date('Y-m-d H:i:s',$val['addtime']);
                 if($val['group_id'] > 0){
-                    $res=M('AuthGroup')->where("id={$val['group_id']}")->find();
-                    $val['group_id']=$res['title'];
+                    $res=M('RoleDepartment')->where("id={$val['group_id']}")->find();
+                    $val['group_id']=$res['name'];
                 }else{
                     $val['group_id']='';
                 }
@@ -418,7 +419,7 @@ class ResourceModel extends Model
             ->where("guest_id={$guest_id} and status=1")
             ->order('id desc')
             ->find();
-        if($res){
+        if(!$res){
             $this->allocation($info,$guest_name,$res);
 
             M('VisitorInfo')->where("id={$info['id']}")->save(array('status'=>2));
