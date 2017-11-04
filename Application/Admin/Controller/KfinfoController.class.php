@@ -21,7 +21,7 @@ class KfinfoController extends Controller
             file_put_contents("./Uploads/log/bote_".$time.'.txt', $aaa);
 
             $ip = get_client_ip();
-            if($ip != '122.227.58.170')throw new Exception('非法请求');
+            //if($ip != '122.227.58.170')throw new Exception('非法请求');
 
             $cmd=I('post.cmd','');
             if($cmd == 'talk_info'){//整体推送
@@ -69,7 +69,7 @@ class KfinfoController extends Controller
             $time=date('Y-m-d H:i:s',time()).'_'.rand();
             file_put_contents("./Uploads/log/ditie_".$time.'.txt', $aaa);
             $ip = get_client_ip();
-            if($ip != '122.227.58.170')throw new Exception('非法请求');
+            //if($ip != '122.227.58.170')throw new Exception('非法请求');
 
             $cmd=I('post.cmd','');
             if($cmd == 'talk_info'){//整体推送
