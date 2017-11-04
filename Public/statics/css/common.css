@@ -1,0 +1,17 @@
+.sidebar:before{background-color: #222222
+}
+.navbar{
+    background-color: #2ba2e6;
+    height: 60px;
+    line-height: 60px;
+}
+.nav-list>li{
+    border-top: none;
+    border-bottom: 1px solid #282828;
+}
+.nav-list>li>a{
+    background-color: #3e3e3e;
+    color: #bfbfbf;
+}
+
+.nav-list{background-color: red}
