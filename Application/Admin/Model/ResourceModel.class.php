@@ -635,7 +635,7 @@ class ResourceModel extends Model
     public function summary($group_id)
     {
         $total=M('Total')->where("group_id={$group_id}")->find();
-        $totalNum=isset($total['total']) ? $total['total']:'';//今日总数量
+        $totalNum=isset($total['total']) ? $total['total']:0;//今日总数量
 
         // 今日开始时间戳
         $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
@@ -646,6 +646,9 @@ class ResourceModel extends Model
         count( case status when 2 then status end ) as num3")
             ->where("group_id={$group_id} and  addtime between  {$startDay} and {$endDay}")
             ->find();
+
+
+
 
         //当月
         $firstday =mktime(0, 0, 0, date('m'), 1);

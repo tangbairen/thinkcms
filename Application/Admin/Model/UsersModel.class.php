@@ -49,4 +49,43 @@ class UsersModel extends Model
         return $verify->check($code, $id);
     }
 
+    /*
+     * 获取所有公司下面的部门情况
+     * */
+    public function getTotalData()
+    {
+        $data=$this->where("level=3")->select();
+
+        if(!empty($data)){
+            // 今日开始时间戳
+            $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
+            // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
+            $end=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+            foreach($data as $key=>&$val){
+                //今日所有公司的资源
+                $sql="select count(*) as total,
+                count( case status when  0 then status end ) as num1,
+                count( case status when 1 then status end ) as num2,
+                count( case status when 2 then status end ) as num2
+                 from bt_role_department as d
+                LEFT JOIN bt_resource as r on d.id=r.group_id
+                where d.parent_id={$val['department_id']} and r.addtime between  {$startDay} and {$end}";
+                $res=M()->query($sql);
+                p($res);
+                if(!empty($res)){
+                    $val['yifenp']=$res[0]['num2']+$res[0]['num3'];
+                    $val['weifenp']=$res[0]['num1'];
+                    $val['youxiao']=$res[0]['num2'];
+                }
+            }
+        }
+
+        p($data);
+
+    }
+
+
+
+
+
 }

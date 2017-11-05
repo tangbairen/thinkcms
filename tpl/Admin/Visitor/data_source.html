@@ -1,11 +1,14 @@
 <extend name="Public:base"/>
 <block name="title">数据源</block>
+<block name="css">
+    <link rel="stylesheet" href="__PUBLIC__/statics/css/mainlist.css">
+</block>
 <block name="content">
     <style>
         .form-group>label[class*="col-"] {padding-top: 10px;}
     </style>
     <div class="page-header">
-        <h1><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据源</h1>
+        <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据源</p>
     </div>
     <div class="col-xs-12">
         <form class="form-inline" style="margin-bottom: 10px; ">
@@ -68,7 +71,7 @@
                 <li class="active"> <a >数据列表</a></li>
             </ul>
             <div class="tab-content">
-                <table class="table table-striped table-bordered table-hover table-condensed">
+                <table class="table">
                     <tr>
                         <th>ID</th>
                         <th>访客ID</th>
@@ -84,7 +87,7 @@
                         <th>操作</th>
                     </tr>
                     <foreach name="data" item="val">
-                        <tr>
+                        <tr  class="tr-hover">
                             <td>{$val['id']}</td>
                             <td>{$val['guest_id']}</td>
                             <td>{$val['talk_id']}</td>

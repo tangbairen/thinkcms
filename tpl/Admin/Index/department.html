@@ -1,0 +1,127 @@
+<extend name="Public:base"/>
+<block name="title">后台首页</block>
+<block name="content">
+    <div class="page-header">
+        <p><i class="fa fa-home"></i> 首页</p>
+    </div>
+    <div class="col-xs-12">
+        <div class="tabbable" style="margin-bottom: 50px;">
+            <div class="common-top">
+                <div class="">欢迎使用后台管理系统</div>
+            </div>
+            <div class="common-content">
+                <div class="common-div">
+                    <p>登录时间</p>
+                    <p>{$data['last_login_time']|date='Y-m-d H:i:s',###}</p>
+                </div>
+                <div class="common-div">
+                    <p>登录IP</p>
+                    <p>{$data['last_login_ip']}</p>
+                </div>
+                <div class="common-div">
+                    <p>登录地址</p>
+                    <p>{$area['country']}</p>
+                </div>
+                <div class="common-div">
+                    <p>登录次数</p>
+                    <p>{$data['login_count']}</p>
+                </div>
+                <div class="common-div">
+                    <p>所属部门</p>
+                    <p>{$data['name']}</p>
+                </div>
+            </div>
+        </div>
+        <div class="tabbable">
+            <div class="common-content">
+                <div class="layui-tab">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">今日分配情况</li>
+                        <li>本月分配情况</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <div class="content-div">
+                                <div class="content-info">
+                                    <div class="content-info-left">
+                                        <p><span class="title">今日目标资源</span> <span class="num">{$today['totalNum']}</span></p>
+                                        <p><span class="title">今日资源</span> <span class="num">{$today['todayTotal']}</span></p>
+                                        <p><span class="title">已反馈</span> <span class="num">{$today['num2']+$today['num3']}</span></p>
+                                        <p><span class="title">未反馈</span> <span class="num">{$today['num1']}</span></p>
+                                        <p><span class="title">有效资源</span> <span class="num"><?php echo round($today['num2'] / $today['todayTotal'],2)?>%</span></p>
+                                    </div>
+                                    <div class="content-info-right">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">
+                            <div class="content-div">
+                                <div class="content-info">
+                                    <div class="content-info-left">
+                                        <p><span class="title">本月总资源</span> <span class="num">{$month['todayMonth']}</span></p>
+                                        <p><span class="title">已反馈</span> <span class="num">{$month['num2']+$month['num3']}</span></p>
+                                        <p><span class="title">未反馈</span> <span class="num">{$month['num1']}</span></p>
+                                        <p><span class="title">有效资源</span> <span class="num"><?php echo round($month['num2'] / $month['todayMonth'],2)?>%</span></p>
+                                    </div>
+                                    <div class="content-info-right">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="js">
+    <script>
+        layui.use('element', function(){
+            var $ = layui.jquery
+                    ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+            //触发事件
+            var active = {
+                tabAdd: function(){
+                    //新增一个Tab项
+                    element.tabAdd('demo', {
+                        title: '新选项'+ (Math.random()*1000|0) //用于演示
+                        ,content: '内容'+ (Math.random()*1000|0)
+                        ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+                    })
+                }
+                ,tabDelete: function(othis){
+                    //删除指定Tab项
+                    element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+                    othis.addClass('layui-btn-disabled');
+                }
+                ,tabChange: function(){
+                    //切换到指定Tab项
+                    element.tabChange('demo', '22'); //切换到：用户管理
+                }
+            };
+
+            $('.site-demo-active').on('click', function(){
+                var othis = $(this), type = othis.data('type');
+                active[type] ? active[type].call(this, othis) : '';
+            });
+
+            //Hash地址的定位
+            var layid = location.hash.replace(/^#test=/, '');
+            element.tabChange('test', layid);
+
+            element.on('tab(test)', function(elem){
+                location.hash = 'test='+ $(this).attr('lay-id');
+            });
+
+        });
+    </script>
+</block>
