@@ -32,7 +32,9 @@ class IndexController extends AdminBaseController{
 
 		switch($data['level']){
 			case 1://超级
-				D('Users')->getTotalData();
+				$data=D('Users')->getTotalData();
+				$this->assign('data',$data);
+				$this->display('total');
 				break;
 			case 3:
 				//获取部门资源信息  部门id

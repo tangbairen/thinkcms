@@ -15,10 +15,8 @@ class PersonalController extends AdminBaseController
     public function index()
     {
         $uid=session('user.id');
-        $data=M('Users')->field('id,username,email,phone,company')->where("id={$uid}")->find();
-        $res=M('AuthGroupAccess')->where("uid={$uid}")->find();
-        $group=M('AuthGroup')->where("id={$res['group_id']}")->find();
-
+        $data=M('Users')->field('id,department_id,username,email,phone,company')->where("id={$uid}")->find();
+        $group=M('RoleDepartment')->where("id={$data['department_id']}")->find();
         $this->assign('data',$data);
         $this->assign('group',$group);
         $this->display();

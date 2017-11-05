@@ -1,0 +1,62 @@
+<extend name="Public:base"/>
+<block name="title">后台首页</block>
+<block name="content">
+    <div class="page-header">
+        <p><i class="fa fa-home"></i> 首页</p>
+    </div>
+    <div class="col-xs-12">
+        <div class="tabbable" style="margin-bottom: 50px;">
+            <div class="common-top">
+                <div class="">欢迎使用后台管理系统</div>
+            </div>
+            <div class="common-content">
+                <div class="common-div">
+                    <p>登录时间</p>
+                    <p>{$data['last_login_time']|date='Y-m-d H:i:s',###}</p>
+                </div>
+                <div class="common-div">
+                    <p>登录IP</p>
+                    <p>{$data['last_login_ip']}</p>
+                </div>
+                <div class="common-div">
+                    <p>登录地址</p>
+                    <p>{$area['country']}</p>
+                </div>
+                <div class="common-div">
+                    <p>登录次数</p>
+                    <p>{$data['login_count']}</p>
+                </div>
+                <div class="common-div">
+                    <p>所属部门</p>
+                    <p>{$data['name']}</p>
+                </div>
+            </div>
+        </div>
+        <notempty name="data">
+            <div class="tabbable">
+                <div class="common-content">
+                    <foreach name="data" item="val">
+                        <div class="content-div">
+                            <p class="content-div-title">{$val['company']}（公司）</p>
+                            <div class="content-info">
+                                <div class="content-info-left">
+                                    <p><span class="title">今日目标</span> <span class="num">{$val['total']}</span></p>
+                                    <p><span class="title">已分配</span> <span class="num">{$val['yifenp']}</span></p>
+                                    <p><span class="title">未分配</span> <span class="num">{$val['weifenp']}</span></p>
+                                    <p><span class="title">有效资源</span> <span class="num">{$val['youxiao']}</span></p>
+                                    <p><span class="title">月累计</span> <span class="num">{$val['totalmonth']}</span></p>
+
+                                </div>
+                                <div class="content-info-right">
+
+                                </div>
+                            </div>
+                        </div>
+                    </foreach>
+                </div>
+            </div>
+        </notempty>
+
+    </div>
+</block>
+<block name="js"></block>

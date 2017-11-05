@@ -2,18 +2,18 @@
 <block name="title">个人资料</block>
 <block name="content">
     <div class="page-header">
-        <h1><i class="fa fa-home"></i> 首页 > 个人资料</h1>
+        <p><i class="fa fa-home"></i> 首页 > 系统管理 > 个人资料</p>
     </div>
     <div class="col-xs-3">
         <form action="{:U('Personal/edit')}" method="post">
             <div class="form-group">
-                <label for="exampleInputEmail1">所属组（角色）</label>
-                <input type="text" value="{$group['title']}" readonly class="form-control" id="exampleInputEmail1">
+                <label for="exampleInputEmail1">所属部门</label>
+                <input type="text" value="{$group['name']}" readonly class="form-control" id="exampleInputEmail1">
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label for="exampleInputEmail1">公司</label>
                 <input type="text" value="{$data['company']}" readonly class="form-control" id="exampleInputEmail1">
-            </div>
+            </div>-->
             <div class="form-group">
                 <label for="exampleInputEmail1">登录名</label>
                 <input type="text" readonly name="username" value="{$data['username']}" class="form-control" id="exampleInputEmail1" placeholder="登录名">

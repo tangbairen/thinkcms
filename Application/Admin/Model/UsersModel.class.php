@@ -62,25 +62,47 @@ class UsersModel extends Model
             // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
             $end=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
             foreach($data as $key=>&$val){
+                $name=M('RoleDepartment')->where("id={$val['department_id']}")->find();
+                //今日公司的目标数
+                $total=M('RoleDepartment')->alias('r')
+                    ->field('sum(t.total) as total')
+                    ->join('left join bt_total as t on r.id=t.group_id')
+                    ->where("r.parent_id={$val['department_id']}")
+                    ->find();
                 //今日所有公司的资源
                 $sql="select count(*) as total,
                 count( case status when  0 then status end ) as num1,
                 count( case status when 1 then status end ) as num2,
-                count( case status when 2 then status end ) as num2
+                count( case status when 2 then status end ) as num3
                  from bt_role_department as d
                 LEFT JOIN bt_resource as r on d.id=r.group_id
                 where d.parent_id={$val['department_id']} and r.addtime between  {$startDay} and {$end}";
                 $res=M()->query($sql);
-                p($res);
+                //月累计
+                $firstday =mktime(0, 0, 0, date('m'), 1);
+                $lastday = mktime(0, 0, 0,date('m')+1,1)-1;
+
+                $sql="select count(*) as total
+                 from bt_role_department as d
+                LEFT JOIN bt_resource as r on d.id=r.group_id
+                where d.parent_id={$val['department_id']} and r.addtime between  {$firstday} and {$lastday}";
+                $month=M()->query($sql);
+
                 if(!empty($res)){
                     $val['yifenp']=$res[0]['num2']+$res[0]['num3'];
                     $val['weifenp']=$res[0]['num1'];
-                    $val['youxiao']=$res[0]['num2'];
+                    $val['youxiao']=$res[0]['num3'];
                 }
+                $val['total']=isset($total['total']) ? $total['total'] : 0;//今日目标
+                $val['totalmonth']=isset($month[0]['total']) ? $month[0]['total'] : 0;//月累计
+                $val['company']=isset($name['name']) ? $name['name'] : '';
             }
+
+            return $data;
+        }else{
+            return false;
         }
 
-        p($data);
 
     }
 
