@@ -32,8 +32,8 @@ class IndexController extends AdminBaseController{
 
 		switch($data['level']){
 			case 1://超级
-				$data=D('Users')->getTotalData();
-				$this->assign('data',$data);
+				$resource=D('Users')->getTotalData();
+				$this->assign('resource',$resource);
 				$this->display('total');
 				break;
 			case 3:
