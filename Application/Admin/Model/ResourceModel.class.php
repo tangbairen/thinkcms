@@ -526,13 +526,13 @@ class ResourceModel extends Model
         $map['username']='';
         $map['phone']=$phone;
         $map['chats']=$chats;
-        $map['customer_info']=$data['worker_id'];//客服工号
-        $map['brand_id']=$bransSource['brand_id'];//品牌id
-        $map['province']=$province;//省份id
-        $map['area_id']=$area_id;//地区id
-        $map['source']=$bransSource['source'];//来源
-        $map['keyword']=$keyword;
-        $map['allocation']=$allocation;
+        $map['customer_info']=isset($data['worker_id']) ? $data['worker_id'] : '';//客服工号
+        $map['brand_id']=isset($bransSource['brand_id']) ? $bransSource['brand_id']: '';//品牌id
+        $map['province']=isset($province) ? $province : '';//省份id
+        $map['area_id']=isset($area_id) ? $area_id : '';//地区id
+        $map['source']=isset($bransSource['source']) ? $bransSource['source'] : '';//来源
+        $map['keyword']=isset($keyword) ? $keyword : '';
+        $map['allocation']=isset($allocation) ? $allocation : '';
         $map['types']=2;
         $res=$this->add($map);
 
