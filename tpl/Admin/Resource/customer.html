@@ -65,13 +65,13 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">时间：</label>
                 <div class="col-sm-8">
-                    <input id="test1" name="start_time"  class="form-control" id="inputEmail3" value="{$start_time}">
+                    <input onClick="WdatePicker()" name="start_time"  class="form-control" id="inputEmail3" value="{$start_time}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-3 control-label">~</label>
                 <div class="col-sm-9">
-                    <input id="test2" name="end_time"   class="form-control" id="inputEmail3" value="{$end_time}">
+                    <input onClick="WdatePicker()" name="end_time"   class="form-control" id="inputEmail3" value="{$end_time}">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">搜索</button>
@@ -152,7 +152,8 @@
     </div>
 </block>
 <block name="js">
-    <script src="__PUBLIC__/statics/laydate/laydate.js"></script>
+    <!--<script src="__PUBLIC__/statics/laydate/laydate.js"></script>-->
+    <script src="__PUBLIC__/statics/timejs/WdatePicker.js"></script>
     <script>
 
         function selectAll(obj){
@@ -196,14 +197,14 @@
 
 
         //时间选择器
-        laydate.render({
+        /*laydate.render({
             elem: '#test1'
             ,type: 'datetime'
         });
         laydate.render({
             elem: '#test2'
             ,type: 'datetime'
-        });
+        });*/
     </script>
 
 
