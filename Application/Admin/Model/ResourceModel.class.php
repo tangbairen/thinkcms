@@ -419,6 +419,7 @@ class ResourceModel extends Model
             ->where("guest_id={$guest_id} and status=1")
             ->order('id desc')
             ->find();
+        p($res);
         if(!$res){
             $this->allocation($info,$guest_name,$res);
 
