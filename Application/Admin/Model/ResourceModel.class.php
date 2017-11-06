@@ -95,6 +95,96 @@ class ResourceModel extends Model
         return array('data'=>$data,'show'=>$show,'count'=>$count);
     }
 
+    /*
+     * 获取全部数据
+     * */
+    public function bumenData($where='1')
+    {
+
+        $phone=trim(I('get.phone',''));
+        $s_group=I('get.group','');
+        $start_time=I('get.start_time','');
+        $end_time=I('get.end_time','');
+        $allocation=I('get.allocation','');
+        $brand_id=I('get.brand','');
+        $referer_id=I('get.referer','');
+        $status=I('get.status','');
+        if(!empty($phone)){
+            $where .=" and phone like '%{$phone}%' or chats like '%{$phone}%'";
+        }
+
+        if(!empty($allocation)){
+            $where .=" and allocation={$allocation}";
+        }
+
+        if(!empty($s_group)){
+            $where .=" and group_id={$s_group}";
+        }
+
+        if(!empty($start_time)){
+            $start_time=strtotime($start_time);
+            $where .=" and addtime >={$start_time}";
+        }
+
+        if(!empty($end_time)){
+            $end_time=strtotime($end_time);
+            $where .=" and addtime <={$end_time}";
+        }
+        if(!empty($brand_id)){
+            $where .=" and brand_id={$brand_id}";
+        }
+        if(!empty($referer_id)){
+            $where .=" and source like '{$referer_id}%'";
+        }
+        if(!empty($status) && $status == 3){
+            $where .=" and status=0";
+        }else if(!empty($status)){
+            $where .=" and status={$status}";
+        }
+
+        import('@.Class.Page'); //引入Page类
+        // 查询满足要求的总记录数
+        $count = $this->where($where)->count();
+
+        /*进行第三方分页类配置*/
+        $page = array(
+            'total' => $count,/*总数（改）*/
+            'url' => !empty($param['url']) ? $param['url'] : '',/*URL配置*/
+            'max' => !empty($param['max']) ? $param['max'] : 20,/*每页显示多少条记录（改）*/
+            'url_model' => 1,/*URL模式*/
+            'ajax' =>  !empty($param['ajax']) ? true : false,/*开启ajax分页*/
+            'out' =>  !empty($param['out']) ? $param['out'] : false,/*输出设置*/
+            'url_suffix' => true,/*url后缀*/
+            'tags' => array('首页','上一页','下一页','尾页'),
+        );
+        /*实例化第三方分页类库*/
+        $page = new \Page($page);
+
+        $data=$this->where($where)->order('addtime desc,id desc')->limit($page->pagerows(),$page->maxrows())->select();
+
+        if(!empty($data)){
+            foreach($data as $key=>&$val){
+                if($val['group_id'] > 0){
+                    $res=M('RoleDepartment')->where("id={$val['group_id']}")->find();
+                    $val['group_name']=$res['name'];
+                }
+                if($val['brand_id'] > 0){
+                    $brands=M('Brands')->where("id={$val['brand_id']}")->find();
+                    $val['brands_name']=$brands['name'];
+                }
+                if($val['province'] > 0){
+
+                    $province=M('Province')->where("id={$val['province']}")->find();
+
+                    $val['province_name']=$province['name'];
+                }
+            }
+        }
+        // 得到分页
+        $show = $page->get_page();
+        return array('data'=>$data,'show'=>$show,'count'=>$count);
+    }
+
     public function edit()
     {
 

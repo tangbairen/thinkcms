@@ -14,35 +14,37 @@ class ResourceController extends AdminBaseController
      * */
     public function index()
     {
-        $data=D('Resource')->selectData();
-        //部门
-        $group=M('RoleDepartment')->select();
-        $phone=I('get.phone');
-        $s_group=I('get.group');
-        $start_time=I('get.start_time','');
-        $end_time=I('get.end_time','');
-        $allocation=I('get.allocation','');
-        $brand_id=I('get.brand','');
-        $referer_id=I('get.referer','');
+            $data=D('Resource')->selectData();
+            //部门
+            $group=M('RoleDepartment')->select();
+            $phone=I('get.phone');
+            $s_group=I('get.group');
+            $start_time=I('get.start_time','');
+            $end_time=I('get.end_time','');
+            $allocation=I('get.allocation','');
+            $brand_id=I('get.brand','');
+            $referer_id=I('get.referer','');
 
-        $brand=M('Brands')->select();//品牌
-        $referer=M('Referer')->field('distinct title')->select();//来源渠道
+            $brand=M('Brands')->select();//品牌
+            $referer=M('Referer')->field('distinct title')->select();//来源渠道
 
-        $array=array(
-            'phone'=>$phone,
-            's_group'=>$s_group,
-            'start_time'=>$start_time,
-            'end_time'=>$end_time,
-            'allocation'=>$allocation,
-            'brand'=>$brand,
-            'brand_id'=>$brand_id,
-            'referer_id'=>$referer_id,
-            'referer'=>$referer
-        );
-        $this->assign($array);
-        $this->assign('group',$group);
-        $this->assign($data);// 赋值数据集
-        $this->display();
+            $array=array(
+                'phone'=>$phone,
+                's_group'=>$s_group,
+                'start_time'=>$start_time,
+                'end_time'=>$end_time,
+                'allocation'=>$allocation,
+                'brand'=>$brand,
+                'brand_id'=>$brand_id,
+                'referer_id'=>$referer_id,
+                'referer'=>$referer
+            );
+            $this->assign($array);
+            $this->assign('group',$group);
+            $this->assign($data);// 赋值数据集
+
+
+            $this->display();
     }
 
     /*
@@ -218,12 +220,12 @@ class ResourceController extends AdminBaseController
     public function auditExport()
     {
         $uid=session('user.id');
-        $group=M('AuthGroupAccess')->where("uid=$uid")->find();
-
+//        $group=M('AuthGroupAccess')->where("uid=$uid")->find();
+        $group=M('Users')->where("id=$uid")->find();
         $phone=trim(I('get.phone',''));
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
-        $where="group_id = {$group['group_id']}";
+        $where="group_id = {$group['department_id']}";
         $box=I('get.box','');
         $brand=I('get.brand','');
         $referer=I('get.referer','');
@@ -401,8 +403,16 @@ class ResourceController extends AdminBaseController
     public function audit()
     {
         $uid=session('user.id');
-        $group=M('AuthGroupAccess')->where("uid=$uid")->find();
-        $data=D('Resource')->selectData("group_id = {$group['group_id']}");
+        $group=M('Users')->where("id=$uid")->find();
+        if($group['level'] == 3){//公司账号
+            $sql='select GROUP_CONCAT(id) as id from bt_role_department where parent_id='.$group['department_id'];
+            $res=M()->query($sql);
+            $id=isset($res[0]['id']) ? $res[0]['id'] : 0;
+            $data=D('Resource')->bumenData("group_id in({$id}) ");
+        }else{
+
+            $data=D('Resource')->selectData("group_id = {$group['department_id']}");
+        }
         //所有组
         $group=M('AuthGroup')->select();
         $phone=I('get.phone');
