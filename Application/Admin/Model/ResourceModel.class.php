@@ -420,7 +420,8 @@ class ResourceModel extends Model
             ->order('id desc')
             ->find();
         p($res);
-        if(!$res){
+        if(!empty($res)){
+            echo 11;
             $this->allocation($info,$guest_name,$res);
 
             M('VisitorInfo')->where("id={$info['id']}")->save(array('status'=>2));
