@@ -72,6 +72,7 @@ class KfinfoController extends Controller
             //if($ip != '122.227.58.170')throw new Exception('非法请求');
 
             $cmd=I('post.cmd','');
+            file_put_contents("./Uploads/log/ditiecmd_".$time.'.txt', $cmd);
             if($cmd == 'talk_info'){//整体推送
                 $content=I('post.content','');
                 if(!empty($content)){
@@ -83,6 +84,7 @@ class KfinfoController extends Controller
             }else{
                 //访客信息推送
                 $customer=I('post.content','');
+                file_put_contents("./Uploads/log/ditiectomer_".$time.'.txt', $customer);
                 if(!empty($customer)){
                     $customer=urldecode($customer);
                     $customer=json_decode($customer,true);
