@@ -5,33 +5,28 @@
         .form-group>label[class*="col-"] {padding-top: 10px;}
     </style>
     <div class="page-header">
-        <h1><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据审核</h1>
+        <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据审核</p>
     </div>
     <div class="col-xs-12">
         <form class="form-inline" style="margin-bottom: 10px;">
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-5 control-label">联系方式：</label>
-                <div class="col-sm-7" style="margin-left: -20px;">
-                    <input type="text" name="phone" value="{$phone}" class="form-control" id="inputEmail3" placeholder="手机号/微信/QQ">
-                </div>
+                <label for="inputEmail3" >联系方式：</label>
+                <input type="text" name="phone" value="{$phone}"  placeholder="手机号/微信/QQ">
             </div>
 
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">时间：</label>
-                <div class="col-sm-8">
-                    <input onClick="WdatePicker()" name="start_time"  class="form-control" id="inputEmail3" value="{$start_time}">
-                </div>
+                <label for="inputEmail3" >时间：</label>
+                <input type="text" onClick="WdatePicker()" name="start_time"  value="{$start_time}" style="width: 100px;">
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-3 control-label">~</label>
-                <div class="col-sm-9">
-                    <input onClick="WdatePicker()" name="end_time"   class="form-control" id="inputEmail3" value="{$end_time}">
-                </div>
+                <label for="inputEmail3" >~</label>
+                <input type="text" onClick="WdatePicker()" name="end_time" value="{$end_time}" style="width: 100px;">
             </div>
-            <div class="form-group">
-                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
+            <div></div>
+            <div class="form-group" style="margin-top: 10px;">
                 <div class="col-sm-12">
-                    <select class="form-control" name="brand" id="brand">
+                    <label for="inputEmail3" >选择品牌：</label>
+                    <select  name="brand" id="brand">
                         <option value="">品牌</option>
                         <foreach name="brand" item="val">
                             <option value="{$val['id']}" <if condition="$brand_id eq $val['id']">selected</if>  >{$val['name']}</option>
@@ -39,10 +34,10 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group">
-                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
+            <div class="form-group" style="margin-top: 10px;">
                 <div class="col-sm-12">
-                    <select class="form-control" name="referer" id="referer">
+                    <label for="inputEmail3" >来源：</label>
+                    <select  name="referer" id="referer">
                         <option value="">来源渠道</option>
                         <foreach name="referer" item="val">
                             <option value="{$val['title']}" <if condition="$referer_id eq $val['title']">selected</if>  >{$val['title']}</option>
@@ -50,10 +45,11 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top: 10px;">
                 <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
                 <div class="col-sm-12">
-                    <select class="form-control" name="status" id="status">
+                    <label for="inputEmail3" >状态：</label>
+                    <select  name="status" id="status">
                         <option value="">是否可跟</option>
                         <option value="3" <if condition="$status eq 3">selected</if> >未处理</option>
                         <option value="1" <if condition="$status eq 1">selected</if> >是</option>
@@ -61,13 +57,15 @@
                     </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">搜索</button>
-            <a class="btn btn-default" onclick="clean();">清空</a>
-            <span style="padding-left: 20px;">总条数（{$count}）</span>
-            <a class="btn btn-primary" onclick="daochu()">导出数据</a>
+            <div style="margin-top: 5px;margin-bottom: 10px;">
+                <button type="submit" class="btn btn-primary" style="height: 30px;line-height: 8px;">搜索</button>
+                <a class="btn btn-default" onclick="clean();" style="height: 30px;line-height: 8px;">清空</a>
+                <a class="btn btn-primary" href="javascript:if(confirm('确定要导出数据吗？')){daochu();}" style="height: 30px;line-height: 8px;">导出数据</a>
+                <span style="padding-left: 20px;">总条数（{$count}）</span>
+            </div>
         </form>
 
-        <div class="tabbable">
+        <div class="tabbable" style="margin-top: 20px;">
 
             <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
                 <li class="active"> <a >数据列表</a></li>
@@ -78,7 +76,7 @@
                         <th><input type="checkbox" onclick="selectAll(this)"></th>
                         <th>时间</th>
                         <th>客服ID/名字</th>
-                        <th>省份</th>
+                        <!--<th>省份</th>-->
                         <th>地址</th>
                         <th>客户姓名</th>
                         <th>电话号码</th>
@@ -103,7 +101,7 @@
                             <td><input type="checkbox" name="box[]" value="{$val['id']}"></td>
                             <td>{$val['addtime'] | date='Y-m-d H:i:s',###}</td>
                             <td>{$val['customer_info']}</td>
-                            <td>{$val['province_name']}</td>
+                            <!--<td>{$val['province_name']}</td>-->
                             <td>{$val['address']}</td>
                             <td>{$val['username']}</td>
                             <td>{$val['phone']}</td>

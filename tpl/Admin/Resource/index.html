@@ -13,26 +13,22 @@
     <div class="col-xs-12">
         <form class="form-inline" style="margin-bottom: 10px;font-size: 12px;">
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-5 control-label">联系方式：</label>
-                <div class="col-sm-7" style="margin-left: -20px;">
-                    <input type="text" name="phone" value="{$phone}" class="form-control" id="inputEmail3" placeholder="手机号/微信/QQ">
-                </div>
+                <label for="inputEmail3">联系方式：</label>
+                <input type="text" name="phone" value="{$phone}" placeholder="手机号/微信/QQ">
             </div>
             <div class="form-group">
-                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
-                <div class="col-sm-12">
-                    <select class="form-control" name="group" id="group">
+                    <label for="inputEmail3">部门：</label>
+                    <select  name="group" id="group">
                         <option value="">全部</option>
                         <foreach name="group" item="val">
                             <option value="{$val['id']}" <if condition="$s_group eq $val['id']">selected</if> >{$val['name']}</option>
                         </foreach>
                     </select>
-                </div>
             </div>
             <div class="form-group">
-                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
                 <div class="col-sm-12">
-                    <select class="form-control" name="allocation" id="allocation">
+                    <label for="inputEmail3">状态：</label>
+                    <select  name="allocation" id="allocation">
                         <option value="">是否分配</option>
                         <option value="2" <if condition="$allocation eq 2">selected</if> >分配</option>
                         <option value="1" <if condition="$allocation eq 1">selected</if> >未分配</option>
@@ -40,48 +36,44 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">时间：</label>
-                <div class="col-sm-8">
-                    <input id="test1" name="start_time"  class="form-control" id="inputEmail3" value="{$start_time}">
-                </div>
+                <label for="inputEmail3">选择品牌：</label>
+                <select name="brand" id="brand">
+                    <option value="">品牌</option>
+                    <foreach name="brand" item="val">
+                        <option value="{$val['id']}" <if condition="$brand_id eq $val['id']">selected</if>  >{$val['name']}</option>
+                    </foreach>
+                </select>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-3 control-label">~</label>
-                <div class="col-sm-9">
-                    <input  id="test2" name="end_time"   class="form-control" id="inputEmail3" value="{$end_time}">
-                </div>
-            </div>
-            <div class="form-group">
-                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
-                <div class="col-sm-12">
-                    <select class="form-control" name="brand" id="brand">
-                        <option value="">品牌</option>
-                        <foreach name="brand" item="val">
-                            <option value="{$val['id']}" <if condition="$brand_id eq $val['id']">selected</if>  >{$val['name']}</option>
-                        </foreach>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <!--<label for="inputEmail3" class="col-sm-3 control-label">用户组：</label>-->
-                <div class="col-sm-12">
-                    <select class="form-control" name="referer" id="referer">
+                <label for="inputEmail3" >来源：</label>
+                    <select  name="referer" id="referer">
                         <option value="">来源渠道</option>
                         <foreach name="referer" item="val">
                             <option value="{$val['title']}" <if condition="$referer_id eq $val['title']">selected</if>  >{$val['title']}</option>
                         </foreach>
                     </select>
-                </div>
+            </div>
+            <div></div>
+            <div class="form-group" style="margin-top: 5px;">
+                <label for="inputEmail3" >时间：</label>
+                <input type="text" onClick="WdatePicker()" id="test1" name="start_time" id="inputEmail3" value="{$start_time}" style="width: 100px;">
+            </div>
+            <div class="form-group" style="margin-top: 5px;">
+                <label for="inputEmail3" >~</label>
+                <input type="text" onClick="WdatePicker()" id="test2" name="end_time" value="{$end_time}" style="width: 100px;">
             </div>
 
-            <button type="submit" class="btn btn-primary">搜索</button>
-            <a class="btn btn-default" onclick="clean();">清空</a>
-            <span style="padding-left: 20px;padding-right: 20px;">总条数（{$count}）</span>
-            <a class="btn btn-primary" onclick="daochu()">导出数据</a>
+            <div></div>
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn btn-primary" style="height: 30px;line-height: 8px;">搜索</button>
+                <a class="btn btn-default" onclick="clean();" style="height: 30px;line-height: 8px;">清空</a>
+                <a class="btn btn-primary" onclick="daochu()" style="height: 30px;line-height: 8px;">导出数据</a>
+                <span style="padding-left: 20px;padding-right: 20px;">总条数（{$count}）</span>
+            </div>
         </form>
 
 
-        <div class="tabbable">
+        <div class="tabbable" style="margin-top: 30px;">
 
             <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
                 <li class="active"> <a href="{:U('Admin/Rule/admin_user_list')}">数据列表</a></li>
@@ -169,7 +161,8 @@
     </div>
 </block>
 <block name="js">
-    <script src="__PUBLIC__/statics/laydate/laydate.js"></script>
+    <!--<script src="__PUBLIC__/statics/laydate/laydate.js"></script>-->
+    <script src="__PUBLIC__/statics/timejs/WdatePicker.js"></script>
     <script>
 
         function clean(){
@@ -201,7 +194,7 @@
         /*laydate.render({
             elem: '#test1' //指定元素
         });*/
-        //时间选择器
+       /* //时间选择器
         laydate.render({
             elem: '#test1'
             ,type: 'datetime'
@@ -209,7 +202,7 @@
         laydate.render({
             elem: '#test2'
             ,type: 'datetime'
-        });
+        });*/
     </script>
 
 
