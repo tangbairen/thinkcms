@@ -48,10 +48,13 @@
                                         <p><span class="title">今日资源</span> <span class="num">{$today['todayTotal']}</span></p>
                                         <p><span class="title">已反馈</span> <span class="num">{$today['num2']+$today['num3']}</span></p>
                                         <p><span class="title">未反馈</span> <span class="num">{$today['num1']}</span></p>
-                                        <p><span class="title">有效资源</span> <span class="num"><?php echo round($today['num2'] / $today['todayTotal'],2)?>%</span></p>
+                                        <p><span class="title">有效资源</span> <span class="num">{$today['num2']}</span></p>
                                     </div>
                                     <div class="content-info-right">
-
+                                        <div class="content-yuan">
+                                            <p style="color:#fff;font-size: 28px;"><?php echo round($today['num2'] / $today['todayTotal'],2)?>%</p>
+                                            <p style="color:#fff;font-size: 18px;">有效率</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

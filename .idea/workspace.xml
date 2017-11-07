@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" afterPath="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" afterPath="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/common.css" afterPath="$PROJECT_DIR$/Public/statics/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/department.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/department.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/total.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,50 +28,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="customer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
+      <file leaf-file-name="IndexController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.37037">
-              <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="50" />
+            <state vertical-scroll-proportion="-11.428572">
+              <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="total.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/total.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7239819">
+              <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
               <folding>
-                <element signature="n#style#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#if#0;n#td#15;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#if#0;n#td#15;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <marker date="1509979827497" expanded="true" signature="9245:9313" placeholder="{&quot;elem&quot;: '#test1'...}" />
-                <marker date="1509979827497" expanded="true" signature="9339:9407" placeholder="{&quot;elem&quot;: '#test2'...}" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="audit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
+      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.666667">
-              <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="68" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_source.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.740741">
-              <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
-              <folding />
+            <state vertical-scroll-proportion="-21.857143">
+              <caret line="49" column="101" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="101" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userinfo.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html">
+      <file leaf-file-name="department.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/department.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6910569">
-              <caret line="123" column="68" selection-start-line="123" selection-start-column="68" selection-end-line="123" selection-end-column="68" />
+            <state vertical-scroll-proportion="-20.714285">
+              <caret line="50" column="109" selection-start-line="50" selection-start-column="109" selection-end-line="50" selection-end-column="109" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#block#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/statics/css/common.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-25.857143">
+              <caret line="125" column="24" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -113,15 +133,12 @@
         <option value="$PROJECT_DIR$/tpl/Admin/Brands/detail.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Public/base.html" />
         <option value="$PROJECT_DIR$/Public/statics/css/mainlist.css" />
-        <option value="$PROJECT_DIR$/Public/statics/css/common.css" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/index.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/modify.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Index/department.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Index/welcome.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Rule/adduser.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/RoleDepartmentModel.class.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/PersonalController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php" />
@@ -129,13 +146,16 @@
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/ResourceController.class.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Personal/index.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/customer.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html" />
+        <option value="$PROJECT_DIR$/Public/statics/css/common.css" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Index/department.html" />
       </list>
     </option>
   </component>
@@ -157,8 +177,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="780" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -185,8 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -236,72 +255,6 @@
               <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Visitor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Personal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -335,7 +288,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thinkcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,37 +343,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thinkcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,11 +418,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="780" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2555066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -491,13 +460,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/rule_group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20361991">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/check_user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -660,13 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/statics/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.142857">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/department.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.285715">
@@ -695,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/department.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.428571">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.606335">
@@ -723,24 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/RoleDepartmentModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1312218">
-          <caret line="50" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -776,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="190" column="7" selection-start-line="190" selection-start-column="7" selection-end-line="190" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10406504">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,26 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54308945">
           <caret line="474" column="0" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
-          <folding>
-            <marker date="1509976421961" expanded="true" signature="11312:11382" placeholder="select GROUP..bt_role_department..." />
-            <marker date="1509976421961" expanded="true" signature="15778:16043" placeholder="select t.gro..bt_total..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/total.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22764228">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7105691">
-          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3707317">
           <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,30 +738,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1237785">
           <caret line="10" column="292" selection-start-line="10" selection-start-column="292" selection-end-line="10" selection-end-column="292" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.37037">
-          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#if#0;n#td#15;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#if#0;n#td#15;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <marker date="1509979827497" expanded="true" signature="9245:9313" placeholder="{&quot;elem&quot;: '#test1'...}" />
-            <marker date="1509979827497" expanded="true" signature="9339:9407" placeholder="{&quot;elem&quot;: '#test2'...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.48755655">
+          <caret line="114" column="70" selection-start-line="114" selection-start-column="70" selection-end-line="114" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.740741">
+        <state vertical-scroll-proportion="0.022624435">
           <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
           <folding />
         </state>
@@ -858,17 +759,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667">
+        <state vertical-scroll-proportion="0.022624435">
           <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Visitor/userinfo.html">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/customer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6910569">
-          <caret line="123" column="68" selection-start-line="123" selection-start-column="68" selection-end-line="123" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.022624435">
+          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#block#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#if#0;n#td#15;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#if#0;n#td#15;n#tr#0;n#foreach#0;n#table#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.428572">
+          <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/statics/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.857143">
+          <caret line="125" column="24" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/department.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.714285">
+          <caret line="50" column="109" selection-start-line="50" selection-start-column="109" selection-end-line="50" selection-end-column="109" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#block#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.857143">
+          <caret line="49" column="101" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="101" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/total.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7239819">
+          <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
