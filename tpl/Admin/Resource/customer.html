@@ -1,5 +1,5 @@
 <extend name="Public:base"/>
-<block name="title">数据列表</block>
+<block name="title">资源列表</block>
 <block name="css">
     <link rel="stylesheet" href="__PUBLIC__/statics/css/mainlist.css">
 </block>
@@ -8,10 +8,10 @@
         .form-group>label[class*="col-"] {padding-top: 10px;}
     </style>
     <div class="page-header">
-        <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 数据列表</p>
+        <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 资源列表</p>
     </div>
     <div class="col-xs-12">
-        <form class="form-inline" style="margin-bottom: 10px;">
+        <form class="form-inline" style="margin-bottom: 30px;">
             <div class="form-group">
                 <label for="inputEmail3" >联系方式：</label>
                 <input type="text" name="phone" value="{$phone}"  placeholder="手机号/微信/QQ">
@@ -91,14 +91,14 @@
                         <th>时间</th>
                         <th>客服ID/名字</th>
                         <th>访客ID</th>
-                        <!--<th>省份</th>-->
-                        <th>地址</th>
+                        <th>省份</th>
+                        <!--<th>地址</th>-->
                         <th>客户姓名</th>
                         <th>电话号码</th>
                         <th>QQ/微信</th>
                         <th>来源渠道</th>
                         <th>品牌</th>
-                        <th>所属组</th>
+                        <th>部门</th>
                         <th>关键字</th>
                         <th>添加类型</th>
                         <th>是否分配</th>
@@ -111,8 +111,8 @@
                             <td>{$val['addtime'] | date='Y-m-d H:i:s',###}</td>
                             <td>{$val['customer_info']}</td>
                             <td>{$val['talk_id']}</td>
-                            <!--<td>{$val['province_name']}</td>-->
-                            <td width="150px;">{$val['address']}</td>
+                            <td>{$val['province_name']}</td>
+                            <!--<td width="150px;">{$val['address']}</td>-->
                             <td>{$val['username']}</td>
                             <td>{$val['phone']}</td>
                             <td>{$val['chats']}</td>

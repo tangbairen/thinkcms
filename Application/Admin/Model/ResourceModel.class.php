@@ -487,6 +487,8 @@ class ResourceModel extends Model
                     $val['update_time']='';
                 }
 
+                $val['keyword']=urldecode($val['keyword']);
+
                 $val['types']=$type[$val['types']];
                 $val['allocation']=$fenpei[$val['allocation']];
             }
