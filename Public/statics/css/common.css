@@ -45,6 +45,15 @@
     float: left;
     width:300px;
     text-align: center;
+    /*width: 337px;*/
+
+}
+.common-div{
+    width: 337px;
+    height: 173px;
+    background-color: rgba(0, 155, 255, 1);
+    color: #fff;
+
 }
 .common-content div p{
     margin: 20px;
