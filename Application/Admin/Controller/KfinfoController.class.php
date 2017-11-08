@@ -16,11 +16,11 @@ class KfinfoController extends Controller
     {
         try{
             if(!IS_POST) throw new Exception('非法请求');
-            $aaa=$_POST;
-            $time=date('Y-m-d H:i:s',time()).'_'.rand();
+            //$aaa=$_POST;
+            //$time=date('Y-m-d H:i:s',time()).'_'.rand();
             //file_put_contents("./Uploads/log/bote_".$time.'.txt', $aaa);
 
-            $ip = get_client_ip();
+            //$ip = get_client_ip();
             //if($ip != '122.227.58.170')throw new Exception('非法请求');
 
             $cmd=I('post.cmd','');
@@ -65,10 +65,10 @@ class KfinfoController extends Controller
     {
         try{
             if(!IS_POST) throw new Exception('非法请求');
-            $aaa=$_POST;
-            $time=date('Y-m-d H:i:s',time()).'_'.rand();
-            file_put_contents("./Uploads/log/ditie_".$time.'.txt', $aaa);
-            $ip = get_client_ip();
+            //$aaa=$_POST;
+            //$time=date('Y-m-d H:i:s',time()).'_'.rand();
+            //file_put_contents("./Uploads/log/ditie_".$time.'.txt', $aaa);
+            //$ip = get_client_ip();
             //if($ip != '122.227.58.170')throw new Exception('非法请求');
 
             $cmd=I('post.cmd','');
