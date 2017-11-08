@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/total.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="total.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="total.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/total.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61312217">
+            <state vertical-scroll-proportion="-19.357143">
               <caret line="66" column="112" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#2;n#!!top" expanded="true" />
@@ -99,14 +98,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersModel.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsersModel.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.428572">
-              <caret line="102" column="30" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.6606335">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
-                <marker date="1510142032762" expanded="true" signature="2452:2890" placeholder="select count... bt_role_department" />
-                <marker date="1510142032762" expanded="true" signature="3101:3522" placeholder="select count... bt_role_department" />
+                <marker date="1510142154094" expanded="true" signature="2452:2890" placeholder="select count... bt_role_department" />
+                <marker date="1510142154094" expanded="true" signature="3101:3522" placeholder="select count... bt_role_department" />
               </folding>
             </state>
           </provider>
@@ -169,8 +168,8 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/RoleDepartmentModel.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php" />
       </list>
     </option>
   </component>
@@ -997,20 +996,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.428572">
-          <caret line="102" column="30" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="30" />
-          <folding>
-            <marker date="1510142032762" expanded="true" signature="2452:2890" placeholder="select count... bt_role_department" />
-            <marker date="1510142032762" expanded="true" signature="3101:3522" placeholder="select count... bt_role_department" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/total.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61312217">
+        <state vertical-scroll-proportion="-19.357143">
           <caret line="66" column="112" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#2;n#!!top" expanded="true" />
@@ -1018,6 +1006,17 @@
             <element signature="n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#2;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#foreach#0;n#div#0;n#div#0;n#notempty#0;n#div#1;n#block#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/UsersModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6606335">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding>
+            <marker date="1510142154094" expanded="true" signature="2452:2890" placeholder="select count... bt_role_department" />
+            <marker date="1510142154094" expanded="true" signature="3101:3522" placeholder="select count... bt_role_department" />
           </folding>
         </state>
       </provider>

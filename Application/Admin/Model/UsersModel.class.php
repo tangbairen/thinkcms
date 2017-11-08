@@ -100,7 +100,6 @@ class UsersModel extends Model
                     $val['todaynum']=$res[0]['total'];
                 }
                 $val['total']=isset($total['total']) ? $total['total'] : 0;//今日目标
-                $val['todaynum']=isset($res['total']) ? $res['total'] : 0;//今日资源数
                 $val['totalmonth']=isset($month[0]['total']) ? $month[0]['total'] : 0;//月累计
                 $num2=isset($month[0]['num2']) ? $month[0]['num2'] : 0;
                 $num3=isset($month[0]['num3']) ? $month[0]['num3'] : 0;
