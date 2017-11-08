@@ -53,8 +53,27 @@
     height: 173px;
     background-color: rgba(0, 155, 255, 1);
     color: #fff;
-
+    padding-top:30px;
 }
+.common-div-neirong{
+    font-size: 14px !important;
+}
+.common-div-1{
+    background-color: rgba(0, 155, 255, 1);
+}
+.common-div-2{
+    background-color: rgba(0, 148, 247, 1);
+}
+.common-div-3{
+    background-color: rgba(2, 145, 240, 1);
+}
+.common-div-4{
+    background-color: rgba(4, 143, 232, 1);
+}
+.common-div-5{
+    background-color: rgba(2, 139, 224, 1);
+}
+
 .common-content div p{
     margin: 20px;
     font-size: 16px;
@@ -93,8 +112,12 @@
     text-align: left;
     height: 28px;
     line-height: 15px;
-    border-left: 4px solid #019BFF;
+    /*border-left: 4px solid #019BFF;*/
     padding-left: 10px;
+}
+.info-left-border{
+    border-left: 4px solid #019BFF;
+    padding-right: 5px;
 }
 .content-info-left .num{
     padding-left: 20px;

@@ -10,25 +10,30 @@
                 <div class="">欢迎使用后台管理系统</div>
             </div>
             <div class="common-content">
-                <div class="common-div">
+                <div class="common-div common-div-1">
+                    <img src="__PUBLIC__/statics/images/time.png" alt="">
                     <p>登录时间</p>
-                    <p>{$data['last_login_time']|date='Y-m-d H:i:s',###}</p>
+                    <p class="common-div-neirong">{$data['last_login_time']|date='Y-m-d H:i:s',###}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-2">
+                    <img src="__PUBLIC__/statics/images/ip.png" alt="">
                     <p>登录IP</p>
-                    <p>{$data['last_login_ip']}</p>
+                    <p class="common-div-neirong">{$data['last_login_ip']}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-3">
+                    <img src="__PUBLIC__/statics/images/area.png" alt="">
                     <p>登录地址</p>
-                    <p>{$area['country']}</p>
+                    <p class="common-div-neirong">{$area['country']}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-4">
+                    <img src="__PUBLIC__/statics/images/logincount.png" alt="">
                     <p>登录次数</p>
-                    <p>{$data['login_count']}</p>
+                    <p class="common-div-neirong">{$data['login_count']}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-5">
+                    <img src="__PUBLIC__/statics/images/tree.png" alt="">
                     <p>所属部门</p>
-                    <p>{$data['name']}</p>
+                    <p class="common-div-neirong">{$data['name']}</p>
                 </div>
             </div>
         </div>
@@ -40,10 +45,10 @@
                     <p class="content-div-title">{$val['name']}（部门）</p>
                     <div class="content-info">
                         <div class="content-info-left">
-                            <p><span class="title">今日目标</span> <span class="num">{$val['total']}</span></p>
-                            <p><span class="title">已分配</span> <span class="num">{$val['yifenp']}</span></p>
-                            <p><span class="title">未分配</span> <span class="num">{$val['meifenp']}</span></p>
-                            <p><span class="title">有效资源</span> <span class="num">{$val['youxiao']}</span></p>
+                            <p><i class="info-left-border"></i><span class="title">今日目标</span> <span class="num">{$val['total']}</span></p>
+                            <p><i class="info-left-border"></i><span class="title">已分配</span> <span class="num">{$val['yifenp']}</span></p>
+                            <p><i class="info-left-border"></i><span class="title">未分配</span> <span class="num">{$val['meifenp']}</span></p>
+                            <p><i class="info-left-border"></i><span class="title">有效资源</span> <span class="num">{$val['youxiao']}</span></p>
                         </div>
                         <div class="content-info-right">
                             <div class="content-yuan">
