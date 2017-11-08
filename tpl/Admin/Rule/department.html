@@ -32,7 +32,7 @@
                     <td>
                         <div class="layui-btn-group">
                             <a  data-toggle="modal" data-target="#exampleModal1"
-                                departId="{$val['id']}" departName="{$val['_name']}" remark="{$val['description']}" areaId="{$val['area_id']}"
+                                departId="{$val['id']}" departName="{$val['name']}" remark="{$val['description']}" areaId="{$val['area_id']}"
                                 onclick="edit(this)"  class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
                             <a href="javascript:if(confirm('确定删除？'))location='{:U('Admin/Rule/del_bumen',array('id'=>$val['id']))}'"  class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
                         </div>
