@@ -82,6 +82,9 @@
     margin: 20px;
     font-size: 16px;
 }
+.content-info-left p{
+    margin: 10px !important;
+}
 .content-div{
     min-width:410px;
     min-height: 305px;
