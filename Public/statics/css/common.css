@@ -38,8 +38,12 @@
     margin-bottom: 20px;
 }
 .common-content{
-    width: 100%;
-   margin-left: 30px;
+    width: 1700px;
+   margin-left: -5px;
+}
+.tabbable{
+    width: 1700px;
+    margin-top: -30px;
 }
 .common-content div{
     float: left;
@@ -49,7 +53,7 @@
 
 }
 .common-div{
-    width: 337px;
+    width: 337px !important;
     height: 173px;
     background-color: rgba(0, 155, 255, 1);
     color: #fff;
@@ -79,10 +83,10 @@
     font-size: 16px;
 }
 .content-div{
-    min-width:380px;
+    min-width:410px;
     min-height: 305px;
     border: 1px solid #cdd0cb;
-    margin: 10px;
+    /*margin: 10px;*/
 }
 .content-div .content-div-title{
     margin:0 !important;
@@ -94,6 +98,10 @@
     text-align: left;
     padding-left: 10px;
 
+}
+.content-div .content-div-color{
+    background-color: rgba(230, 228, 228, 1) !important;
+    color: #000000;
 }
 .content-info{
     width: 400px !important;
