@@ -85,10 +85,31 @@ class RoleDepartmentModel extends Model
                     ->where("group_id={$val['id']} and  addtime between  {$startDay} and {$endDay}")
                     ->find();
 
-                $val['yifenp']=$feedback['num2']+$feedback['num3'];
-                $val['meifenp']=$feedback['num1'];
-                $val['youxiao']=$feedback['num2'];
-                $val['rate']=round($feedback['num2'] / $val['total'],2);
+                //月累计
+                $firstday =mktime(0, 0, 0, date('m'), 1);
+                $lastday = mktime(0, 0, 0,date('m')+1,1)-1;
+
+                $month=M('Resource')->field("count(*) as total,count( case status when  0 then status end ) as num1,count( case status when 1 then status end ) as num2,
+        count( case status when 2 then status end ) as num3")
+                    ->where("group_id={$val['id']} and  addtime between  {$firstday} and {$lastday}")
+                    ->find();
+                $val['totalmonth']=isset($month['total']) ? $month['total'] : 0;//月累计
+                $num2=isset($month['num2']) ? $month['num2'] : 0;
+                $num3=isset($month['num3']) ? $month['num3'] : 0;
+                $val['m_yifk']=$num2+$num3;//已反馈
+                $val['m_weifk']=isset($month['num1']) ? $month['num1'] : 0;//未反馈
+                $val['m_youxiao']=$num2;//未反馈
+
+
+                $num1=isset($feedback['num1']) ? $feedback['num1'] : 0;//未反馈
+                $num2=isset($feedback['num2']) ? $feedback['num2'] : 0;//可跟
+                $num3=isset($feedback['num3']) ? $feedback['num3'] : 0;//不可跟
+                $today=isset($feedback['total']) ? $feedback['total'] : 0;//今日资源
+                $val['yifenp']=$num2+$num3;//已分配
+                $val['meifenp']=$num1;
+                $val['youxiao']=$num2;
+                $val['totalnum']=$today;
+                $val['rate']=round($num2 / $today,2);
 
             }
 

@@ -1,5 +1,15 @@
 <extend name="Public:base"/>
 <block name="title">后台首页</block>
+<block name="css">
+    <style>
+        .page-content{
+            margin: 0;
+        }
+        .layui-tab-title li{
+            width: 204px !important;
+        }
+    </style>
+</block>
 <block name="content">
     <div class="page-header">
         <p><i class="fa fa-home"></i> 首页</p>
@@ -37,8 +47,62 @@
                 </div>
             </div>
         </div>
-        <notempty name="depart">
-        <div class="tabbable">
+        <notempty name="depart"><div class="tabbable">
+            <div class="common-content">
+                <foreach name="depart" item="val">
+                    <div class="layui-tab content-div">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">{$val['name']}（部门）- 今日</li>
+                            <li>{$val['name']}（部门）- 本月</li>
+                        </ul>
+                        <div class="layui-tab-content">
+
+                            <div class="layui-tab-item layui-show">
+                                <div class="content-div">
+                                    <div class="content-info">
+                                        <div class="content-info-left">
+                                            <p><span class="title">今日目标资源</span> <span class="num">{$val['total']}</span></p>
+                                            <p><span class="title">今日资源</span> <span class="num">{$val['totalnum']}</span></p>
+                                            <p><span class="title">已反馈</span> <span class="num">{$val['yifenp']}</span></p>
+                                            <p><span class="title">未反馈</span> <span class="num">{$val['meifenp']}</span></p>
+                                            <p><span class="title">有效资源</span> <span class="num">{$val['youxiao']}</span></p>
+                                        </div>
+                                        <div class="content-info-right">
+                                            <div class="content-yuan">
+                                                <p style="color:#fff;font-size: 28px;">{$val['rate']}%</p>
+                                                <p style="color:#fff;font-size: 18px;">有效率</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-tab-item">
+                                <div class="content-div">
+                                    <div class="content-info">
+                                        <div class="content-info-left">
+                                            <p><span class="title">本月总资源</span> <span class="num">{$val['totalmonth']}</span></p>
+                                            <p><span class="title">已反馈</span> <span class="num">{$val['m_yifk']}</span></p>
+                                            <p><span class="title">未反馈</span> <span class="num">{$val['m_weifk']}</span></p>
+                                            <p><span class="title">有效资源</span> <span class="num">{$val['m_youxiao']}</span></p>
+                                        </div>
+                                        <div class="content-info-right">
+                                            <div class="content-yuan">
+                                                <p style="color:#fff;font-size: 28px;"><?php echo round($val['m_youxiao'] / $val['totalmonth'],2)?>%</p>
+                                                <p style="color:#fff;font-size: 18px;">有效率</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </foreach>
+            </div>
+        </div>
+
+        <!--<div class="tabbable">
             <div class="common-content">
                 <foreach name="depart" item="val">
                 <div class="content-div ">
@@ -60,9 +124,53 @@
                 </div>
                 </foreach>
             </div>
-        </div>
+        </div>-->
         </notempty>
 
     </div>
 </block>
-<block name="js"></block>
+<block name="js">
+    <script>
+        layui.use('element', function(){
+            var $ = layui.jquery
+                    ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+            //触发事件
+            var active = {
+                tabAdd: function(){
+                    //新增一个Tab项
+                    element.tabAdd('demo', {
+                        title: '新选项'+ (Math.random()*1000|0) //用于演示
+                        ,content: '内容'+ (Math.random()*1000|0)
+                        ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+                    })
+                }
+                ,tabDelete: function(othis){
+                    //删除指定Tab项
+                    element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+                    othis.addClass('layui-btn-disabled');
+                }
+                ,tabChange: function(){
+                    //切换到指定Tab项
+                    element.tabChange('demo', '22'); //切换到：用户管理
+                }
+            };
+
+            $('.site-demo-active').on('click', function(){
+                var othis = $(this), type = othis.data('type');
+                active[type] ? active[type].call(this, othis) : '';
+            });
+
+            //Hash地址的定位
+            var layid = location.hash.replace(/^#test=/, '');
+            element.tabChange('test', layid);
+
+            element.on('tab(test)', function(elem){
+                location.hash = 'test='+ $(this).attr('lay-id');
+            });
+
+        });
+    </script>
+</block>

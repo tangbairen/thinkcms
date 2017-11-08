@@ -39,11 +39,13 @@ class IndexController extends AdminBaseController{
 			case 3:
 				//获取部门资源信息  部门id
 				$depart=D('RoleDepartment')->getDepartData($data['department_id']);
+
 				$this->assign('depart',$depart);
 				$this->display('index');
 				break;
-			case 5://销售部门
+			case 4://销售部门
 				$summary=D('Resource')->summary($data['department_id']);//今日，当月汇总
+
 				$this->assign($summary);
 				$this->display('department');
 				break;

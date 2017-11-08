@@ -85,7 +85,9 @@ class UsersModel extends Model
                 $firstday =mktime(0, 0, 0, date('m'), 1);
                 $lastday = mktime(0, 0, 0,date('m')+1,1)-1;
 
-                $sql="select count(*) as total
+                $sql="select count(*) as total,count( case status when  0 then status end ) as num1,
+                count( case status when 1 then status end ) as num2,
+                count( case status when 2 then status end ) as num3
                  from bt_role_department as d
                 LEFT JOIN bt_resource as r on d.id=r.group_id
                 where d.parent_id={$val['department_id']} and r.addtime between  {$firstday} and {$lastday}";
@@ -94,10 +96,16 @@ class UsersModel extends Model
                 if(!empty($res)){
                     $val['yifenp']=$res[0]['num2']+$res[0]['num3'];
                     $val['weifenp']=$res[0]['num1'];
-                    $val['youxiao']=$res[0]['num3'];
+                    $val['youxiao']=$res[0]['num2'];
+                    $val['todaynum']=$res[0]['total'];
                 }
                 $val['total']=isset($total['total']) ? $total['total'] : 0;//今日目标
                 $val['totalmonth']=isset($month[0]['total']) ? $month[0]['total'] : 0;//月累计
+                $num2=isset($month[0]['num2']) ? $month[0]['num2'] : 0;
+                $num3=isset($month[0]['num3']) ? $month[0]['num3'] : 0;
+                $val['yifk']=$num2+$num3;//已反馈
+                $val['weifk']=isset($month[0]['num1']) ? $month[0]['num1'] : 0;//未反馈
+                $val['youxiao']=$num2;//未反馈
                 $val['company']=isset($name['name']) ? $name['name'] : '';
             }
 

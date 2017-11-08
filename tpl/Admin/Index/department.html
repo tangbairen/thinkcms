@@ -66,10 +66,13 @@
                                         <p><span class="title">本月总资源</span> <span class="num">{$month['todayMonth']}</span></p>
                                         <p><span class="title">已反馈</span> <span class="num">{$month['num2']+$month['num3']}</span></p>
                                         <p><span class="title">未反馈</span> <span class="num">{$month['num1']}</span></p>
-                                        <p><span class="title">有效资源</span> <span class="num"><?php echo round($month['num2'] / $month['todayMonth'],2)?>%</span></p>
+                                        <p><span class="title">有效资源</span> <span class="num">{$month['num2']}</span></p>
                                     </div>
                                     <div class="content-info-right">
-
+                                        <div class="content-yuan">
+                                            <p style="color:#fff;font-size: 28px;"><?php echo round($month['num2'] / $month['todayMonth'],2)?>%</p>
+                                            <p style="color:#fff;font-size: 18px;">有效率</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
