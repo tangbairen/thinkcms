@@ -606,7 +606,8 @@ class RuleController extends AdminBaseController{
 
 
         }else{//用户列表
-            $data=D('AuthGroupAccess')->getAllData();
+            //$data=D('AuthGroupAccess')->getAllData();
+            $data=M('Users')->select();
             foreach($data as $key=>&$val){
                 /*$company=M('Company')->alias('c')->join('bt_users as u  on  c.cid=u.id')->where("uid={$val['id']}")->select();
                 if(!empty($company)){

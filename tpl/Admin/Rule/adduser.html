@@ -27,6 +27,7 @@
                     <th>登录时间</th>
                     <th>邮箱</th>
                     <th>手机</th>
+                    <th>备注</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
@@ -49,6 +50,7 @@
                         </td>
                         <td>{$v['email']}</td>
                         <td>{$v['phone']}</td>
+                        <td>{$v['remarks']}</td>
                         <td>
                             <if condition="$v['status'] eq 1 ">
                                 <span >正常</span>
