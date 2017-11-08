@@ -22,7 +22,7 @@ class KfinfoController extends Controller
 
             //$ip = get_client_ip();
             //if($ip != '122.227.58.170')throw new Exception('非法请求');
-
+            M()->startTrans();
             $cmd=I('post.cmd','');
             if($cmd == 'talk_info'){//整体推送
                 $content=I('post.content','');
@@ -45,10 +45,11 @@ class KfinfoController extends Controller
                 }
 
             }
-
+            M()->commit();
             $data= array('cmd'=>'OK','token'=>'TOKEN');
             echo json_encode($data);
         }catch(Exception $e){
+            M()->rollback();
             $message=$e->getMessage();
             //file_put_contents('./Uploads/log/message.txt',$message);
             $data= array('cmd'=>'OK','token'=>'TOKEN');
@@ -70,7 +71,7 @@ class KfinfoController extends Controller
             //file_put_contents("./Uploads/log/ditie_".$time.'.txt', $aaa);
             //$ip = get_client_ip();
             //if($ip != '122.227.58.170')throw new Exception('非法请求');
-
+            M()->startTrans();
             $cmd=I('post.cmd','');
             //file_put_contents("./Uploads/log/ditiecmd_".$time.'.txt', $cmd);
             if($cmd == 'talk_info'){//整体推送
@@ -95,10 +96,11 @@ class KfinfoController extends Controller
                 }
 
             }
-
+            M()->commit();
             $data= array('cmd'=>'OK','token'=>'TOKEN');
             echo json_encode($data);
         }catch(Exception $e){
+            M()->rollback();
             $message=$e->getMessage();
             //file_put_contents('./Uploads/log/ditie_message.txt',$message);
             $data= array('cmd'=>'OK','token'=>'TOKEN');
