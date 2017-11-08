@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/common.css" afterPath="$PROJECT_DIR$/Public/statics/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/total.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Login/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Login/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Public/base.html" afterPath="$PROJECT_DIR$/tpl/Admin/Public/base.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.520362">
+            <state vertical-scroll-proportion="-16.428572">
               <caret line="44" column="65" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="65" />
               <folding />
             </state>
@@ -49,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Public/statics/css/common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.066667">
-              <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.47058824">
+              <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -923,10 +918,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/statics/css/common.css">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.066667">
-          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+        <state vertical-scroll-proportion="-16.428572">
+          <caret line="44" column="65" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -939,10 +934,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
+    <entry file="file://$PROJECT_DIR$/Public/statics/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.520362">
-          <caret line="44" column="65" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.47058824">
+          <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
           <folding />
         </state>
       </provider>
