@@ -54,7 +54,10 @@ class UsersModel extends Model
      * */
     public function getTotalData()
     {
-        $data=$this->where("level=3")->select();
+        $data=$this->
+            field('distinct department_id,id,username,email,phone,company,status,register_time,last_login_ip,last_login_time,login_count,remarks,level')
+            ->where("level=3")
+            ->select();
 
         if(!empty($data)){
             // 今日开始时间戳
