@@ -299,6 +299,7 @@ class ResourceModel extends Model
 
         //部门
         $group=M('RoleDepartment')->select();
+
         $group_id='';
         foreach($group as $key=>$val){//清除没有分配的地区的组
             $arr=explode(',',$val['area_id']);
@@ -322,7 +323,7 @@ class ResourceModel extends Model
                 $group_id .=$v['id'].',';
             }
         }
-
+        p($group);
         if(empty($group_id)){
             return 0;
         }
@@ -344,6 +345,7 @@ class ResourceModel extends Model
                 unset($total_count[$key]);
             }
         }
+        p($total_count);
         //总数都满了
         if(empty($total_count)){
             return 0;
@@ -356,7 +358,6 @@ class ResourceModel extends Model
             $count=$this->where("group_id={$val['group_id']} and brand_id={$brand_id} and addtime  between {$startDay} and {$endDay}")->count();
             $arr[$val['group_id']]=$count;
         }
-
         $total=0;
         $brand=M('BrandsAuth')->where("brands_id={$brand_id}")->select();
         //清除个数已满的
@@ -375,8 +376,10 @@ class ResourceModel extends Model
 
             return 0;
         }
+        p($arr);
+        echo $gid=$this->getGid($arr,$total);
+        exit;
 
-        $gid=$this->getGid($arr,$total);
 
         return $gid;
 
