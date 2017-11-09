@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,20 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KfinfoController.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="KfinfoController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.857143">
-              <caret line="32" column="51" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.4524887">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VisitorRecordModel.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VisitorRecordModel.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89819">
+            <state vertical-scroll-proportion="-39.07143">
               <caret line="200" column="26" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
               <folding />
             </state>
@@ -105,8 +104,8 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Rule/adduser.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php" />
       </list>
     </option>
   </component>
@@ -802,18 +801,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.857143">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="51" />
+        <state vertical-scroll-proportion="-39.07143">
+          <caret line="200" column="26" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89819">
-          <caret line="200" column="26" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.4524887">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding />
         </state>
       </provider>
