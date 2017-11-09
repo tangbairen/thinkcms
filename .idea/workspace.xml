@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/Application/Admin/Model/RoleDepartmentModel.class.php" line="106" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="" />
+    <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/adduser.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/adduser.html" />
+    </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,7 +30,7 @@
       <file leaf-file-name="total.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/total.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.142857">
+            <state vertical-scroll-proportion="-82.28571">
               <caret line="231" column="66" selection-start-line="231" selection-start-column="66" selection-end-line="231" selection-end-column="66" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#td#0;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
@@ -38,51 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="department.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/department.html">
+      <file leaf-file-name="adduser.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/adduser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-118.71429">
-              <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="190" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BrandsController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.428572">
-              <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.0">
-              <caret line="55" column="91" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325792">
-              <caret line="337" column="44" selection-start-line="337" selection-start-column="44" selection-end-line="337" selection-end-column="44" />
+            <state vertical-scroll-proportion="1.2217195">
+              <caret line="220" column="101" selection-start-line="220" selection-start-column="101" selection-end-line="220" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -125,7 +87,6 @@
         <option value="$PROJECT_DIR$/tpl/Admin/Index/welcome.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Rule/department.html" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Rule/adduser.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/index.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Visitor/data_source.html" />
@@ -147,6 +108,7 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Rule/adduser.html" />
       </list>
     </option>
   </component>
@@ -649,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/adduser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1764706">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30995476">
@@ -785,14 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.022624435">
-          <caret line="40" column="58" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15837105">
@@ -843,38 +790,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/department.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-118.71429">
-          <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="190" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20361991">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/total.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.142857">
-          <caret line="231" column="66" selection-start-line="231" selection-start-column="66" selection-end-line="231" selection-end-column="66" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#td#0;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#td#0;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#3;n#block#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,14 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.428572">
-          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CrontabController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.5">
@@ -912,8 +824,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325792">
-          <caret line="337" column="44" selection-start-line="337" selection-start-column="44" selection-end-line="337" selection-end-column="44" />
+        <state vertical-scroll-proportion="-1.9285715">
+          <caret line="325" column="20" selection-start-line="325" selection-start-column="20" selection-end-line="325" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/BrandsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36199096">
+          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6119909">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3167421">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/department.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.760181">
+          <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="190" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Brands/total.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-82.28571">
+          <caret line="231" column="66" selection-start-line="231" selection-start-column="66" selection-end-line="231" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#td#0;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#td#0;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#3;n#block#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Rule/adduser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2217195">
+          <caret line="220" column="101" selection-start-line="220" selection-start-column="101" selection-end-line="220" selection-end-column="101" />
           <folding />
         </state>
       </provider>

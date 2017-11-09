@@ -127,10 +127,10 @@
                             <div class="col-sm-10">
                                 <select class="form-control" name="level">
                                     <option value="">请选择类别</option>
-                                    <option value="5">销售员工</option>
+                                    <option value="4">销售员工</option>
                                     <option value="3">公司管理员（销售）</option>
                                     <option value="2">管理员</option>
-                                    <option value="4">员工</option>
+                                    <option value="1">超级管理员</option>
                                 </select>
                             </div>
 
@@ -222,10 +222,10 @@
                             <div class="col-sm-10">
                                 <select class="form-control" name="edit_level" id="edit_level">
                                     <option value="">请选择类别</option>
-                                    <option value="5">销售员工</option>
+                                    <option value="4">销售员</option>
                                     <option value="3">公司管理员（销售）</option>
                                     <option value="2">管理员</option>
-                                    <option value="4">员工</option>
+                                    <option value="1">超级管理员</option>
                                 </select>
                             </div>
 
@@ -304,9 +304,7 @@
             if(level == 4){
                 xuan2='selected';
             }
-            if(level == 5){
-                xuan5='selected';
-            }
+
             if(level == 3){
                 xuan3='selected';
             }
@@ -318,10 +316,9 @@
             <option value="2">管理员</option>
             <option value="4">员工</option>*/
             var leveloption="<option value=''>请选择类别</option>";
-            leveloption +="<option value='5' "+xuan5+">销售员工</option>";
+            leveloption +="<option value='4' "+xuan2+">销售员</option>";
             leveloption +="<option value='3' "+xuan3+">公司管理员（销售）</option>";
             leveloption +="<option value='2' "+xuan1+">管理员</option>";
-            leveloption +="<option value='4' "+xuan2+">员工</option>";
             leveloption +="<option value='1' "+xuan4+">超级管理员</option>";
 
             $('#departarr').append(option);
