@@ -515,7 +515,6 @@ class ResourceModel extends Model
             ->find();
 
         if(!empty($res)){
-
             $this->allocation($info,$guest_name,$res);
 
             M('VisitorInfo')->where("id={$info['id']}")->save(array('status'=>2));
@@ -564,7 +563,7 @@ class ResourceModel extends Model
 
 
     /*
-     * 信息表id，访客名称（手机号），记录结果集
+     * 信息表id，访客名称（手机号），记录结果集(record)
      * */
     public function allocation($info,$guest_name,$data)
     {
@@ -579,8 +578,8 @@ class ResourceModel extends Model
             $area_id=0;
         }
 //        $brand_id=$this->getBrandId($data['kw'],$data['talk_page']);
-        $bransSource=$this->brands_source($data);
-        $group_id=$this->allocationGroup($bransSource['brand_id'],$area_id);
+        $bransSource=$this->brands_source($data);//获取来源渠道和品牌
+        $group_id=$this->allocationGroup53($bransSource['brand_id'],$area_id,$data['worker_id']);
 
         if(empty($group_id)){
             $allocation=1;
@@ -630,9 +629,120 @@ class ResourceModel extends Model
         $map['keyword']=isset($keyword) ? $keyword : '';
         $map['allocation']=isset($allocation) ? $allocation : '';
         $map['types']=2;
+
         $res=$this->add($map);
 
         return $res;
+    }
+
+    /*
+     * 分配部门
+     * @param $brand_id [品牌id]
+     * @param $area_id [地区id]
+     * @param $worker_id [客服工号]
+     * @return $group_id [用户组id]
+     * */
+    public function allocationGroup53($brand_id,$area_id,$worker_id='')
+    {
+
+        if(empty($brand_id) || empty($area_id)){
+
+            return 0;
+        }
+
+        //部门
+        $group=M('RoleDepartment')->select();
+
+        $group_id='';
+        foreach($group as $key=>$val){//清除没有分配的地区的组
+            $arr=explode(',',$val['area_id']);
+            if(!in_array($area_id,$arr)){
+                unset($group[$key]);
+            }
+
+        }
+
+        if(empty($group)){
+
+            return 0;
+        }
+
+        //清除没有品牌的组
+        foreach($group as $k=>$v){
+            $res=M('BrandsAuth')->where("brands_id={$brand_id} and gid={$v['id']}")->find();
+            if(empty($res)){
+                unset($group[$k]);
+            }else{
+                $group_id .=$v['id'].',';
+            }
+        }
+
+        if(empty($group_id)){
+            return 0;
+        }
+
+        $group_id=trim($group_id,',');          //所有部门id
+        $map['group_id']  = array('in',$group_id);
+        $total_count=M('Total')->where($map)->select();//总数
+
+        //处理它是哪个53账号下的公司
+        $len=strpos($worker_id,'kf');
+        $gongid=substr($worker_id,0,$len+2);
+        foreach($total_count as $k=>$v){
+            if(strpos($v['account_numbe'],$gongid) ===false){
+                unset($total_count[$k]);
+            }
+        }
+
+        // 今日开始时间戳
+        $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
+        // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
+        $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+        foreach($total_count as $key=>$val){
+            $group_total=M('Resource')
+                ->field('count(*) as num')
+                ->where("group_id={$val['group_id']} and addtime  between {$startDay} and {$endDay}")
+                ->select();
+            if($group_total[0]['num'] >= $val['total']){
+
+                unset($total_count[$key]);
+            }
+        }
+        //总数都满了
+        if(empty($total_count)){
+            return 0;
+        }
+
+        //品牌超出 删除
+        $arr=array();//所属组 今日的资源数量
+        foreach($total_count as $key=>$val){
+            //今天这个品牌的数量
+            $count=$this->where("group_id={$val['group_id']} and brand_id={$brand_id} and addtime  between {$startDay} and {$endDay}")->count();
+            $arr[$val['group_id']]=$count;
+        }
+
+        $total=0;
+        $brand=M('BrandsAuth')->where("brands_id={$brand_id}")->select();
+        //清除个数已满的
+        foreach($brand as $key=>$val){
+            //设置限定个数
+            if($val['count'] > 0){
+                if($arr[$val['gid']] >= $val['count']){
+                    unset($arr[$val['gid']]);
+                }
+            }
+
+            $total +=$val['count']+$arr[$val['gid']];//这个品牌总分配数+已分配的
+        }
+
+        if(empty($arr)){
+
+            return 0;
+        }
+        $gid=$this->getGid($arr,$total);
+
+        return $gid;
+
     }
 
     /*

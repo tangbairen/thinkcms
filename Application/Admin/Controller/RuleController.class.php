@@ -723,6 +723,7 @@ class RuleController extends AdminBaseController{
 
             //判断是否存在
             $arr['username']=$edit_name;
+            $arr['id']=array('NEQ',$user_id);
             $count=M('Users')->where($arr)->find();
             if(!empty($count)) throw new Exception('该用户名已经注册过了');
 

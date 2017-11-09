@@ -27,7 +27,7 @@ class BrandsController extends AdminBaseController
     {
         try{
             $name=I('post.name','','htmlspecialchars');
-            $identify=I('post.name','','htmlspecialchars');
+            $identify=I('post.identify','','htmlspecialchars');
             $name=trim($name);
             $identify=trim($identify);
             if(empty($name)) throw new Exception('品牌名称不能为空');
@@ -243,7 +243,7 @@ class BrandsController extends AdminBaseController
     public function total()
     {
         $data=M('Total')->alias('t')
-            ->field('t.id,t.title,t.group_id,t.total,g.name as group_name')
+            ->field('t.id,t.title,t.group_id,t.total,t.account_numbe,g.name as group_name')
             ->join('bt_role_department as g on t.group_id = g.id')
             ->select();
 
@@ -262,6 +262,9 @@ class BrandsController extends AdminBaseController
         $title=I('post.title');
         $group_id=I('post.group');
         $total=I('post.total');
+        $check2=I('post.check2');
+
+        $account_numbe=implode($check2,',');
 
         $res=M('Total')->where("group_id={$group_id}")->find();
         if($res){
@@ -270,7 +273,8 @@ class BrandsController extends AdminBaseController
         $array=array(
             'title'=>$title,
             'group_id'=>$group_id,
-            'total'=>$total
+            'total'=>$total,
+            'account_numbe'=>$account_numbe
         );
 
         $data=M('Total')->add($array);
@@ -288,9 +292,10 @@ class BrandsController extends AdminBaseController
         $total=I('post.total_count');
         $id=I('post.id');
         $total_title=I('post.total_title');
+        $edit_check2=I('post.edit_check2');
+        $account_numbe=implode($edit_check2,',');
 
-
-        $data=M('Total')->where("id={$id}")->save(array('total'=>$total));
+        $data=M('Total')->where("id={$id}")->save(array('total'=>$total,'account_numbe'=>$account_numbe));
 
         if($data){
             $this->success('修改成功',U('Admin/Brands/total'));

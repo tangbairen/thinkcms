@@ -22,6 +22,7 @@
                         <th>部门</th>
                         <th>标题</th>
                         <th>分配总数</th>
+                        <th>对应53客服账号</th>
                         <th>操作</th>
                     </tr>
                     <foreach name="data" item="val">
@@ -29,8 +30,9 @@
                             <td>{$val['group_name']}</td>
                             <td>{$val['title']}</td>
                             <td>{$val['total']}</td>
+                            <td>{$val['account_numbe']}</td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" total="{$val['total']}" totalTitle="{$val['title']}" onclick="edit(this)">修改</button>
+                                <button type="button" class="btn btn-primary btn-xs" totalId="{$val['id']}" total="{$val['total']}" totalTitle="{$val['title']}" account_numbe="{$val['account_numbe']}" onclick="edit(this)">修改</button>
                                 <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Brands/del_total',array('id'=>$val['id'],'group_id'=>$val['group_id']))}'}" type="button" class="btn btn-danger btn-xs">删除</a>
                             </td>
                         </tr>
@@ -71,8 +73,25 @@
 
                             </tr>
                             <tr>
-                                <th width="12%">分配数量：</th>
+                                <th width="16%">分配数量：</th>
                                 <td> <input class="input-medium" type="text" name="total"></td>
+                            </tr>
+                            <tr>
+                                <th width="20%">53客服账号：</th>
+                                <td>
+                                    <input type="checkbox" name="check2[]" value="bote53kf@163.com">
+                                    <span style="padding-right: 10px;">bote53kf@163.com</span>
+                                    <input type="checkbox" name="check2[]" value="ditiezhankf@163.com">
+                                    <span style="padding-right: 10px;">ditiezhankf@163.com</span>
+                                    <br>
+                                    <input type="checkbox" name="check2[]" value="luchi53kf@163.com">
+                                    <span style="padding-right: 10px;">luchi53kf@163.com</span>
+                                    <input type="checkbox" name="check2[]" value="daifeibql@sina.com">
+                                    <span style="padding-right: 10px;">daifeibql@sina.com</span>
+                                    <br>
+                                    <input type="checkbox" name="check2[]" value="keyingkf06@163.com">
+                                    <span style="padding-right: 10px;">keyingkf06@163.com</span>
+                                </td>
                             </tr>
 
                             <tr><th></th><td> <input class="btn btn-success" type="submit" onclick="return addData();" value="添加"></td></tr>
@@ -104,6 +123,23 @@
                                 <td> <input class="input-medium" type="text" name="total_count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></td>
                             </tr>
                             <tr>
+                                <th width="20%">53客服账号：</th>
+                                <td>
+                                    <input type="checkbox" name="edit_check2[]" value="bote53kf@163.com">
+                                    <span style="padding-right: 10px;">bote53kf@163.com</span>
+                                    <input type="checkbox" name="edit_check2[]" value="ditiezhankf@163.com">
+                                    <span style="padding-right: 10px;">ditiezhankf@163.com</span>
+                                    <br>
+                                    <input type="checkbox" name="edit_check2[]" value="luchi53kf@163.com">
+                                    <span style="padding-right: 10px;">luchi53kf@163.com</span>
+                                    <input type="checkbox" name="edit_check2[]" value="daifeibql@sina.com">
+                                    <span style="padding-right: 10px;">daifeibql@sina.com</span>
+                                    <br>
+                                    <input type="checkbox" name="edit_check2[]" value="keyingkf06@163.com">
+                                    <span style="padding-right: 10px;">keyingkf06@163.com</span>
+                                </td>
+                            </tr>
+                            <tr>
                                 <th></th>
                                 <td> <input class="btn btn-success" type="submit" onclick="return edit_total();" value="修改"></td>
                             </tr>
@@ -128,9 +164,18 @@
             var totalId=$(obj).attr('totalId');
             var total=$(obj).attr('total');
             var totalTitle=$(obj).attr('totalTitle');
+            var account_numbe=$(obj).attr('account_numbe');
             $("input[name='id']").val(totalId);
             $("input[name='total_count']").val(total);
             $("input[name='total_title']").val(totalTitle);
+
+
+            $("input[name='edit_check2[]']").each(function(){
+                if(account_numbe.indexOf($(this).val()) >= 0){
+                    $(this).attr('checked','checked');
+                }
+
+            });
 
             $('#bjy-edit').modal('show');
         }
@@ -145,6 +190,7 @@
         function addData(){
             var title=$("input[name='title']").val();
             var total=$("input[name='total']").val();
+
             var group=$('#group').val();
 
             if(title == ''){
@@ -162,6 +208,11 @@
                 return false;
             }
 
+            if(!$("input[name='check2[]']").is(':checked')) {
+                layer.msg('请选择53客服账号', {icon: 5,time:2000});
+                return false;
+            }
+
         }
 
         function edit_total(){
@@ -175,6 +226,11 @@
 
             if(title == ''){
                 layer.msg('请输入标题', {icon: 5,time:2000});
+                return false;
+            }
+
+            if(!$("input[name='edit_check2[]']").is(':checked')) {
+                layer.msg('请选择53客服账号', {icon: 5,time:2000});
                 return false;
             }
 
