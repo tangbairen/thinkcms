@@ -323,7 +323,7 @@ class ResourceModel extends Model
                 $group_id .=$v['id'].',';
             }
         }
-        p($group);
+        //p($group);
         if(empty($group_id)){
             return 0;
         }
@@ -345,7 +345,7 @@ class ResourceModel extends Model
                 unset($total_count[$key]);
             }
         }
-        p($total_count);
+        //p($total_count);
         //总数都满了
         if(empty($total_count)){
             return 0;
@@ -376,9 +376,9 @@ class ResourceModel extends Model
 
             return 0;
         }
-        p($arr);
-        echo $gid=$this->getGid($arr,$total);
-        exit;
+        //p($arr);
+        $gid=$this->getGid($arr,$total);
+        //exit;
 
 
         return $gid;
