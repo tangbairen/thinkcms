@@ -198,10 +198,10 @@ class VisitorRecordModel extends Model
         );
         $res=$this->where($arr)->find();
 
-        if(empty($res)){
+//        if(empty($res)){
 
             $id=$this->add($map);
-        }
+//        }
 
 
         return true;
