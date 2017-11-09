@@ -96,7 +96,7 @@ class UsersModel extends Model
                 if(!empty($res)){
                     $val['yifenp']=$res[0]['num2']+$res[0]['num3'];
                     $val['weifenp']=$res[0]['num1'];
-                    $val['youxiao']=$res[0]['num2'];
+                    $val['today_youxiao']=$res[0]['num2'];
                     $val['todaynum']=$res[0]['total'];
                 }
                 $val['total']=isset($total['total']) ? $total['total'] : 0;//今日目标

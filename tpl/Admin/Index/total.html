@@ -67,11 +67,11 @@
                                             <p><span class="title">今日资源</span> <span class="num">{$val['todaynum']}</span></p>
                                             <p><span class="title">已反馈</span> <span class="num">{$val['yifenp']}</span></p>
                                             <p><span class="title">未反馈</span> <span class="num">{$val['weifenp']}</span></p>
-                                            <p><span class="title">有效资源</span> <span class="num">{$val['youxiao']}</span></p>
+                                            <p><span class="title">有效资源</span> <span class="num">{$val['today_youxiao']}</span></p>
                                         </div>
                                         <div class="content-info-right">
                                             <div class="content-yuan">
-                                                <p style="color:#fff;font-size: 28px;"><?php echo round($val['youxiao'] / $val['total'],2);?>%</p>
+                                                <p style="color:#fff;font-size: 28px;"><?php echo round($val['today_youxiao'] / $val['total'],2)*100;?>%</p>
                                                 <p style="color:#fff;font-size: 18px;">有效率</p>
                                             </div>
                                         </div>
@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="content-info-right">
                                             <div class="content-yuan">
-                                                <p style="color:#fff;font-size: 28px;"><?php echo round($val['youxiao'] / $val['totalmonth'],2)?>%</p>
+                                                <p style="color:#fff;font-size: 28px;"><?php echo round($val['youxiao'] / $val['totalmonth'],2)*100?>%</p>
                                                 <p style="color:#fff;font-size: 18px;">有效率</p>
                                             </div>
                                         </div>

@@ -10,23 +10,28 @@
                 <div class="">欢迎使用后台管理系统</div>
             </div>
             <div class="common-content">
-                <div class="common-div">
+                <div class="common-div common-div-1">
+                    <img src="__PUBLIC__/statics/images/time.png" alt="">
                     <p>登录时间</p>
                     <p>{$data['last_login_time']|date='Y-m-d H:i:s',###}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-2">
+                    <img src="__PUBLIC__/statics/images/ip.png" alt="">
                     <p>登录IP</p>
                     <p>{$data['last_login_ip']}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-3">
+                    <img src="__PUBLIC__/statics/images/area.png" alt="">
                     <p>登录地址</p>
                     <p>{$area['country']}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-4">
+                    <img src="__PUBLIC__/statics/images/logincount.png" alt="">
                     <p>登录次数</p>
                     <p>{$data['login_count']}</p>
                 </div>
-                <div class="common-div">
+                <div class="common-div common-div-5">
+                    <img src="__PUBLIC__/statics/images/tree.png" alt="">
                     <p>所属部门</p>
                     <p>{$data['name']}</p>
                 </div>
@@ -52,7 +57,7 @@
                                     </div>
                                     <div class="content-info-right">
                                         <div class="content-yuan">
-                                            <p style="color:#fff;font-size: 28px;"><?php echo round($today['num2'] / $today['todayTotal'],2)?>%</p>
+                                            <p style="color:#fff;font-size: 28px;"><?php echo round($today['num2'] / $today['todayTotal'],2)*100;?>%</p>
                                             <p style="color:#fff;font-size: 18px;">有效率</p>
                                         </div>
                                     </div>
@@ -70,7 +75,7 @@
                                     </div>
                                     <div class="content-info-right">
                                         <div class="content-yuan">
-                                            <p style="color:#fff;font-size: 28px;"><?php echo round($month['num2'] / $month['todayMonth'],2)?>%</p>
+                                            <p style="color:#fff;font-size: 28px;"><?php echo round($month['num2'] / $month['todayMonth'],2)*100;?>%</p>
                                             <p style="color:#fff;font-size: 18px;">有效率</p>
                                         </div>
                                     </div>
