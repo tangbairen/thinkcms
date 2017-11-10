@@ -87,7 +87,7 @@ return array(
         'DB_PREFIX' => '', // 数据库表前缀
     ),
 
-    //数据库配置2 (SEO留言)
+    //数据库配置(Luchi留言)
     'DB_LUCHI' => array(
         'DB_TYPE'  => 'mysqli',
         'DB_USER'  => 'jjluchi_message',
@@ -95,6 +95,17 @@ return array(
         'DB_HOST'  => '116.31.118.96',
         'DB_PORT'  => '3306',
         'DB_NAME'  => 'jjluchi_message',
+        'DB_CHARSET'=>    'utf8',
+        'DB_PREFIX' => '', // 数据库表前缀
+    ),
+    //数据库配置 (Oben留言)
+    'DB_OBEN' => array(
+        'DB_TYPE'  => 'mysqli',
+        'DB_USER'  => 'jjoben_message',
+        'DB_PWD'   => 'yTQ20-u9',
+        'DB_HOST'  => '116.31.118.96',
+        'DB_PORT'  => '3306',
+        'DB_NAME'  => 'jjoben_message',
         'DB_CHARSET'=>    'utf8',
         'DB_PREFIX' => '', // 数据库表前缀
     ),

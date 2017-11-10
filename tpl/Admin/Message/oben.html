@@ -71,7 +71,7 @@
                             <td>{$val['ip']}</td>
                             <td>{$val['create_time']}</td>
                             <td>
-                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Message/del_luchi',array('id'=>$val['id']))}'}"
+                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Message/del_oben',array('id'=>$val['id']))}'}"
                                    type="button" class="btn btn-danger btn-xs">删除</a>
                             </td>
                         </tr>
@@ -114,7 +114,7 @@
                 arr[i]=$(this).val();
             });
 
-            var url="{:U('Admin/message/luchiExport')}?phone="+phone+'&start_time='+start_time+'&end_time='+end_time+'&box='+arr;
+            var url="{:U('Admin/message/obenExport')}?phone="+phone+'&start_time='+start_time+'&end_time='+end_time+'&box='+arr;
             location.href=url;
 
         }
