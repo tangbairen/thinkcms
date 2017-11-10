@@ -87,4 +87,15 @@ return array(
         'DB_PREFIX' => '', // 数据库表前缀
     ),
 
+    //数据库配置2 (SEO留言)
+    'DB_LUCHI' => array(
+        'DB_TYPE'  => 'mysqli',
+        'DB_USER'  => 'jjluchi_message',
+        'DB_PWD'   => 'bHV07@s1',
+        'DB_HOST'  => '116.31.118.96',
+        'DB_PORT'  => '3306',
+        'DB_NAME'  => 'jjluchi_message',
+        'DB_CHARSET'=>    'utf8',
+        'DB_PREFIX' => '', // 数据库表前缀
+    ),
 );

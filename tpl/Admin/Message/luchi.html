@@ -1,5 +1,5 @@
 <extend name="Public:base"/>
-<block name="title">柏特留言</block>
+<block name="title">禄持留言板</block>
 <block name="content">
     <style>
         .form-group>label[class*="col-"] {padding-top: 10px;}
@@ -58,23 +58,23 @@
                         <th>操作</th>
                     </tr>
                     <foreach name="data" item="val">
-                    <tr style=" height:70px;">
-                        <td><input type="checkbox" name="box[]" value="{$val['id']}"></td>
-                        <td>{$val['username']}</td>
-                        <td>{$val['tel']/863}</td>
-                        <td width="150px;">{$val['area']}</td>
-                        <td>{$val['xm']}</td>
-                        <td><if condition="$val['qq'] neq 0">{$val['qq']}</if></td>
-                        <td>{$val['company']}</td>
-                        <td width="250px;">{$val['content']}</td>
-                        <td width="350px;">{$val['url']}</td>
-                        <td>{$val['ip']}</td>
-                        <td>{$val['create_time']}</td>
-                        <td>
-                            <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Message/del_data',array('id'=>$val['id']))}'}"
-                               type="button" class="btn btn-danger btn-xs">删除</a>
-                        </td>
-                    </tr>
+                        <tr style=" height:70px;">
+                            <td><input type="checkbox" name="box[]" value="{$val['id']}"></td>
+                            <td>{$val['username']}</td>
+                            <td>{$val['tel']/863}</td>
+                            <td width="150px;">{$val['area']}</td>
+                            <td>{$val['xm']}</td>
+                            <td><if condition="$val['qq'] neq 0">{$val['qq']}</if></td>
+                            <td>{$val['company']}</td>
+                            <td width="250px;">{$val['content']}</td>
+                            <td width="350px;">{$val['url']}</td>
+                            <td>{$val['ip']}</td>
+                            <td>{$val['create_time']}</td>
+                            <td>
+                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Message/del_data',array('id'=>$val['id']))}'}"
+                                   type="button" class="btn btn-danger btn-xs">删除</a>
+                            </td>
+                        </tr>
                     </foreach>
                 </table>
                 <div style="margin-bottom: 100px;margin-top: 50px;">
@@ -121,14 +121,14 @@
 
 
         /*//时间选择器
-        laydate.render({
-            elem: '#test1'
-            ,type: 'datetime'
-        });
-        laydate.render({
-            elem: '#test2'
-            ,type: 'datetime'
-        });*/
+         laydate.render({
+         elem: '#test1'
+         ,type: 'datetime'
+         });
+         laydate.render({
+         elem: '#test2'
+         ,type: 'datetime'
+         });*/
     </script>
 
 

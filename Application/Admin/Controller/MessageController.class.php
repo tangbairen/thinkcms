@@ -1,6 +1,7 @@
 <?php
 namespace Admin\Controller;
 
+use Admin\Model\MessageluchiModel;
 use Admin\Model\MessageModel;
 use Admin\Model\Messagemxn2Model;
 use Admin\Model\MessageseoModel;
@@ -266,7 +267,29 @@ class MessageController extends AdminBaseController
 
     }
 
+    /*
+     * 禄持留言板
+     * 2017-11-10 09：48
+     * */
+    public function luchi()
+    {
+        $phone=trim(I('get.phone',''));
+        $start_time=I('get.start_time','');
+        $end_time=I('get.end_time','');
 
+       ;
+        $model=new \Admin\Model\Luchi\Messagemxn2Model();
+        $data=$model->getBoteData();
+        $array=array(
+            'phone'         =>$phone,
+            'start_time'    =>$start_time,
+            'end_time'      =>$end_time
+
+        );
+        $this->assign($data);
+        $this->assign($array);
+        $this->display();
+    }
 
 
 }
