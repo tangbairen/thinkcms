@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/Admin/Message/luchi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/MessageController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/MessageController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Conf/config.php" afterPath="$PROJECT_DIR$/Application/Common/Conf/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/total.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Message/bote.html" afterPath="$PROJECT_DIR$/tpl/Admin/Message/bote.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessageController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessageController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/MessageController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5656109">
+            <state vertical-scroll-proportion="-49.42857">
               <caret line="280" column="57" selection-start-line="280" selection-start-column="57" selection-end-line="280" selection-end-column="57" />
               <folding>
                 <element signature="e#35#69#0#PHP" expanded="true" />
@@ -57,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.571428">
-              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.29411766">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -168,7 +162,6 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/KfinfoController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/VisitorRecordModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Common/Conf/config.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/MessageluchiModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/luchi/Messagemxn2Model.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/MessageController.class.php" />
@@ -176,6 +169,7 @@
         <option value="$PROJECT_DIR$/tpl/Admin/Message/bote.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Message/luchi.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Index/total.html" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -933,14 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.571428">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Common/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.142857">
@@ -993,11 +979,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/MessageController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5656109">
+        <state vertical-scroll-proportion="-49.42857">
           <caret line="280" column="57" selection-start-line="280" selection-start-column="57" selection-end-line="280" selection-end-column="57" />
           <folding>
             <element signature="e#35#69#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29411766">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
