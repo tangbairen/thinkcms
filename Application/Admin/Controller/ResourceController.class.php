@@ -221,11 +221,23 @@ class ResourceController extends AdminBaseController
     {
         $uid=session('user.id');
 //        $group=M('AuthGroupAccess')->where("uid=$uid")->find();
+        //$group=M('Users')->where("id=$uid")->find();
+
         $group=M('Users')->where("id=$uid")->find();
+        if($group['level'] == 3){//公司账号
+            $sql='select GROUP_CONCAT(id) as id from bt_role_department where parent_id='.$group['department_id'];
+            $res=M()->query($sql);
+            $id=isset($res[0]['id']) ? $res[0]['id'] : 0;
+
+            $where="group_id in({$id})";
+        }else{
+
+            $where="group_id = {$group['department_id']}";
+        }
         $phone=trim(I('get.phone',''));
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
-        $where="group_id = {$group['department_id']}";
+//        $where="group_id = {$group['department_id']}";
         $box=I('get.box','');
         $brand=I('get.brand','');
         $referer=I('get.referer','');
