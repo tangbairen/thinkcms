@@ -39,6 +39,10 @@ class ResourceModel extends Model
 
         if(!empty($end_time)){
             $end_time=strtotime($end_time);
+            if($end_time == $start_time){
+                $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+                $end_time=$endDay;
+            }
             $where .=" and addtime <={$end_time}";
         }
         if(!empty($brand_id)){
