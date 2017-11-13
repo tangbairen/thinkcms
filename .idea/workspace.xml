@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Brands/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Brands/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" />
     </list>
     <ignored path="thinkcms.iws" />
@@ -32,12 +30,12 @@
       <file leaf-file-name="add_resource.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44570136">
-              <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.8076923">
+              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#li#0;n#foreach#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#block#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <marker date="1510542381854" expanded="true" signature="9144:9182" placeholder="..." />
+                <marker date="1510543110292" expanded="true" signature="9038:9076" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -392,7 +390,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -792,12 +790,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44570136">
-          <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.8076923">
+          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#span#0;n#li#0;n#foreach#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#block#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <marker date="1510542381854" expanded="true" signature="9144:9182" placeholder="..." />
+            <marker date="1510543110292" expanded="true" signature="9038:9076" placeholder="..." />
           </folding>
         </state>
       </provider>
