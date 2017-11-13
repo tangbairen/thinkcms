@@ -5,6 +5,9 @@
 <block name="content">
     <style>
         .input-medium{width: 300px;}
+        .modal-body ul{margin-bottom: 10px;}
+        .modal-body ul li{float:left;width: 130px;margin-top: 5px;}
+        .modal-footer{margin-top: 20px;}
     </style>
     <div class="page-header">
         <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 添加数据</p>
@@ -124,17 +127,25 @@
                     <h4 class="modal-title" id="exampleModalLabel">选择品牌</h4>
                 </div>
                 <div class="modal-body">
+                    <input type="text" onkeyup="search(this);" maxlength="15" >
+
                     <form>
+                        <ul>
                         <foreach name="brandArr" item="val">
-                            <span style="padding-right: 15px;padding-left: 5px;">{$val['name']}
+                        <li>
+                             <span style="padding-right: 15px;padding-left: 5px;">{$val['name']}
                                 <input class="xb-icheck" type="radio" name="brand_title"
                                        brandName="{$val['name']}" value="{$val['id']}"
                                 <if condition="$val['id'] eq $data['brand_id']"> checked </if> >
                             </span>
+                        </li>
+
                         </foreach>
+                        </ul>
 
                     </form>
                 </div>
+                <div style="clear: both"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                     <button type="button" class="btn btn-primary" onclick="brand_confirm();">确定</button>
@@ -149,6 +160,27 @@
 <block name="js">
     <icheckjs color="blue"/>
     <script>
+        function search(obj){
+            var name=$(obj).val();
+            if(name != ''){
+                $("input[name='brand_title']").each(function(k,v){
+
+                    var checkValue = $(this).attr('brandname');
+                    var num=checkValue.indexOf(name);
+                    if(num > -1){
+
+                        var aaa=$("input[name='brand_title']").eq(k).parent().css("color","red");
+                        var aaa=$("input[name='brand_title']").eq(k).parent().siblings().css('color','');
+
+                    }
+                });
+            }else{
+                    $("input[name='brand_title']").each(function(k,v){
+                        var aaa=$(this).eq(k).parent().css("color","#000");
+                    });
+            }
+
+        }
 
         function check(){
 
@@ -161,6 +193,7 @@
             var brand_id=$("input[name='brand_id']").val();
 
             if(province == ''){
+
                 alert('请先选择省份');
                 return false;
             }
