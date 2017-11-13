@@ -30,11 +30,11 @@
       <file leaf-file-name="add_resource.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5361991">
-              <caret line="135" column="42" selection-start-line="135" selection-start-column="42" selection-end-line="135" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.18099548">
+              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <marker date="1510543224249" expanded="true" signature="9000:9038" placeholder="..." />
+                <marker date="1510543323375" expanded="true" signature="9000:9038" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -789,11 +789,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5361991">
-          <caret line="135" column="42" selection-start-line="135" selection-start-column="42" selection-end-line="135" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.18099548">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <marker date="1510543224249" expanded="true" signature="9000:9038" placeholder="..." />
+            <marker date="1510543323375" expanded="true" signature="9000:9038" placeholder="..." />
           </folding>
         </state>
       </provider>
