@@ -179,6 +179,9 @@
 
         function search(obj){
             var name=$(obj).val();
+            name= $.trim(name);
+
+            $('.modal-body ul li label').css('color','#000');
             if(name != ''){
                 $("input[name='brand_title']").each(function(k,v){
 
@@ -189,10 +192,12 @@
                         var aaa=$("input[name='brand_title']").eq(k).parent().css("color","red");
                         var aaa=$("input[name='brand_title']").eq(k).parent().siblings().css('color','');
 
+                    }else{
+                        $('.modal-body ul li span').css('color','#000');
                     }
                 });
             }else{
-                $('.modal-body ul li span').css('color','#000');
+                $('.modal-body ul li label').css('color','#000');
             }
 
         }
