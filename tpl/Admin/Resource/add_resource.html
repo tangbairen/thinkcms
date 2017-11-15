@@ -8,6 +8,9 @@
         .modal-body ul{margin-bottom: 10px;}
         .modal-body ul li{float:left;width: 160px;margin-top: 5px;}
         .modal-footer{margin-top: 20px;}
+        label {
+            cursor: pointer;
+        }
     </style>
     <div class="page-header">
         <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 添加数据</p>
@@ -46,6 +49,18 @@
                                 </foreach>
                             </select>
                             <span>(必填)</span>
+                            <!--<div style="position:absolute;">
+                                <span style="margin-left:100px;width:18px;overflow:hidden;">
+                                <select style="width:170px;margin-left:-100px" id="area" >
+                                    <option value="5">德国</option>
+                                    <option value="4">挪威</option>
+                                    <option value="3"> 瑞士</option>
+                                    <option value="10"> 广东</option>
+                                    <option value="8"> 广西</option>
+                                </select>
+                                </span>
+                                <input name="box" onkeyup="sukeyup(this);" style="width:150px;height:30px;position:absolute;left:0px;">
+                            </div>-->
                         </td>
                     </tr>
                     <tr>
@@ -87,7 +102,7 @@
                         <th></th>
                         <td>
                             <input class="btn btn-success" type="submit" onclick="return add_data();" value="保存">
-                            <input class="btn btn-danger" type="submit" onclick="check();" value="取消">
+                            <a class="btn btn-danger" onclick="check();">取消</a>
                         </td>
                     </tr>
                 </table>
@@ -131,13 +146,13 @@
 
                     <form>
                         <ul>
-                        <foreach name="brandArr" item="val">
+                        <foreach name="brandArr" item="val" key="k">
                         <li>
-                             <span style="">{$val['name']}
-                                <input class="xb-icheck" type="radio" name="brand_title"
+                             <label for="radio{$k}" style="">{$val['name']}
+                                <input class="xb-icheck" type="radio" id="radio{$k}" name="brand_title"
                                        brandName="{$val['name']}" value="{$val['id']}"
                                 <if condition="$val['id'] eq $data['brand_id']"> checked </if> >
-                            </span>
+                            </label>
                         </li>
 
                         </foreach>
@@ -160,6 +175,8 @@
 <block name="js">
     <icheckjs color="blue"/>
     <script>
+
+
         function search(obj){
             var name=$(obj).val();
             if(name != ''){
