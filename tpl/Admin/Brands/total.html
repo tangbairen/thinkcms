@@ -219,7 +219,7 @@
             var total=$("input[name='total_count']").val();
             var title=$("input[name='total_title']").val();
 
-            if(total == '' || total== 0){
+            if(total === ''){
                 layer.msg('请输入分配数量', {icon: 5,time:2000});
                 return false;
             }

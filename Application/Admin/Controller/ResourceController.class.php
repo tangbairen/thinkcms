@@ -584,4 +584,18 @@ GROUP BY  t.group_id,t.total";
         $this->display();
     }
 
+    /*
+     * 公司 各部门汇总
+     * @data 2017-11-16 11：30
+     * */
+    public function summary()
+    {
+        $data=D('Resource')->getSummary();
+
+        $this->assign('data',$data);
+        $this->display();
+    }
+
+
+
 }

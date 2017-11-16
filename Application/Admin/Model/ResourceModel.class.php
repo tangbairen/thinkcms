@@ -894,4 +894,53 @@ class ResourceModel extends Model
         return array('today'=>$today,'month'=>$month);
     }
 
+    /*
+     * 获取公司各部门汇总信息 （昨天比，上周比）
+     * @date 2017-11-16 13:46
+     * */
+    public function getSummary()
+    {
+        $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
+        $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+
+        $lastDay=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
+        $endlastDay=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
+
+        $lastweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1-7,date("Y"));
+        $lastweekEnd=mktime(23,59,59,date("m"),date("d")-date("w")+7-7,date("Y"));
+
+        $thisweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1,date("Y"));
+        $thisweekEnd=mktime(23,59,59,date("m"),date("d")-date("w")+7,date("Y"));
+
+        $data=$this->field("group_id,count(case  when addtime >= 1510761600 and addtime  <= 1510847999 then id end	) as today,
+count(case  when addtime >= 1510675200 and addtime  <= 1510761599 then id end	) as yesterday,
+count(case  when addtime >= 1509897600 and addtime  <= 1510502399 then id end	) as lastweek,
+count(case  when addtime >= 1510502400 and addtime  <= 1511107199 then id end	) as thisweek")
+            ->where('group_id > 0')
+            ->group('group_id')
+            ->select();
+        $array=array();
+        if(!empty($data)){
+            foreach($data as $key=>$val){
+                $res=M('RoleDepartment')->where("id={$val['group_id']}")->find();
+
+                if(!empty($res)){
+                    $parent=M('RoleDepartment')->where("id={$res['parent_id']}")->find();
+                    if(!empty($parent)){
+                        $array[$parent['id']]['company']=$parent['name'];
+                    }
+                }
+                if(!empty($array[$res['parent_id']])){
+                    $array[$res['parent_id']]['data'][]=array_merge($res,$data[$key]);
+                }
+
+            }
+        }
+
+
+        return $array;
+
+    }
+
+
 }
