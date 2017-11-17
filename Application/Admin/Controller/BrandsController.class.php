@@ -15,7 +15,7 @@ class BrandsController extends AdminBaseController
     public function index()
     {
 
-        $data=M('Brands')->select();
+        $data=M('Brands')->order('order_by desc')->select();
         $this->assign('data',$data);
         $this->display();
     }
@@ -424,5 +424,50 @@ class BrandsController extends AdminBaseController
         }
     }
 
+    /*
+     * 品牌排序
+     * @date 2017-11-17 09:25
+     * */
+    public function order()
+    {
+        $data=I('post.');
+
+        $result=$this->orderData($data);
+        if ($result) {
+            $this->success('排序成功',U('Admin/Brands/index'));
+        }else{
+            $this->error('排序失败');
+        }
+    }
+
+    /**
+     * 数据排序
+     * @param  array $data   数据源
+     * @param  string $id    主键
+     * @param  string $order 排序字段
+     * @return boolean       操作是否成功
+     */
+    public function orderData($data,$id='id',$order='order_by'){
+        foreach ($data as $k => $v) {
+
+            $v=empty($v) ? null : $v;
+            M('Brands')->where(array($id=>$k))->save(array($order=>$v));
+        }
+        return true;
+    }
+
+    public function getbrand()
+    {
+        $brandArr=M('Brands')->field('id,name')
+            ->order('order_by desc')
+            ->select();
+        if(!empty($brandArr)){
+            $data=array('status'=>'success','data'=>$brandArr);
+        }else{
+            $data=array('status'=>'error','data'=>'');
+        }
+
+        echo json_encode($data);
+    }
 
 }

@@ -6,7 +6,7 @@
     <style>
         .input-medium{width: 300px;}
         .modal-body ul{margin-bottom: 10px;}
-        .modal-body ul li{float:left;width: 160px;margin-top: 5px;}
+        .modal-body ul li{float:left;width: 160px;margin-top: 5px; height: 25px;}
         .modal-footer{margin-top: 20px;}
         label {
             cursor: pointer;
@@ -145,7 +145,7 @@
                     <input type="text" onkeyup="search(this);" maxlength="15" >
 
                     <form>
-                        <ul>
+                        <ul id="modal-body-brand">
                         <foreach name="brandArr" item="val" key="k">
                         <li>
                              <label for="radio{$k}" style="">{$val['name']}
@@ -154,9 +154,12 @@
                                 <if condition="$val['id'] eq $data['brand_id']"> checked </if> >
                             </label>
                         </li>
-
                         </foreach>
+
                         </ul>
+                        <div style="clear: both;padding-top: 20px;text-align: center" id="jiazai">
+                            <a href="javascript:void(0)" onclick="getbrand()">加载更多</a>
+                        </div>
 
                     </form>
                 </div>
@@ -176,6 +179,37 @@
     <icheckjs color="blue"/>
     <script>
 
+        function getbrand(){
+            setTimeout(function(){
+
+                $.ajax({
+                    'url':"{:U('Brands/getbrand')}",
+                    'type':'post',
+                    'dataType':'json',
+                    success:function(data){
+                        if(data['status'] == 'success'){
+                            var li='';
+                            $.each(data['data'],function(k,v){
+
+                                li +="<li > <label for='radio"+k+"' style='color: #000000'> "+v['name']+"<input class='xb-icheck' type='radio' id='radio"+k+"' name='brand_title' brandName='"+v['name']+"' value='"+v['id']+"'  > </label> </li>";
+                            });
+
+                            $('#modal-body-brand').html('');
+                            $('#modal-body-brand').html(li)
+
+                            $('#jiazai').hide();
+                        }else{
+
+                        }
+
+                    }
+                });
+
+
+            },200);
+
+
+        }
 
         function search(obj){
             var name=$(obj).val();

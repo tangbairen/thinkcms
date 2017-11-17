@@ -74,7 +74,7 @@ class ResourceModel extends Model
         /*实例化第三方分页类库*/
         $page = new \Page($page);
 
-        $data=$this->where($where)->order('addtime desc,id desc')->limit($page->pagerows(),$page->maxrows())->select();
+        $data=$this->where($where)->order('status asc,addtime desc')->limit($page->pagerows(),$page->maxrows())->select();
 
         if(!empty($data)){
             foreach($data as $key=>&$val){

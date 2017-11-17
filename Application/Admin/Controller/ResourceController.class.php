@@ -403,7 +403,7 @@ class ResourceController extends AdminBaseController
             //省份
             $province=M('Province')->select();
             //品牌
-            $brandArr=M('Brands')->select();
+            $brandArr=M('Brands')->order('order_by desc')->limit(45)->select();
             $array=array(
                 'brandArr'=>$brandArr,
                 'province'=>$province

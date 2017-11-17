@@ -9,8 +9,10 @@
         <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
             <li> <a  onclick="add()">添加品牌</a></li>
         </ul>
+        <form class="" action="{:U('Admin/Brands/order')}" method="post">
         <table class="table table-bordered" style="margin-top: 10px;">
             <tr>
+                <th width="5%">排序</th>
                 <th>品牌ID</th>
                 <th>品牌名称</th>
                 <th>品牌标识</th>
@@ -20,6 +22,7 @@
             </tr>
             <foreach name="data" item="val">
                 <tr>
+                    <td><input class="input-medium" style="width:60px;height:25px;" type="text" name="{$val['id']}" value="{$val['order_by']}"></td>
                     <td>{$val['id']}</td>
                     <td>{$val['name']}</td>
                     <td>{$val['identify']}</td>
@@ -34,6 +37,8 @@
                 </tr>
             </foreach>
         </table>
+        <input class="btn btn-success" type="submit" value="排序" style="margin-bottom: 50px;">
+        </form>
     </div>
 
     <div class="modal fade" id="bjy-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
