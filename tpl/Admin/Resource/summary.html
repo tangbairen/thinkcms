@@ -38,8 +38,8 @@
                     <tr>
                         <td><?php echo $v['name']?></td>
                         <td><?php echo $v['today']?></td>
-                        <td><?php echo $v['today'] - $v['yesterday'];?></td>
-                        <td><?php echo $v['thisweek'] - $v['lastweek'];?></td>
+                        <td><?php if($v['today'] - $v['yesterday'] > 0){echo '+';}?><?php echo $v['today'] - $v['yesterday'];?></td>
+                        <td><?php if($v['thisweek'] - $v['lastweek'] > 0){echo '+';}?><?php echo $v['thisweek'] - $v['lastweek'];?></td>
                     </tr>
                 <?php endforeach; ?>
                 <tr>

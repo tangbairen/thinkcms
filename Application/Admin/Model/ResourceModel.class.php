@@ -912,10 +912,10 @@ class ResourceModel extends Model
         $thisweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1,date("Y"));
         $thisweekEnd=mktime(23,59,59,date("m"),date("d")-date("w")+7,date("Y"));
 
-        $data=$this->field("group_id,count(case  when addtime >= 1510761600 and addtime  <= 1510847999 then id end	) as today,
-count(case  when addtime >= 1510675200 and addtime  <= 1510761599 then id end	) as yesterday,
-count(case  when addtime >= 1509897600 and addtime  <= 1510502399 then id end	) as lastweek,
-count(case  when addtime >= 1510502400 and addtime  <= 1511107199 then id end	) as thisweek")
+        $data=$this->field("group_id,count(case  when addtime >= {$startDay} and addtime  <= {$endDay} then id end	) as today,
+count(case  when addtime >= {$lastDay} and addtime  <= {$endlastDay} then id end	) as yesterday,
+count(case  when addtime >= {$lastweekStart} and addtime  <= {$lastweekEnd} then id end	) as lastweek,
+count(case  when addtime >= {$thisweekStart} and addtime  <= {$thisweekEnd} then id end	) as thisweek")
             ->where('group_id > 0')
             ->group('group_id')
             ->select();
@@ -937,10 +937,7 @@ count(case  when addtime >= 1510502400 and addtime  <= 1511107199 then id end	) 
             }
         }
 
-
         return $array;
-
     }
-
-
+    
 }
