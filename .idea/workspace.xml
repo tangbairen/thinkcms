@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/audit.html" />
     </list>
     <ignored path="thinkcms.iws" />
@@ -32,11 +31,11 @@
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5622172">
-              <caret line="330" column="21" selection-start-line="330" selection-start-column="21" selection-end-line="330" selection-end-column="21" />
+              <caret line="330" column="17" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#block#1;n#!!top" expanded="true" />
-                <marker date="1510906314977" expanded="true" signature="15574:15718" placeholder="..." />
-                <marker date="1510906314977" expanded="true" signature="15648:15666" placeholder="..." />
+                <marker date="1510906457950" expanded="true" signature="15571:15715" placeholder="..." />
+                <marker date="1510906457950" expanded="true" signature="15645:15663" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -879,11 +878,11 @@
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5622172">
-          <caret line="330" column="21" selection-start-line="330" selection-start-column="21" selection-end-line="330" selection-end-column="21" />
+          <caret line="330" column="17" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#div#3;n#block#1;n#!!top" expanded="true" />
-            <marker date="1510906314977" expanded="true" signature="15574:15718" placeholder="..." />
-            <marker date="1510906314977" expanded="true" signature="15648:15666" placeholder="..." />
+            <marker date="1510906457950" expanded="true" signature="15571:15715" placeholder="..." />
+            <marker date="1510906457950" expanded="true" signature="15645:15663" placeholder="..." />
           </folding>
         </state>
       </provider>
