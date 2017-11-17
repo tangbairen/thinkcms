@@ -596,6 +596,25 @@ GROUP BY  t.group_id,t.total";
         $this->display();
     }
 
+    /*
+     * 各部门获取最新的资源  (ajax)
+     * @data 2017-11-17 14:56
+     * */
+    public function getnewdata()
+    {
+        $uid=session('user.id');
+        $group=M('Users')->where("id=$uid")->find();//获取部门id
+        $data=D('Resource')->where("group_id = {$group['department_id']} and status=0")->count();
+
+        if($data > 0){
+            $array=array('code'=>200,'message'=>$data);
+        }else{
+            $array=array('code'=>400,'message'=>'');
+        }
+
+        echo json_encode($array);
+    }
+
 
 
 }

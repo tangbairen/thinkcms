@@ -215,7 +215,7 @@
             </div>
         </div>
     </div>
-
+    <div id="newMessageDIV" style="display:none"></div>
 </block>
 <block name="js">
     <!--<script src="__PUBLIC__/statics/laydate/laydate.js"></script>-->
@@ -302,15 +302,76 @@
 
         }
 
-        //时间选择器
-        /*laydate.render({
-            elem: '#test1'
-            ,type: 'datetime'
+        $(function(){
+            setInterval(function(){
+                message.clear();
+                $.ajax({
+                    'url':"{:U('resource/getnewdata')}",
+                    'type':'get',
+                    'dataType':'json',
+                    success:function(data){
+                        if(data['code'] == '200'){
+                            message.show();
+                            var index=layer.alert('您有'+data['message']+'新信息未处理，请刷新页面查看', {
+                                skin: 'layui-layer-lan'
+                                ,closeBtn: 1
+                                ,shadeClose: true
+                                ,shade: 0.1
+                                ,anim: 4 //动画类型
+                            });
+                            play();
+                        }else{
+                            message.clear();
+                            layer.close(index);
+                        }
+                    }
+
+
+                });
+            },30000);
+
         });
-        laydate.render({
-            elem: '#test2'
-            ,type: 'datetime'
-        })*/;
+
+        function play(){
+
+                //IE9+,Firefox,Chrome均支持<audio/>
+                $('#newMessageDIV').html('<audio autoplay="autoplay"><source src="__PUBLIC__/statics/music/10.mp3"'
+                        + 'type="audio/wav"/><source src="notify.mp3" type="audio/mpeg"/></audio>');
+        }
+
+        // 使用message对象封装消息
+        var message={
+            time: 0,
+            title: document.title,
+            timer: null,
+
+            // 显示新消息提示
+            show:function(){
+                var title = message.title.replace("[　　　]", "").replace("【新消息】", "");
+                // 定时器，设置消息切换频率闪烁效果就此产生
+                message.timer = setTimeout(
+                        function() {
+                            message.time++;
+                            message.show();
+
+                            if (message.time % 2 == 0) {
+                                document.title = "【新消息】" + title
+                            }
+                            else{
+                                document.title = "【　　　】" + title
+                            };
+                        },
+                        600 // 闪烁时间差
+                );
+                return [message.timer, message.title];
+            },
+
+            // 取消新消息提示
+            clear: function(){
+                clearTimeout(message.timer);
+                document.title = message.title;
+            }
+        };
 
     </script>
 
