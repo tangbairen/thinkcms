@@ -45,8 +45,8 @@
                 <tr>
                     <td>合计</td>
                     <td><?php echo $total;?></td>
-                    <td><?php echo $lasttotal;?></td>
-                    <td><?php echo $weektotal;?></td>
+                    <td><?php if($lasttotal > 0){echo '+';}?><?php echo $lasttotal;?></td>
+                    <td><?php if($weektotal > 0){echo '+';}?><?php echo $weektotal;?></td>
                 </tr>
             </table>
         </foreach>

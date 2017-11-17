@@ -939,5 +939,5 @@ count(case  when addtime >= {$thisweekStart} and addtime  <= {$thisweekEnd} then
 
         return $array;
     }
-    
+
 }
