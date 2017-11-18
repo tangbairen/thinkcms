@@ -221,6 +221,27 @@
     <!--<script src="__PUBLIC__/statics/laydate/laydate.js"></script>-->
     <script src="__PUBLIC__/statics/timejs/WdatePicker.js"></script>
     <script>
+
+        var popNotice = function(aaa) {
+            console.log(2);
+            if (window.Notification.permission == "granted") {
+
+                var notification = new Notification("Hi，帅哥：", {
+                    body: '可以加你为好友吗？'+aaa,
+                    icon: 'http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg'
+                });
+
+                notification.onclick = function() {
+                    text.innerHTML = '张小姐已于' + new Date().toTimeString().split(' ')[0] + '加你为好友！';
+                    notification.close();
+                };
+            }else{
+                console.log(3);
+            }
+        };
+        popNotice('sdf');
+
+
         function selectAll(obj){
             if(obj.checked){
                 $("tr :checkbox").prop("checked", true);
@@ -316,7 +337,7 @@
                         notification.close();
                     };
                 }else{
-                    console.log(2);
+                    console.log(3);
                 }
             };
             popNotice(0);
