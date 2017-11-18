@@ -221,27 +221,6 @@
     <!--<script src="__PUBLIC__/statics/laydate/laydate.js"></script>-->
     <script src="__PUBLIC__/statics/timejs/WdatePicker.js"></script>
     <script>
-
-        var popNotice = function(aaa) {
-            console.log(2);
-            if (window.Notification.permission == "granted") {
-
-                var notification = new Notification("Hi，帅哥：", {
-                    body: '可以加你为好友吗？'+aaa,
-                    icon: 'http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg'
-                });
-
-                notification.onclick = function() {
-                    text.innerHTML = '张小姐已于' + new Date().toTimeString().split(' ')[0] + '加你为好友！';
-                    notification.close();
-                };
-            }else{
-                console.log(3);
-            }
-        };
-        popNotice('sdf');
-
-
         function selectAll(obj){
             if(obj.checked){
                 $("tr :checkbox").prop("checked", true);
@@ -326,8 +305,8 @@
         $(function(){
 
             var popNotice = function(count) {
-                if (window.Notification.permission == "granted") {
-                    console.log(1);
+                if (Notification.permission == "granted") {
+
                     var notification = new Notification("信息通知：", {
                         body: new Date().toTimeString().split(' ')[0]+': 你有'+count+'条，新的资源未处理，请注意查看',
                         icon: '__PUBLIC__/statics/images/tongzhi.jpg',
@@ -336,12 +315,9 @@
                         window.location.reload();
                         notification.close();
                     };
-                }else{
-                    console.log(3);
                 }
             };
-            popNotice(0);
-
+            
             setInterval(function(){
                 message.clear();
                 $.ajax({
