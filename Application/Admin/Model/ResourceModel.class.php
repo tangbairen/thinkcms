@@ -344,12 +344,15 @@ class ResourceModel extends Model
                 ->field('count(*) as num')
                 ->where("group_id={$val['group_id']} and addtime  between {$startDay} and {$endDay}")
                 ->select();
+
             if($group_total[0]['num'] >= $val['total']){
 
                 unset($total_count[$key]);
+            }else{
+                $total_count[$key]['num']=$group_total[0]['num'];
             }
         }
-        //p($total_count);
+
         //总数都满了
         if(empty($total_count)){
             return 0;
@@ -360,8 +363,10 @@ class ResourceModel extends Model
         foreach($total_count as $key=>$val){
             //今天这个品牌的数量
             $count=$this->where("group_id={$val['group_id']} and brand_id={$brand_id} and addtime  between {$startDay} and {$endDay}")->count();
-            $arr[$val['group_id']]=$count;
+            $arr[$val['group_id']]=$count+$val['num'];//品牌数+今日资源总数
         }
+
+
         $total=0;
         $brand=M('BrandsAuth')->where("brands_id={$brand_id}")->select();
         //清除个数已满的
@@ -380,10 +385,8 @@ class ResourceModel extends Model
 
             return 0;
         }
-        //p($arr);
-        $gid=$this->getGid($arr,$total);
-        //exit;
 
+        $gid=$this->getGid($arr,$total);
 
         return $gid;
 
@@ -713,7 +716,10 @@ class ResourceModel extends Model
             if($group_total[0]['num'] >= $val['total']){
 
                 unset($total_count[$key]);
+            }else{
+                $total_count[$key]['num']=$group_total[0]['num'];
             }
+
         }
         //总数都满了
         if(empty($total_count)){
@@ -725,7 +731,7 @@ class ResourceModel extends Model
         foreach($total_count as $key=>$val){
             //今天这个品牌的数量
             $count=$this->where("group_id={$val['group_id']} and brand_id={$brand_id} and addtime  between {$startDay} and {$endDay}")->count();
-            $arr[$val['group_id']]=$count;
+            $arr[$val['group_id']]=$count+$val['num'];//品牌数+今日资源总数
         }
 
         $total=0;
