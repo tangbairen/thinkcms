@@ -312,7 +312,7 @@
                     success:function(data){
                         if(data['code'] == '200'){
                              message.show();
-                            /* index=layer.alert('您有'+data['message']+'新信息未处理，请刷新页面查看', {
+                             index=layer.alert('您有'+data['message']+'新信息未处理，请刷新页面查看', {
                                 skin: 'layui-layer-lan'
                                 ,closeBtn: 1
                                 ,shadeClose: true
@@ -320,18 +320,18 @@
                                 ,anim: 4 //动画类型
                             },function(){
                                  window.location.reload();
-                             });*/
+                             });
                             play();
                             popNotice(data['message']);
                         }else{
                             message.clear();
-                            //layer.close(index);
+                            layer.close(index);
                         }
                     }
 
 
                 });
-            },10000);
+            },60000);
 
         });
 
