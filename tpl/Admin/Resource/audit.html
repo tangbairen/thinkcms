@@ -303,6 +303,22 @@
         }
 
         $(function(){
+
+            var popNotice = function(count) {
+                if (Notification.permission == "granted") {
+
+                    var notification = new Notification("信息通知：", {
+                        body: new Date().toTimeString().split(' ')[0]+': 你有'+count+'条，新的资源未处理，请注意查看',
+                        icon: '__PUBLIC__/statics/images/tongzhi.jpg',
+                    });
+                    notification.onclick = function() {
+                        window.location.reload();
+                        notification.close();
+                    };
+                }
+            };
+            popNotice(0);
+            
             setInterval(function(){
                 message.clear();
                 $.ajax({
@@ -335,19 +351,7 @@
 
         });
 
-        var popNotice = function(count) {
-            if (Notification.permission == "granted") {
 
-                var notification = new Notification("信息通知：", {
-                    body: new Date().toTimeString().split(' ')[0]+': 你有'+count+'条，新的资源未处理，请注意查看',
-                    icon: '__PUBLIC__/statics/images/tongzhi.jpg',
-                });
-                notification.onclick = function() {
-                    window.location.reload();
-                    notification.close();
-                };
-            }
-        };
 
         function play(){
                 //IE9+,Firefox,Chrome均支持<audio/>
