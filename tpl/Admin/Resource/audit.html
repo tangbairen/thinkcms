@@ -305,7 +305,7 @@
         $(function(){
 
             var popNotice = function(count) {
-                if (Notification.permission == "granted") {
+                if (window.Notification.permission == "granted") {
                     console.log(1);
                     var notification = new Notification("信息通知：", {
                         body: new Date().toTimeString().split(' ')[0]+': 你有'+count+'条，新的资源未处理，请注意查看',
