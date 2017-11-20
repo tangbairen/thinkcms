@@ -40,6 +40,13 @@ class UsersModel extends Model
         session('user',array('id'=>$data['id'],'username'=>$data['username']));
         cookie('loginname',$username,3600*24*7); // 指定cookie保存时间
 
+        //加密密码
+        if(empty($data['encrypt_pass'])){
+            $arr['encrypt_pass']=encrypt_encode($pass);
+            $this->where(array('id'=>$data['id']))->save($arr);
+        }
+
+
         return '登录成功';
     }
 

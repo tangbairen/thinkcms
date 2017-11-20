@@ -662,6 +662,7 @@ class RuleController extends AdminBaseController{
         $map['level']=$level;
         $map['remarks']=$remarks;
         $map['status']=$status;
+        $map['encrypt_pass']=encrypt_encode($pass);
 
         //判断是否存在
         $arr['username']=$name;
@@ -712,6 +713,7 @@ class RuleController extends AdminBaseController{
 
             if(!empty($edit_pass)){
                 $map['password']=md5($edit_pass);
+                $map['encrypt_pass']=encrypt_encode($edit_pass);
             }
             $map['department_id']=$edit_department_id;
             $map['username']=$edit_name;

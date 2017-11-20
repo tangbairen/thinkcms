@@ -43,6 +43,7 @@ class PersonalController extends AdminBaseController
             if(!empty($password) || !empty($password2)){
                 if($password != $password2) throw new Exception('两个密码不一致');
                 $map['password']=md5($password);
+                $map['encrypt_pass']=encrypt_encode($password);
             }
             $uid=session('user.id');
             $res=M('Users')->where("id={$uid}")->save($map);
