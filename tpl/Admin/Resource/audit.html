@@ -337,7 +337,29 @@
                                  window.location.reload();
                              });
                             play();
-                            popNotice(data['message']);
+                            //popNotice(data['message']);
+
+                            if(window.Notification && Notification.permission !== "denied") {
+                                Notification.requestPermission(function(status) {
+                                    var n = new Notification('信息通知', {
+                                        body: new Date().toTimeString().split(' ')[0]+': 你有'+data['message']+'条，新的资源未处理，请注意查看',
+                                        icon: '__PUBLIC__/statics/images/tongzhi.jpg',
+                                    });
+                                    n.onclick = function() {
+                                        window.location.reload();
+                                        notification.close();
+                                    };
+                                    // 手动关闭
+                                    // n.close();
+
+                                    // 自动关闭
+                                    n.onshow = function () {
+                                        setTimeout(n.close.bind(n), 5000);
+                                    }
+                                });
+                            }
+
+
                         }else{
                             message.clear();
                             layer.close(index);
@@ -346,7 +368,7 @@
 
 
                 });
-            },60000);
+            },10000);
 
         });
 
