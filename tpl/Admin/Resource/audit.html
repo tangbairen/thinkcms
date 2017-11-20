@@ -346,6 +346,7 @@
                                         icon: '__PUBLIC__/statics/images/tongzhi.jpg',
                                     });
                                     n.onclick = function() {
+                                        window.focus();
                                         window.location.reload();
                                         n.close();
                                     };
@@ -354,7 +355,7 @@
 
                                     // 自动关闭
                                     n.onshow = function () {
-                                        setTimeout(n.close.bind(n), 40000);
+                                        setTimeout(n.close.bind(n), 80000);
                                     }
                                 });
                             }
@@ -368,7 +369,7 @@
 
 
                 });
-            },50000);
+            },10000);
 
         });
 

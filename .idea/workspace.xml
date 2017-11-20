@@ -30,13 +30,13 @@
       <file leaf-file-name="audit.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4117647">
-              <caret line="349" column="50" selection-start-line="349" selection-start-column="50" selection-end-line="349" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.5248869">
+              <caret line="357" column="69" selection-start-line="357" selection-start-column="69" selection-end-line="357" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#7;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#block#1;n#!!top" expanded="true" />
-                <marker date="1511146543219" expanded="true" signature="17460:17604" placeholder="..." />
-                <marker date="1511146543219" expanded="true" signature="17534:17552" placeholder="..." />
+                <marker date="1511147239295" expanded="true" signature="17516:17660" placeholder="..." />
+                <marker date="1511147239295" expanded="true" signature="17590:17608" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -737,13 +737,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/audit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4117647">
-          <caret line="349" column="50" selection-start-line="349" selection-start-column="50" selection-end-line="349" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.5248869">
+          <caret line="357" column="69" selection-start-line="357" selection-start-column="69" selection-end-line="357" selection-end-column="69" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#7;n#form#0;n#div#1;n#block#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#block#1;n#!!top" expanded="true" />
-            <marker date="1511146543219" expanded="true" signature="17460:17604" placeholder="..." />
-            <marker date="1511146543219" expanded="true" signature="17534:17552" placeholder="..." />
+            <marker date="1511147239295" expanded="true" signature="17516:17660" placeholder="..." />
+            <marker date="1511147239295" expanded="true" signature="17590:17608" placeholder="..." />
           </folding>
         </state>
       </provider>
