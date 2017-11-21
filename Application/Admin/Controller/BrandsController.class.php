@@ -192,22 +192,31 @@ class BrandsController extends AdminBaseController
         if(IS_POST){
             try{
                 $group_id=I('post.group_id');
-                $brand_id=I('post.brand_id');
-                $count=I('post.count');
-
                 if(empty($group_id)) throw new Exception('请选择用户组');
-                if(empty($brand_id)) throw new Exception('请选择分配品牌');
-//                if(empty($count)) throw new Exception('请输入分配数量');
-                $map['brands_id']=$brand_id;
+
                 $map['gid']=$group_id;
                 $res=M('BrandsAuth')->where($map)->find();
                 if($res) throw new Exception('已经分配过！');
 
-                $map['count']=$count;
+                $arr=I('post.');
+                unset($arr['group']);
+                unset($arr['group_id']);
 
-                $data=M('BrandsAuth')->add($map);
+                foreach($arr as $key=>$val){
+                    if($val === '' && !is_numeric($val)){
+                        unset($arr[$key]);
+                    }
+                }
 
-                if(!$data) throw new Exception('分配失败');
+                if(empty($arr)) throw new Exception('至少分配一个品牌的数量');
+
+                foreach($arr as $k=>$v){
+                    $strarr['gid']=$group_id;
+                    $strarr['brands_id']=$k;
+                    $strarr['count']=$v;
+                    $data=M('BrandsAuth')->add($strarr);
+                }
+
 
                 $this->success('分配成功',U('Admin/Brands/brand_auth'));
 
@@ -469,5 +478,45 @@ class BrandsController extends AdminBaseController
 
         echo json_encode($data);
     }
+
+    /*
+     * 品牌分类
+     * @date 2017-11-20
+     * */
+    public function category()
+    {
+        if(IS_POST){
+
+            try{
+                $name=I('post.name','');
+                $parent_id=I('post.parent_id',0);
+                $description=I('post.description','');
+                if(empty($name)) throw new Exception('品牌分类名称不能为空');
+
+                $map['name']=$name;
+                $map['parent_id']=$parent_id;
+                $map['description']=$description;
+
+                $res=M('BrandsCategory')->add($map);
+                if(empty($res)) throw new Exception('添加失败');
+
+                $this->success('添加成功');
+
+            }catch(Exception $e){
+                $message=$e->getMessage();
+                $this->error($message);
+            }
+
+
+        }else{
+
+            $data=M('BrandsCategory')->select();
+            $data=\Org\Nx\Data::tree($data,'name','id','parent_id');
+            $this->assign('data',$data);
+            $this->display();
+        }
+
+    }
+
 
 }

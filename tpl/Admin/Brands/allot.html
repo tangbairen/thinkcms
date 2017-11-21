@@ -5,6 +5,8 @@
 <block name="content">
     <style>
         .input-medium{width: 300px;}
+        .brand_ul{width: 100%;height: 100%;}
+        .brand_ul li{float: left;width: 12%;margin: 5px;}
     </style>
     <div class="page-header">
         <p><i class="fa fa-home"></i> 首页 &gt; 品牌管理 &gt; 分配数据</p>
@@ -27,29 +29,46 @@
                         </td>
                     </tr>
 
-                    <tr>
+                    <!--<tr>
                         <th>分配品牌</th>
                         <td>
                             <input class="input-medium" type="text" value="{$brand_name}" readonly name="brand_name">
                             <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat">点击选择</a>
                         </td>
                         <input type="hidden" name="brand_id" value="">
-                    </tr>
-                    <tr>
+                    </tr>-->
+                    <!--<tr>
                         <th>分配数量</th>
                         <td>
                             <input class="input-medium" type="text" value="1" name="count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
                         </td>
-                    </tr>
-                    <tr>
+                    </tr>-->
+                    <!--<tr>
                         <th></th>
                         <td>
-                            <input class="btn btn-success" type="submit" onclick="return edit();" value="保存">
-                            <a class="btn btn-danger"  onclick="check();" >取消</a>
+
                         </td>
-                    </tr>
+                    </tr>-->
                 </table>
+                <div>0:为不限制</div>
+                <hr>
+                <ul class="brand_ul">
+
+                    <foreach name="brandArr" item="val">
+                    <li>
+                        <span>{$val['name']}:</span>
+                        <span><input type="text" style="width: 50px;" maxlength="3" name="{$val['id']}" value=""></span>
+                    </li>
+                    </foreach>
+
+                </ul>
+                <div style="clear: both;margin-top: 30px;">
+                    <input class="btn btn-success" type="submit" onclick="return edit();" value="保存">
+                    <a class="btn btn-danger"  onclick="check();" >取消</a>
+                </div>
+
             </form>
+            <div style="clear: both"></div>
         </div>
     </div>
     <!--用户组-->
@@ -139,16 +158,16 @@
 
         function edit(){
             var group_id=$("input[name='group_id']").val();
-            var brand_id=$("input[name='brand_id']").val();
-            var count=$("input[name='count']").val();
+            /*var brand_id=$("input[name='brand_id']").val();
+            var count=$("input[name='count']").val();*/
             if(group_id == ''){
-                layer.msg('请选择用户组', {icon: 5,time:2000});
+                layer.msg('请选择部门', {icon: 5,time:2000});
                 return false;
             }
-            if(brand_id == ''){
+            /*if(brand_id == ''){
                 layer.msg('请选择品牌', {icon: 5,time:2000});
                 return false;
-            }
+            }*/
 
             /*if(count == ''){
                 alert('请输入分配数量');

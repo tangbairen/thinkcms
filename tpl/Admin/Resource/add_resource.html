@@ -28,6 +28,10 @@
                         <td></td>
                     </tr>
                     <tr>
+                        <th>客服ID/名字</th>
+                        <td> <input class="input-medium" type="text" value="" name="customer_info"></td>
+                    </tr>
+                    <tr>
                         <th>客户姓名</th>
                         <td> <input class="input-medium" type="text" name="username" value=""></td>
                     </tr>
@@ -39,6 +43,39 @@
                         <th>QQ/微信</th>
                         <td> <input class="input-medium" type="text" value="" name="chats"></td>
                     </tr>
+                    <tr>
+                        <th>地址</th>
+                        <td> <input class="input-medium" type="text" value="" name="address"></td>
+                    </tr>
+                    <tr>
+                        <th>关键字</th>
+                        <td> <input class="input-medium" type="text" value="" name="keyword"></td>
+                    </tr>
+                    <tr>
+                        <th>来源渠道</th>
+                        <!--<td> <input class="input-medium" type="text" value="" name="source"><span>(必填)</span></td>-->
+                        <td>
+                            <select name="source" id="source">
+                                <option value="">请选择来源</option>
+                                <option value="百度移动">百度移动</option>
+                                <option value="百度PC">百度PC</option>
+                                <option value="百度信息流">百度信息流</option>
+                                <option value="360移动">360移动</option>
+                                <option value="360PC">360PC</option>
+                                <option value="搜狗移动">搜狗移动</option>
+                                <option value="搜狗PC">搜狗PC</option>
+                                <option value="神马移动">神马移动</option>
+                                <option value="神马PC">神马PC</option>
+                                <option value="SEO优化">SEO优化</option>
+                                <option value="新媒体">新媒体</option>
+                                <option value="400">400</option>
+                                <option value="留言板">留言板</option>
+                                <option value="离线宝">离线宝</option>
+                                <option value="中国加盟网">中国加盟网</option>
+                            </select>
+                        </td>
+                    </tr>
+
                     <tr>
                         <th>省份</th>
                         <td>
@@ -63,18 +100,7 @@
                             </div>-->
                         </td>
                     </tr>
-                    <tr>
-                        <th>客服ID/名字</th>
-                        <td> <input class="input-medium" type="text" value="" name="customer_info"></td>
-                    </tr>
-                    <tr>
-                        <th>地址</th>
-                        <td> <input class="input-medium" type="text" value="" name="address"></td>
-                    </tr>
-                    <tr>
-                        <th>来源渠道</th>
-                        <td> <input class="input-medium" type="text" value="" name="source"><span>(必填)</span></td>
-                    </tr>
+
                     <tr>
                         <th>品牌</th>
                         <td>
@@ -93,10 +119,7 @@
                             <span>(如不选择，将自动分配)</span>
                         </td>
                     </tr>
-                    <tr>
-                        <th>关键字</th>
-                        <td> <input class="input-medium" type="text" value="" name="keyword"></td>
-                    </tr>
+
 
                     <tr>
                         <th></th>
@@ -248,12 +271,12 @@
 
             if(province == ''){
 
-                alert('请先选择省份');
+                layer.msg('请先选择省份', {icon: 5,time:2000});
                 return false;
             }
 
             if(brand_name == ''){
-                alert('请先选择品牌');
+                layer.msg('请先选择品牌', {icon: 5,time:2000});
                 return false;
             }
 
@@ -280,20 +303,22 @@
         }
 
         function add_data(){
-            var source=$("input[name='source']").val();
+            var source=$("#source").val();
             var brand_name=$("input[name='brand_name']").val();
             var province=$("#province").val();
 
-            if(province == ''){
-                alert('请选择省份');
-                return false;
-            }
             if(source == ''){
-                alert('请填写来源渠道');
+                layer.msg('请填写来源渠道', {icon: 5,time:2000});
                 return false;
             }
+
+            if(province == ''){
+                layer.msg('请选择省份', {icon: 5,time:2000});
+                return false;
+            }
+
             if(brand_name == ''){
-                alert('请选择品牌');
+                layer.msg('请选择品牌', {icon: 5,time:2000});
                 return false;
             }
 
@@ -305,7 +330,7 @@
             var groupid=$("input[name='group_user']:checked").val();
             var groupName=$("input[name='group_user']:checked").attr('groupName');
             if(typeof(groupid) == 'undefined'){
-                alert('请选择所属组');
+                layer.msg('请选择所属组', {icon: 5,time:2000});
                 return false;
             }
 
@@ -318,7 +343,7 @@
             var brand_id=$("input[name='brand_title']:checked").val();
             var brandName=$("input[name='brand_title']:checked").attr('brandName');
             if(typeof(brand_id) == 'undefined'){
-                alert('请选择咨询品牌');
+                layer.msg('请选择咨询品牌', {icon: 5,time:2000});
                 return false;
             }
 
