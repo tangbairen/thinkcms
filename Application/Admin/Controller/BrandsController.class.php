@@ -465,6 +465,9 @@ class BrandsController extends AdminBaseController
         return true;
     }
 
+    /*
+     * 获取所有品牌
+     * */
     public function getbrand()
     {
         $brandArr=M('Brands')->field('id,name')
@@ -478,6 +481,22 @@ class BrandsController extends AdminBaseController
 
         echo json_encode($data);
     }
+
+    /*
+     * 获取搜索的品牌
+     * */
+    public function get_brands()
+    {
+        $brand_name=I('get.brand_name','');
+        $array['name']=array('like',"%$brand_name%");
+        $brandArr=M('Brands')->field('id,name')
+            ->where($array)
+            ->order('order_by desc')
+            ->select();
+
+        $this->ajaxReturn($brandArr);
+    }
+
 
     /*
      * 品牌分类

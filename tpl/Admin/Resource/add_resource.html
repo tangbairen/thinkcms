@@ -11,6 +11,8 @@
         label {
             cursor: pointer;
         }
+        #shengfen li {width: 100%;height: 30px;border-bottom:1px solid #c3c3c3;line-height: 30px;}
+        #shengfen li:hover{background: #c2c2c2;}
     </style>
     <div class="page-header">
         <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; 添加数据</p>
@@ -55,7 +57,22 @@
                         <th>来源渠道</th>
                         <!--<td> <input class="input-medium" type="text" value="" name="source"><span>(必填)</span></td>-->
                         <td>
-                            <select name="source" id="source">
+                            <input type="radio" name="source" value="百度移动" checked>百度移动&nbsp;&nbsp;
+                            <input type="radio" name="source" value="百度PC">百度PC&nbsp;&nbsp;
+                            <input type="radio" name="source" value="百度信息流">百度信息流&nbsp;&nbsp;
+                            <input type="radio" name="source" value="360移动">360移动&nbsp;&nbsp;
+                            <input type="radio" name="source" value="360PC">360PC&nbsp;&nbsp;
+                            <input type="radio" name="source" value="搜狗移动">搜狗移动&nbsp;&nbsp;
+                            <input type="radio" name="source" value="搜狗PC">搜狗PC&nbsp;&nbsp;
+                            <input type="radio" name="source" value="神马移动">神马移动&nbsp;&nbsp;
+                            <input type="radio" name="source" value="神马PC">神马PC&nbsp;&nbsp;
+                            <input type="radio" name="source" value="SEO优化">SEO优化&nbsp;&nbsp;
+                            <input type="radio" name="source" value="新媒体">新媒体&nbsp;&nbsp;
+                            <input type="radio" name="source" value="400">400&nbsp;&nbsp;
+                            <input type="radio" name="source" value="留言板">留言板&nbsp;&nbsp;
+                            <input type="radio" name="source" value="离线宝">离线宝&nbsp;&nbsp;
+                            <input type="radio" name="source" value="中国加盟网">中国加盟网&nbsp;&nbsp;
+                            <!--<select name="source" id="source">
                                 <option value="">请选择来源</option>
                                 <option value="百度移动">百度移动</option>
                                 <option value="百度PC">百度PC</option>
@@ -72,32 +89,37 @@
                                 <option value="留言板">留言板</option>
                                 <option value="离线宝">离线宝</option>
                                 <option value="中国加盟网">中国加盟网</option>
-                            </select>
+                            </select>-->
+                            <span>(必填)</span>
                         </td>
+
                     </tr>
 
                     <tr>
-                        <th>省份</th>
+                        <th height="40px;">省份</th>
                         <td>
-                            <select name="province" id="province">
+                            <!--<select name="province" id="province">
                                 <option value="">请选择省份</option>
                                 <foreach name="province" item="val">
                                     <option value="{$val['id']}">{$val['name']}</option>
                                 </foreach>
                             </select>
-                            <span>(必填)</span>
-                            <!--<div style="position:absolute;">
+                            <span>(必填)</span>-->
+                            <div style="position:absolute;">
                                 <span style="margin-left:100px;width:18px;overflow:hidden;">
-                                <select style="width:170px;margin-left:-100px" id="area" >
-                                    <option value="5">德国</option>
-                                    <option value="4">挪威</option>
-                                    <option value="3"> 瑞士</option>
-                                    <option value="10"> 广东</option>
-                                    <option value="8"> 广西</option>
+                                <select style="width:170px;margin-left:-100px" name="province" id="province" onchange="change_province(this);">
+                                    <option value="">请选择省份</option>
+                                    <foreach name="province" item="val">
+                                        <option value="{$val['id']}">{$val['name']}</option>
+                                    </foreach>
                                 </select>
                                 </span>
-                                <input name="box" onkeyup="sukeyup(this);" style="width:150px;height:30px;position:absolute;left:0px;">
-                            </div>-->
+                                <input name="box" onkeyup="sukeyup(this);" style="width:150px;height:30px;position:absolute;left:0px;" id="sheng_name" AUTOCOMPLETE="off">
+                                <ul id="shengfen" style="border: 1px solid #9b97a2;z-index:800;position: absolute;width: 150px;background: #fff;display: none">
+
+                                </ul>
+
+                            </div>
                         </td>
                     </tr>
 
@@ -165,9 +187,9 @@
                     <h4 class="modal-title" id="exampleModalLabel">选择品牌</h4>
                 </div>
                 <div class="modal-body">
-                    <input type="text" onkeyup="search(this);" maxlength="15" >
+                    <input type="text" onkeyup="get_brands(this);" maxlength="15" >
 
-                    <form>
+                    <form id="js-form">
                         <ul id="modal-body-brand">
                         <foreach name="brandArr" item="val" key="k">
                         <li>
@@ -202,6 +224,88 @@
     <icheckjs color="blue"/>
     <script>
 
+        $(function(){
+            $(document).bind("click",function(e){
+                //id为menu的是菜单，id为open的是打开菜单的按钮
+                if($(e.target).closest("#shengfen li").length == 0 && $(e.target).closest("#shengfen").length == 0){
+                    //点击id为menu之外且id不是不是open，则触发
+                    $('#shengfen').hide();
+                    var status=$('#province option:selected').val();
+                    if(!status){
+                        $('#sheng_name').val('');
+                    }else{
+                        $('#sheng_name').val($('#province option:selected').html());
+                    }
+                }
+            })
+        })
+
+        function change_province(obj){
+            var  name= $("#province").find("option:selected").text();
+            $('#sheng_name').html(name);
+        }
+
+        function xuanzhe(obj,id){
+            var name=$(obj).html();
+            $('#province option').each(function(k,v){
+                var option=$(this).html();
+                if(name == option){
+                    var num=$(this).val();
+                    $("#province option:contains('"+name+"')").attr('selected',true).siblings().attr('selected',false);
+                    $('#sheng_name').val(name);
+                    $('#shengfen').hide();
+                    return false;
+                }
+            });
+
+        }
+
+        $('#shengfen li').click(function(){
+            alert(11);
+            var index=$(this).index();
+            var name=$('#shengfen li').eq(index).html();
+            console.log(name);
+            $('#province option').each(function(k,v){
+                var option=$(this).html();
+                console.log(name);
+                console.log(option);
+                if(name == option){
+                    var num=$(this).val();
+                    $("#province option").eq(index).attr('selected',true).siblings().attr('selected',false);
+                    $('#sheng_name').val(name);
+                    $('#shengfen').hide();
+                    return false;
+                }
+            });
+        });
+
+        function sukeyup(obj){
+            $('#shengfen').html('');
+            $.ajax({
+                'url':"{:U('Area/get_province')}",
+                'type':'get',
+                'data':{'get_province':$(obj).val()},
+                'dataType':'json',
+                success:function(data){
+                    if(data['code'] == 200){
+                        var li='';
+
+                        $.each(data['data'],function(k,v){
+
+                            li +="<li onclick='xuanzhe(this,"+v['id']+")'>"+v['name']+"</li>";
+                        });
+
+                        $('#shengfen').html(li);
+                        $('#shengfen').show();
+                    }else{
+                        $('#shengfen').hide();
+                    }
+
+                }
+
+            });
+        }
+
         function getbrand(){
             setTimeout(function(){
 
@@ -234,7 +338,39 @@
 
         }
 
-        function search(obj){
+        //获取搜索品牌
+        function get_brands(obj){
+            $.ajax({
+                'url':"{:U('Brands/get_brands')}",
+                'type':'get',
+                'data':{'brand_name':$(obj).val()},
+                'dataType':'json',
+                success:function(data){
+                        var li='';
+                        $.each(data,function(k,v){
+
+                            li +="<li > <label for='radio"+k+"' style='color: #000000'> "+v['name']+"<input class='xb-icheck' type='radio' id='radio"+k+"' name='brand_title' brandName='"+v['name']+"' value='"+v['id']+"'  > </label> </li>";
+                        });
+
+                        $('#modal-body-brand').html('');
+                        $('#modal-body-brand').html(li)
+                        $('#jiazai').hide();
+                    if($(obj).val() == ''){
+
+                        $('#modal-body-brand li:gt(42)').hide();
+
+                        var str='<div style="clear: both;padding-top: 20px;text-align: center" id="jiazai"> <a href="javascript:void(0)" onclick="getbrand()">加载更多</a> </div>';
+
+                        $('#modal-body-brand').append(str);
+
+                    }
+                }
+            });
+
+
+        }
+
+        /*function search(obj){
             var name=$(obj).val();
             name= $.trim(name);
 
@@ -257,7 +393,7 @@
                 $('.modal-body ul li label').css('color','#000');
             }
 
-        }
+        }*/
 
         function check(){
 

@@ -142,5 +142,25 @@ class AreaController extends AdminBaseController
 
     }
 
+    /*
+     * 获取省份
+     * @data 2017-11-22 13:45
+     * */
+    public function get_province()
+    {
+        $get_province=I('get.get_province','');
+
+        $array['name']=array('like',"%$get_province%");
+        $brandArr=M('Province')->field('id,name')
+            ->where($array)
+            ->select();
+        if(empty($brandArr)){
+            $data=array('code'=>400,'data'=>'');
+        }else{
+            $data=array('code'=>200,'data'=>$brandArr);
+        }
+        $this->ajaxReturn($data);
+    }
+
 
 }

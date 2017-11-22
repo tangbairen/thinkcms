@@ -538,15 +538,15 @@ class ResourceController extends AdminBaseController
      * */
     public function group()
     {
-        $province_id=I('get.province');
-        $brand_id=I('get.brand_id');
+        $province_id=I('get.province',0);
+        $brand_id=I('get.brand_id',0);
 
         //选择区域id  得到区域id
         $province=M('Province')->where("id={$province_id}")->find();
         //组
         //$group=M('AuthGroup')->field('id,title,area_id')->select();
         //部门
-        $group=M('RoleDepartment')->select();
+        $group=M('RoleDepartment')->order('parent_id')->select();
         foreach($group as $key=>$val){
             $arr=explode(',',$val['area_id']);
             if(!in_array($province['area_id'],$arr)){
@@ -560,7 +560,6 @@ class ResourceController extends AdminBaseController
                 unset($group[$k]);
             }
         }
-
 
         $this->ajaxReturn($group);
     }
