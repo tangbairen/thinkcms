@@ -244,7 +244,7 @@ class ResourceModel extends Model
         $chats=I('post.chats');
         $province_id=I('post.province');//省份id
         $customer_info=I('post.customer_info');//客服信息
-        $address=I('post.address');
+        $address=I('post.address','');
         $source=I('post.source');
         $group_id=I('post.group_id');
         $brand_id=I('post.brand_id');
