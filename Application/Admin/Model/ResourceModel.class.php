@@ -913,7 +913,7 @@ class ResourceModel extends Model
         $endlastDay=mktime(date('H'),date('i'),date('s'),date('m'),date('d')-1,date('Y'));
 
         $lastweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1-7,date("Y"));
-        $lastweekEnd=mktime(date('H'),date('i'),date('s'),date("m"),date("d")-date("w")+7-7,date("Y"));
+        $lastweekEnd=mktime(date('H'),date('i'),date('s'),date("m"),date("d")-7,date("Y"));
 
         $thisweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1,date("Y"));
         $thisweekEnd=mktime(date('H'),date('i'),date('s'),date("m"),date("d"),date("Y"));
