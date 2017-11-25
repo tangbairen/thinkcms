@@ -142,7 +142,8 @@ class BrandsController extends AdminBaseController
 
         $array=array(
             'data'=>$data,
-            'group_name'=>$group['name']
+            'group_name'=>$group['name'],
+            'gid'=>$gid
         );
         $this->assign($array);
 
@@ -532,6 +533,73 @@ class BrandsController extends AdminBaseController
             $data=M('BrandsCategory')->select();
             $data=\Org\Nx\Data::tree($data,'name','id','parent_id');
             $this->assign('data',$data);
+            $this->display();
+        }
+
+    }
+
+    /*
+     * 增加新的品牌
+     * @date 2017-11-25 10:50
+     * */
+    public function newbrands()
+    {
+        if(IS_POST){
+
+            try{
+                $group_id=I('post.group_id')+0;
+                if(empty($group_id)) throw new Exception('请选择用户组');
+
+                $arr=I('post.');
+
+
+                unset($arr['group_id']);
+
+                foreach($arr as $key=>$val){
+                    if($val === '' && !is_numeric($val)){
+                        unset($arr[$key]);
+                    }
+                }
+                if(empty($arr)) throw new Exception('至少分配一个品牌的数量');
+
+                foreach($arr as $k=>$v){
+                    $strarr['gid']=$group_id;
+                    $strarr['brands_id']=$k;
+                    $strarr['count']=$v;
+                    $data=M('BrandsAuth')->add($strarr);
+                }
+
+
+                $this->success('分配成功',U('Admin/Brands/brand_auth'));
+
+            }catch(Exception $e){
+                $message=$e->getMessage();
+                $this->error($message);
+            }
+
+
+
+        }else{
+
+            $gid=I('get.gid',0)+0;
+            $group=M('RoleDepartment')->where("id={$gid}")->find();
+
+            $brands_id=M('BrandsAuth')->field("GROUP_CONCAT(brands_id) as brands_id")->where("gid = {$gid}")->find();
+
+            //品牌
+            $brandArr=M('Brands')
+                ->field('b.*')
+                ->alias('b')
+                ->join('left join bt_brands_auth as t on t.gid=b.id')
+                ->where("b.id not in({$brands_id['brands_id']})")
+                ->select();
+
+            $array=array(
+                'brandArr'=>$brandArr,
+                'group'=>$group
+            );
+
+            $this->assign($array);
             $this->display();
         }
 

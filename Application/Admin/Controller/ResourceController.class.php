@@ -560,6 +560,12 @@ class ResourceController extends AdminBaseController
                 unset($group[$k]);
             }
         }
+        foreach($group as $kk=>$vv){
+            $res=M('Total')->where("group_id={$vv['id']} and total > 0")->find();
+            if(empty($res)){
+                unset($group[$kk]);
+            }
+        }
 
         $this->ajaxReturn($group);
     }
