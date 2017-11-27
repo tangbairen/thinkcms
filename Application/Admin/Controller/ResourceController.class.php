@@ -621,5 +621,13 @@ GROUP BY  t.group_id,t.total";
     }
 
 
+    /*
+     * 导入客户资源
+     * @date: 2017-11-27 16:00
+     * */
+    public function importdata()
+    {
+        $this->display();
+    }
 
 }
