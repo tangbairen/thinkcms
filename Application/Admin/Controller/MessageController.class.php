@@ -277,7 +277,7 @@ class MessageController extends AdminBaseController
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
 
-       ;
+
         $model=new \Admin\Model\Luchi\Messagemxn2Model();
         $data=$model->getBoteData();
         $array=array(
