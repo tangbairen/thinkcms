@@ -47,11 +47,8 @@ class HandlerController extends Controller
         $Sheets = $xlsReader->load($path);
         //开始读取上传到服务器中的Excel文件，返回一个二维数组
         $result= $Sheets->getSheet(0);
-        $highestRow = $Sheets->get(); // 取得总行数
-        $highestColumm = $Sheets->getHighestColumn(); // 取得总列数
-//        $dataArray=$result->toArray();
-//        $dataArray=$result->getHighestRow();
-//        p($dataArray);
-//        return $dataArray;
+        $dataArray=$result->toArray();
+        p($result);
+        return $dataArray;
     }
 }
