@@ -38,6 +38,8 @@ class RoleDepartmentModel extends Model
         $edit_id=I('post.edit_id')+0;
         $edit_description=trim(I('post.edit_description'));
         $check2=I('post.edit_check2');
+        $edit_group=I('post.edit_group');
+
         if(empty($edit_name)) throw new Exception('部门名称不能为空');
 
         if(!empty($check2)){
@@ -46,6 +48,7 @@ class RoleDepartmentModel extends Model
 
         $map['name']=$edit_name;
         $map['description']=$edit_description;
+        $map['group_id']=$edit_group;
 
         //判断是否存在
         $arr['name']=$edit_name;
