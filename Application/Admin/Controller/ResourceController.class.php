@@ -564,6 +564,19 @@ class ResourceController extends AdminBaseController
             $res=M('Total')->where("group_id={$vv['id']} and total > 0")->find();
             if(empty($res)){
                 unset($group[$kk]);
+            }else{
+                // 今日开始时间戳
+                $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
+                // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
+                $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+                $group_total=M('Resource')
+                    ->field('count(*) as num')
+                    ->where("group_id={$vv['id']} and addtime  between {$startDay} and {$endDay}")
+                    ->find();
+                if($group_total['num'] >= $res['total']){
+                    unset($group[$kk]);
+                }
+
             }
         }
 
