@@ -237,7 +237,11 @@ class ResourceController extends AdminBaseController
             $where="group_id in({$id})";
         }else{
 
-            $where="group_id = {$group['department_id']}";
+//            $where="group_id = {$group['department_id']}";
+            //查看三天的数据
+            $start=mktime(0,0,0,date('m'),date('d')-2,date('Y'));
+            $end=time();
+            $where="group_id = {$group['department_id']} and addtime between {$start} and {$end} ";
         }
         $phone=trim(I('get.phone',''));
         $start_time=I('get.start_time','');
