@@ -427,8 +427,11 @@ class ResourceController extends AdminBaseController
             $id=isset($res[0]['id']) ? $res[0]['id'] : 0;
             $data=D('Resource')->bumenData("group_id in({$id}) ");
         }else{
-
-            $data=D('Resource')->selectData("group_id = {$group['department_id']}");
+            //查看三天的数据
+            $start=mktime(0,0,0,date('m'),date('d')-2,date('Y'));
+            $end=time();
+            $where="group_id = {$group['department_id']} and addtime between {$start} and {$end} ";
+            $data=D('Resource')->selectData($where);
         }
         //所有组
         $group=M('AuthGroup')->select();
