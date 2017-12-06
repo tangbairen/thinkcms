@@ -914,12 +914,14 @@ class ResourceModel extends Model
         $lastDay=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
         $endlastDay=mktime(date('H'),date('i'),date('s'),date('m'),date('d')-1,date('Y'));
 
-        $lastweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1-7,date("Y"));
+        //$lastweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1-7,date("Y"));
+        $lastweekStart=mktime(0, 0 , 0,date("m"),date("d")-7,date("Y"));
         $lastweekEnd=mktime(date('H'),date('i'),date('s'),date("m"),date("d")-7,date("Y"));
 
-        $thisweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1,date("Y"));
+        //$thisweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1,date("Y"));
+        $thisweekStart=mktime(0, 0 , 0,date("m"),date("d"),date("Y"));
         $thisweekEnd=mktime(date('H'),date('i'),date('s'),date("m"),date("d"),date("Y"));
-
+        
         $data=$this->field("group_id,count(case  when addtime >= {$startDay} and addtime  <= {$endDay} then id end	) as today,
 count(case  when addtime >= {$lastDay} and addtime  <= {$endlastDay} then id end	) as yesterday,
 count(case  when addtime >= {$lastweekStart} and addtime  <= {$lastweekEnd} then id end	) as lastweek,
