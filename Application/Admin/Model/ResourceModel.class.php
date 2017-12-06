@@ -249,6 +249,7 @@ class ResourceModel extends Model
         $group_id=I('post.group_id');
         $brand_id=I('post.brand_id');
         $remarks=I('post.keyword');
+        $s_number=I('post.s_number');
 
         if(empty($source)) throw new Exception('请填写来源渠道');
         if(empty($brand_id)) throw new Exception('请选择咨询品牌');
@@ -278,6 +279,7 @@ class ResourceModel extends Model
         $map['area_id']=$province['area_id'];
         $map['source']=$source;
         $map['keyword']=$remarks;
+        $map['service_number']=$s_number;
         $map['allocation']=$allocation;
 
 

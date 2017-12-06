@@ -93,6 +93,7 @@
                         <th>品牌</th>
                         <th>部门</th>
                         <th>关键字</th>
+                        <th>53账号</th>
                         <th>添加类型</th>
                         <th>是否分配</th>
                         <th>是否可跟</th>
@@ -117,6 +118,7 @@
                             <td width="6%">{$val['brands_name']}</td>
                             <td width="6%">{$val['group_name']}</td>
                             <td width="10%;">{$val['keyword']|urldecode}</td>
+                            <td width="10%;">{$val['service_number']}</td>
                             <td>
                                 <if condition="$val['types'] eq 1">平台手动
                                     <else />53客服平台
