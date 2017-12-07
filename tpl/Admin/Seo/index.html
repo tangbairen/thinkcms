@@ -1,0 +1,147 @@
+<extend name="Public:base"/>
+<block name="title">资源列表</block>
+<block name="css">
+    <link rel="stylesheet" href="__PUBLIC__/statics/css/mainlist.css">
+</block>
+<block name="content">
+    <style>
+        .form-group>label[class*="col-"] {padding-top: 10px;}
+        .tabbable{margin-top: 30px;}
+    </style>
+    <div class="page-header">
+        <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; SEO数据</p>
+    </div>
+    <div class="col-xs-12">
+
+
+        <div class="tabbable">
+
+            <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
+                <li class="active"> <a >数据列表</a></li>
+                <li> <a href="{:U('Admin/Seo/add_data')}">添加数据</a></li>
+            </ul>
+            <div class="tab-content">
+                <table class="table ">
+                    <tr>
+                        <th><input type="checkbox" onclick="selectAll(this)"></th>
+                        <th>ID</th>
+                        <th>时间</th>
+                        <th>客服ID/名字</th>
+                        <th>访客ID</th>
+                        <th>省份</th>
+                        <!--<th>地址</th>-->
+                        <th>客户姓名</th>
+                        <th>电话号码</th>
+                        <th>QQ/微信</th>
+                        <th>来源渠道</th>
+                        <th>品牌</th>
+                        <th>部门</th>
+                        <th>关键字</th>
+                        <th>53账号</th>
+                        <th>添加类型</th>
+                        <th>是否分配</th>
+                        <th>操作</th>
+                    </tr>
+                    <foreach name="data" item="val">
+                        <tr class="tr-hover">
+                            <td><input type="checkbox" name="box[]" value="{$val['id']}"></td>
+                            <td>{$val['id']}</td>
+                            <td>{$val['addtime'] | date='Y-m-d H:i:s',###}</td>
+                            <td>{$val['customer_info']}</td>
+                            <td>{$val['talk_id']}</td>
+                            <td>{$val['province_name']}</td>
+                            <!--<td width="150px;">{$val['address']}</td>-->
+                            <td>{$val['username']}</td>
+                            <td>{$val['phone']}</td>
+                            <td>{$val['chats']}</td>
+                            <td>{$val['source']}</td>
+                            <td>{$val['brands_name']}</td>
+                            <td>{$val['group_name']}</td>
+                            <td width="150px;">{$val['keyword']|urldecode}</td>
+                            <td>{$val['service_number']}</td>
+                            <td>
+                                <if condition="$val['types'] eq 1">平台手动
+                                    <else />53客服平台
+                                </if>
+                            </td>
+                            <td>
+                                <if condition="$val['allocation'] eq 2">
+                                    <span style="color:#1fbc53">已分配</span>
+                                    <else />
+                                    <span style="color:#b62409">未分配</span>
+                                </if>
+                            </td>
+                            <td>
+                                <a href="{:U('Admin/Resource/modify',array('number'=>$val['id']))}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Resource/delete',array('id'=>$val['id']))}'}" type="button" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                            </td>
+                            </td>
+                        </tr>
+
+                    </foreach>
+                </table>
+                <div style="margin-bottom: 100px;margin-top: 50px;">
+                    {$show}
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <!--<script src="__PUBLIC__/statics/laydate/laydate.js"></script>-->
+    <script src="__PUBLIC__/statics/timejs/WdatePicker.js"></script>
+    <script>
+
+        function selectAll(obj){
+            if(obj.checked){
+                $("tr :checkbox").prop("checked", true);
+            }else{
+                $("tr :checkbox").prop("checked", false);
+            }
+        }
+
+        function clean(){
+            $("input[name='phone']").val('');
+            $("input[name='start_time']").val('');
+            $("input[name='end_time']").val('');
+            $("select[name='brand']").val('');
+            $("select[name='allocation']").val('');
+            $("select[name='referer']").val('');
+            $("#group").val('');
+        }
+
+        function daochu(){
+            var phone=$("input[name='phone']").val();
+            var start_time=$("input[name='start_time']").val();
+            var end_time=$("input[name='end_time']").val();
+            var group=$('#group').val();
+            var allocation=$('#allocation').val();
+            var brand=$('#brand').val();
+            var referer=$('#referer').val();
+
+            var box=$('input[name="box[]"]:checked');
+            var arr=[];
+            box.each(function(i,v){
+                arr[i]=$(this).val();
+            });
+
+            var url="{:U('Admin/Resource/customerExport')}?phone="+phone+'&group='+group+'&start_time='+start_time+'&end_time='+end_time+'&allocation='+allocation+'&box='+arr+'&brand='+brand+'&referer='+referer;
+
+            location.href=url;
+
+        }
+
+
+        //时间选择器
+        /*laydate.render({
+         elem: '#test1'
+         ,type: 'datetime'
+         });
+         laydate.render({
+         elem: '#test2'
+         ,type: 'datetime'
+         });*/
+    </script>
+
+
+</block>

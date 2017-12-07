@@ -1,0 +1,473 @@
+<extend name="Public:base"/>
+<block name="title">修改管理员</block>
+<block name="css"><icheckcss/>
+</block>
+<block name="content">
+    <style>
+        .input-medium{width: 300px;}
+        .modal-body ul{margin-bottom: 10px;}
+        .modal-body ul li{float:left;width: 160px;margin-top: 5px; height: 25px;}
+        .modal-footer{margin-top: 20px;}
+        label {
+            cursor: pointer;
+        }
+        #shengfen li {width: 100%;height: 30px;border-bottom:1px solid #c3c3c3;line-height: 30px;}
+        #shengfen li:hover{background: #c2c2c2;}
+    </style>
+    <div class="page-header">
+        <p><i class="fa fa-home"></i> 首页 &gt; 资源管理 &gt; seo资源</p>
+    </div><div class="col-xs-12">
+    <div class="tabbable">
+        <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab">
+            <li> <a href="{:U('Admin/seo/index')}">数据列表</a></li>
+            <li class="active"> <a>添加数据</a></li>
+        </ul>
+        <div class="tab-content">
+            <form class="form-inline" method="post" action="{:U('Admin/seo/add_data')}">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <tr>
+                        <th>客户信息</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>客服ID/名字</th>
+                        <td> <input class="input-medium" type="text" value="" name="customer_info"></td>
+                    </tr>
+                    <tr>
+                        <th>客户姓名</th>
+                        <td> <input class="input-medium" type="text" name="username" value=""></td>
+                    </tr>
+                    <tr>
+                        <th>手机号</th>
+                        <td> <input class="input-medium" type="text" name="phone" value="" maxlength="13"></td>
+                    </tr>
+                    <tr>
+                        <th>QQ/微信</th>
+                        <td> <input class="input-medium" type="text" value="" name="chats"></td>
+                    </tr>
+                    <!--<tr>
+                        <th>地址</th>
+                        <td> <input class="input-medium" type="text" value="" name="address"></td>
+                    </tr>-->
+                    <tr>
+                        <th>关键字</th>
+                        <td> <input class="input-medium" type="text" value="" name="keyword"></td>
+                    </tr>
+                    <tr>
+                        <th>53账号</th>
+                        <td> <input class="input-medium" type="text" value="" name="s_number" maxlength="50"> (可填)</td>
+                    </tr>
+                    <tr>
+                        <th>来源渠道</th>
+                        <!--<td> <input class="input-medium" type="text" value="" name="source"><span>(必填)</span></td>-->
+                        <td>
+
+                            <label for="source10">
+                                <input type="radio" name="source" checked value="SEO优化" id="source10">SEO优化&nbsp;&nbsp;
+                            </label>
+
+
+                            <span>(必填)</span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <th height="40px;">省份</th>
+                        <td>
+                            <!--<select name="province" id="province">
+                                <option value="">请选择省份</option>
+                                <foreach name="province" item="val">
+                                    <option value="{$val['id']}">{$val['name']}</option>
+                                </foreach>
+                            </select>
+                            <span>(必填)</span>-->
+                            <div style="position:absolute;">
+                                <span style="margin-left:100px;width:18px;overflow:hidden;">
+                                <select style="width:170px;margin-left:-100px" name="province" id="province" onchange="change_province(this);">
+                                    <option value="">请选择省份</option>
+                                    <foreach name="province" item="val">
+                                        <option value="{$val['id']}">{$val['name']}</option>
+                                    </foreach>
+                                </select>
+                                </span>
+                                <input name="box" onkeyup="sukeyup(this);" style="width:150px;height:30px;position:absolute;left:0px;" id="sheng_name" AUTOCOMPLETE="off">
+                                <ul id="shengfen" style="border: 1px solid #9b97a2;z-index:800;position: absolute;width: 150px;background: #fff;display: none">
+
+                                </ul>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>品牌</th>
+                        <td>
+                            <input class="input-medium" type="text" value="" readonly name="brand_name">
+                            <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat">点击选择</a>
+                            <span>(必填)</span>
+                        </td>
+                        <input type="hidden" name="brand_id" value="">
+                    </tr>
+                    <tr>
+                        <th>用户组（所属）</th>
+                        <td>
+                            <input class="input-medium" type="text" name="group" value="" readonly>
+                            <input type="hidden" name="group_id" value="">
+                            <a href="" data-toggle="modal" onclick="return group();" data-target="#exampleModal" data-whatever="@fat">点击选择</a>
+                            <span>(如不选择，将自动分配)</span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input class="btn btn-success" type="submit" onclick="return add_data();" value="保存">
+                            <a class="btn btn-danger" onclick="check();">取消</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!--用户组-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">选择所属组</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="groupform">
+                        <!--<span style="padding-right: 15px;padding-left: 5px;">{$val['title']}
+                            <input class="xb-icheck" type="radio" name="group_user"
+                                   groupName="{$val['title']}" value="{$val['id']}">
+                        </span>-->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="group_confirm();">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end 用户组-->
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">选择品牌</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" onkeyup="get_brands(this);" maxlength="15" >
+
+                    <form id="js-form">
+                        <ul id="modal-body-brand">
+                            <foreach name="brandArr" item="val" key="k">
+                                <li>
+                                    <label for="radio{$k}" style="">{$val['name']}
+                                        <input class="xb-icheck" type="radio" id="radio{$k}" name="brand_title"
+                                               brandName="{$val['name']}" value="{$val['id']}"
+                                        <if condition="$val['id'] eq $data['brand_id']"> checked </if> >
+                                    </label>
+                                </li>
+                            </foreach>
+
+                        </ul>
+                        <div style="clear: both;padding-top: 20px;text-align: center" id="jiazai">
+                            <a href="javascript:void(0)" onclick="getbrand()">加载更多</a>
+                        </div>
+
+                    </form>
+                </div>
+                <div style="clear: both"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="brand_confirm();">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</block>
+<block name="js">
+    <icheckjs color="blue"/>
+    <script>
+
+        $(function(){
+            $(document).bind("click",function(e){
+                //id为menu的是菜单，id为open的是打开菜单的按钮
+                if($(e.target).closest("#shengfen li").length == 0 && $(e.target).closest("#shengfen").length == 0){
+                    //点击id为menu之外且id不是不是open，则触发
+                    $('#shengfen').hide();
+                    var status=$('#province option:selected').val();
+                    if(!status){
+                        $('#sheng_name').val('');
+                    }else{
+                        $('#sheng_name').val($('#province option:selected').html());
+                    }
+                }
+            })
+        })
+
+        function change_province(obj){
+            var  name= $("#province").find("option:selected").text();
+            $('#sheng_name').html(name);
+        }
+
+        function xuanzhe(obj,id){
+            var name=$(obj).html();
+            $('#province option').each(function(k,v){
+                var option=$(this).html();
+                if(name == option){
+                    var num=$(this).val();
+                    $("#province option:contains('"+name+"')").attr('selected',true).siblings().attr('selected',false);
+                    $('#sheng_name').val(name);
+                    $('#shengfen').hide();
+                    return false;
+                }
+            });
+
+        }
+
+        $('#shengfen li').click(function(){
+            alert(11);
+            var index=$(this).index();
+            var name=$('#shengfen li').eq(index).html();
+            console.log(name);
+            $('#province option').each(function(k,v){
+                var option=$(this).html();
+                console.log(name);
+                console.log(option);
+                if(name == option){
+                    var num=$(this).val();
+                    $("#province option").eq(index).attr('selected',true).siblings().attr('selected',false);
+                    $('#sheng_name').val(name);
+                    $('#shengfen').hide();
+                    return false;
+                }
+            });
+        });
+
+        function sukeyup(obj){
+            $('#shengfen').html('');
+            $.ajax({
+                'url':"{:U('Area/get_province')}",
+                'type':'get',
+                'data':{'get_province':$(obj).val()},
+                'dataType':'json',
+                success:function(data){
+                    if(data['code'] == 200){
+                        var li='';
+
+                        $.each(data['data'],function(k,v){
+
+                            li +="<li onclick='xuanzhe(this,"+v['id']+")'>"+v['name']+"</li>";
+                        });
+
+                        $('#shengfen').html(li);
+                        $('#shengfen').show();
+                    }else{
+                        $('#shengfen').hide();
+                    }
+
+                }
+
+            });
+        }
+
+        function getbrand(){
+            setTimeout(function(){
+
+                $.ajax({
+                    'url':"{:U('Brands/getbrand')}",
+                    'type':'post',
+                    'dataType':'json',
+                    success:function(data){
+                        if(data['status'] == 'success'){
+                            var li='';
+                            $.each(data['data'],function(k,v){
+
+                                li +="<li > <label for='radio"+k+"' style='color: #000000'> "+v['name']+"<input class='xb-icheck' type='radio' id='radio"+k+"' name='brand_title' brandName='"+v['name']+"' value='"+v['id']+"'  > </label> </li>";
+                            });
+
+                            $('#modal-body-brand').html('');
+                            $('#modal-body-brand').html(li)
+
+                            $('#jiazai').hide();
+                        }else{
+
+                        }
+
+                    }
+                });
+
+
+            },200);
+
+
+        }
+
+        //获取搜索品牌
+        function get_brands(obj){
+            $.ajax({
+                'url':"{:U('Brands/get_brands')}",
+                'type':'get',
+                'data':{'brand_name':$(obj).val()},
+                'dataType':'json',
+                success:function(data){
+                    var li='';
+                    $.each(data,function(k,v){
+
+                        li +="<li > <label for='radio"+k+"' style='color: #000000'> "+v['name']+"<input class='xb-icheck' type='radio' id='radio"+k+"' name='brand_title' brandName='"+v['name']+"' value='"+v['id']+"'  > </label> </li>";
+                    });
+
+                    $('#modal-body-brand').html('');
+                    $('#modal-body-brand').html(li)
+                    $('#jiazai').hide();
+                    if($(obj).val() == ''){
+
+                        $('#modal-body-brand li:gt(42)').hide();
+
+                        var str='<div style="clear: both;padding-top: 20px;text-align: center" id="jiazai"> <a href="javascript:void(0)" onclick="getbrand()">加载更多</a> </div>';
+
+                        $('#modal-body-brand').append(str);
+
+                    }
+                }
+            });
+
+
+        }
+
+        /*function search(obj){
+         var name=$(obj).val();
+         name= $.trim(name);
+
+         $('.modal-body ul li label').css('color','#000');
+         if(name != ''){
+         $("input[name='brand_title']").each(function(k,v){
+
+         var checkValue = $(this).attr('brandname');
+         var num=checkValue.indexOf(name);
+         if(num > -1){
+
+         var aaa=$("input[name='brand_title']").eq(k).parent().css("color","red");
+         var aaa=$("input[name='brand_title']").eq(k).parent().siblings().css('color','');
+
+         }else{
+         $('.modal-body ul li span').css('color','#000');
+         }
+         });
+         }else{
+         $('.modal-body ul li label').css('color','#000');
+         }
+
+         }*/
+
+        function check(){
+
+            window.history.go(-1);
+        }
+
+        function group(){
+            var province=$('#province').val();
+            var brand_name=$("input[name='brand_name']").val();
+            var brand_id=$("input[name='brand_id']").val();
+
+            if(province == ''){
+
+                layer.msg('请先选择省份', {icon: 5,time:2000});
+                return false;
+            }
+
+            if(brand_name == ''){
+                layer.msg('请先选择品牌', {icon: 5,time:2000});
+                return false;
+            }
+
+            $.ajax({
+                'url':"{:U('Admin/Resource/group')}",
+                'type':'get',
+                'data':{'province':province,'brand_id':brand_id},
+                'dataType':'json',
+                'success':function(data){
+                    $('#groupform').html('');
+                    $str='';
+                    $.each(data,function(i,val){
+                        $str +="<span style='padding-right: 15px;padding-left: 5px;'>"+val['name']+"<input class='xb-icheck' type='radio' name='group_user' groupName='"+val['name']+"' value='"+val['id']+"'> </span>";
+                    });
+
+                    $('#groupform').append($str);
+
+                }
+
+
+
+            });
+
+        }
+
+        function add_data(){
+            var source=$("#source").val();
+            var brand_name=$("input[name='brand_name']").val();
+            var province=$("#province").val();
+
+            if(source == ''){
+                layer.msg('请填写来源渠道', {icon: 5,time:2000});
+                return false;
+            }
+
+            if(province == ''){
+                layer.msg('请选择省份', {icon: 5,time:2000});
+                return false;
+            }
+
+            if(brand_name == ''){
+                layer.msg('请选择品牌', {icon: 5,time:2000});
+                return false;
+            }
+
+
+
+        }
+
+        function group_confirm(){
+            var groupid=$("input[name='group_user']:checked").val();
+            var groupName=$("input[name='group_user']:checked").attr('groupName');
+            if(typeof(groupid) == 'undefined'){
+                layer.msg('请选择所属组', {icon: 5,time:2000});
+                return false;
+            }
+
+            $("input[name='group_id']").val(groupid);
+            $("input[name='group']").val(groupName);
+            $('#exampleModal').modal('hide');
+        }
+
+        function brand_confirm(){
+            var brand_id=$("input[name='brand_title']:checked").val();
+            var brandName=$("input[name='brand_title']:checked").attr('brandName');
+            if(typeof(brand_id) == 'undefined'){
+                layer.msg('请选择咨询品牌', {icon: 5,time:2000});
+                return false;
+            }
+
+            $("input[name='brand_id']").val(brand_id);
+            $("input[name='brand_name']").val(brandName);
+            $('#exampleModal2').modal('hide');
+        }
+
+
+    </script>
+
+
+
+</block>
