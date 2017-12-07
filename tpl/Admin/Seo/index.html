@@ -40,7 +40,6 @@
                         <th>53账号</th>
                         <th>添加类型</th>
                         <th>是否分配</th>
-                        <th>操作</th>
                     </tr>
                     <foreach name="data" item="val">
                         <tr class="tr-hover">
@@ -71,10 +70,7 @@
                                     <span style="color:#b62409">未分配</span>
                                 </if>
                             </td>
-                            <td>
-                                <a href="{:U('Admin/Resource/modify',array('number'=>$val['id']))}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
-                                <a href="javascript:if(confirm('确定要删除？')){location.href='{:U('Admin/Resource/delete',array('id'=>$val['id']))}'}" type="button" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
-                            </td>
+
                             </td>
                         </tr>
 
