@@ -203,6 +203,7 @@ class ResourceModel extends Model
         $group_id=I('post.group_id');
         $brand_id=I('post.brand_id');
         $remarks=I('post.keyword');
+        $service_number=I('post.s_number');
         //选择区域id
         $area_id=0;
         if(!empty($province_id)){
@@ -228,6 +229,7 @@ class ResourceModel extends Model
         $map['area_id']=$area_id;
         $map['source']=$source;
         $map['keyword']=$remarks;
+        $map['service_number']=$service_number;
         $map['allocation']=$allocation;
 
         $result=$this->where("id={$id}")->save($map);
@@ -921,7 +923,7 @@ class ResourceModel extends Model
         //$thisweekStart=mktime(0, 0 , 0,date("m"),date("d")-date("w")+1,date("Y"));
         $thisweekStart=mktime(0, 0 , 0,date("m"),date("d"),date("Y"));
         $thisweekEnd=mktime(date('H'),date('i'),date('s'),date("m"),date("d"),date("Y"));
-        
+
         $data=$this->field("group_id,count(case  when addtime >= {$startDay} and addtime  <= {$endDay} then id end	) as today,
 count(case  when addtime >= {$lastDay} and addtime  <= {$endlastDay} then id end	) as yesterday,
 count(case  when addtime >= {$lastweekStart} and addtime  <= {$lastweekEnd} then id end	) as lastweek,

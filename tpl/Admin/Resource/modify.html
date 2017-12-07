@@ -39,27 +39,31 @@
 
                     <tr>
                         <th>客服姓名</th>
-                        <td> <input class="input-medium" type="text" name="username" value="{$data['username']}"></td>
+                        <td> <input class="input-medium" type="text" name="username" value="{$data['username']}" maxlength="50"></td>
                     </tr>
                     <tr>
                         <th>手机号</th>
-                        <td> <input class="input-medium" type="text" name="phone" value="{$data['phone']}"></td>
+                        <td> <input class="input-medium" type="text" name="phone" value="{$data['phone']}" maxlength="15"></td>
                     </tr>
                     <tr>
                         <th>QQ/微信</th>
-                        <td> <input class="input-medium" type="text" value="{$data['chats']}" name="chats"></td>
+                        <td> <input class="input-medium" type="text" value="{$data['chats']}" name="chats" maxlength="50"></td>
                     </tr>
                     <tr>
                         <th>客服ID/名字</th>
-                        <td> <input class="input-medium" type="text" value="{$data['customer_info']}" name="customer_info"></td>
+                        <td> <input class="input-medium" type="text" value="{$data['customer_info']}" name="customer_info" maxlength="100"></td>
                     </tr>
                     <tr>
                         <th>地址</th>
-                        <td> <input class="input-medium" type="text" value="{$data['address']}" name="address"></td>
+                        <td> <input class="input-medium" type="text" value="{$data['address']}" name="address" maxlength="100"></td>
                     </tr>
                     <tr>
                         <th>关键字</th>
-                        <td> <input class="input-medium" type="text" value="{$data['keyword']|urldecode}" name="keyword"></td>
+                        <td> <input class="input-medium" type="text" value="{$data['keyword']|urldecode}" name="keyword" maxlength="100"></td>
+                    </tr>
+                    <tr>
+                        <th>53账号</th>
+                        <td> <input class="input-medium" type="text" value="{$data['service_number']}" name="s_number" maxlength="50"></td>
                     </tr>
                     <tr>
                         <th>省份</th>
