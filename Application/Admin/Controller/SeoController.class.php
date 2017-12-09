@@ -18,26 +18,20 @@ class SeoController extends AdminBaseController
         //部门
         $group=M('RoleDepartment')->select();
         $phone=I('get.phone');
-        $s_group=I('get.group');
         $start_time=I('get.start_time','');
         $end_time=I('get.end_time','');
         $brand_id=I('get.brand','');
-        $referer_id=I('get.referer','');
 
-        $allocation=I('get.allocation','');
 
         $brand=M('Brands')->select();//品牌
         $referer=M('Referer')->field('distinct title')->select();//来源渠道
 
         $array=array(
             'phone'=>$phone,
-            's_group'=>$s_group,
             'start_time'=>$start_time,
             'end_time'=>$end_time,
-            'allocation'=>$allocation,
             'brand'=>$brand,
             'brand_id'=>$brand_id,
-            'referer_id'=>$referer_id,
             'referer'=>$referer
         );
 

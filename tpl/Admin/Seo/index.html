@@ -12,7 +12,41 @@
         <p><i class="fa fa-home"></i> 首页 &gt; 客户资源 &gt; SEO数据</p>
     </div>
     <div class="col-xs-12">
+        <form class="form-inline" style="margin-bottom: 30px;">
+            <div class="form-group">
+                <label for="inputEmail3" >联系方式：</label>
+                <input type="text" name="phone" value="{$phone}"  placeholder="手机号/微信/QQ">
+            </div>
 
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="inputEmail3" >品牌：</label>
+                    <select  name="brand" id="brand">
+                        <option value="">品牌</option>
+                        <foreach name="brand" item="val">
+                            <option value="{$val['id']}" <if condition="$brand_id eq $val['id']">selected</if>  >{$val['name']}</option>
+                        </foreach>
+                    </select>
+                </div>
+            </div>
+
+            <div></div>
+            <div class="form-group" style="margin-top: 5px;">
+                <label for="inputEmail3" >时间：</label>
+                <input type="text" onClick="WdatePicker()" name="start_time" value="{$start_time}" style="width: 100px;">
+            </div>
+            <div class="form-group" style="margin-top: 5px;">
+                <label for="inputEmail3" >~</label>
+                <input type="text" onClick="WdatePicker()" name="end_time" value="{$end_time}" style="width: 100px;">
+            </div>
+
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn btn-primary" style="height: 30px;line-height: 8px;">搜索</button>
+                <a class="btn btn-default" onclick="clean();" style="height: 30px;line-height: 8px;">清空</a>
+                <!--<a class="btn btn-primary"  href="javascript:if(confirm('确定要导出数据吗？')){daochu();}" style="height: 30px;line-height: 8px;">导出数据</a>-->
+                <span style="padding-left: 20px;">总条数（{$count}）</span>
+            </div>
+        </form>
 
         <div class="tabbable">
 
