@@ -14,7 +14,13 @@ class SeoController extends AdminBaseController
      * */
     public function index()
     {
-        $data=D('Resource')->selectData("source='SEO优化'");
+        $phone=I('get.phone','');
+        if(empty($phone)){
+            $where="source='SEO优化'";
+        }else{
+            $where='phone='.$phone;
+        }
+        $data=D('Resource')->selectData($where);
         //部门
         $group=M('RoleDepartment')->select();
         $phone=I('get.phone');
