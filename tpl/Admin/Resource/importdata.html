@@ -41,7 +41,7 @@
             <form action="" enctype="multipart/form-data" id="uploadForm">
                 <input type="file" id="myfile" name="myfile"><span>(限制不能超过100行数据，且文件大小不能大于2M)</span>
                 <br>
-                <button type="button" class="layui-btn" id="test9" onclick="check()">开始上传</button>
+                <button id="upload" type="button" class="layui-btn" id="test9" onclick="check()">开始上传</button>
             </form>
         </div>
         <hr>
@@ -55,35 +55,53 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th>人物</th>
-                    <th>民族</th>
-                    <th>出场时间</th>
-                    <th>格言</th>
+                    <th>客服ID/名称</th>
+                    <th>客户姓名</th>
+                    <th>省份</th>
+                    <th>品牌</th>
+                    <th>部门</th>
+                    <th>电话号码</th>
+                    <th>QQ/微信</th>
+                    <th>来源渠道</th>
+                    <th>关键词</th>
+                    <th>是否分配</th>
+                    <th>是否重复</th>
+                    <th>修改</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>贤心</td>
-                    <td>汉族</td>
-                    <td>1989-10-14</td>
-                    <td>人生似修行</td>
-                </tr>
+                <input type="hidden" id="number_id" value="">
+                <tbody id="tablel-cont">
+
 
                 </tbody>
             </table>
+            <button id="tianjia" onclick="add_data();" type="button" class="layui-btn" id="test10" style="display: none;">确认添加</button>
         </div>
     </div>
 <block name="js">
     <script>
 
+        function add_data(){
+            var number_id=$("#number_id").val();
+            if(number_id != ''){
+                layer.msg('数据有误，请重新操作',function(){
+                    window.location.reload();
+                });
+
+            }
+        }
+
         function check(){
+
             var myfile=$('#myfile').val();
             if(myfile == ''){
                 layer.msg('请选择上传的Excel 表格');
                 return false;
             }
+            var index = layer.load(0, {shade: [0.7,'#000']}); //0代表加载的风格，支持0-2
+
+            $('#upload').attr({'disabled':'disabled'});
             var formData = new FormData($("#uploadForm" )[0]);
-            console.log(formData);
 
             $.ajax({
                 type:"post",
@@ -93,9 +111,58 @@
                 cache: false,
                 contentType: false,
                 processData: false,
+                dataType:'json',
+                timeout : 1000, //超时时间设置，单位毫秒
                 success: function(data){
+                    if(data['status'] == 'error'){
+                        layer.msg(data['message'],function(){
+                            window.location.reload();
+                        });
+                    }
+                    if(data['status'] == 'success'){
+                        if(data['data'].length > 0){
+                            var tr='';
+                            $.each(data['data'],function(k,v){
+                                if(v['fenpei'] == '已匹配'){
+                                    fenpei="style='color:green'";
+                                }else{
+                                    fenpei='';
+                                }
+                                if(v['repeart'] == '重复'){
+                                    repeart="style='color:red'";
+                                }else{
+                                    repeart='';
+                                }
+                                tr+="<tr>" +
+                                        "<td>"+v['custormer_info']+"</td>" +
+                                        "<td>"+v['username']+"</td>" +
+                                        "<td>"+v['province_name']+"</td>" +
+                                        "<td>"+v['brands_name']+"</td>" +
+                                        "<td>"+v['group_name']+"</td>" +
+                                        "<td>"+v['phone']+"</td>" +
+                                        "<td>"+v['chats']+"</td>" +
+                                        "<td>"+v['source']+"</td>" +
+                                        "<td>"+v['keywork']+"</td>" +
+                                        "<td "+fenpei+">"+v['fenpei']+"</td>" +
+                                        "<td "+repeart+">"+v['repeart']+"</td>" +
+                                        "<td>"+'修改'+"</td>" +
+                                        "</tr>";
+                            });
 
-                }
+                            $('#tablel-cont').html(tr);
+                            $('#number_id').val(data['number_id']);
+                            $('#tianjia').show();
+                        }
+                    }
+                },
+                complete : function(XMLHttpRequest,status){ //请求完成后最终执行参数
+                    if(status=='timeout'){
+                        layer.close(index);
+                        alert("超时");
+                    }
+                    alert()
+                },
+
 
             });
         }
