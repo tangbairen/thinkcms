@@ -275,4 +275,41 @@ class HandlerController extends Controller
         $this->ajaxReturn($data);
     }
 
+    /*
+     * 同步到资源表中
+     * */
+    public function adddata()
+    {
+        try{
+            if(!IS_POST) throw new Exception('非法操作');
+            $number_id=I('post.number_id','');
+            if(empty($number_id)) throw new Exception('数据有误，请刷新重试！');
+
+            $importData=M('Import')->where('number_id='.$number_id)->select();
+            if(empty($importData)) throw new Exception('操作失败，请刷新后重试！');
+            $time=time();
+            $sql='install into bt_resource (`id`,`username`,`customer_info`,`phone`,`brand_id`,`area_id`,`group_id`,`source`,`province`
+                ,`chats`,`keyword`,`service_number`,`addtime`) values ';
+            foreach($importData as $key=>$val){
+                $sql .="({$val['id']},'{$val['username']}','{$val['custormer_info']}','{$val['phone']}',{$val['brand_id']},
+                {$val['area_id']}),{$val['group_id']},'{$val['source']}',{$val['province']},'{$val['chats']}','{$val['keyword']}',
+                '{$val['service_number']}',{$time} )";
+            }
+
+            $res=M('Resource')->query($sql);
+
+            if(empty($res)) throw new Exception('添加失败');
+
+            $data=array('status'=>'success','message'=>'成功导入了'.count($importData).'条数据');
+
+            $this->ajaxReturn($data);
+
+        }catch (Exception $e){
+
+            $message=$e->getMessage();
+            $data=array('status'=>'error','message'=>$message);
+            $this->ajaxReturn($data);
+        }
+    }
+
 }

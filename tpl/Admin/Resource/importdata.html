@@ -78,6 +78,7 @@
                 </tbody>
             </table>
             <button id="tianjia" onclick="add_data();" type="button" class="layui-btn" id="test10" style="display: none;">确认添加</button>
+            <button id="quxiao" onclick="window.location.reload() ;" type="button" class="layui-btn" id="test15" style="display: none;">取消</button>
         </div>
     </div>
 
@@ -289,8 +290,19 @@
                 layer.msg('数据有误，请重新操作',function(){
                     window.location.reload();
                 });
-
+                return false;
             }
+
+            $.ajax({
+                type:"post",
+                url:"{:U('handler/adddata')}",
+                data:"{'number_id':number_id}",
+                dataType:'json',
+                success: function(data){
+
+                }
+            });
+
         }
 
         function check(){
@@ -322,7 +334,9 @@
                         });
                     }
                     if(data['status'] == 'success'){
+
                         if(data['data'].length > 0){
+
                             var tr='';
                             $.each(data['data'],function(k,v){
                                 if(v['fenpei'] == '已匹配'){
@@ -357,6 +371,7 @@
                             $('#tablel-cont').html(tr);
                             $('#number_id').val(data['number_id']);
                             $('#tianjia').show();
+                            $('#quxiao').show();
                         }
                     }
                 },
@@ -377,13 +392,21 @@
             $('#username').val('');
             $('#phone').val('');
             $("#source option").each(function (i) {
-                console.log(i);
-                $(this).attr("selected", "");
+                $(this).attr("selected", false);
             });
-            
-            $("#province").find("option:selected").attr('selected',false);
-            $("#brand").find("option:selected").attr('selected',false);
-            $("#group").find("option:selected").attr('selected',false);
+
+            $("#province option").each(function (i) {
+                $(this).attr("selected", false);
+            });
+
+            $("#brand option").each(function (i) {
+                $(this).attr("selected", false);
+            });
+
+            $("#group option").each(function (i) {
+                $(this).attr("selected", false);
+            });
+            $("#brand_name").val('');
         }
         function edit(obj){
             var id=$(obj).attr('id');
