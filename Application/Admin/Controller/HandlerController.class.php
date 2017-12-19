@@ -255,4 +255,24 @@ class HandlerController extends Controller
 
     }
 
+
+    /*
+     * 导入 ，获取品牌
+     * */
+    public function get_brand()
+    {
+        $get_province=I('get.get_brand','');
+
+        $array['name']=array('like',"%$get_province%");
+        $brandArr=M('Brands')->field('id,name')
+            ->where($array)
+            ->select();
+        if(empty($brandArr)){
+            $data=array('code'=>400,'data'=>'');
+        }else{
+            $data=array('code'=>200,'data'=>$brandArr);
+        }
+        $this->ajaxReturn($data);
+    }
+
 }

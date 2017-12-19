@@ -295,14 +295,13 @@
         }
 
         $('#shengfen li').click(function(){
-            alert(11);
+
             var index=$(this).index();
             var name=$('#shengfen li').eq(index).html();
-            console.log(name);
+
             $('#province option').each(function(k,v){
                 var option=$(this).html();
-                console.log(name);
-                console.log(option);
+
                 if(name == option){
                     var num=$(this).val();
                     $("#province option").eq(index).attr('selected',true).siblings().attr('selected',false);
@@ -465,8 +464,6 @@
                     $('#groupform').append($str);
 
                 }
-
-
 
             });
 

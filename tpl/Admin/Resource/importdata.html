@@ -31,7 +31,8 @@
             text-decoration: none;
         }
         .formdata{width: 100%;height: 100px;}
-
+        .form-title{width: 60px;}
+        #pinpai li{line-height: 30px;cursor: pointer}
     </style>
     <div class="page-header">
         <p><i class="fa fa-home"></i> 首页 &gt; 导入数据 </p>
@@ -45,6 +46,7 @@
             </form>
         </div>
         <hr>
+        <button onclick='edit()' id='"+v['import_id']+"'  class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >修改</button>
         <div class="layui-form">
             <table class="layui-table">
                 <colgroup>
@@ -78,8 +80,208 @@
             <button id="tianjia" onclick="add_data();" type="button" class="layui-btn" id="test10" style="display: none;">确认添加</button>
         </div>
     </div>
+
+
+
+    <!--模态框-->
+    <div class="modal fade" id="exampleModal"  tabindex="-1" role="dialog"  aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title" id="exampleModalLabel">修改信息（请按顺序修改）</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label form-title">客户名称:</label>
+                            <input type="text" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label form-title">电话号码:</label>
+                            <input type="text"  id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label form-title">53账号:</label>
+                            <input type="text"  id="number">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label form-title">来源渠道:</label>
+                            <select style="width:170px;" name="source" id="source" >
+                                <option value="">选择来源渠道</option>
+                                <option value="百度移动">百度移动</option>
+                                <option value="百度PC">百度PC</option>
+                                <option value="百度信息流">百度信息流</option>
+                                <option value="360移动">360移动</option>
+                                <option value="360PC">360PC</option>
+                                <option value="搜狗移动">搜狗移动</option>
+                                <option value="搜狗PC">搜狗PC</option>
+                                <option value="神马移动">神马移动</option>
+                                <option value="SEO优化">SEO优化</option>
+                                <option value="新媒体">新媒体</option>
+                                <option value="400">400</option>
+                                <option value="留言板">留言板</option>
+                                <option value="离线宝">离线宝</option>
+                                <option value="中国加盟网">中国加盟网</option>
+                            </select>
+                            <span>（必填）</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label form-title">省&nbsp;&nbsp;份:</label>
+                            <select style="width:170px;" name="province" id="province" onchange="getprovince();">
+                                <option value="">请选择省份</option>
+                                <foreach name="province" item="vo" >
+                                    <option value="{$vo['id']}">{$vo['name']}</option>
+                                </foreach>
+                            </select>
+                            <span>（必填）</span>
+                        </div>
+                        <div class="form-group" style="position: relative">
+                            <label for="message-text" class="control-label form-title">品&nbsp;&nbsp;牌:</label>
+
+                            <div style="position:absolute;left: 65px;top:0">
+
+                                <span style="margin-left:100px;width:18px;overflow:hidden;">
+                                <select style="width:170px;margin-left:-100px" name="brand" id="brand" onchange="change_province(this);">
+                                    <option value="">请选择品牌</option>
+                                    <foreach name="brandArr" item="val">
+                                        <option value="{$val['id']}">{$val['name']}</option>
+                                    </foreach>
+                                </select>
+                                </span>
+                                <input name="box" onkeyup="sukeyup(this);" style="width:150px;height:30px;position:absolute;left:0px;" id="brand_name" AUTOCOMPLETE="off" value="" />
+                                <ul id="pinpai" style="border: 1px solid #9b97a2;z-index:800;position: absolute;width: 150px;background: #fff;display: none">
+
+                                </ul>
+                                <span>（必填）</span>
+                            </div>
+                            <div style="clear: both"></div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label form-title">部&nbsp;&nbsp;门:</label>
+                            <select style="width:170px;" name="group" id="group"  onclick="getGroup()">
+                                <option value="">请选择部门</option>
+                            </select>
+                            <span>（不选，按规则自动分配）</span>
+                        </div>
+                        <input type="hidden" value="" name="import_id" id="import_id">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="close11();">取消</button>
+                            <button type="button" class="btn btn-primary">修改</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--模态框-->
+</block>
 <block name="js">
     <script>
+
+
+
+        function getGroup(){
+            var province=$('#province').val();
+            var brand=$('#brand').val();
+            if(province == ''){
+                layer.msg('请选择省份');
+                $("#group option:not(:first)").remove();
+                return false;
+            }
+            if(brand == ''){
+                layer.msg('请选择品牌');
+                $("#group option:not(:first)").remove();
+                return false;
+            }
+
+        }
+        function getprovince(){
+            var province=$('#province').val();
+            var brand=$('#brand').val();
+
+            if(province !='' && brand !=''){
+                group(province,brand);
+            }
+        }
+
+
+        function xuanzhe(obj,id){
+            var name=$(obj).html();
+            $('#brand option').each(function(k,v){
+                var option=$(this).html();
+                if(name == option){
+                    var num=$(this).val();
+                    $("#brand option:contains('"+name+"')").attr('selected',true).siblings().attr('selected',false);
+                    $('#brand_name').val(name);
+                    $('#pinpai').hide();
+                    return false;
+                }else{
+                    $('#brand').append("<option selected='selected' value="+id+">"+name+"</option>");
+                    $('#brand_name').val(name);
+                    $('#pinpai').hide();
+                    return false;
+                }
+            });
+            var  index= $("#brand").find("option:selected").val();
+            if(index == ''){
+                $('#brand').append("<option selected='selected' value="+id+">"+name+"</option>");
+                $('#brand_name').val(name);
+            }
+            $('#pinpai').hide();
+
+            return false;
+        }
+
+
+        function sukeyup(obj){
+            $('#pinpai').html('');
+            if($(obj).val() == ''){
+                $('#pinpai').hide();
+            }else{
+
+                $.ajax({
+                    'url':"{:U('handler/get_brand')}",
+                    'type':'get',
+                    'data':{'get_brand':$(obj).val()},
+                    'dataType':'json',
+                    success:function(data){
+                        if(data['code'] == 200){
+                            var li='';
+
+                            $.each(data['data'],function(k,v){
+
+                                li +="<li onclick='xuanzhe(this,"+v['id']+")'>"+v['name']+"</li>";
+                            });
+
+                            $('#pinpai').html(li);
+                            $('#pinpai').show();
+                        }else{
+                            $('#pinpai').hide();
+                        }
+
+                    }
+
+                });
+
+            }
+
+        }
+
+        function change_province(obj){
+            var  name= $("#brand").find("option:selected").text();
+            $('#brand_name').val(name);
+
+            var province=$('#province').val();
+            var brand=$('#brand').val();
+
+            if(province !='' && brand !=''){
+                group(province,brand);
+            }
+
+        }
 
         function add_data(){
             var number_id=$("#number_id").val();
@@ -145,7 +347,10 @@
                                         "<td>"+v['keywork']+"</td>" +
                                         "<td "+fenpei+">"+v['fenpei']+"</td>" +
                                         "<td "+repeart+">"+v['repeart']+"</td>" +
-                                        "<td>"+'修改'+"</td>" +
+                                        "<td>"+
+                                        "<button onclick='edit(this)' id='"+v['import_id']+"' username='"+v['username']+"' phone='"+v['phone']+"' " +
+                                        "source='"+v['source']+"' province='"+v['province']+"' brand_id='"+v['brand_id']+"' brands_name='"+v['brands_name']+"' group_name='"+v['group_name']+"' group_id='"+v['group_id']+"' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >修改</button>"
+                                        +"</td>" +
                                         "</tr>";
                             });
 
@@ -158,15 +363,109 @@
                 complete : function(XMLHttpRequest,status){ //请求完成后最终执行参数
                     if(status=='timeout'){
                         layer.close(index);
-                        alert("超时");
+                        x
                     }
-                    alert()
-                },
-
+                    setTimeout(function(){
+                        layer.close(index);
+                    },2000);
+                }
 
             });
         }
-    </script>
-</block>
+        function close11(){
+            $('#import_id').val('');
+            $('#username').val('');
+            $('#phone').val('');
+            $("#source option").each(function (i) {
+                console.log(i);
+                $(this).attr("selected", "");
+            });
+            
+            $("#province").find("option:selected").attr('selected',false);
+            $("#brand").find("option:selected").attr('selected',false);
+            $("#group").find("option:selected").attr('selected',false);
+        }
+        function edit(obj){
+            var id=$(obj).attr('id');
+            var username=$(obj).attr('username');
+            var phone=$(obj).attr('phone');
+            var source=$(obj).attr('source');
+            var province=$(obj).attr('province');
+            var brand_id=$(obj).attr('brand_id');
+            var brands_name=$(obj).attr('brands_name');
+            var group_name=$(obj).attr('group_name');
+            var group_id=$(obj).attr('group_id');
+            $('#import_id').val(id);
+            $('#username').val(username);
+            $('#phone').val(phone);
 
+            $('#source option').each(function(k,v) {
+                var option = $(this).html();
+
+                if (source == option) {
+                    var num = $(this).val();
+                    $("#source option:contains('" + source + "')").attr('selected', true).siblings().attr('selected', false);
+
+                }
+            });
+            $('#province option').each(function(k,v) {
+                var option_p = $(this).val();
+                if (province == option_p) {
+                    $(this).attr('selected', true).siblings().attr('selected', false);
+                }
+            });
+
+            if(brand_id > 0){
+                $('#brand option').each(function(k,v) {
+                    var option_b = $(this).val();
+                    if (brand_id == option_b) {
+                        $(this).attr('selected', true).siblings().attr('selected', false);
+                    }
+                });
+
+                var  index= $("#brand").find("option:selected").val();
+                if(index == ''){
+                    $('#brand').append("<option selected='selected' value="+brand_id+">"+brands_name+"</option>");
+                    $('#brand_name').val(brands_name);
+                }
+            }
+
+            if(group_id > 0){
+                $('#group option').each(function(k,v) {
+                    var option_g = $(this).val();
+                    if (group_id == option_g) {
+                        $(this).attr('selected', true).siblings().attr('selected', false);
+                    }
+                });
+
+                var  group_index= $("#group").find("option:selected").val();
+                if(group_index == ''){
+                    $('#group').append("<option selected='selected' value="+group_id+">"+group_name+"</option>");
+                }
+            }
+
+        }
+
+        function group(province,brand){
+            $.ajax({
+                'url':"{:U('Admin/Resource/group')}",
+                'type':'get',
+                'data':{'province':province,'brand_id':brand},
+                'dataType':'json',
+                'success':function(data){
+                    $('#group').html('');
+                    $str='<option>请选择部门</option>';
+                    $.each(data,function(i,val){
+                        $str +="<option value='"+val['id']+"'>"+val['name']+"</option>";
+                    });
+
+                    $('#group').append($str);
+
+                }
+
+            });
+        }
+
+
+    </script>
 </block>

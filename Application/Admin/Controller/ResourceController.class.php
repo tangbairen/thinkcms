@@ -647,6 +647,15 @@ GROUP BY  t.group_id,t.total";
      * */
     public function importdata()
     {
+        //省份
+        $province=M('Province')->select();
+        //品牌
+        $brandArr=M('Brands')->order('order_by desc')->limit(30)->select();
+
+
+
+        $this->assign('province',$province);
+        $this->assign('brandArr',$brandArr);
         $this->display();
     }
 
