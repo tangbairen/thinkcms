@@ -36,7 +36,7 @@ class HandlerController extends Controller
                 $number_id=$this->readExcel($path);
             }
             $array=M('Import')->where('number_id='.$number_id)->select();
-            $repeatArray=M('Import')->query("select phone,count(*) as count from bt_resource group by phone having count>1");
+            $repeatArray=M()->query("select phone,count(*) as count from bt_resource");
             if(!empty($array)){
                 foreach($array as $key=>&$val){
                     if($val['group_id'] > 0){
@@ -62,14 +62,9 @@ class HandlerController extends Controller
                         $val['province_name']='';
                     }
 
-                    if(!empty($repeatArray)){
-                        foreach($repeatArray as $k=>$v){
-                            if($val['phone'] == $v['phone']){
-                                $val['repeart']='重复';
-                            }else{
-                                $val['repeart']='';
-                            }
-                        }
+                    if(!empty($val['phone'])){
+                        $res=M('Resource')->where('phone='.$val['phone'])->find();
+                        $val['repeart']=!empty($res) ? '重复':'';
                     }
                 }
             }
@@ -151,6 +146,7 @@ class HandlerController extends Controller
         $chats      =isset($data[5]) ? $data[5]:'';
         $source     =isset($data[6]) ? $data[6]:'';//渠道
         $keyword    =isset($data[7]) ? $data[7]:'';
+        $service_number    =isset($data[8]) ? $data[8]:'';
 
         if(!empty($phone) || !empty($chats)){
             $model=D('Resource');
@@ -167,11 +163,11 @@ class HandlerController extends Controller
             $brand_id=$this->getBrandId($keyword);//品牌id
             $group_id=$model->allocationGroup($brand_id,$area_id);//部门id
 
-            if($group_id > 0){
+            /*if($group_id > 0){
                 $status=2;
             }else{
                 $status=1;
-            }
+            }*/
 
             $map['number_id']       =$number_id;
             $map['custormer_info']  =$kefu_id;
@@ -184,14 +180,13 @@ class HandlerController extends Controller
             $map['province']        =$province;
             $map['source']          =$source;
             $map['keywork']         =$keyword;
-            $map['status']          =$status;
+            $map['service_number']  =$service_number;
+            $map['status']          =1;
             $map['time']            =time();
 
             M('Import')->add($map);
 
         }
-
-
 
         return true;
     }
@@ -252,6 +247,9 @@ class HandlerController extends Controller
         if($array[7] !='关键字'){
             throw new Exception('文件格式不正确');
         }
+        if($array[8] !='53账号'){
+            throw new Exception('文件格式不正确1');
+        }
 
     }
 
@@ -282,23 +280,29 @@ class HandlerController extends Controller
     {
         try{
             if(!IS_POST) throw new Exception('非法操作');
-            $number_id=I('post.number_id','');
-            if(empty($number_id)) throw new Exception('数据有误，请刷新重试！');
+            $number_id=I('post.number_id',0);
 
-            $importData=M('Import')->where('number_id='.$number_id)->select();
+            if(empty($number_id)) throw new Exception('数据有误，请刷新重试！');
+            $map['number_id']=$number_id;
+            $map['status']=1;
+            $importData=M('Import')->where($map)->select();
+
             if(empty($importData)) throw new Exception('操作失败，请刷新后重试！');
             $time=time();
-            $sql='install into bt_resource (`id`,`username`,`customer_info`,`phone`,`brand_id`,`area_id`,`group_id`,`source`,`province`
-                ,`chats`,`keyword`,`service_number`,`addtime`) values ';
+            $sql="insert into bt_resource (`id`,`username`,`customer_info`,`phone`,`brand_id`,`area_id`,`group_id`,`source`,`province`,`chats`,`keyword`,`service_number`,`addtime`,`allocation`) values ";
             foreach($importData as $key=>$val){
-                $sql .="({$val['id']},'{$val['username']}','{$val['custormer_info']}','{$val['phone']}',{$val['brand_id']},
-                {$val['area_id']}),{$val['group_id']},'{$val['source']}',{$val['province']},'{$val['chats']}','{$val['keyword']}',
-                '{$val['service_number']}',{$time} )";
+                if(empty($val['group_id'])){
+                    $allocation=1;
+                }else{
+                    $allocation=2;
+                }
+                $sql .="(null,'{$val['username']}','{$val['custormer_info']}','{$val['phone']}',{$val['brand_id']},{$val['area_id']},{$val['group_id']},'{$val['source']}',{$val['province']},'{$val['chats']}','{$val['keyword']}','{$val['service_number']}',{$time},{$allocation} ),";
             }
-
-            $res=M('Resource')->query($sql);
-
+            $sql=rtrim($sql,',');
+            $sql=rtrim($sql,'"');
+            $res=M()->execute($sql);
             if(empty($res)) throw new Exception('添加失败');
+            M('Import')->where('number_id='.$number_id)->save(array('status'=>1));
 
             $data=array('status'=>'success','message'=>'成功导入了'.count($importData).'条数据');
 
@@ -311,5 +315,112 @@ class HandlerController extends Controller
             $this->ajaxReturn($data);
         }
     }
+
+    public function del()
+    {
+        try{
+
+            $number=I('post.number');
+            if(empty($number)) throw new Exception('删除失败');
+
+            $res=M('Import')->where("import_id=".$number)->delete();
+
+            if(empty($res)) throw new Exception('删除失败');
+
+            $data=array('status'=>'success','message'=>'删除成功');
+            $this->ajaxReturn($data);
+        }catch(Exception $e){
+
+            $message=$e->getMessage();
+            $data=array('status'=>'error','message'=>$message);
+            $this->ajaxReturn($data);
+        }
+
+    }
+
+    /*
+     * 修改导入数据
+     * */
+    public function modity()
+    {
+        try{
+
+            if(!IS_POST) throw new Exception('非法请求');
+
+            $import_id              =I('post.import_id',0);
+            $map['username']        =I('post.username');
+            $map['phone']           =I('post.phone');
+            $map['service_number']  =I('post.service_number');
+            $map['source']          =I('post.source');
+            $map['province']        =I('post.province');
+            $map['brand_id']        =I('post.brand');
+            $map['group_id']        =I('post.group');
+            $map['area_id']         =I('post.group');
+
+            $res=M('Province')->where("id=".$map['brand_id'])->find();
+            if(empty($res)){
+                $map['area_id']     =0;
+            }else{
+                $map['area_id']     =$res['area_id'];
+            }
+
+            $res=M('Import')->where("import_id=".$import_id)->save($map);
+            if(empty($res)) throw new Exception('修改失败');
+
+            $data=array('status'=>'success','message'=>'修改成功');
+            $this->ajaxReturn($data);
+        }catch(Exception $e){
+
+            $message=$e->getMessage();
+            $data=array('status'=>'error','message'=>$message);
+            $this->ajaxReturn($data);
+        }
+    }
+
+    /*
+     * 获取导入数据
+     * */
+    public function getdata()
+    {
+
+        $number_id=I('post.number_id');
+        $array=M('Import')->where('number_id='.$number_id)->select();
+        $repeatArray=M()->query("select phone,count(*) as count from bt_resource");
+        if(!empty($array)){
+            foreach($array as $key=>&$val){
+                if($val['group_id'] > 0){
+                    $res=M('RoleDepartment')->where("id={$val['group_id']}")->find();
+                    $val['group_name']=$res['name'];
+                    $val['fenpei']='已匹配';
+                }else{
+                    $val['group_name']='';
+                    $val['fenpei']='未匹配';
+                }
+                if($val['brand_id'] > 0){
+                    $brands=M('Brands')->where("id={$val['brand_id']}")->find();
+                    $val['brands_name']=$brands['name'];
+                }else{
+                    $val['brands_name']='';
+                }
+                if($val['province'] > 0){
+
+                    $province=M('Province')->where("id={$val['province']}")->find();
+
+                    $val['province_name']=$province['name'];
+                }else{
+                    $val['province_name']='';
+                }
+
+                if(!empty($val['phone'])){
+                    $res=M('Resource')->where('phone='.$val['phone'])->find();
+                    $val['repeart']=!empty($res) ? '重复':'';
+                }
+            }
+        }
+
+        $data=array('status'=>'success','data'=>$array,'number_id'=>$number_id);
+        $this->ajaxReturn($data);
+    }
+
 
 }
