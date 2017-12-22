@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/summary.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/summary.html" />
     </list>
     <ignored path="thinkcms.iws" />
@@ -50,21 +49,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5927602">
+            <state vertical-scroll-proportion="-18.714285">
               <caret line="938" column="23" selection-start-line="938" selection-start-column="23" selection-end-line="938" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="summary.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="summary.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-47.285713">
-              <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.77375567">
+              <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#foreach#0;n#div#1;n#block#1;n#!!top" expanded="true" />
               </folding>
@@ -811,21 +810,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/summary.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-47.285713">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#foreach#0;n#div#1;n#block#1;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-18.714285">
+          <caret line="938" column="23" selection-start-line="938" selection-start-column="23" selection-end-line="938" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5927602">
-          <caret line="938" column="23" selection-start-line="938" selection-start-column="23" selection-end-line="938" selection-end-column="23" />
-          <folding />
+        <state vertical-scroll-proportion="0.77375567">
+          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#foreach#0;n#div#1;n#block#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

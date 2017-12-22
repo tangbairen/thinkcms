@@ -35,10 +35,22 @@
                     $total=0;
                     $weektotal=0;
                     $lasttotal=0;
+                    $sem=0;
+                    $seo=0;
+                    $xinmeiti=0;
+                    $jiameng=0;
+                    $mbtotal=0;
+                    $ce=0;
                     foreach($val['data'] as $v):
                     $total += $v['today'];
                     $lasttotal += $v['today'] - $v['yesterday'];
                     $weektotal +=$v['thisweek'] - $v['lastweek'];
+                    $sem +=$v['today'] - $v['seo'] - $v['xinmeiti'] - $v['jiameng'];
+                    $seo +=$v['seo'];
+                    $xinmeiti +=$v['xinmeiti'];
+                    $jiameng +=$v['jiameng'];
+                    $mbtotal +=$v['total'];
+                    $ce +=$v['total']-$v['today'];
                 ?>
 
                 <tr>
@@ -56,9 +68,15 @@
                 <?php endforeach; ?>
                 <tr>
                     <td>合计</td>
+                    <td><?php echo $mbtotal;?></td>
                     <td><?php echo $total;?></td>
+                    <td><?php echo $ce;?></td>
                     <td><?php if($lasttotal > 0){echo '+';}?><?php echo $lasttotal;?></td>
                     <td><?php if($weektotal > 0){echo '+';}?><?php echo $weektotal;?></td>
+                    <td><?php echo $sem;?></td>
+                    <td><?php echo $seo;?></td>
+                    <td><?php echo $xinmeiti;?></td>
+                    <td><?php echo $jiameng;?></td>
                 </tr>
             </table>
         </foreach>
