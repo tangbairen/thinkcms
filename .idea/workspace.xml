@@ -53,8 +53,8 @@
       <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5248869">
-              <caret line="932" column="23" selection-start-line="932" selection-start-column="23" selection-end-line="932" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.5927602">
+              <caret line="938" column="23" selection-start-line="938" selection-start-column="23" selection-end-line="938" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -63,8 +63,8 @@
       <file leaf-file-name="summary.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.142858">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="-47.285713">
+              <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#foreach#0;n#div#1;n#block#1;n#!!top" expanded="true" />
               </folding>
@@ -176,8 +176,8 @@
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/importdata.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/HandlerController.class.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Resource/summary.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Resource/summary.html" />
       </list>
     </option>
   </component>
@@ -813,8 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.142858">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="-47.285713">
+          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#foreach#0;n#div#1;n#block#1;n#!!top" expanded="true" />
           </folding>
@@ -823,8 +823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5248869">
-          <caret line="932" column="23" selection-start-line="932" selection-start-column="23" selection-end-line="932" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.5927602">
+          <caret line="938" column="23" selection-start-line="938" selection-start-column="23" selection-end-line="938" selection-end-column="23" />
           <folding />
         </state>
       </provider>
