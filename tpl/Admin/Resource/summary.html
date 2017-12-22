@@ -21,9 +21,15 @@
                 <tr>
                     <th rowspan="15" style="vertical-align:middle" ><php>echo date('Y年m月d日 H点i分',time());</php></th>
                     <th>{$val['company']}</th>
+                    <th>目标数</th>
                     <th>资源数</th>
-                    <th>资源数环比昨天</th>
-                    <th>资源数同比上周</th>
+                    <th>差额</th>
+                    <th width="10%">资源数环比昨天</th>
+                    <th width="10%">资源数同比上周</th>
+                    <th>SEM</th>
+                    <th>SEO</th>
+                    <th>新媒体</th>
+                    <th>中国加盟网</th>
                 </tr>
                 <?php
                     $total=0;
@@ -37,9 +43,15 @@
 
                     <tr>
                         <td><?php echo $v['name']?></td>
+                        <td><?php echo $v['total']?></td>
                         <td><?php echo $v['today']?></td>
+                        <td><?php echo $v['total']-$v['today'];?></td>
                         <td><?php if($v['today'] - $v['yesterday'] > 0){echo '+';}?><?php echo $v['today'] - $v['yesterday'];?></td>
                         <td><?php if($v['thisweek'] - $v['lastweek'] > 0){echo '+';}?><?php echo $v['thisweek'] - $v['lastweek'];?></td>
+                        <td><?php echo $v['today'] - $v['seo'] - $v['xinmeiti'] - $v['jiameng'];?></td>
+                        <td><?php echo $v['seo']?></td>
+                        <td><?php echo $v['xinmeiti']?></td>
+                        <td><?php echo $v['jiameng']?></td>
                     </tr>
                 <?php endforeach; ?>
                 <tr>

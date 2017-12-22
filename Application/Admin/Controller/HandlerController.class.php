@@ -141,7 +141,7 @@ class HandlerController extends Controller
         $kefu_id    =isset($data[0]) ? $data[0]:'';
         $username   =isset($data[1]) ? $data[1]:'';
         $address    =isset($data[2]) ? $data[2]:'';
-        $group      =$data[3];
+        $group      =isset($data[3]) ? $data[3]:'';
         $phone      =isset($data[4]) ? $data[4]:'';
         $chats      =isset($data[5]) ? $data[5]:'';
         $source     =isset($data[6]) ? $data[6]:'';//渠道

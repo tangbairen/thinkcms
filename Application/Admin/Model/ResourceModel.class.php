@@ -924,13 +924,20 @@ class ResourceModel extends Model
         $thisweekStart=mktime(0, 0 , 0,date("m"),date("d"),date("Y"));
         $thisweekEnd=mktime(date('H'),date('i'),date('s'),date("m"),date("d"),date("Y"));
 
-        $data=$this->field("group_id,count(case  when addtime >= {$startDay} and addtime  <= {$endDay} then id end	) as today,
-count(case  when addtime >= {$lastDay} and addtime  <= {$endlastDay} then id end	) as yesterday,
-count(case  when addtime >= {$lastweekStart} and addtime  <= {$lastweekEnd} then id end	) as lastweek,
-count(case  when addtime >= {$thisweekStart} and addtime  <= {$thisweekEnd} then id end	) as thisweek")
-            ->where('group_id > 0')
-            ->group('group_id')
+        $data=$this->alias('r')
+            ->field("r.group_id,count(case  when r.addtime >= {$startDay} and r.addtime  <= {$endDay} then r.id end	) as today,
+                count(case  when r.addtime >= {$lastDay} and r.addtime  <= {$endlastDay} then r.id end	) as yesterday,
+                count(case  when r.addtime >= {$lastweekStart} and r.addtime  <= {$lastweekEnd} then r.id end	) as lastweek,
+                count(case  when r.addtime >= {$thisweekStart} and r.addtime  <= {$thisweekEnd} then r.id end	) as thisweek,t.total,
+                count(case when r.source='SEO优化' and r.addtime >= {$startDay} and r.addtime <= {$endDay}  then r.id end	) as seo,
+                count(case when r.source='新媒体' and r.addtime >= {$startDay} and r.addtime <= {$endDay}  then r.id end	) as xinmeiti,
+                count(case when r.source='中国加盟网' and r.addtime >= {$startDay} and r.addtime <= {$endDay}  then r.id end	) as jiameng"
+            )
+            ->join("left join bt_total as t on t.group_id=r.group_id")
+            ->where('r.group_id > 0')
+            ->group('r.group_id')
             ->select();
+
         $array=array();
         if(!empty($data)){
             foreach($data as $key=>$val){
