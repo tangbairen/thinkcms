@@ -199,7 +199,7 @@ class HandlerController extends Controller
             $map['keywork']         =$keyword;
             $map['service_number']  =$service_number;
             $map['status']          =1;
-            $map['time']            =time();
+            $map['addtime']            =time();
 
             M('Import')->add($map);
 
