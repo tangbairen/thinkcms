@@ -1,4 +1,9 @@
 <extend name="Public:base"/>
+<block name="css">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="Expires" content="-1">
+</block>
 <block name="title">导入数据</block>
 <block name="content">
     <style>
@@ -89,7 +94,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" onclick="close11();">&times;</span></button>
                     <h2 class="modal-title" id="exampleModalLabel">修改信息（请按顺序修改）</h2>
                 </div>
                 <div class="modal-body">
@@ -129,7 +134,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="control-label form-title">省&nbsp;&nbsp;份:</label>
-                            <select style="width:170px;" name="province" id="province" onchange="getprovince();">
+                            <select style="width:170px;" name="province" id="province" onchange="getprovince();" autocomplete="off">
                                 <option value="">请选择省份</option>
                                 <foreach name="province" item="vo" >
                                     <option value="{$vo['id']}">{$vo['name']}</option>
@@ -164,7 +169,7 @@
                             <select style="width:170px;" name="group" id="group"  onclick="getGroup()">
                                 <option value="">请选择部门</option>
                             </select>
-                            <span>（不选，按规则自动分配）</span>
+                            <span>（必填）</span>
                         </div>
                         <input type="hidden" value="" name="import_id" id="import_id">
                         <div class="modal-footer">
@@ -183,6 +188,29 @@
     <script>
 
         $('#submit').submit(function(){
+            var source=$('#source').val();
+            var province=$('#province').val();
+            var brand=$('#brand').val();
+            var group=$('#group').val();
+            if(source == ''){
+                layer.msg('请选择来源渠道',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+
+            if(province == ''){
+                layer.msg('请选择省份',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+            if(brand == ''){
+                layer.msg('请选择品牌',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+
+            if(group == '' || group=='请选择部门'){
+                layer.msg('请选择部门',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+
             var dataArray=$(this).serializeArray();
             $.ajax({
                 'url':"{:U('handler/modity')}",
@@ -194,6 +222,7 @@
                         $('#exampleModal').modal('hide');
                         layer.msg(data['message'],{icon: 1,time:3000,shade: [0.8, '#000']},function(){
                             var number_id=$('#number_id').val();
+                            close11();
                             getdata(number_id);
                         });
                     }else{
@@ -477,7 +506,7 @@
                                         "<td "+fenpei+">"+v['fenpei']+"</td>" +
                                         "<td "+repeart+">"+v['repeart']+"</td>" +
                                         "<td>"+
-                                        "<button onclick='edit(this)' id='"+v['import_id']+"' username='"+v['username']+"' phone='"+v['phone']+"' " +
+                                        "<button onclick='edit(this,"+v['import_id']+")' id='"+v['import_id']+"' username='"+v['username']+"' phone='"+v['phone']+"' " +
                                         "source='"+v['source']+"' province='"+v['province']+"' brand_id='"+v['brand_id']+"' brands_name='"+v['brands_name']+"' group_name='"+v['group_name']+"' group_id='"+v['group_id']+"' service_number='"+v['service_number']+"' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >修改</button>"
                                         +"<button type='button' class='btn btn-danger' onclick='del(this,"+v['import_id']+");'>删除</button>"
                                         +"</td>" +
@@ -504,6 +533,7 @@
 
             });
         }
+
         function close11(){
             $('#import_id').val('');
             $('#username').val('');
@@ -525,13 +555,15 @@
             });
             $("#brand_name").val('');
         }
-        function edit(obj){
+
+        function edit(obj,import_id){
             var id=$(obj).attr('id');
             var username=$(obj).attr('username');
             var phone=$(obj).attr('phone');
             var source=$(obj).attr('source');
             var service_number=$(obj).attr('service_number');
             var province=$(obj).attr('province');
+
             var brand_id=$(obj).attr('brand_id');
             var brands_name=$(obj).attr('brands_name');
             var group_name=$(obj).attr('group_name');
@@ -541,21 +573,37 @@
             $('#phone').val(phone);
             $('#service_number').val(service_number);
 
-            $('#source option').each(function(k,v) {
+
+            /*$('#source option').each(function(k,v) {
                 var option = $(this).html();
 
                 if (source == option) {
-                    var num = $(this).val();
                     $("#source option:contains('" + source + "')").attr('selected', true).siblings().attr('selected', false);
 
                 }
             });
+            var  source_index= $("#source").find("option:selected").val();
+            if(source_index != source){
+                $("#source option").each(function (i) {
+                    $(this).attr("selected", false);
+                });
+            }
+
+
             $('#province option').each(function(k,v) {
                 var option_p = $(this).val();
+
                 if (province == option_p) {
+
                     $(this).attr('selected', true).siblings().attr('selected', false);
                 }
             });
+            var  province_index= $("#province").find("option:selected").val();
+            if(province_index != province){
+                $("#province option").each(function (i) {
+                    $(this).attr("selected", false);
+                });
+            }
 
             if(brand_id > 0){
                 $('#brand option').each(function(k,v) {
@@ -566,9 +614,9 @@
                 });
 
                 var  index= $("#brand").find("option:selected").val();
+                $('#brand_name').val(brands_name);
                 if(index == ''){
                     $('#brand').append("<option selected='selected' value="+brand_id+">"+brands_name+"</option>");
-                    $('#brand_name').val(brands_name);
                 }
             }
 
@@ -584,7 +632,7 @@
                 if(group_index == ''){
                     $('#group').append("<option selected='selected' value="+group_id+">"+group_name+"</option>");
                 }
-            }
+            }*/
 
         }
 
@@ -608,7 +656,7 @@
 
         function group(province,brand){
             $.ajax({
-                'url':"{:U('Admin/Resource/group')}",
+                'url':"{:U('Admin/handler/group')}",
                 'type':'get',
                 'data':{'province':province,'brand_id':brand},
                 'dataType':'json',
