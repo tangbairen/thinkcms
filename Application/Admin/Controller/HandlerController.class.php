@@ -399,7 +399,7 @@ class HandlerController extends Controller
      * */
     public function getdatainfo()
     {
-        echo 111;exit;
+
         $number_id=I('post.number_id');
         $array=M('Import')->where('number_id='.$number_id)->select();
 //        $repeatArray=M()->query("select phone,count(*) as count from bt_resource");
