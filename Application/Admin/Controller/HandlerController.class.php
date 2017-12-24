@@ -313,10 +313,11 @@ class HandlerController extends Controller
                 }else{
                     $allocation=2;
                 }
-                $sql .="(null,'{$val['username']}','{$val['custormer_info']}','{$val['phone']}',{$val['brand_id']},{$val['area_id']},{$val['group_id']},'{$val['source']}',{$val['province']},'{$val['chats']}','{$val['keyword']}','{$val['service_number']}',{$time},{$allocation} ),";
+                $sql .="(null,'{$val['username']}','{$val['custormer_info']}','{$val['phone']}',{$val['brand_id']},{$val['area_id']},{$val['group_id']},'{$val['source']}',{$val['province']},'{$val['chats']}','{$val['keywork']}','{$val['service_number']}',{$time},{$allocation} ),";
             }
             $sql=rtrim($sql,',');
             $sql=rtrim($sql,'"');
+
             $res=M()->execute($sql);
             if(empty($res)) throw new Exception('添加失败');
             M('Import')->where('number_id='.$number_id)->save(array('status'=>1));
