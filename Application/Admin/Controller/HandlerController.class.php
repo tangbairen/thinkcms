@@ -397,7 +397,7 @@ class HandlerController extends Controller
     /*
      * 获取导入数据
      * */
-    public function getdata()
+    public function getdatainfo()
     {
 
         $number_id=I('post.number_id');
