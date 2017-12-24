@@ -541,8 +541,5 @@ class HandlerController extends Controller
         $this->ajaxReturn($group);
     }
 
-    public function demo()
-    {
-        echo 12121212;
-    }
+
 }

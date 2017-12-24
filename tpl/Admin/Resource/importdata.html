@@ -263,16 +263,7 @@
             });
 
         }
-        function demo(){
-            $.ajax({
-                type:"post",
-                url:"{:U('handler/demo')}",
-//                dataType:'json',
-                success:function(data){
-
-                }
-            });
-        }
+        
         $('#submit').submit(function(){
             var source=$('#source').val();
             var province=$('#province').val();
@@ -310,7 +301,6 @@
                             var number_id=$('#number_id').val();
                             close11();
                             getdata(number_id);
-                            demo();
                         });
                     }else{
                         layer.msg(data['message'],{icon: 2,time:3000,shade: [0.8, '#000']});
