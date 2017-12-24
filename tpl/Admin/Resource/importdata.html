@@ -187,52 +187,6 @@
 <block name="js">
     <script>
 
-        $('#submit').submit(function(){
-            var source=$('#source').val();
-            var province=$('#province').val();
-            var brand=$('#brand').val();
-            var group=$('#group').val();
-            if(source == ''){
-                layer.msg('请选择来源渠道',{icon: 5,time:2000,shade: [0.8, '#000']});
-                return false;
-            }
-
-            if(province == ''){
-                layer.msg('请选择省份',{icon: 5,time:2000,shade: [0.8, '#000']});
-                return false;
-            }
-            if(brand == ''){
-                layer.msg('请选择品牌',{icon: 5,time:2000,shade: [0.8, '#000']});
-                return false;
-            }
-
-            if(group == '' || group=='请选择部门'){
-                layer.msg('请选择部门',{icon: 5,time:2000,shade: [0.8, '#000']});
-                return false;
-            }
-
-            var dataArray=$(this).serializeArray();
-            $.ajax({
-                'url':"{:U('handler/modity')}",
-                'type':'post',
-                'data':dataArray,
-                'dataType':'json',
-                success:function(data){
-                    if(data['status'] == 'success'){
-                        $('#exampleModal').modal('hide');
-                        layer.msg(data['message'],{icon: 1,time:3000,shade: [0.8, '#000']},function(){
-                            var number_id=$('#number_id').val();
-                            close11();
-                            getdata(number_id);
-                        });
-                    }else{
-                        layer.msg(data['message'],{icon: 2,time:3000,shade: [0.8, '#000']});
-                    }
-                }
-            });
-
-        });
-
         function getdata(number_id){
             var index = layer.load(0, {shade: [0.7,'#000']}); //0代表加载的风格，支持0-2
             $.ajax({
@@ -309,6 +263,62 @@
             });
 
         }
+        function demo(){
+            $.ajax({
+                type:"post",
+                url:"{:U('handler/demo')}",
+//                dataType:'json',
+                success:function(data){
+
+                }
+            });
+        }
+        $('#submit').submit(function(){
+            var source=$('#source').val();
+            var province=$('#province').val();
+            var brand=$('#brand').val();
+            var group=$('#group').val();
+            if(source == ''){
+                layer.msg('请选择来源渠道',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+
+            if(province == ''){
+                layer.msg('请选择省份',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+            if(brand == ''){
+                layer.msg('请选择品牌',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+
+            if(group == '' || group=='请选择部门'){
+                layer.msg('请选择部门',{icon: 5,time:2000,shade: [0.8, '#000']});
+                return false;
+            }
+
+            var dataArray=$(this).serializeArray();
+            $.ajax({
+                'url':"{:U('handler/modity')}",
+                'type':'post',
+                'data':dataArray,
+                'dataType':'json',
+                success:function(data){
+                    if(data['status'] == 'success'){
+                        $('#exampleModal').modal('hide');
+                        layer.msg(data['message'],{icon: 1,time:3000,shade: [0.8, '#000']},function(){
+                            var number_id=$('#number_id').val();
+                            close11();
+                            getdata(number_id);
+                            demo();
+                        });
+                    }else{
+                        layer.msg(data['message'],{icon: 2,time:3000,shade: [0.8, '#000']});
+                    }
+                }
+            });
+
+        });
 
         function getGroup(){
             var province=$('#province').val();
