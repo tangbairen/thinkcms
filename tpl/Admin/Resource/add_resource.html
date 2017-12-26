@@ -469,6 +469,7 @@
             });
 
         }
+        //询问框
 
         function add_data(){
             var source=$("#source").val();
@@ -501,7 +502,9 @@
                 'dataType':'json',
                 success:function(data){
                     if(data['status'] == 'success'){
-                        layer.confirm('该资源已经存在是否添加？', {icon: 5,
+                        layer.confirm('该资源已经存在是否添加？', {
+                            content:data['data'],
+                            icon: 5,
                             btn: ['添加','取消'] //按钮
                         }, function(index){
                             $('#adddata').submit();

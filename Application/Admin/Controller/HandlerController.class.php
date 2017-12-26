@@ -454,9 +454,15 @@ class HandlerController extends Controller
             $phone=empty(I('get.phone')) ? '' : trim(I('get.phone'));
             $chats=empty(I('get.chats')) ? '' : I('get.chats');
 
-            $res=M('Resource')->where("brand_id={$brand_id} and phone='{$phone}'")->find();
+            $res=M('Resource')->where("brand_id={$brand_id} and phone='{$phone}'")->order('addtime desc')->select();
             if(empty($res)) throw new Exception('允许添加');
-            $data=array('status'=>'success','message'=>'信息已经存在');
+            $li='该资源信息重复，如下：<br>';
+            foreach($res as $key=>$val){
+                $group=M('RoleDepartment')->where("id=".$val['group_id'])->find();
+                $brand=M('Brands')->where("id=".$val['brand_id'])->find();
+                $li .=$group['name'].' : '.$brand['name'].'  '.date('Y-m-d H:i',$val['addtime']).'<br>';
+            }
+            $data=array('status'=>'success','message'=>'信息已经存在','data'=>$li);
             $this->ajaxReturn($data);
         }catch(Exception $e){
 
