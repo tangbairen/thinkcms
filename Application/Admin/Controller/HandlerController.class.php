@@ -178,7 +178,7 @@ class HandlerController extends Controller
             }
 
             if(empty($group_id)){
-                $group_id=$model->allocationGroup($brand_id,$area_id);//部门id
+                $group_id=$this->allocationGroup($brand_id,$area_id,$number_id);//部门id
             }
 
             $array=array('百度移动','百度PC','百度信息流','360移动','360PC','搜狗移动','搜狗PC','神马移动','SEO优化','新媒体','400','留言板','离线宝','中国加盟网');
@@ -208,6 +208,125 @@ class HandlerController extends Controller
         return true;
     }
 
+    /*
+     * 分配组
+     * @param $brand_id [品牌id]
+     * @param $area_id [地区id]
+     * @param $number_id 本次操作编号
+     * @return $group_id [用户组id]
+     * */
+    public function allocationGroup($brand_id,$area_id,$number_id)
+    {
+        if(empty($brand_id) || empty($area_id)){
+
+            return 0;
+        }
+
+        //组
+        //$group=M('AuthGroup')->field('id,title,area_id')->select();
+
+        //部门
+        $group=M('RoleDepartment')->select();
+
+        $group_id='';
+        foreach($group as $key=>$val){//清除没有分配的地区的组
+            $arr=explode(',',$val['area_id']);
+            if(!in_array($area_id,$arr)){
+                unset($group[$key]);
+            }
+
+        }
+
+        if(empty($group)){
+
+            return 0;
+        }
+
+        //清除没有品牌的组
+        foreach($group as $k=>$v){
+            $res=M('BrandsAuth')->where("brands_id={$brand_id} and gid={$v['id']}")->find();
+            if(empty($res)){
+                unset($group[$k]);
+            }else{
+                $group_id .=$v['id'].',';
+            }
+        }
+        //p($group);
+        if(empty($group_id)){
+            return 0;
+        }
+
+        $group_id=trim($group_id,',');          //所有部门id
+        $map['group_id']  = array('in',$group_id);
+        $total_count=M('Total')->where($map)->select();//总数
+        // 今日开始时间戳
+        $startDay=mktime(0,0,0,date('m'),date('d'),date('Y'));
+        // 减1 是少了一秒 ，不然就是第二天了  结束时间戳
+        $endDay=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+        foreach($total_count as $key=>$val){
+            $group_total=M('Resource')
+                ->field('count(*) as num')
+                ->where("group_id={$val['group_id']} and addtime  between {$startDay} and {$endDay}")
+                ->select();
+
+            if($group_total[0]['num'] >= $val['total']){
+
+                unset($total_count[$key]);
+            }else{
+                $total_count[$key]['num']=$group_total[0]['num'];
+            }
+        }
+
+        //总数都满了
+        if(empty($total_count)){
+            return 0;
+        }
+
+        //品牌超出 删除
+        $arr=array();//所属组 今日的资源数量
+        foreach($total_count as $key=>$val){
+            //今天这个品牌的数量
+            $count=M('Resource')->where("group_id={$val['group_id']} and brand_id={$brand_id} and addtime  between {$startDay} and {$endDay}")->count();
+            $importCount=M('Import')->where("group_id={$val['group_id']} and number_id='{$number_id}'")->count();
+            $arr[$val['group_id']]=$count+$val['num']+$importCount;//品牌数+今日资源总数
+        }
+
+
+        $total=0;
+        $brand=M('BrandsAuth')->where("brands_id={$brand_id}")->select();
+        //清除个数已满的
+        foreach($brand as $key=>$val){
+            //设置限定个数
+            if($val['count'] > 0){
+                if($arr[$val['gid']] >= $val['count']){
+                    unset($arr[$val['gid']]);
+                }
+            }
+
+            $total +=$val['count']+$arr[$val['gid']];//这个品牌总分配数+已分配的
+        }
+
+        if(empty($arr)){
+
+            return 0;
+        }
+
+        $gid=$this->getGid($arr,$total);
+
+        return $gid;
+
+    }
+
+    public function getGid($array,$total)
+    {
+        $map=[];
+        foreach($array as $key=>$val){
+            $map[$key]=round($val / $total,2);
+        }
+        $gid=array_search(min($map),$map);
+
+        return $gid;
+    }
 
     /*
      * 获取品牌id
