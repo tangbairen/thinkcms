@@ -189,7 +189,7 @@ class HandlerController extends Controller
             $map['number_id']       =$number_id;
             $map['custormer_info']  =$kefu_id;
             $map['username']        =$username;
-            $map['phone']           =$phone;
+            $map['phone']           =substr($phone,0,13);
             $map['chats']           =$chats;
             $map['brand_id']        =$brand_id;
             $map['area_id']         =$area_id;
