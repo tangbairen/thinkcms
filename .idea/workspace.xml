@@ -6,9 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1d9fb9-e3c9-4c92-af21-d45e348f4823" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/002.xlsx" afterPath="$PROJECT_DIR$/002.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/HandlerController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/HandlerController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/importdata.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/importdata.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" afterPath="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" />
     </list>
     <ignored path="thinkcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,16 +30,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HandlerController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HandlerController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/HandlerController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.271493">
-              <caret line="203" column="35" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="35" />
+            <state vertical-scroll-proportion="-6.571429">
+              <caret line="562" column="6" selection-start-line="562" selection-start-column="6" selection-end-line="562" selection-end-column="6" />
               <folding>
                 <element signature="e#35#56#0#PHP" expanded="true" />
-                <marker date="1514271262147" expanded="true" signature="1035:1082" placeholder="select phone... " />
-                <marker date="1514271262147" expanded="true" signature="12379:12561" placeholder="insert into bt_resource... " />
-                <marker date="1514271262147" expanded="true" signature="15895:15942" placeholder="select phone... " />
+                <marker date="1514701036599" expanded="true" signature="1035:1082" placeholder="select phone... " />
+                <marker date="1514701036599" expanded="true" signature="12379:12561" placeholder="insert into bt_resource... " />
+                <marker date="1514701036599" expanded="true" signature="15895:15942" placeholder="select phone... " />
               </folding>
             </state>
           </provider>
@@ -48,7 +48,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
@@ -58,7 +58,7 @@
       <file leaf-file-name="ResourceModel.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.857142">
+            <state vertical-scroll-proportion="0.0">
               <caret line="291" column="4" selection-start-line="291" selection-start-column="4" selection-end-line="407" selection-end-column="5" />
               <folding />
             </state>
@@ -68,7 +68,7 @@
       <file leaf-file-name="modify.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.71428573">
+            <state vertical-scroll-proportion="0.0">
               <caret line="65" column="117" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="117" />
               <folding>
                 <marker date="1513732804819" expanded="true" signature="14009:14023" placeholder="..." />
@@ -82,7 +82,7 @@
       <file leaf-file-name="importdata.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/importdata.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.0">
+            <state vertical-scroll-proportion="-0.71428573">
               <caret line="329" column="13" selection-start-line="329" selection-start-column="13" selection-end-line="329" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#block#2;n#!!top" expanded="true" />
@@ -98,21 +98,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_resource.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_resource.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.142857">
-              <caret line="505" column="49" selection-start-line="505" selection-start-column="49" selection-end-line="505" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.47511312">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#span#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-                <marker date="1514257976327" expanded="true" signature="16785:16799" placeholder="..." />
-                <marker date="1514257976327" expanded="true" signature="17732:17746" placeholder="..." />
-                <marker date="1514257976327" expanded="true" signature="18244:18292" placeholder="..." />
-                <marker date="1514257976327" expanded="true" signature="20338:20376" placeholder="..." />
+                <marker date="1514701231037" expanded="true" signature="16830:16844" placeholder="..." />
+                <marker date="1514701231037" expanded="true" signature="17777:17791" placeholder="..." />
+                <marker date="1514701231037" expanded="true" signature="18289:18337" placeholder="..." />
+                <marker date="1514701231037" expanded="true" signature="20383:20421" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -189,9 +189,9 @@
         <option value="$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/summary.html" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Resource/importdata.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/HandlerController.class.php" />
+        <option value="$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html" />
       </list>
     </option>
   </component>
@@ -242,6 +242,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -370,7 +371,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -810,27 +810,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.142857">
-          <caret line="505" column="49" selection-start-line="505" selection-start-column="49" selection-end-line="505" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#span#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
-            <marker date="1514257976327" expanded="true" signature="16785:16799" placeholder="..." />
-            <marker date="1514257976327" expanded="true" signature="17732:17746" placeholder="..." />
-            <marker date="1514257976327" expanded="true" signature="18244:18292" placeholder="..." />
-            <marker date="1514257976327" expanded="true" signature="20338:20376" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
@@ -838,7 +820,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/modify.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.71428573">
+        <state vertical-scroll-proportion="0.0">
           <caret line="65" column="117" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="117" />
           <folding>
             <marker date="1513732804819" expanded="true" signature="14009:14023" placeholder="..." />
@@ -850,7 +832,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ResourceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.857142">
+        <state vertical-scroll-proportion="0.0">
           <caret line="291" column="4" selection-start-line="291" selection-start-column="4" selection-end-line="407" selection-end-column="5" />
           <folding />
         </state>
@@ -858,7 +840,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/importdata.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.0">
+        <state vertical-scroll-proportion="-0.71428573">
           <caret line="329" column="13" selection-start-line="329" selection-start-column="13" selection-end-line="329" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#block#2;n#!!top" expanded="true" />
@@ -875,13 +857,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/HandlerController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.271493">
-          <caret line="203" column="35" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="35" />
+        <state vertical-scroll-proportion="-6.571429">
+          <caret line="562" column="6" selection-start-line="562" selection-start-column="6" selection-end-line="562" selection-end-column="6" />
           <folding>
             <element signature="e#35#56#0#PHP" expanded="true" />
-            <marker date="1514271262147" expanded="true" signature="1035:1082" placeholder="select phone... " />
-            <marker date="1514271262147" expanded="true" signature="12379:12561" placeholder="insert into bt_resource... " />
-            <marker date="1514271262147" expanded="true" signature="15895:15942" placeholder="select phone... " />
+            <marker date="1514701036599" expanded="true" signature="1035:1082" placeholder="select phone... " />
+            <marker date="1514701036599" expanded="true" signature="12379:12561" placeholder="insert into bt_resource... " />
+            <marker date="1514701036599" expanded="true" signature="15895:15942" placeholder="select phone... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Admin/Resource/add_resource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47511312">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#span#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#td#0;n#tr#8;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#block#2;n#!!top" expanded="true" />
+            <marker date="1514701231037" expanded="true" signature="16830:16844" placeholder="..." />
+            <marker date="1514701231037" expanded="true" signature="17777:17791" placeholder="..." />
+            <marker date="1514701231037" expanded="true" signature="18289:18337" placeholder="..." />
+            <marker date="1514701231037" expanded="true" signature="20383:20421" placeholder="..." />
           </folding>
         </state>
       </provider>

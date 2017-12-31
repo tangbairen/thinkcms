@@ -579,7 +579,7 @@ class HandlerController extends Controller
             foreach($res as $key=>$val){
                 $group=M('RoleDepartment')->where("id=".$val['group_id'])->find();
                 $brand=M('Brands')->where("id=".$val['brand_id'])->find();
-                $li .=$group['name'].' : '.$brand['name'].'  '.date('Y-m-d H:i',$val['addtime']).'<br>';
+                $li .=$group['name'].' : '.$brand['name'].'  '.date('Y-m-d H:i',$val['addtime']).' '.$val['source'].'<br>';
             }
             $data=array('status'=>'success','message'=>'信息已经存在','data'=>$li);
             $this->ajaxReturn($data);
