@@ -572,8 +572,12 @@ class HandlerController extends Controller
             $brand_id=empty(I('get.brand_id')) ? 0 : I('get.brand_id');
             $phone=empty(I('get.phone')) ? '' : trim(I('get.phone'));
             $chats=empty(I('get.chats')) ? '' : I('get.chats');
+            if(!empty($phone)){
+                $res=M('Resource')->where("brand_id={$brand_id} and phone='{$phone}'")->order('addtime desc')->select();
+            }else{
+                $res=M('Resource')->where("brand_id={$brand_id} and chats='{$chats}'")->order('addtime desc')->select();
+            }
 
-            $res=M('Resource')->where("brand_id={$brand_id} and phone='{$phone}'")->order('addtime desc')->select();
             if(empty($res)) throw new Exception('允许添加');
             $li='该资源信息重复，如下：<br>';
             foreach($res as $key=>$val){
