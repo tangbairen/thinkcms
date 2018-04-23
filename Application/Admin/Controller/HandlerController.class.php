@@ -485,15 +485,20 @@ class HandlerController extends Controller
             if(!IS_POST) throw new Exception('非法请求');
             $import_id=I('post.import_id');
             $username=I('post.username');
-            $phone=(I('post.phone');
+            $phone=I('post.phone');
+            $service_number=I('post.service_number');
+            $source=I('post.source');
+            $province=I('post.province');
+            $brand_id=I('post.brand');
+            $group_id=I('post.group');
             $import_id              =empty($import_id) ? 0: $import_id;
             $map['username']        =empty($username) ? '': $username;
             $map['phone']           =empty($phone) ? '':$phone;
-            $map['service_number']  =empty(I('post.service_number')) ? '':I('post.service_number');
-            $map['source']          =empty(I('post.source')) ? '':I('post.source');
-            $map['province']        =empty(I('post.province')) ? 0:I('post.province');
-            $map['brand_id']        =empty(I('post.brand')) ? 0:I('post.brand');
-            $map['group_id']        =empty(I('post.group')) ? 0:I('post.group');
+            $map['service_number']  =empty($service_number) ? '':$service_number;
+            $map['source']          =empty($source) ? '':$source;
+            $map['province']        =empty($province) ? 0:$province;
+            $map['brand_id']        =empty($brand_id) ? 0:$brand_id;
+            $map['group_id']        =empty($group_id) ? 0:$group_id;
 
             $res=M('Province')->where("id=".$map['province'])->find();
             if(empty($res)){
@@ -569,11 +574,13 @@ class HandlerController extends Controller
     public function getrepeat()
     {
         try{
-
+            $brand_id=I('get.brand_id');
+            $phone=trim(I('get.phone'));
+            $chats=I('get.chats');
             if(!IS_AJAX) throw new Exception('非法请求');
-            $brand_id=empty(I('get.brand_id')) ? 0 : I('get.brand_id');
-            $phone=empty(I('get.phone')) ? '' : trim(I('get.phone'));
-            $chats=empty(I('get.chats')) ? '' : I('get.chats');
+            $brand_id=empty($brand_id) ? 0 : $brand_id;
+            $phone=empty($phone) ? '' : $phone;
+            $chats=empty($chats) ? '' : $chats;
             if(!empty($phone)){
                 $res=M('Resource')->where("brand_id={$brand_id} and phone='{$phone}'")->order('addtime desc')->select();
             }else{
@@ -603,9 +610,9 @@ class HandlerController extends Controller
     public function getimport()
     {
         try{
-
+            $import_id=I('post.import_id');
             if(!IS_AJAX) throw new Exception('非法请求');
-            $import_id=empty(I('post.import_id')) ? 0:I('post.import_id');
+            $import_id=empty($import_id) ? 0:$import_id;
 
             $dataArray=M('Import')->where("import_id=".$import_id)->find();
             if(empty($dataArray)) throw new Exception('数据不存在');
