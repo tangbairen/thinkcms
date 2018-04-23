@@ -81,16 +81,16 @@ class MessageController extends AdminBaseController
                 $start_time=strtotime($start_time);
                 $where['unix_timestamp(create_time)']=array('EGT',$start_time);
             }else if(!empty($end_time)){
-                return [];
+                return array();
             }
         }
 
-        $field=['username','tel','area','xm','qq','content','url','ip','create_time'];
+        $field=array('username','tel','area','xm','qq','content','url','ip','create_time');
 
         $model=new MessageModel();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
+        $header=array('姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司');
 
         export($header,$data);
 
@@ -167,16 +167,16 @@ class MessageController extends AdminBaseController
                 $start_time=strtotime($start_time);
                 $where['unix_timestamp(create_time)']=array('EGT',$start_time);
             }else if(!empty($end_time)){
-                return [];
+                return array();
             }
         }
 
-        $field=['username','tel','area','xm','qq','content','url','ip','create_time'];
+        $field=array('username','tel','area','xm','qq','content','url','ip','create_time');
 
         $model=new Messagemxn2Model();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
+        $header=array('姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司');
 
         export($header,$data);
 
@@ -252,16 +252,16 @@ class MessageController extends AdminBaseController
                 $start_time=strtotime($start_time);
                 $where['unix_timestamp(create_time)']=array('EGT',$start_time);
             }else if(!empty($end_time)){
-                return [];
+                return array();
             }
         }
 
-        $field=['username','tel','area','xm','qq','content','url','ip','create_time'];
+        $field=array('username','tel','area','xm','qq','content','url','ip','create_time');
 
         $model=new MessageseoModel();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
+        $header=array('姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司');
 
         export($header,$data);
 
@@ -339,17 +339,17 @@ class MessageController extends AdminBaseController
                 $start_time=strtotime($start_time);
                 $where['unix_timestamp(create_time)']=array('EGT',$start_time);
             }else if(!empty($end_time)){
-                return [];
+                return array();
             }
         }
 
-        $field=['username','tel','area','xm','qq','content','url','ip','create_time'];
+        $field=array('username','tel','area','xm','qq','content','url','ip','create_time');
 
         //$model=new MessageseoModel();
         $model=new \Admin\Model\Luchi\Messagemxn2Model();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
+        $header=array('姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司');
 
         export($header,$data);
 
@@ -428,17 +428,17 @@ class MessageController extends AdminBaseController
                 $start_time=strtotime($start_time);
                 $where['unix_timestamp(create_time)']=array('EGT',$start_time);
             }else if(!empty($end_time)){
-                return [];
+                return array();
             }
         }
 
-        $field=['username','tel','area','xm','qq','content','url','ip','create_time'];
+        $field=array('username','tel','area','xm','qq','content','url','ip','create_time');
 
         //$model=new MessageseoModel();
         $model=new \Admin\Model\Oben\Messagemxn2Model();
         $data=$model->boteExport($field,$where);
 
-        $header=['姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司'];
+        $header=array('姓名','电话','地址','项目','QQ','留言内容','来源url','来源ip','提交时间','公司');
 
         export($header,$data);
 

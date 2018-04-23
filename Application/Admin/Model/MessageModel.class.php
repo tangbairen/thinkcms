@@ -36,7 +36,7 @@ class MessageModel extends Model
                 $start_time=strtotime($start_time);
                 $where['unix_timestamp(create_time)']=array('EGT',$start_time);
             }else if(!empty($end_time)){
-                return [];
+                return array();
             }
         }
 

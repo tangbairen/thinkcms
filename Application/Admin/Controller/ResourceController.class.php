@@ -90,13 +90,13 @@ class ResourceController extends AdminBaseController
             $where .=" and source like '{$referer}%'";
         }
 
-        $field=['addtime','customer_info','province','address','username',
-            'phone','chats','source','brand_id','group_id','keyword','service_number','types','allocation','status','company','update_time','assistant','confirm_address','remark'];
+        $field=array('addtime','customer_info','province','address','username',
+            'phone','chats','source','brand_id','group_id','keyword','service_number','types','allocation','status','company','update_time','assistant','confirm_address','remark');
 
         $data=D('Resource')->exportData($field,$where);
 
 
-        $header=['时间','客服ID','省份','	地址','客户姓名','电话号码','QQ/微信','来源渠道','品牌','所属组','关键字','53账号','添加类型','是否分配','是否可跟','公司名称','回访时间','回访人','确认地址','备注信息'];
+        $header=array('时间','客服ID','省份','	地址','客户姓名','电话号码','QQ/微信','来源渠道','品牌','所属组','关键字','53账号','添加类型','是否分配','是否可跟','公司名称','回访时间','回访人','确认地址','备注信息');
         export($header,$data);
     }
 
@@ -209,13 +209,13 @@ class ResourceController extends AdminBaseController
             $where .=" and source like '{$referer}%'";
         }
 
-        $field=['addtime','customer_info','province','address','username',
-            'phone','chats','source','brand_id','group_id','keyword','service_number','types','allocation'];
+        $field=array('addtime','customer_info','province','address','username',
+            'phone','chats','source','brand_id','group_id','keyword','service_number','types','allocation');
 
         $data=D('Resource')->exportData($field,$where);
 
 
-        $header=['时间','客服ID','省份','	地址','客户姓名','电话号码','QQ/微信','来源渠道','品牌','所属组','关键字','53账号','添加类型','是否分配'];
+        $header=array('时间','客服ID','省份','	地址','客户姓名','电话号码','QQ/微信','来源渠道','品牌','所属组','关键字','53账号','添加类型','是否分配');
         export($header,$data);
     }
 
@@ -287,9 +287,9 @@ class ResourceController extends AdminBaseController
             $where .=" and status={$status}";
         }
 
-        $field=['addtime','customer_info','province','address','username',
-            'phone','chats','source','brand_id','group_id','keyword','types','allocation','status','company','update_time','assistant','confirm_address','remark'];
-        $header=['时间','客服ID','省份','	地址','客户姓名','电话号码','QQ/微信','来源渠道','品牌','所属组','关键字','添加类型','是否分配','是否可跟','公司名称','回访时间','回访人','确认地址','备注信息'];
+        $field=array('addtime','customer_info','province','address','username',
+            'phone','chats','source','brand_id','group_id','keyword','types','allocation','status','company','update_time','assistant','confirm_address','remark');
+        $header=array('时间','客服ID','省份','	地址','客户姓名','电话号码','QQ/微信','来源渠道','品牌','所属组','关键字','添加类型','是否分配','是否可跟','公司名称','回访时间','回访人','确认地址','备注信息');
 
 
         $data=D('Resource')->exportData($field,$where);

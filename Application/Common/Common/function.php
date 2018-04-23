@@ -150,25 +150,22 @@ function export($head, $body, $name = null, $version = '2007')
         }
 
         // 版本差异信息
-        $version_opt = [
-            '2007' => [
+        $version_opt = array(
+            '2007' => array(
                 'mime'       => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                 'ext'        => '.xlsx',
                 'write_type' => 'Excel2007',
-            ],
-            '2003' => ['mime'       => 'application/vnd.ms-excel',
+            ),
+            '2003' => array('mime'       => 'application/vnd.ms-excel',
                 'ext'        => '.xls',
                 'write_type' => 'Excel5',
-            ],
-            'pdf'  => ['mime'       => 'application/pdf',
+            ),
+            'pdf'  => array('mime'       => 'application/pdf',
                 'ext'        => '.pdf',
                 'write_type' => 'PDF',
-            ],
-            'ods'  => ['mime'       => 'application/vnd.oasis.opendocument.spreadsheet',
-                'ext'        => '.ods',
-                'write_type' => 'OpenDocument',
-            ],
-        ];
+            ),
+            
+        );
 
         header('Content-Type: ' . $version_opt[$version]['mime']);
         header('Content-Disposition: attachment;filename="' . $name . $version_opt[$version]['ext'] . '"');

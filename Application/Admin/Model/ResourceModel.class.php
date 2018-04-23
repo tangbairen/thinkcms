@@ -398,7 +398,7 @@ class ResourceModel extends Model
 
     public function getGid($array,$total)
     {
-        $map=[];
+        $map=array();
         foreach($array as $key=>$val){
             $map[$key]=round($val / $total,2);
         }
@@ -469,9 +469,9 @@ class ResourceModel extends Model
             ->where($where)
             ->order($order)
             ->select();
-        $type=[1=>'平台手动',2=>'53客服平台'];
-        $fenpei=[1=>'未分配',2=>'已分配'];
-        $status=[1=>'可跟',2=>'不可跟'];
+        $type=array(1=>'平台手动',2=>'53客服平台');
+        $fenpei=array(1=>'未分配',2=>'已分配');
+        $status= array(1=>'可跟',2=>'不可跟');
         if(!empty($data)){
             foreach($data as $key=>&$val){
                 $val['addtime']=date('Y-m-d H:i:s',$val['addtime']);
@@ -777,7 +777,7 @@ class ResourceModel extends Model
 
         $source='';
         $brand_id='';
-        $arr=['1'=>'PC',2=>'移动',3=>'微信'];
+        $arr=array('1'=>'PC',2=>'移动',3=>'微信');
         $referer=M('Referer')->select();
         if(!empty($referer)){
             foreach($referer as $key=>$val){

@@ -319,7 +319,7 @@ class HandlerController extends Controller
 
     public function getGid($array,$total)
     {
-        $map=[];
+        $map=array();
         foreach($array as $key=>$val){
             $map[$key]=round($val / $total,2);
         }
@@ -483,10 +483,12 @@ class HandlerController extends Controller
         try{
 
             if(!IS_POST) throw new Exception('非法请求');
-
-            $import_id              =empty(I('post.import_id')) ? 0: I('post.import_id');
-            $map['username']        =empty(I('post.username')) ? '': I('post.username');
-            $map['phone']           =empty(I('post.phone')) ? '':I('post.phone');
+            $import_id=I('post.import_id');
+            $username=I('post.username');
+            $phone=(I('post.phone');
+            $import_id              =empty($import_id) ? 0: $import_id;
+            $map['username']        =empty($username) ? '': $username;
+            $map['phone']           =empty($phone) ? '':$phone;
             $map['service_number']  =empty(I('post.service_number')) ? '':I('post.service_number');
             $map['source']          =empty(I('post.source')) ? '':I('post.source');
             $map['province']        =empty(I('post.province')) ? 0:I('post.province');

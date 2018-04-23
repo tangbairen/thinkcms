@@ -69,7 +69,7 @@ class AdminBaseController extends BaseController
 	public function getServerInfo()
 	{
 		$mysqlVersion = M()->query('select version() as version');
-		$serverInfo = [
+		$serverInfo = array(
 			'ThinkPHP版本' => 'ThinkPHP ' . THINK_VERSION,
 			'操作系统' => PHP_OS,
 			'主机名信息' => $_SERVER['SERVER_NAME'] . ' (' . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'] . ')',
@@ -89,7 +89,7 @@ class AdminBaseController extends BaseController
 			'register_globals' => get_cfg_var("register_globals") == "1" ? '√' : '×',
 			'magic_quotes_gpc' => (1 === get_magic_quotes_gpc()) ? '√' : '×',
 			'magic_quotes_runtime' => (1 === get_magic_quotes_runtime()) ? '√' : '×'
-		];
+		);
 		return $serverInfo;
 	}
 
