@@ -20,7 +20,7 @@ class UsersModel extends Model
         if(empty($code))throw new Exception('验证码不能为空');
 
         $res=$this->check_verify($code);
-//        if(!$res) throw new Exception('验证码错误');
+       if(!$res) throw new Exception('验证码错误');
 
         $data=$this->where("username ='{$username}'")->find();
 
