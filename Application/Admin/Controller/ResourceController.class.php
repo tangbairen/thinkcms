@@ -435,7 +435,7 @@ class ResourceController extends AdminBaseController
             $start=mktime(0,0,0,date('m'),date('d')-2,date('Y'));
             $end=time();
             $where="group_id = {$group['department_id']} and addtime between {$start} and {$end} ";
-            $data=D('Resource')->selectData($where);
+            $data=D('Resource')->auditData($where);
         }
         //所有组
         $group=M('AuthGroup')->select();
