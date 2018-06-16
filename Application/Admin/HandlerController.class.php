@@ -181,7 +181,7 @@ class HandlerController extends Controller
                 $group_id=$this->allocationGroup($brand_id,$area_id,$number_id);//部门id
             }
 
-            $array=array('百度移动','百度PC','百度信息流','360移动','360PC','搜狗移动','搜狗PC','神马移动','SEO优化','新媒体','400','留言板','离线宝','中国加盟网','今日头条','今日头条二');
+            $array=array('百度移动','百度PC','百度信息流','360移动','360PC','搜狗移动','搜狗PC','神马移动','SEO优化','新媒体','400','留言板','离线宝','中国加盟网');
             if(!in_array(trim($source),$array)){
                 $source='';
             }
